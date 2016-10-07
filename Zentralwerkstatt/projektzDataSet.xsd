@@ -63,7 +63,7 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="gerätTableAdapter" GeneratorDataComponentClassName="gerätTableAdapter" Name="gerät" UserDataComponentName="gerätTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="geräteTableAdapter" GeneratorDataComponentClassName="geräteTableAdapter" Name="geräte" UserDataComponentName="geräteTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.gerät" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
@@ -119,7 +119,7 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="gerätetypTableAdapter" GeneratorDataComponentClassName="gerätetypTableAdapter" Name="gerätetyp" UserDataComponentName="gerätetypTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="gerätetypenTableAdapter" GeneratorDataComponentClassName="gerätetypenTableAdapter" Name="gerätetypen" UserDataComponentName="gerätetypenTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.gerätetyp" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
@@ -283,7 +283,7 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="prüfkriteriumTableAdapter" GeneratorDataComponentClassName="prüfkriteriumTableAdapter" Name="prüfkriterium" UserDataComponentName="prüfkriteriumTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="prüfkriterienTableAdapter" GeneratorDataComponentClassName="prüfkriterienTableAdapter" Name="prüfkriterien" UserDataComponentName="prüfkriterienTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.prüfkriterium" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
@@ -344,7 +344,7 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="prüfungTableAdapter" GeneratorDataComponentClassName="prüfungTableAdapter" Name="prüfung" UserDataComponentName="prüfungTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="prüfungenTableAdapter" GeneratorDataComponentClassName="prüfungenTableAdapter" Name="prüfungen" UserDataComponentName="prüfungenTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.prüfung" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
@@ -408,7 +408,7 @@
   <xs:element name="projektzDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="projektzDataSet" msprop:Generator_UserDSName="projektzDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="benutzer" msprop:Generator_TableClassName="benutzerDataTable" msprop:Generator_TableVarName="tablebenutzer" msprop:Generator_TablePropName="benutzer" msprop:Generator_RowDeletingName="benutzerRowDeleting" msprop:Generator_RowChangingName="benutzerRowChanging" msprop:Generator_RowEvHandlerName="benutzerRowChangeEventHandler" msprop:Generator_RowDeletedName="benutzerRowDeleted" msprop:Generator_UserTableName="benutzer" msprop:Generator_RowChangedName="benutzerRowChanged" msprop:Generator_RowEvArgName="benutzerRowChangeEvent" msprop:Generator_RowClassName="benutzerRow">
+        <xs:element name="benutzer" msprop:Generator_TableClassName="benutzerDataTable" msprop:Generator_TableVarName="tablebenutzer" msprop:Generator_RowChangedName="benutzerRowChanged" msprop:Generator_TablePropName="benutzer" msprop:Generator_RowDeletingName="benutzerRowDeleting" msprop:Generator_RowChangingName="benutzerRowChanging" msprop:Generator_RowEvHandlerName="benutzerRowChangeEventHandler" msprop:Generator_RowDeletedName="benutzerRowDeleted" msprop:Generator_RowClassName="benutzerRow" msprop:Generator_UserTableName="benutzer" msprop:Generator_RowEvArgName="benutzerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDBenutzer" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDBenutzer" msprop:Generator_ColumnPropNameInRow="IDBenutzer" msprop:Generator_ColumnPropNameInTable="IDBenutzerColumn" msprop:Generator_UserColumnName="IDBenutzer" type="xs:int" />
@@ -430,7 +430,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="gerät" msprop:Generator_TableClassName="gerätDataTable" msprop:Generator_TableVarName="tablegerät" msprop:Generator_TablePropName="gerät" msprop:Generator_RowDeletingName="gerätRowDeleting" msprop:Generator_RowChangingName="gerätRowChanging" msprop:Generator_RowEvHandlerName="gerätRowChangeEventHandler" msprop:Generator_RowDeletedName="gerätRowDeleted" msprop:Generator_UserTableName="gerät" msprop:Generator_RowChangedName="gerätRowChanged" msprop:Generator_RowEvArgName="gerätRowChangeEvent" msprop:Generator_RowClassName="gerätRow">
+        <xs:element name="geräte" msprop:Generator_TableClassName="geräteDataTable" msprop:Generator_TableVarName="tablegeräte" msprop:Generator_RowChangedName="geräteRowChanged" msprop:Generator_TablePropName="geräte" msprop:Generator_RowDeletingName="geräteRowDeleting" msprop:Generator_RowChangingName="geräteRowChanging" msprop:Generator_RowEvHandlerName="geräteRowChangeEventHandler" msprop:Generator_RowDeletedName="geräteRowDeleted" msprop:Generator_RowClassName="geräteRow" msprop:Generator_UserTableName="geräte" msprop:Generator_RowEvArgName="geräteRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Geräte_Barcode" msprop:Generator_ColumnVarNameInTable="columnGeräte_Barcode" msprop:Generator_ColumnPropNameInRow="Geräte_Barcode" msprop:Generator_ColumnPropNameInTable="Geräte_BarcodeColumn" msprop:Generator_UserColumnName="Geräte_Barcode" type="xs:int" />
@@ -446,7 +446,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="gerätetyp" msprop:Generator_TableClassName="gerätetypDataTable" msprop:Generator_TableVarName="tablegerätetyp" msprop:Generator_TablePropName="gerätetyp" msprop:Generator_RowDeletingName="gerätetypRowDeleting" msprop:Generator_RowChangingName="gerätetypRowChanging" msprop:Generator_RowEvHandlerName="gerätetypRowChangeEventHandler" msprop:Generator_RowDeletedName="gerätetypRowDeleted" msprop:Generator_UserTableName="gerätetyp" msprop:Generator_RowChangedName="gerätetypRowChanged" msprop:Generator_RowEvArgName="gerätetypRowChangeEvent" msprop:Generator_RowClassName="gerätetypRow">
+        <xs:element name="gerätetypen" msprop:Generator_TableClassName="gerätetypenDataTable" msprop:Generator_TableVarName="tablegerätetypen" msprop:Generator_RowChangedName="gerätetypenRowChanged" msprop:Generator_TablePropName="gerätetypen" msprop:Generator_RowDeletingName="gerätetypenRowDeleting" msprop:Generator_RowChangingName="gerätetypenRowChanging" msprop:Generator_RowEvHandlerName="gerätetypenRowChangeEventHandler" msprop:Generator_RowDeletedName="gerätetypenRowDeleted" msprop:Generator_RowClassName="gerätetypenRow" msprop:Generator_UserTableName="gerätetypen" msprop:Generator_RowEvArgName="gerätetypenRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDGerätetyp" msprop:Generator_ColumnVarNameInTable="columnIDGerätetyp" msprop:Generator_ColumnPropNameInRow="IDGerätetyp" msprop:Generator_ColumnPropNameInTable="IDGerätetypColumn" msprop:Generator_UserColumnName="IDGerätetyp" type="xs:int" />
@@ -475,7 +475,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="hersteller" msprop:Generator_TableClassName="herstellerDataTable" msprop:Generator_TableVarName="tablehersteller" msprop:Generator_TablePropName="hersteller" msprop:Generator_RowDeletingName="herstellerRowDeleting" msprop:Generator_RowChangingName="herstellerRowChanging" msprop:Generator_RowEvHandlerName="herstellerRowChangeEventHandler" msprop:Generator_RowDeletedName="herstellerRowDeleted" msprop:Generator_UserTableName="hersteller" msprop:Generator_RowChangedName="herstellerRowChanged" msprop:Generator_RowEvArgName="herstellerRowChangeEvent" msprop:Generator_RowClassName="herstellerRow">
+        <xs:element name="hersteller" msprop:Generator_TableClassName="herstellerDataTable" msprop:Generator_TableVarName="tablehersteller" msprop:Generator_RowChangedName="herstellerRowChanged" msprop:Generator_TablePropName="hersteller" msprop:Generator_RowDeletingName="herstellerRowDeleting" msprop:Generator_RowChangingName="herstellerRowChanging" msprop:Generator_RowEvHandlerName="herstellerRowChangeEventHandler" msprop:Generator_RowDeletedName="herstellerRowDeleted" msprop:Generator_RowClassName="herstellerRow" msprop:Generator_UserTableName="hersteller" msprop:Generator_RowEvArgName="herstellerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDHersteller" msprop:Generator_ColumnVarNameInTable="columnIDHersteller" msprop:Generator_ColumnPropNameInRow="IDHersteller" msprop:Generator_ColumnPropNameInTable="IDHerstellerColumn" msprop:Generator_UserColumnName="IDHersteller" type="xs:int" />
@@ -489,7 +489,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="prüfergebnisse" msprop:Generator_TableClassName="prüfergebnisseDataTable" msprop:Generator_TableVarName="tableprüfergebnisse" msprop:Generator_TablePropName="prüfergebnisse" msprop:Generator_RowDeletingName="prüfergebnisseRowDeleting" msprop:Generator_RowChangingName="prüfergebnisseRowChanging" msprop:Generator_RowEvHandlerName="prüfergebnisseRowChangeEventHandler" msprop:Generator_RowDeletedName="prüfergebnisseRowDeleted" msprop:Generator_UserTableName="prüfergebnisse" msprop:Generator_RowChangedName="prüfergebnisseRowChanged" msprop:Generator_RowEvArgName="prüfergebnisseRowChangeEvent" msprop:Generator_RowClassName="prüfergebnisseRow">
+        <xs:element name="prüfergebnisse" msprop:Generator_TableClassName="prüfergebnisseDataTable" msprop:Generator_TableVarName="tableprüfergebnisse" msprop:Generator_RowChangedName="prüfergebnisseRowChanged" msprop:Generator_TablePropName="prüfergebnisse" msprop:Generator_RowDeletingName="prüfergebnisseRowDeleting" msprop:Generator_RowChangingName="prüfergebnisseRowChanging" msprop:Generator_RowEvHandlerName="prüfergebnisseRowChangeEventHandler" msprop:Generator_RowDeletedName="prüfergebnisseRowDeleted" msprop:Generator_RowClassName="prüfergebnisseRow" msprop:Generator_UserTableName="prüfergebnisse" msprop:Generator_RowEvArgName="prüfergebnisseRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDPrüfung" msprop:Generator_ColumnVarNameInTable="columnIDPrüfung" msprop:Generator_ColumnPropNameInRow="IDPrüfung" msprop:Generator_ColumnPropNameInTable="IDPrüfungColumn" msprop:Generator_UserColumnName="IDPrüfung" type="xs:int" />
@@ -504,7 +504,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="prüfkriterium" msprop:Generator_TableClassName="prüfkriteriumDataTable" msprop:Generator_TableVarName="tableprüfkriterium" msprop:Generator_TablePropName="prüfkriterium" msprop:Generator_RowDeletingName="prüfkriteriumRowDeleting" msprop:Generator_RowChangingName="prüfkriteriumRowChanging" msprop:Generator_RowEvHandlerName="prüfkriteriumRowChangeEventHandler" msprop:Generator_RowDeletedName="prüfkriteriumRowDeleted" msprop:Generator_UserTableName="prüfkriterium" msprop:Generator_RowChangedName="prüfkriteriumRowChanged" msprop:Generator_RowEvArgName="prüfkriteriumRowChangeEvent" msprop:Generator_RowClassName="prüfkriteriumRow">
+        <xs:element name="prüfkriterien" msprop:Generator_TableClassName="prüfkriterienDataTable" msprop:Generator_TableVarName="tableprüfkriterien" msprop:Generator_RowChangedName="prüfkriterienRowChanged" msprop:Generator_TablePropName="prüfkriterien" msprop:Generator_RowDeletingName="prüfkriterienRowDeleting" msprop:Generator_RowChangingName="prüfkriterienRowChanging" msprop:Generator_RowEvHandlerName="prüfkriterienRowChangeEventHandler" msprop:Generator_RowDeletedName="prüfkriterienRowDeleted" msprop:Generator_RowClassName="prüfkriterienRow" msprop:Generator_UserTableName="prüfkriterien" msprop:Generator_RowEvArgName="prüfkriterienRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDKriterium" msprop:Generator_ColumnVarNameInTable="columnIDKriterium" msprop:Generator_ColumnPropNameInRow="IDKriterium" msprop:Generator_ColumnPropNameInTable="IDKriteriumColumn" msprop:Generator_UserColumnName="IDKriterium" type="xs:int" />
@@ -527,7 +527,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="prüfung" msprop:Generator_TableClassName="prüfungDataTable" msprop:Generator_TableVarName="tableprüfung" msprop:Generator_TablePropName="prüfung" msprop:Generator_RowDeletingName="prüfungRowDeleting" msprop:Generator_RowChangingName="prüfungRowChanging" msprop:Generator_RowEvHandlerName="prüfungRowChangeEventHandler" msprop:Generator_RowDeletedName="prüfungRowDeleted" msprop:Generator_UserTableName="prüfung" msprop:Generator_RowChangedName="prüfungRowChanged" msprop:Generator_RowEvArgName="prüfungRowChangeEvent" msprop:Generator_RowClassName="prüfungRow">
+        <xs:element name="prüfungen" msprop:Generator_TableClassName="prüfungenDataTable" msprop:Generator_TableVarName="tableprüfungen" msprop:Generator_RowChangedName="prüfungenRowChanged" msprop:Generator_TablePropName="prüfungen" msprop:Generator_RowDeletingName="prüfungenRowDeleting" msprop:Generator_RowChangingName="prüfungenRowChanging" msprop:Generator_RowEvHandlerName="prüfungenRowChangeEventHandler" msprop:Generator_RowDeletedName="prüfungenRowDeleted" msprop:Generator_RowClassName="prüfungenRow" msprop:Generator_UserTableName="prüfungen" msprop:Generator_RowEvArgName="prüfungenRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDPrüfung" msprop:Generator_ColumnVarNameInTable="columnIDPrüfung" msprop:Generator_ColumnPropNameInRow="IDPrüfung" msprop:Generator_ColumnPropNameInTable="IDPrüfungColumn" msprop:Generator_UserColumnName="IDPrüfung" type="xs:int" />
@@ -543,12 +543,12 @@
       <xs:selector xpath=".//mstns:benutzer" />
       <xs:field xpath="mstns:IDBenutzer" />
     </xs:unique>
-    <xs:unique name="gerät_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:gerät" />
+    <xs:unique name="geräte_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:geräte" />
       <xs:field xpath="mstns:Geräte_Barcode" />
     </xs:unique>
-    <xs:unique name="gerätetyp_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:gerätetyp" />
+    <xs:unique name="gerätetypen_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:gerätetypen" />
       <xs:field xpath="mstns:IDGerätetyp" />
     </xs:unique>
     <xs:unique name="hersteller_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
@@ -560,24 +560,24 @@
       <xs:field xpath="mstns:IDPrüfung" />
       <xs:field xpath="mstns:IDKriterium" />
     </xs:unique>
-    <xs:unique name="prüfkriterium_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:prüfkriterium" />
+    <xs:unique name="prüfkriterien_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:prüfkriterien" />
       <xs:field xpath="mstns:IDKriterium" />
     </xs:unique>
-    <xs:unique name="prüfung_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:prüfung" />
+    <xs:unique name="prüfungen_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:prüfungen" />
       <xs:field xpath="mstns:IDPrüfung" />
     </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Gerät_IDGerätetyp_FK" msdata:parent="gerätetyp" msdata:child="gerät" msdata:parentkey="IDGerätetyp" msdata:childkey="IDGerätetyp" msprop:Generator_UserChildTable="gerät" msprop:Generator_ChildPropName="GetgerätRows" msprop:Generator_UserRelationName="Gerät_IDGerätetyp_FK" msprop:Generator_RelationVarName="relationGerät_IDGerätetyp_FK" msprop:Generator_UserParentTable="gerätetyp" msprop:Generator_ParentPropName="gerätetypRow" />
-      <msdata:Relationship name="Gerätetyp_IDHersteller_FK" msdata:parent="hersteller" msdata:child="gerätetyp" msdata:parentkey="IDHersteller" msdata:childkey="IDHersteller" msprop:Generator_UserChildTable="gerätetyp" msprop:Generator_ChildPropName="GetgerätetypRows" msprop:Generator_UserRelationName="Gerätetyp_IDHersteller_FK" msprop:Generator_RelationVarName="relationGerätetyp_IDHersteller_FK" msprop:Generator_UserParentTable="hersteller" msprop:Generator_ParentPropName="herstellerRow" />
-      <msdata:Relationship name="Prüfergebnisse_IDKriterium_FK" msdata:parent="prüfkriterium" msdata:child="prüfergebnisse" msdata:parentkey="IDKriterium" msdata:childkey="IDKriterium" msprop:Generator_UserChildTable="prüfergebnisse" msprop:Generator_ChildPropName="GetprüfergebnisseRows" msprop:Generator_UserRelationName="Prüfergebnisse_IDKriterium_FK" msprop:Generator_RelationVarName="relationPrüfergebnisse_IDKriterium_FK" msprop:Generator_UserParentTable="prüfkriterium" msprop:Generator_ParentPropName="prüfkriteriumRow" />
-      <msdata:Relationship name="Prüfergebnisse_IDPrüfung_FK" msdata:parent="prüfung" msdata:child="prüfergebnisse" msdata:parentkey="IDPrüfung" msdata:childkey="IDPrüfung" msprop:Generator_UserChildTable="prüfergebnisse" msprop:Generator_ChildPropName="GetprüfergebnisseRows" msprop:Generator_UserRelationName="Prüfergebnisse_IDPrüfung_FK" msprop:Generator_RelationVarName="relationPrüfergebnisse_IDPrüfung_FK" msprop:Generator_UserParentTable="prüfung" msprop:Generator_ParentPropName="prüfungRow" />
-      <msdata:Relationship name="Prüfkriterium_IDGerätetyp_FK" msdata:parent="gerätetyp" msdata:child="prüfkriterium" msdata:parentkey="IDGerätetyp" msdata:childkey="IDGerätetyp" msprop:Generator_UserChildTable="prüfkriterium" msprop:Generator_ChildPropName="GetprüfkriteriumRows" msprop:Generator_UserRelationName="Prüfkriterium_IDGerätetyp_FK" msprop:Generator_ParentPropName="gerätetypRow" msprop:Generator_RelationVarName="relationPrüfkriterium_IDGerätetyp_FK" msprop:Generator_UserParentTable="gerätetyp" />
-      <msdata:Relationship name="Prüfung_GeräteBarcode_FK" msdata:parent="gerät" msdata:child="prüfung" msdata:parentkey="Geräte_Barcode" msdata:childkey="Geräte_Barcode" msprop:Generator_UserChildTable="prüfung" msprop:Generator_ChildPropName="GetprüfungRows" msprop:Generator_UserRelationName="Prüfung_GeräteBarcode_FK" msprop:Generator_ParentPropName="gerätRow" msprop:Generator_RelationVarName="relationPrüfung_GeräteBarcode_FK" msprop:Generator_UserParentTable="gerät" />
-      <msdata:Relationship name="Prüfung_IDBenutzer_FK" msdata:parent="benutzer" msdata:child="prüfung" msdata:parentkey="IDBenutzer" msdata:childkey="IDBenutzer" msprop:Generator_UserChildTable="prüfung" msprop:Generator_ChildPropName="GetprüfungRows" msprop:Generator_UserRelationName="Prüfung_IDBenutzer_FK" msprop:Generator_ParentPropName="benutzerRow" msprop:Generator_RelationVarName="relationPrüfung_IDBenutzer_FK" msprop:Generator_UserParentTable="benutzer" />
+      <msdata:Relationship name="Gerät_IDGerätetyp_FK" msdata:parent="gerätetypen" msdata:child="geräte" msdata:parentkey="IDGerätetyp" msdata:childkey="IDGerätetyp" msprop:Generator_UserChildTable="geräte" msprop:Generator_ChildPropName="GetgerätRows" msprop:Generator_UserRelationName="Gerät_IDGerätetyp_FK" msprop:Generator_ParentPropName="gerätetypenRow" msprop:Generator_RelationVarName="relationGerät_IDGerätetyp_FK" msprop:Generator_UserParentTable="gerätetypen" />
+      <msdata:Relationship name="Gerätetyp_IDHersteller_FK" msdata:parent="hersteller" msdata:child="gerätetypen" msdata:parentkey="IDHersteller" msdata:childkey="IDHersteller" msprop:Generator_UserChildTable="gerätetypen" msprop:Generator_ChildPropName="GetgerätetypRows" msprop:Generator_UserRelationName="Gerätetyp_IDHersteller_FK" msprop:Generator_ParentPropName="herstellerRow" msprop:Generator_RelationVarName="relationGerätetyp_IDHersteller_FK" msprop:Generator_UserParentTable="hersteller" />
+      <msdata:Relationship name="Prüfergebnisse_IDKriterium_FK" msdata:parent="prüfkriterien" msdata:child="prüfergebnisse" msdata:parentkey="IDKriterium" msdata:childkey="IDKriterium" msprop:Generator_UserChildTable="prüfergebnisse" msprop:Generator_ChildPropName="GetprüfergebnisseRows" msprop:Generator_UserRelationName="Prüfergebnisse_IDKriterium_FK" msprop:Generator_ParentPropName="prüfkriterienRow" msprop:Generator_RelationVarName="relationPrüfergebnisse_IDKriterium_FK" msprop:Generator_UserParentTable="prüfkriterien" />
+      <msdata:Relationship name="Prüfergebnisse_IDPrüfung_FK" msdata:parent="prüfungen" msdata:child="prüfergebnisse" msdata:parentkey="IDPrüfung" msdata:childkey="IDPrüfung" msprop:Generator_UserChildTable="prüfergebnisse" msprop:Generator_ChildPropName="GetprüfergebnisseRows" msprop:Generator_UserRelationName="Prüfergebnisse_IDPrüfung_FK" msprop:Generator_ParentPropName="prüfungenRow" msprop:Generator_RelationVarName="relationPrüfergebnisse_IDPrüfung_FK" msprop:Generator_UserParentTable="prüfungen" />
+      <msdata:Relationship name="Prüfkriterium_IDGerätetyp_FK" msdata:parent="gerätetypen" msdata:child="prüfkriterien" msdata:parentkey="IDGerätetyp" msdata:childkey="IDGerätetyp" msprop:Generator_UserChildTable="prüfkriterien" msprop:Generator_ChildPropName="GetprüfkriterienRows" msprop:Generator_UserRelationName="Prüfkriterium_IDGerätetyp_FK" msprop:Generator_RelationVarName="relationPrüfkriterium_IDGerätetyp_FK" msprop:Generator_UserParentTable="gerätetypen" msprop:Generator_ParentPropName="gerätetypRow" />
+      <msdata:Relationship name="Prüfung_GeräteBarcode_FK" msdata:parent="geräte" msdata:child="prüfungen" msdata:parentkey="Geräte_Barcode" msdata:childkey="Geräte_Barcode" msprop:Generator_UserChildTable="prüfungen" msprop:Generator_ChildPropName="GetprüfungenRows" msprop:Generator_UserRelationName="Prüfung_GeräteBarcode_FK" msprop:Generator_RelationVarName="relationPrüfung_GeräteBarcode_FK" msprop:Generator_UserParentTable="geräte" msprop:Generator_ParentPropName="gerätRow" />
+      <msdata:Relationship name="Prüfung_IDBenutzer_FK" msdata:parent="benutzer" msdata:child="prüfungen" msdata:parentkey="IDBenutzer" msdata:childkey="IDBenutzer" msprop:Generator_UserChildTable="prüfungen" msprop:Generator_ChildPropName="GetprüfungenRows" msprop:Generator_UserRelationName="Prüfung_IDBenutzer_FK" msprop:Generator_RelationVarName="relationPrüfung_IDBenutzer_FK" msprop:Generator_UserParentTable="benutzer" msprop:Generator_ParentPropName="benutzerRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

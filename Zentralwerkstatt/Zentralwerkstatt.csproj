@@ -71,6 +71,9 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="projektzDataSet.cs">
+      <DependentUpon>projektzDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="projektzDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
