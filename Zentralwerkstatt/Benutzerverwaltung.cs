@@ -13,13 +13,10 @@ namespace Zentralwerkstatt
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet2.benutzer". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.BenutzerTableAdapter.Fill(this.ProjectZDatabase.benutzer);
         }
         //Change DB
         private void Übernehmen_Click(object sender, EventArgs e)
         {
-            BenutzerTableAdapter.Update(ProjectZDatabase);
-            this.BenutzerTableAdapter.Fill(this.ProjectZDatabase.benutzer);
         }
 
 
