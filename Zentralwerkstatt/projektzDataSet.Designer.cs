@@ -38,6 +38,8 @@ namespace Zentralwerkstatt {
         
         private prüfungenDataTable tableprüfungen;
         
+        private testDataTable tabletest;
+        
         private global::System.Data.DataRelation relationGerät_IDGerätetyp_FK;
         
         private global::System.Data.DataRelation relationGerätetyp_IDHersteller_FK;
@@ -100,6 +102,9 @@ namespace Zentralwerkstatt {
                 }
                 if ((ds.Tables["prüfungen"] != null)) {
                     base.Tables.Add(new prüfungenDataTable(ds.Tables["prüfungen"]));
+                }
+                if ((ds.Tables["test"] != null)) {
+                    base.Tables.Add(new testDataTable(ds.Tables["test"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -191,6 +196,16 @@ namespace Zentralwerkstatt {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public testDataTable test {
+            get {
+                return this.tabletest;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -277,6 +292,9 @@ namespace Zentralwerkstatt {
                 if ((ds.Tables["prüfungen"] != null)) {
                     base.Tables.Add(new prüfungenDataTable(ds.Tables["prüfungen"]));
                 }
+                if ((ds.Tables["test"] != null)) {
+                    base.Tables.Add(new testDataTable(ds.Tables["test"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -352,6 +370,12 @@ namespace Zentralwerkstatt {
                     this.tableprüfungen.InitVars();
                 }
             }
+            this.tabletest = ((testDataTable)(base.Tables["test"]));
+            if ((initTable == true)) {
+                if ((this.tabletest != null)) {
+                    this.tabletest.InitVars();
+                }
+            }
             this.relationGerät_IDGerätetyp_FK = this.Relations["Gerät_IDGerätetyp_FK"];
             this.relationGerätetyp_IDHersteller_FK = this.Relations["Gerätetyp_IDHersteller_FK"];
             this.relationPrüfergebnisse_IDKriterium_FK = this.Relations["Prüfergebnisse_IDKriterium_FK"];
@@ -383,6 +407,8 @@ namespace Zentralwerkstatt {
             base.Tables.Add(this.tableprüfkriterien);
             this.tableprüfungen = new prüfungenDataTable();
             base.Tables.Add(this.tableprüfungen);
+            this.tabletest = new testDataTable();
+            base.Tables.Add(this.tabletest);
             this.relationGerät_IDGerätetyp_FK = new global::System.Data.DataRelation("Gerät_IDGerätetyp_FK", new global::System.Data.DataColumn[] {
                         this.tablegerätetypen.IDGerätetypColumn}, new global::System.Data.DataColumn[] {
                         this.tablegeräte.IDGerätetypColumn}, false);
@@ -452,6 +478,12 @@ namespace Zentralwerkstatt {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeprüfungen() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializetest() {
             return false;
         }
         
@@ -530,6 +562,9 @@ namespace Zentralwerkstatt {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void prüfungenRowChangeEventHandler(object sender, prüfungenRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void testRowChangeEventHandler(object sender, testRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1337,8 +1372,8 @@ namespace Zentralwerkstatt {
                 this.columnIDGerätetyp.AllowDBNull = false;
                 this.columnIDGerätetyp.Unique = true;
                 this.columnIDHersteller.AllowDBNull = false;
-                this.columnHeaderText.MaxLength = 50;
-                this.columnFooterText.MaxLength = 50;
+                this.columnHeaderText.MaxLength = 200;
+                this.columnFooterText.MaxLength = 200;
                 this.columnBezeichnung.AllowDBNull = false;
                 this.columnBezeichnung.MaxLength = 50;
             }
@@ -2669,6 +2704,270 @@ namespace Zentralwerkstatt {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class testDataTable : global::System.Data.TypedTableBase<testRow> {
+            
+            private global::System.Data.DataColumn columnDatum;
+            
+            private global::System.Data.DataColumn columnBezeichnung;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public testDataTable() {
+                this.TableName = "test";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal testDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected testDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DatumColumn {
+                get {
+                    return this.columnDatum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BezeichnungColumn {
+                get {
+                    return this.columnBezeichnung;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public testRow this[int index] {
+                get {
+                    return ((testRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event testRowChangeEventHandler testRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event testRowChangeEventHandler testRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event testRowChangeEventHandler testRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event testRowChangeEventHandler testRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddtestRow(testRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public testRow AddtestRow(System.DateTime Datum, string Bezeichnung) {
+                testRow rowtestRow = ((testRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Datum,
+                        Bezeichnung};
+                rowtestRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtestRow);
+                return rowtestRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                testDataTable cln = ((testDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new testDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnDatum = base.Columns["Datum"];
+                this.columnBezeichnung = base.Columns["Bezeichnung"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnDatum = new global::System.Data.DataColumn("Datum", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatum);
+                this.columnBezeichnung = new global::System.Data.DataColumn("Bezeichnung", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBezeichnung);
+                this.columnDatum.AllowDBNull = false;
+                this.columnBezeichnung.AllowDBNull = false;
+                this.columnBezeichnung.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public testRow NewtestRow() {
+                return ((testRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new testRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(testRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.testRowChanged != null)) {
+                    this.testRowChanged(this, new testRowChangeEvent(((testRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.testRowChanging != null)) {
+                    this.testRowChanging(this, new testRowChangeEvent(((testRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.testRowDeleted != null)) {
+                    this.testRowDeleted(this, new testRowChangeEvent(((testRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.testRowDeleting != null)) {
+                    this.testRowDeleting(this, new testRowChangeEvent(((testRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovetestRow(testRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                projektzDataSet ds = new projektzDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "testDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class benutzerRow : global::System.Data.DataRow {
@@ -2952,7 +3251,7 @@ namespace Zentralwerkstatt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public geräteRow[] GetgerätRows() {
+            public geräteRow[] GetgeräteRows() {
                 if ((this.Table.ChildRelations["Gerät_IDGerätetyp_FK"] == null)) {
                     return new geräteRow[0];
                 }
@@ -3028,7 +3327,7 @@ namespace Zentralwerkstatt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public gerätetypenRow[] GetgerätetypRows() {
+            public gerätetypenRow[] GetgerätetypenRows() {
                 if ((this.Table.ChildRelations["Gerätetyp_IDHersteller_FK"] == null)) {
                     return new gerätetypenRow[0];
                 }
@@ -3179,7 +3478,7 @@ namespace Zentralwerkstatt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public gerätetypenRow gerätetypRow {
+            public gerätetypenRow gerätetypenRow {
                 get {
                     return ((gerätetypenRow)(this.GetParentRow(this.Table.ParentRelations["Prüfkriterium_IDGerätetyp_FK"])));
                 }
@@ -3260,7 +3559,7 @@ namespace Zentralwerkstatt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public geräteRow gerätRow {
+            public geräteRow geräteRow {
                 get {
                     return ((geräteRow)(this.GetParentRow(this.Table.ParentRelations["Prüfung_GeräteBarcode_FK"])));
                 }
@@ -3288,6 +3587,43 @@ namespace Zentralwerkstatt {
                 }
                 else {
                     return ((prüfergebnisseRow[])(base.GetChildRows(this.Table.ChildRelations["Prüfergebnisse_IDPrüfung_FK"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class testRow : global::System.Data.DataRow {
+            
+            private testDataTable tabletest;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal testRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabletest = ((testDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Datum {
+                get {
+                    return ((global::System.DateTime)(this[this.tabletest.DatumColumn]));
+                }
+                set {
+                    this[this.tabletest.DatumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Bezeichnung {
+                get {
+                    return ((string)(this[this.tabletest.BezeichnungColumn]));
+                }
+                set {
+                    this[this.tabletest.BezeichnungColumn] = value;
                 }
             }
         }
@@ -3516,6 +3852,40 @@ namespace Zentralwerkstatt {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public prüfungenRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class testRowChangeEvent : global::System.EventArgs {
+            
+            private testRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public testRowChangeEvent(testRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public testRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4143,8 +4513,8 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `gerät` WHERE ((`Geräte_Barcode` = @p1) AND (`IDGerätetyp` = @p2) AND" +
-                " (`Name` = @p3) AND (`Anschaffungsdatum` = @p4))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `geräte` WHERE ((`Geräte_Barcode` = @p1) AND (`IDGerätetyp` = @p2) AN" +
+                "D (`Name` = @p3) AND (`Anschaffungsdatum` = @p4))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4180,8 +4550,8 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `gerät` (`Geräte_Barcode`, `IDGerätetyp`, `Name`, `Anschaffungsdatum`" +
-                ") VALUES (@p1, @p2, @p3, @p4)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `geräte` (`Geräte_Barcode`, `IDGerätetyp`, `Name`, `Anschaffungsdatum" +
+                "`) VALUES (@p1, @p2, @p3, @p4)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4213,9 +4583,9 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `gerät` SET `Geräte_Barcode` = @p1, `IDGerätetyp` = @p2, `Name` = @p3, `An" +
-                "schaffungsdatum` = @p4 WHERE ((`Geräte_Barcode` = @p5) AND (`IDGerätetyp` = @p6)" +
-                " AND (`Name` = @p7) AND (`Anschaffungsdatum` = @p8))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `geräte` SET `Geräte_Barcode` = @p1, `IDGerätetyp` = @p2, `Name` = @p3, `A" +
+                "nschaffungsdatum` = @p4 WHERE ((`Geräte_Barcode` = @p5) AND (`IDGerätetyp` = @p6" +
+                ") AND (`Name` = @p7) AND (`Anschaffungsdatum` = @p8))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4292,7 +4662,8 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `Geräte_Barcode`, `IDGerätetyp`, `Name`, `Anschaffungsdatum` FROM `gerät`";
+            this._commandCollection[0].CommandText = "SELECT `Geräte_Barcode`, `IDGerätetyp`, `Name`, `Anschaffungsdatum` FROM `geräte`" +
+                "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4586,9 +4957,9 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `gerätetyp` WHERE ((`IDGerätetyp` = @p1) AND (`IDHersteller` = @p2) A" +
-                "ND ((@p3 = 1 AND `HeaderText` IS NULL) OR (`HeaderText` = @p4)) AND ((@p5 = 1 AN" +
-                "D `FooterText` IS NULL) OR (`FooterText` = @p6)) AND (`Bezeichnung` = @p7))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `gerätetypen` WHERE ((`IDGerätetyp` = @p1) AND (`IDHersteller` = @p2)" +
+                " AND ((@p3 = 1 AND `HeaderText` IS NULL) OR (`HeaderText` = @p4)) AND ((@p5 = 1 " +
+                "AND `FooterText` IS NULL) OR (`FooterText` = @p6)) AND (`Bezeichnung` = @p7))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4650,8 +5021,8 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `gerätetyp` (`IDGerätetyp`, `IDHersteller`, `HeaderText`, `FooterText" +
-                "`, `Bezeichnung`) VALUES (@p1, @p2, @p3, @p4, @p5)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `gerätetypen` (`IDGerätetyp`, `IDHersteller`, `HeaderText`, `FooterTe" +
+                "xt`, `Bezeichnung`) VALUES (@p1, @p2, @p3, @p4, @p5)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4690,7 +5061,7 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `gerätetyp` SET `IDGerätetyp` = @p1, `IDHersteller` = @p2, `HeaderText` = @p3, `FooterText` = @p4, `Bezeichnung` = @p5 WHERE ((`IDGerätetyp` = @p6) AND (`IDHersteller` = @p7) AND ((@p8 = 1 AND `HeaderText` IS NULL) OR (`HeaderText` = @p9)) AND ((@p10 = 1 AND `FooterText` IS NULL) OR (`FooterText` = @p11)) AND (`Bezeichnung` = @p12))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `gerätetypen` SET `IDGerätetyp` = @p1, `IDHersteller` = @p2, `HeaderText` = @p3, `FooterText` = @p4, `Bezeichnung` = @p5 WHERE ((`IDGerätetyp` = @p6) AND (`IDHersteller` = @p7) AND ((@p8 = 1 AND `HeaderText` IS NULL) OR (`HeaderText` = @p9)) AND ((@p10 = 1 AND `FooterText` IS NULL) OR (`FooterText` = @p11)) AND (`Bezeichnung` = @p12))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4801,7 +5172,7 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `IDGerätetyp`, `IDHersteller`, `HeaderText`, `FooterText`, `Bezeichnung` F" +
-                "ROM `gerätetyp`";
+                "ROM `gerätetypen`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5947,7 +6318,7 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `prüfkriterium` WHERE ((`IDKriterium` = @p1) AND (`IDGerätetyp` = @p2" +
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `prüfkriterien` WHERE ((`IDKriterium` = @p1) AND (`IDGerätetyp` = @p2" +
                 ") AND (`Text` = @p3) AND (`Anzeigeart` = @p4) AND (`Status` = @p5))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -5992,7 +6363,7 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `prüfkriterium` (`IDKriterium`, `IDGerätetyp`, `Text`, `Anzeigeart`, " +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `prüfkriterien` (`IDKriterium`, `IDGerätetyp`, `Text`, `Anzeigeart`, " +
                 "`Status`) VALUES (@p1, @p2, @p3, @p4, @p5)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -6032,7 +6403,7 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `prüfkriterium` SET `IDKriterium` = @p1, `IDGerätetyp` = @p2, `Text` = @p3" +
+            this._adapter.UpdateCommand.CommandText = "UPDATE `prüfkriterien` SET `IDKriterium` = @p1, `IDGerätetyp` = @p2, `Text` = @p3" +
                 ", `Anzeigeart` = @p4, `Status` = @p5 WHERE ((`IDKriterium` = @p6) AND (`IDGeräte" +
                 "typ` = @p7) AND (`Text` = @p8) AND (`Anzeigeart` = @p9) AND (`Status` = @p10))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
@@ -6127,7 +6498,7 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `IDKriterium`, `IDGerätetyp`, `Text`, `Anzeigeart`, `Status` FROM `prüfkri" +
-                "terium`";
+                "terien`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6444,8 +6815,8 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `prüfung` WHERE ((`IDPrüfung` = @p1) AND (`Geräte_Barcode` = @p2) AND" +
-                " (`IDBenutzer` = @p3) AND (`Datum` = @p4))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `prüfungen` WHERE ((`IDPrüfung` = @p1) AND (`Geräte_Barcode` = @p2) A" +
+                "ND (`IDBenutzer` = @p3) AND (`Datum` = @p4))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -6481,8 +6852,8 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `prüfung` (`IDPrüfung`, `Geräte_Barcode`, `IDBenutzer`, `Datum`) VALU" +
-                "ES (@p1, @p2, @p3, @p4)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `prüfungen` (`IDPrüfung`, `Geräte_Barcode`, `IDBenutzer`, `Datum`) VA" +
+                "LUES (@p1, @p2, @p3, @p4)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -6514,9 +6885,9 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `prüfung` SET `IDPrüfung` = @p1, `Geräte_Barcode` = @p2, `IDBenutzer` = @p" +
-                "3, `Datum` = @p4 WHERE ((`IDPrüfung` = @p5) AND (`Geräte_Barcode` = @p6) AND (`I" +
-                "DBenutzer` = @p7) AND (`Datum` = @p8))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `prüfungen` SET `IDPrüfung` = @p1, `Geräte_Barcode` = @p2, `IDBenutzer` = " +
+                "@p3, `Datum` = @p4 WHERE ((`IDPrüfung` = @p5) AND (`Geräte_Barcode` = @p6) AND (" +
+                "`IDBenutzer` = @p7) AND (`Datum` = @p8))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -6593,7 +6964,7 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `IDPrüfung`, `Geräte_Barcode`, `IDBenutzer`, `Datum` FROM `prüfung`";
+            this._commandCollection[0].CommandText = "SELECT `IDPrüfung`, `Geräte_Barcode`, `IDBenutzer`, `Datum` FROM `prüfungen`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6735,6 +7106,174 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int p2, int p3, System.DateTime p4, int p5, int p6, int p7, System.DateTime p8) {
             return this.Update(p5, p2, p3, p4, p5, p6, p7, p8);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class testTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public testTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "test";
+            tableMapping.ColumnMappings.Add("Datum", "Datum");
+            tableMapping.ColumnMappings.Add("Bezeichnung", "Bezeichnung");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::Zentralwerkstatt.Properties.Settings.Default.projektzConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT `Datum`, `Bezeichnung` FROM `projektz`.`test`";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(projektzDataSet.testDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual projektzDataSet.testDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            projektzDataSet.testDataTable dataTable = new projektzDataSet.testDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     

@@ -40,14 +40,18 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.projektzDatabase = new Zentralwerkstatt.projektzDataSet();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.Gerätename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Datum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.projektzDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.testTableAdapter();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MenüLeiste.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabaseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // MenüLeiste
@@ -125,41 +129,51 @@
             this.projektzDatabase.DataSetName = "projektzDataSet";
             this.projektzDatabase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Gerätename,
-            this.Datum});
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(12, 27);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(201, 584);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // Gerätename
-            // 
-            this.Gerätename.Text = "Gerätename";
-            this.Gerätename.Width = 100;
-            // 
-            // Datum
-            // 
-            this.Datum.Text = "Datum";
-            this.Datum.Width = 100;
-            // 
             // projektzDatabaseBindingSource
             // 
             this.projektzDatabaseBindingSource.DataSource = this.projektzDatabase;
             this.projektzDatabaseBindingSource.Position = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.datumDataGridViewTextBoxColumn,
+            this.bezeichnungDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.testBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 27);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(310, 524);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // testBindingSource
+            // 
+            this.testBindingSource.DataMember = "test";
+            this.testBindingSource.DataSource = this.projektzDatabaseBindingSource;
+            // 
+            // testTableAdapter
+            // 
+            this.testTableAdapter.ClearBeforeFill = true;
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            // 
+            // bezeichnungDataGridViewTextBoxColumn
+            // 
+            this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "Bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "Bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 636);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MenüLeiste);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -167,12 +181,15 @@
             this.Name = "Main";
             this.Text = "Zentralwerkstatt";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Close);
+            this.Load += new System.EventHandler(this.Main_Load);
             this.MenüLeiste.ResumeLayout(false);
             this.MenüLeiste.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabaseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,9 +207,11 @@
         private System.Windows.Forms.ToolStripMenuItem benutzerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem geräteToolStripMenuItem;
         private projektzDataSet projektzDatabase;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader Gerätename;
-        private System.Windows.Forms.ColumnHeader Datum;
         private System.Windows.Forms.BindingSource projektzDatabaseBindingSource;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource testBindingSource;
+        private projektzDataSetTableAdapters.testTableAdapter testTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
     }
 }

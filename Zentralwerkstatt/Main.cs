@@ -53,5 +53,12 @@ namespace Zentralwerkstatt
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase.test". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.testTableAdapter.Fill(this.projektzDatabase.test);
+
+        }
     }
 }
