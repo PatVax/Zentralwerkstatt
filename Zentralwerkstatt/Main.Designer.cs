@@ -167,7 +167,6 @@
             this.Name = "Main";
             this.Text = "Zentralwerkstatt";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Close);
-            this.Load += new System.EventHandler(this.Main_Load);
             this.MenüLeiste.ResumeLayout(false);
             this.MenüLeiste.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
