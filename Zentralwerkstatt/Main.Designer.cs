@@ -42,10 +42,10 @@
             this.projektzDatabase = new Zentralwerkstatt.projektzDataSet();
             this.projektzDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.testTableAdapter();
             this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.testTableAdapter();
             this.MenüLeiste.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).BeginInit();
@@ -144,17 +144,8 @@
             this.dataGridView1.DataSource = this.testBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(310, 524);
+            this.dataGridView1.Size = new System.Drawing.Size(243, 524);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // testBindingSource
-            // 
-            this.testBindingSource.DataMember = "test";
-            this.testBindingSource.DataSource = this.projektzDatabaseBindingSource;
-            // 
-            // testTableAdapter
-            // 
-            this.testTableAdapter.ClearBeforeFill = true;
             // 
             // datumDataGridViewTextBoxColumn
             // 
@@ -167,6 +158,15 @@
             this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "Bezeichnung";
             this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "Bezeichnung";
             this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
+            // 
+            // testBindingSource
+            // 
+            this.testBindingSource.DataMember = "test";
+            this.testBindingSource.DataSource = this.projektzDatabaseBindingSource;
+            // 
+            // testTableAdapter
+            // 
+            this.testTableAdapter.ClearBeforeFill = true;
             // 
             // Main
             // 
