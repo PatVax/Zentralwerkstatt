@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Zentralverwaltung));
             this.Übernehmen = new System.Windows.Forms.Button();
-            this.ProjectZDatabase = new Zentralwerkstatt.projektzDataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.IDBenutzer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.administratorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DatabaseConnection = new System.Windows.Forms.BindingSource(this.components);
             this.benutzerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ProjectZDatabase = new Zentralwerkstatt.projektzDataSet();
+            this.DatabaseConnection = new System.Windows.Forms.BindingSource(this.components);
             this.benutzerTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.benutzerTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).BeginInit();
             this.SuspendLayout();
             // 
             // Übernehmen
@@ -56,12 +56,6 @@
             this.Übernehmen.Text = "Übernehmen";
             this.Übernehmen.UseVisualStyleBackColor = true;
             this.Übernehmen.Click += new System.EventHandler(this.Übernehmen_Click);
-            // 
-            // ProjectZDatabase
-            // 
-            this.ProjectZDatabase.CaseSensitive = true;
-            this.ProjectZDatabase.DataSetName = "projektzDataSet";
-            this.ProjectZDatabase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridView1
             // 
@@ -106,15 +100,21 @@
             this.administratorDataGridViewCheckBoxColumn.HeaderText = "Administrator";
             this.administratorDataGridViewCheckBoxColumn.Name = "administratorDataGridViewCheckBoxColumn";
             // 
-            // DatabaseConnection
-            // 
-            this.DatabaseConnection.DataMember = "benutzer";
-            this.DatabaseConnection.DataSource = this.ProjectZDatabase;
-            // 
             // benutzerBindingSource
             // 
             this.benutzerBindingSource.DataMember = "benutzer";
             this.benutzerBindingSource.DataSource = this.ProjectZDatabase;
+            // 
+            // ProjectZDatabase
+            // 
+            this.ProjectZDatabase.CaseSensitive = true;
+            this.ProjectZDatabase.DataSetName = "projektzDataSet";
+            this.ProjectZDatabase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // DatabaseConnection
+            // 
+            this.DatabaseConnection.DataMember = "benutzer";
+            this.DatabaseConnection.DataSource = this.ProjectZDatabase;
             // 
             // benutzerTableAdapter
             // 
@@ -132,10 +132,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Benutzerverwaltung";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).EndInit();
             this.ResumeLayout(false);
 
         }

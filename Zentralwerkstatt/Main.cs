@@ -14,33 +14,7 @@ namespace Zentralwerkstatt
             conn = new MySqlConnection(cs);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = conn;
-            
-
-
-          
-            //    try
-            //    {
-            //        int countsql = 0;
-            //        cmd.CommandText = "SELECT Gerät.Name, Prüfung.Datum FROM Gerät INNER JOIN Prüfung ON Gerät.Geräte_Barcode = Prüfung.Geräte_Barcode ORDER BY Prüfung.Datum";
-            //        MySqlDataReader Reader;
-            //        Reader = cmd.ExecuteReader();
-
-            //        while (Reader.Read())
-            //        {
-            //            countsql = countsql + 1;
-            //        }
-            //        Reader.Close();
-            //    }
-            //    catch (MySqlException ex)
-            //    {
-            //        MessageBox.Show("MySQL Error: " + ex.Message);
-            //    }
-            //    if (conn != null)
-            //    {
-            //        conn.Close();
-            //    }
-            
+            cmd.Connection = conn;         
         }
 
         private void benutzerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,7 +25,7 @@ namespace Zentralwerkstatt
 
         private void Main_Close(object sender, FormClosingEventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            Application.Exit();
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -59,6 +33,23 @@ namespace Zentralwerkstatt
             // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase.test". Sie können sie bei Bedarf verschieben oder entfernen.
             this.testTableAdapter.Fill(this.projektzDatabase.test);
 
+            int count = 0;
+            MySqlConnection conn = null;
+            string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+            conn = new MySqlConnection(cs);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            //Abfrage zur anmeldung
+            cmd.CommandText = "SELECT * FROM Test";
+            MySqlDataReader Reader;
+            Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                count = count + 1;
+            }
+            this.StatusStripCount.Text = Convert.ToString(count);
+            Reader.Close();
         }
     }
 }
