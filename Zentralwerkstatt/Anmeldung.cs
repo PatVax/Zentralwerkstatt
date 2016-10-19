@@ -9,12 +9,6 @@ namespace Zentralwerkstatt
         public Anmeldung()
         {
             InitializeComponent();
-            string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
-            MySqlConnection conn = null;
-            conn = new MySqlConnection(cs);
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = conn;
 
         }
         private void AnmeldenButton_Click(object sender, EventArgs e)
@@ -33,23 +27,43 @@ namespace Zentralwerkstatt
                 cmd.CommandText = "SELECT * FROM benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort ='" + this.PasswortTextBox.Text + "'";
                 MySqlDataReader Reader;
                 Reader = cmd.ExecuteReader();
-               
                 while (Reader.Read())
                 {
                     count = count + 1;
                 }
                 //Wenn ein Benutzer gefunden wurde öffne Main.cs
                 if (count == 1)
-                {                    
-                    Main Form2 = new Main();                    
-                    Form2.Show();
-                    this.Hide();
+                {
+                    //Administrator-Abfrage
+                    Reader.Close();
+                    cmd.CommandText = "SELECT * FROM benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort ='" + this.PasswortTextBox.Text + "' AND Administrator = true";
+                    Reader = cmd.ExecuteReader();
+                    count = 0;
+                    while (Reader.Read())
+                    {
+                        count = count + 1;
+                    }
+                    //Wenn ein Benutzer gefunden wurde öffne Main.cs
+                    if (count == 1)
+                    {
+
+                        Main Form2 = new Main();
+                        Form2.Show();
+                        this.Hide();
+                    }
+                    //sonst gib fehler aus
+                    else
+                    {
+                        PasswortTextBox.Text = "";
+                        AdminText.Visible = true;
+                        BenutzerTextBox.Focus();
+                    }
                 }
                 //sonst gib fehler aus
                 else
                 {
                     PasswortTextBox.Text = "";
-                    WarnungsText.Visible = true;
+                    PasswortText.Visible = true;
                     BenutzerTextBox.Focus();
                 }
                 Reader.Close();
@@ -66,7 +80,8 @@ namespace Zentralwerkstatt
         //infotext wegen falschem Passwort
         private void PasswortTextBox_TextChanged(object sender, EventArgs e)
         {
-            WarnungsText.Visible = false;
+            PasswortText.Visible = false;
+            AdminText.Visible = false;
         }
     }
 }
