@@ -83,5 +83,10 @@ namespace Zentralwerkstatt
             PasswortText.Visible = false;
             AdminText.Visible = false;
         }
+
+        private void AbbrechenButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

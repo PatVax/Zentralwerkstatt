@@ -41,9 +41,9 @@
             this.StatusStripText = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusStripCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projektzDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projektzDatabase = new Zentralwerkstatt.projektzDataSet();
             this.testTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.testTableAdapter();
@@ -134,6 +134,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
@@ -147,8 +148,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(203, 524);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // testBindingSource
+            // 
+            this.testBindingSource.DataMember = "test";
+            this.testBindingSource.DataSource = this.projektzDatabaseBindingSource;
             // 
             // datumDataGridViewTextBoxColumn
             // 
@@ -164,17 +171,12 @@
             this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
             this.bezeichnungDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // testBindingSource
-            // 
-            this.testBindingSource.DataMember = "test";
-            this.testBindingSource.DataSource = this.projektzDatabaseBindingSource;
-            // 
             // projektzDatabaseBindingSource
             // 
             this.projektzDatabaseBindingSource.DataSource = this.projektzDatabase;
             this.projektzDatabaseBindingSource.Position = 0;
             // 
-            // projektzDatabase
+            // projektzDatabase1
             // 
             this.projektzDatabase.DataSetName = "projektzDataSet";
             this.projektzDatabase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;

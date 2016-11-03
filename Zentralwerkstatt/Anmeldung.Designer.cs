@@ -37,9 +37,9 @@
             this.AnmeldenButton = new System.Windows.Forms.Button();
             this.AbbrechenButton = new System.Windows.Forms.Button();
             this.PasswortText = new System.Windows.Forms.Label();
+            this.AdminText = new System.Windows.Forms.Label();
             this.DatabaseConnection = new System.Windows.Forms.BindingSource(this.components);
             this.ProjectZDatabase = new Zentralwerkstatt.projektzDataSet();
-            this.AdminText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +80,7 @@
             // 
             // AnmeldenButton
             // 
-            this.AnmeldenButton.Location = new System.Drawing.Point(190, 154);
+            this.AnmeldenButton.Location = new System.Drawing.Point(45, 154);
             this.AnmeldenButton.Name = "AnmeldenButton";
             this.AnmeldenButton.Size = new System.Drawing.Size(99, 23);
             this.AnmeldenButton.TabIndex = 4;
@@ -90,12 +90,13 @@
             // 
             // AbbrechenButton
             // 
-            this.AbbrechenButton.Location = new System.Drawing.Point(45, 154);
+            this.AbbrechenButton.Location = new System.Drawing.Point(195, 154);
             this.AbbrechenButton.Name = "AbbrechenButton";
             this.AbbrechenButton.Size = new System.Drawing.Size(94, 23);
             this.AbbrechenButton.TabIndex = 5;
             this.AbbrechenButton.Text = "Abbrechen";
             this.AbbrechenButton.UseVisualStyleBackColor = true;
+            this.AbbrechenButton.Click += new System.EventHandler(this.AbbrechenButton_Click);
             // 
             // PasswortText
             // 
@@ -108,16 +109,6 @@
             this.PasswortText.Text = "Benutzername oder Passwort falsch!";
             this.PasswortText.Visible = false;
             // 
-            // DatabaseConnection
-            // 
-            this.DatabaseConnection.DataSource = this.ProjectZDatabase;
-            this.DatabaseConnection.Position = 0;
-            // 
-            // ProjectZDatabase
-            // 
-            this.ProjectZDatabase.DataSetName = "projektzDataSet";
-            this.ProjectZDatabase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // AdminText
             // 
             this.AdminText.AutoSize = true;
@@ -128,6 +119,16 @@
             this.AdminText.TabIndex = 7;
             this.AdminText.Text = "Fehlende Berechtigungen!";
             this.AdminText.Visible = false;
+            // 
+            // DatabaseConnection
+            // 
+            this.DatabaseConnection.DataSource = this.ProjectZDatabase;
+            this.DatabaseConnection.Position = 0;
+            // 
+            // ProjectZDatabase
+            // 
+            this.ProjectZDatabase.DataSetName = "projektzDataSet";
+            this.ProjectZDatabase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Anmeldung
             // 
