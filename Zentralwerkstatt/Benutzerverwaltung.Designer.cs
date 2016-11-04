@@ -31,17 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Zentralverwaltung));
             this.Übernehmen = new System.Windows.Forms.Button();
-            this.DatabaseConnection = new System.Windows.Forms.BindingSource(this.components);
-            this.ProjectZDatabase = new Zentralwerkstatt.projektzDataSet();
-            this.BenutzerTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.benutzerTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.IDBenutzer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.administratorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).BeginInit();
+            this.benutzerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ProjectZDatabase = new Zentralwerkstatt.projektzDataSet();
+            this.DatabaseConnection = new System.Windows.Forms.BindingSource(this.components);
+            this.benutzerTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.benutzerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).BeginInit();
             this.SuspendLayout();
             // 
             // Übernehmen
@@ -55,21 +57,6 @@
             this.Übernehmen.UseVisualStyleBackColor = true;
             this.Übernehmen.Click += new System.EventHandler(this.Übernehmen_Click);
             // 
-            // DatabaseConnection
-            // 
-            this.DatabaseConnection.DataMember = "benutzer";
-            this.DatabaseConnection.DataSource = this.ProjectZDatabase;
-            // 
-            // ProjectZDatabase
-            // 
-            this.ProjectZDatabase.CaseSensitive = true;
-            this.ProjectZDatabase.DataSetName = "projektzDataSet";
-            this.ProjectZDatabase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // BenutzerTableAdapter
-            // 
-            this.BenutzerTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -80,7 +67,7 @@
             this.passwortDataGridViewTextBoxColumn,
             this.administratorDataGridViewCheckBoxColumn});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridView1.DataSource = this.DatabaseConnection;
+            this.dataGridView1.DataSource = this.benutzerBindingSource;
             this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
@@ -113,6 +100,26 @@
             this.administratorDataGridViewCheckBoxColumn.HeaderText = "Administrator";
             this.administratorDataGridViewCheckBoxColumn.Name = "administratorDataGridViewCheckBoxColumn";
             // 
+            // benutzerBindingSource
+            // 
+            this.benutzerBindingSource.DataMember = "benutzer";
+            this.benutzerBindingSource.DataSource = this.ProjectZDatabase;
+            // 
+            // ProjectZDatabase
+            // 
+            this.ProjectZDatabase.CaseSensitive = true;
+            this.ProjectZDatabase.DataSetName = "projektzDataSet";
+            this.ProjectZDatabase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // DatabaseConnection
+            // 
+            this.DatabaseConnection.DataMember = "benutzer";
+            this.DatabaseConnection.DataSource = this.ProjectZDatabase;
+            // 
+            // benutzerTableAdapter
+            // 
+            this.benutzerTableAdapter.ClearBeforeFill = true;
+            // 
             // Zentralverwaltung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,9 +132,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Benutzerverwaltung";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -137,13 +145,13 @@
         private System.Windows.Forms.Button Übernehmen;
         private System.Windows.Forms.BindingSource DatabaseConnection;
         private projektzDataSet ProjectZDatabase;
-        private projektzDataSetTableAdapters.benutzerTableAdapter BenutzerTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDBenutzer;
         private System.Windows.Forms.DataGridViewTextBoxColumn benutzernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwortDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn administratorDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView1;
-
+        private System.Windows.Forms.BindingSource benutzerBindingSource;
+        private projektzDataSetTableAdapters.benutzerTableAdapter benutzerTableAdapter;
     }
 }
 

@@ -36,7 +36,8 @@
             this.PasswortTextBox = new System.Windows.Forms.TextBox();
             this.AnmeldenButton = new System.Windows.Forms.Button();
             this.AbbrechenButton = new System.Windows.Forms.Button();
-            this.WarnungsText = new System.Windows.Forms.Label();
+            this.PasswortText = new System.Windows.Forms.Label();
+            this.AdminText = new System.Windows.Forms.Label();
             this.DatabaseConnection = new System.Windows.Forms.BindingSource(this.components);
             this.ProjectZDatabase = new Zentralwerkstatt.projektzDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).BeginInit();
@@ -79,7 +80,7 @@
             // 
             // AnmeldenButton
             // 
-            this.AnmeldenButton.Location = new System.Drawing.Point(190, 154);
+            this.AnmeldenButton.Location = new System.Drawing.Point(45, 154);
             this.AnmeldenButton.Name = "AnmeldenButton";
             this.AnmeldenButton.Size = new System.Drawing.Size(99, 23);
             this.AnmeldenButton.TabIndex = 4;
@@ -89,23 +90,35 @@
             // 
             // AbbrechenButton
             // 
-            this.AbbrechenButton.Location = new System.Drawing.Point(45, 154);
+            this.AbbrechenButton.Location = new System.Drawing.Point(195, 154);
             this.AbbrechenButton.Name = "AbbrechenButton";
             this.AbbrechenButton.Size = new System.Drawing.Size(94, 23);
             this.AbbrechenButton.TabIndex = 5;
             this.AbbrechenButton.Text = "Abbrechen";
             this.AbbrechenButton.UseVisualStyleBackColor = true;
+            this.AbbrechenButton.Click += new System.EventHandler(this.AbbrechenButton_Click);
             // 
-            // WarnungsText
+            // PasswortText
             // 
-            this.WarnungsText.AutoSize = true;
-            this.WarnungsText.ForeColor = System.Drawing.Color.Red;
-            this.WarnungsText.Location = new System.Drawing.Point(94, 27);
-            this.WarnungsText.Name = "WarnungsText";
-            this.WarnungsText.Size = new System.Drawing.Size(179, 13);
-            this.WarnungsText.TabIndex = 6;
-            this.WarnungsText.Text = "Benutzername oder Passwort falsch!";
-            this.WarnungsText.Visible = false;
+            this.PasswortText.AutoSize = true;
+            this.PasswortText.ForeColor = System.Drawing.Color.Red;
+            this.PasswortText.Location = new System.Drawing.Point(94, 27);
+            this.PasswortText.Name = "PasswortText";
+            this.PasswortText.Size = new System.Drawing.Size(179, 13);
+            this.PasswortText.TabIndex = 6;
+            this.PasswortText.Text = "Benutzername oder Passwort falsch!";
+            this.PasswortText.Visible = false;
+            // 
+            // AdminText
+            // 
+            this.AdminText.AutoSize = true;
+            this.AdminText.ForeColor = System.Drawing.Color.Red;
+            this.AdminText.Location = new System.Drawing.Point(94, 27);
+            this.AdminText.Name = "AdminText";
+            this.AdminText.Size = new System.Drawing.Size(132, 13);
+            this.AdminText.TabIndex = 7;
+            this.AdminText.Text = "Fehlende Berechtigungen!";
+            this.AdminText.Visible = false;
             // 
             // DatabaseConnection
             // 
@@ -122,7 +135,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 199);
-            this.Controls.Add(this.WarnungsText);
+            this.Controls.Add(this.AdminText);
+            this.Controls.Add(this.PasswortText);
             this.Controls.Add(this.AbbrechenButton);
             this.Controls.Add(this.AnmeldenButton);
             this.Controls.Add(this.PasswortTextBox);
@@ -151,8 +165,9 @@
         private System.Windows.Forms.TextBox PasswortTextBox;
         private System.Windows.Forms.Button AnmeldenButton;
         private System.Windows.Forms.Button AbbrechenButton;
-        private System.Windows.Forms.Label WarnungsText;
+        private System.Windows.Forms.Label PasswortText;
         private System.Windows.Forms.BindingSource DatabaseConnection;
         private projektzDataSet ProjectZDatabase;
+        private System.Windows.Forms.Label AdminText;
     }
 }
