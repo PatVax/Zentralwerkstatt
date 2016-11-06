@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Zentralwerkstatt
 {
@@ -19,6 +20,7 @@ namespace Zentralwerkstatt
         //Change DB
         private void Übernehmen_Click(object sender, EventArgs e)
         {
+            
         }
 
 
