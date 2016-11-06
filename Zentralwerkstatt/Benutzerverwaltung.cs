@@ -20,7 +20,7 @@ namespace Zentralwerkstatt
         //Change DB
         private void Übernehmen_Click(object sender, EventArgs e)
         {
-            
+            MD5 md5 = MD5.Create();
         }
 
 
