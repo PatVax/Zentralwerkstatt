@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
 
 namespace Zentralwerkstatt
 {
@@ -23,8 +24,9 @@ namespace Zentralwerkstatt
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
+                MD5 md5 = MD5.Create();
                 //Abfrage zur anmeldung
-                cmd.CommandText = "SELECT * FROM benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort ='" + this.PasswortTextBox.Text + "'";
+                cmd.CommandText = "SELECT * FROM benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort ='" +this.PasswortTextBox.Text + "'";
                 MySqlDataReader Reader;
                 Reader = cmd.ExecuteReader();
                 while (Reader.Read())
