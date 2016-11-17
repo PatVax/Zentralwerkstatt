@@ -47,14 +47,12 @@
             this.projektzDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projektzDatabase = new Zentralwerkstatt.projektzDataSet();
             this.testTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.testTableAdapter();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.MenüLeiste.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // MenüLeiste
@@ -155,7 +153,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(203, 518);
             this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // datumDataGridViewTextBoxColumn
             // 
@@ -191,24 +188,11 @@
             // 
             this.testTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(316, 27);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(804, 518);
-            this.dataGridView2.TabIndex = 4;
-            this.dataGridView2.Visible = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1218, 630);
-            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MenüLeiste);
@@ -225,7 +209,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabaseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
