@@ -38,11 +38,6 @@ namespace Zentralwerkstatt
         {
             Application.Exit();
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void fillByToolStripButton_Click(object sender, EventArgs e)
         {
             try
