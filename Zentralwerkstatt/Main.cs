@@ -51,7 +51,7 @@ namespace Zentralwerkstatt
             }
             catch (System.Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
         }

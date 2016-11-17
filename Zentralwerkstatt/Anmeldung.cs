@@ -9,7 +9,17 @@ namespace Zentralwerkstatt
         public Anmeldung()
         {
             InitializeComponent();
-
+            try
+            {
+                string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+                MySqlConnection conn = null;
+                conn = new MySqlConnection(cs);
+                conn.Open();
+            }
+            catch(MySqlException)
+            {
+                MessageBox.Show("Die Verbindung zur Datenbank konnte nicht hergestellt werden");                         
+            }            
         }
         private void AnmeldenButton_Click(object sender, EventArgs e)
         {
@@ -24,7 +34,7 @@ namespace Zentralwerkstatt
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
                 //Abfrage zur anmeldung
-                cmd.CommandText = "SELECT * FROM benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort ='" + this.PasswortTextBox.Text + "'";
+                cmd.CommandText = "SELECT * FROM benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort = md5('" + this.PasswortTextBox.Text + "')";
                 MySqlDataReader Reader;
                 Reader = cmd.ExecuteReader();
                 while (Reader.Read())
@@ -36,7 +46,7 @@ namespace Zentralwerkstatt
                 {
                     //Administrator-Abfrage
                     Reader.Close();
-                    cmd.CommandText = "SELECT * FROM benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort ='" + this.PasswortTextBox.Text + "' AND Administrator = true";
+                    cmd.CommandText = "SELECT * FROM benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort = md5('" + this.PasswortTextBox.Text + "') AND Administrator = true";
                     Reader = cmd.ExecuteReader();
                     count = 0;
                     while (Reader.Read())
@@ -68,9 +78,9 @@ namespace Zentralwerkstatt
                 }
                 Reader.Close();
             }
-            catch (MySqlException ex)
+            catch (MySqlException)
             {
-                MessageBox.Show("MySQL Error: " + ex.Message);
+                MessageBox.Show("Die Verbindung zur Datenbank konnte nicht hergestellt werden");
             }
             if (conn != null)
             {
