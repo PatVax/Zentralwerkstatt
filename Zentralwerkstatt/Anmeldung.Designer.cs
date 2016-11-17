@@ -59,6 +59,7 @@
             this.BenutzerTextBox.Name = "BenutzerTextBox";
             this.BenutzerTextBox.Size = new System.Drawing.Size(192, 20);
             this.BenutzerTextBox.TabIndex = 1;
+            this.BenutzerTextBox.TextChanged += new System.EventHandler(this.PasswortTextBox_TextChanged);
             // 
             // label2
             // 

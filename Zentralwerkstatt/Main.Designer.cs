@@ -163,6 +163,7 @@
             this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
             this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
             this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datumDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // bezeichnungDataGridViewTextBoxColumn
             // 
@@ -216,7 +217,6 @@
             this.Name = "Main";
             this.Text = "Zentralwerkstatt";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Close);
-            this.Load += new System.EventHandler(this.Main_Load);
             this.MenüLeiste.ResumeLayout(false);
             this.MenüLeiste.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -247,9 +247,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource testBindingSource;
         private projektzDataSetTableAdapters.testTableAdapter testTableAdapter;
+        private System.Windows.Forms.ToolStripStatusLabel StatusStripCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripStatusLabel StatusStripCount;
-        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
