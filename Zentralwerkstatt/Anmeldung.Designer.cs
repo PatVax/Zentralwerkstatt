@@ -78,6 +78,7 @@
             this.PasswortTextBox.Size = new System.Drawing.Size(192, 20);
             this.PasswortTextBox.TabIndex = 3;
             this.PasswortTextBox.TextChanged += new System.EventHandler(this.PasswortTextBox_TextChanged);
+            this.PasswortTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswortTextBox_KeyDown);
             // 
             // AnmeldenButton
             // 

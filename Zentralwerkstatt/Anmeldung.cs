@@ -11,6 +11,7 @@ namespace Zentralwerkstatt
             InitializeComponent();
             try
             {
+                //Verbindung mit der Datenbank herstellen, um eine mögliche fehlende Verbindung zu erkennen
                 string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
                 MySqlConnection conn = null;
                 conn = new MySqlConnection(cs);
@@ -18,6 +19,7 @@ namespace Zentralwerkstatt
             }
             catch(MySqlException)
             {
+                //Fehlertext, falls die Verbindung zur Datenbank nicht hergestellt werden konnte
                 MessageBox.Show("Die Verbindung zur Datenbank konnte nicht hergestellt werden");                         
             }            
         }
@@ -26,14 +28,14 @@ namespace Zentralwerkstatt
             MySqlConnection conn = null;
             try
             {
-                //Datenbankanbindung
+                //Manuelle Datenanbindung zum erstellen von eigenen MySQL Abfragen
                 int count = 0;
                 string cs = @"server=localhost;userid=root;password=adminit;database=projektz";           
                 conn = new MySqlConnection(cs);
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                //Abfrage zur anmeldung
+                //Abfrage zur Anmeldung mit verschlüsseltem Passworttext
                 cmd.CommandText = "SELECT * FROM benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort = md5('" + this.PasswortTextBox.Text + "')";
                 MySqlDataReader Reader;
                 Reader = cmd.ExecuteReader();
@@ -41,7 +43,7 @@ namespace Zentralwerkstatt
                 {
                     count = count + 1;
                 }
-                //Wenn ein Benutzer gefunden wurde öffne Main.cs
+                //Wenn ein Benutzer gefunden wurde, findet die Administratorabfrage statt
                 if (count == 1)
                 {
                     //Administrator-Abfrage
@@ -53,7 +55,7 @@ namespace Zentralwerkstatt
                     {
                         count = count + 1;
                     }
-                    //Wenn ein Benutzer gefunden wurde öffne Main.cs
+                    //Wenn der gefundene Benutzer auch Administrator ist, öffne Main.cs
                     if (count == 1)
                     {
 
@@ -61,7 +63,7 @@ namespace Zentralwerkstatt
                         Form2.Show();
                         this.Hide();
                     }
-                    //sonst gib fehler aus
+                    //Falls der Benutzer keine Administratorrechte hat, gib einen Fehlertext aus
                     else
                     {
                         PasswortTextBox.Text = "";
@@ -69,7 +71,7 @@ namespace Zentralwerkstatt
                         BenutzerTextBox.Focus();
                     }
                 }
-                //sonst gib fehler aus
+                //Falls der Benutzer nicht gefunden wurde oder ein falsches Passwort eingegeben wurde, gib einen Fehlertext aus
                 else
                 {
                     PasswortTextBox.Text = "";
@@ -80,6 +82,7 @@ namespace Zentralwerkstatt
             }
             catch (MySqlException)
             {
+                //erneute Fehlermeldung, falls die Verbindung zur Datenbank immer noch nicht hergestellt wurde
                 MessageBox.Show("Die Verbindung zur Datenbank konnte nicht hergestellt werden");
             }
             if (conn != null)
@@ -87,16 +90,26 @@ namespace Zentralwerkstatt
                 conn.Close();
             } 
         }
-        //infotext wegen falschem Passwort
         private void PasswortTextBox_TextChanged(object sender, EventArgs e)
         {
+            //Bei Verändern des Felds für das Passwort oder des Benutzernamens werden die Fehlermeldungen entfernt
             PasswortText.Visible = false;
             AdminText.Visible = false;
         }
 
         private void AbbrechenButton_Click(object sender, EventArgs e)
         {
+            //Bei drücken des Abbrechen Buttons, werden alle Fenster geschlossen
             Application.Exit();
+        }
+
+        private void PasswortTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            //Wenn Enter gedrückt wird, aktiviere den AnmeldenButton
+            if (e.KeyValue == (char)13)
+            {
+                AnmeldenButton_Click(AnmeldenButton, new KeyEventArgs(Keys.Enter));
+            }
         }
     }
 }
