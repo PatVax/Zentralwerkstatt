@@ -46,5 +46,19 @@ namespace Zentralwerkstatt
             //Bei schließen des Main-Programms, alle Fenster schließen
             Application.Exit();
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string Date = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string Name = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+            MySqlConnection conn = null;
+            conn = new MySqlConnection(cs);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conn;
+
+            cmd.CommandText = "SELECT ";
+        }
     }
 }

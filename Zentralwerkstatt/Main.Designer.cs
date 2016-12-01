@@ -37,9 +37,6 @@
             this.benutzerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.geräteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ansichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.StatusStripText = new System.Windows.Forms.ToolStripStatusLabel();
-            this.StatusStripCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,12 +44,15 @@
             this.projektzDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projektzDatabase = new Zentralwerkstatt.projektzDataSet();
             this.testTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.testTableAdapter();
+            this.StatusStripText = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusStripCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.MenüLeiste.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenüLeiste
@@ -93,14 +93,14 @@
             // benutzerToolStripMenuItem
             // 
             this.benutzerToolStripMenuItem.Name = "benutzerToolStripMenuItem";
-            this.benutzerToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.benutzerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.benutzerToolStripMenuItem.Text = "Benutzer";
             this.benutzerToolStripMenuItem.Click += new System.EventHandler(this.benutzerToolStripMenuItem_Click);
             // 
             // geräteToolStripMenuItem
             // 
             this.geräteToolStripMenuItem.Name = "geräteToolStripMenuItem";
-            this.geräteToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.geräteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.geräteToolStripMenuItem.Text = "Geräte";
             // 
             // ansichtToolStripMenuItem
@@ -108,28 +108,6 @@
             this.ansichtToolStripMenuItem.Name = "ansichtToolStripMenuItem";
             this.ansichtToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.ansichtToolStripMenuItem.Text = "Ansicht";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusStripText,
-            this.StatusStripCount});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 608);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1218, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // StatusStripText
-            // 
-            this.StatusStripText.Name = "StatusStripText";
-            this.StatusStripText.Size = new System.Drawing.Size(108, 17);
-            this.StatusStripText.Text = "Anzahl Prüfungen: ";
-            // 
-            // StatusStripCount
-            // 
-            this.StatusStripCount.Name = "StatusStripCount";
-            this.StatusStripCount.Size = new System.Drawing.Size(0, 17);
             // 
             // dataGridView1
             // 
@@ -153,6 +131,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(203, 518);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // datumDataGridViewTextBoxColumn
             // 
@@ -188,6 +167,28 @@
             // 
             this.testTableAdapter.ClearBeforeFill = true;
             // 
+            // StatusStripText
+            // 
+            this.StatusStripText.Name = "StatusStripText";
+            this.StatusStripText.Size = new System.Drawing.Size(108, 17);
+            this.StatusStripText.Text = "Anzahl Prüfungen: ";
+            // 
+            // StatusStripCount
+            // 
+            this.StatusStripCount.Name = "StatusStripCount";
+            this.StatusStripCount.Size = new System.Drawing.Size(0, 17);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusStripText,
+            this.StatusStripCount});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 608);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1218, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,12 +204,12 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Close);
             this.MenüLeiste.ResumeLayout(false);
             this.MenüLeiste.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabaseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,8 +221,6 @@
         private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bearbeitenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ansichtToolStripMenuItem;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel StatusStripText;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem benutzerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem geräteToolStripMenuItem;
@@ -230,8 +229,10 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource testBindingSource;
         private projektzDataSetTableAdapters.testTableAdapter testTableAdapter;
-        private System.Windows.Forms.ToolStripStatusLabel StatusStripCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripStatusLabel StatusStripText;
+        private System.Windows.Forms.ToolStripStatusLabel StatusStripCount;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
