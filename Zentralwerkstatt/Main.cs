@@ -56,9 +56,11 @@ namespace Zentralwerkstatt
             conn = new MySqlConnection(cs);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = conn;
-
-            cmd.CommandText = "SELECT ";
+            cmd.Connection = conn;           
+            cmd.CommandText = "CREATE OR REPLACE VIEW Prüfausgabe AS SELECT prüfkriterien.Text, prüfergebnisse.Messwert FROM prüfkriterien INNER JOIN prüfergebnisse ON prüfkriterien.IDKriterium = prüfergebnisse.IDKriterium WHERE Prüfergebnisse.IDPrüfung IN (SELECT Prüfungen.IDPrüfung FROM Prüfungen INNER JOIN Geräte ON Prüfungen.Geräte_Barcode = Geräte.Geräte_Barcode INNER JOIN Gerätetypen ON Geräte.IDGerätetyp = Gerätetypen.IDGerätetyp WHERE Gerätetypen.Bezeichnung = '" + Name + "' AND Prüfungen.Datum = '" + Date +"')";           
+        }
+        private void Main_Load(object sender, EventArgs e)
+        {
         }
     }
 }

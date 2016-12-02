@@ -47,12 +47,22 @@
             this.StatusStripText = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusStripCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.prüfergebnisseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDPrüfungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDKriteriumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.messwertDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prüfergebnisseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.prüfergebnisseTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.prüfergebnisseTableAdapter();
             this.MenüLeiste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prüfergebnisseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prüfergebnisseBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenüLeiste
@@ -93,14 +103,14 @@
             // benutzerToolStripMenuItem
             // 
             this.benutzerToolStripMenuItem.Name = "benutzerToolStripMenuItem";
-            this.benutzerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.benutzerToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.benutzerToolStripMenuItem.Text = "Benutzer";
             this.benutzerToolStripMenuItem.Click += new System.EventHandler(this.benutzerToolStripMenuItem_Click);
             // 
             // geräteToolStripMenuItem
             // 
             this.geräteToolStripMenuItem.Name = "geräteToolStripMenuItem";
-            this.geräteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.geräteToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.geräteToolStripMenuItem.Text = "Geräte";
             // 
             // ansichtToolStripMenuItem
@@ -189,11 +199,64 @@
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDPrüfungDataGridViewTextBoxColumn,
+            this.iDKriteriumDataGridViewTextBoxColumn,
+            this.messwertDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.prüfergebnisseBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(222, 28);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(984, 517);
+            this.dataGridView2.TabIndex = 4;
+            // 
+            // prüfergebnisseBindingSource
+            // 
+            this.prüfergebnisseBindingSource.DataMember = "prüfergebnisse";
+            this.prüfergebnisseBindingSource.DataSource = this.projektzDatabaseBindingSource;
+            // 
+            // iDPrüfungDataGridViewTextBoxColumn
+            // 
+            this.iDPrüfungDataGridViewTextBoxColumn.DataPropertyName = "IDPrüfung";
+            this.iDPrüfungDataGridViewTextBoxColumn.HeaderText = "IDPrüfung";
+            this.iDPrüfungDataGridViewTextBoxColumn.Name = "iDPrüfungDataGridViewTextBoxColumn";
+            this.iDPrüfungDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDKriteriumDataGridViewTextBoxColumn
+            // 
+            this.iDKriteriumDataGridViewTextBoxColumn.DataPropertyName = "IDKriterium";
+            this.iDKriteriumDataGridViewTextBoxColumn.HeaderText = "IDKriterium";
+            this.iDKriteriumDataGridViewTextBoxColumn.Name = "iDKriteriumDataGridViewTextBoxColumn";
+            this.iDKriteriumDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // messwertDataGridViewTextBoxColumn
+            // 
+            this.messwertDataGridViewTextBoxColumn.DataPropertyName = "Messwert";
+            this.messwertDataGridViewTextBoxColumn.HeaderText = "Messwert";
+            this.messwertDataGridViewTextBoxColumn.Name = "messwertDataGridViewTextBoxColumn";
+            this.messwertDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prüfergebnisseBindingSource1
+            // 
+            this.prüfergebnisseBindingSource1.DataMember = "prüfergebnisse";
+            this.prüfergebnisseBindingSource1.DataSource = this.projektzDatabaseBindingSource;
+            // 
+            // prüfergebnisseTableAdapter
+            // 
+            this.prüfergebnisseTableAdapter.ClearBeforeFill = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1218, 630);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MenüLeiste);
@@ -202,6 +265,7 @@
             this.Name = "Main";
             this.Text = "Zentralwerkstatt";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Close);
+            this.Load += new System.EventHandler(this.Main_Load);
             this.MenüLeiste.ResumeLayout(false);
             this.MenüLeiste.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -210,6 +274,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prüfergebnisseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prüfergebnisseBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,5 +301,12 @@
         private System.Windows.Forms.ToolStripStatusLabel StatusStripText;
         private System.Windows.Forms.ToolStripStatusLabel StatusStripCount;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDPrüfungDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDKriteriumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn messwertDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource prüfergebnisseBindingSource;
+        private System.Windows.Forms.BindingSource prüfergebnisseBindingSource1;
+        private projektzDataSetTableAdapters.prüfergebnisseTableAdapter prüfergebnisseTableAdapter;
     }
 }
