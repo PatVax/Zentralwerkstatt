@@ -48,12 +48,10 @@
             this.StatusStripCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.prüfergebnisseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDPrüfungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDKriteriumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prüfausgabeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prüfausgabeTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.prüfausgabeTableAdapter();
+            this.textDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.messwertDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prüfergebnisseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.prüfergebnisseTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.prüfergebnisseTableAdapter();
             this.MenüLeiste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
@@ -61,8 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prüfergebnisseBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prüfergebnisseBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prüfausgabeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // MenüLeiste
@@ -206,34 +203,31 @@
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDPrüfungDataGridViewTextBoxColumn,
-            this.iDKriteriumDataGridViewTextBoxColumn,
+            this.textDataGridViewTextBoxColumn,
             this.messwertDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.prüfergebnisseBindingSource;
+            this.dataGridView2.DataSource = this.prüfausgabeBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(222, 28);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(984, 517);
             this.dataGridView2.TabIndex = 4;
+            this.dataGridView2.Visible = false;
             // 
-            // prüfergebnisseBindingSource
+            // prüfausgabeBindingSource
             // 
-            this.prüfergebnisseBindingSource.DataMember = "prüfergebnisse";
-            this.prüfergebnisseBindingSource.DataSource = this.projektzDatabaseBindingSource;
+            this.prüfausgabeBindingSource.DataMember = "prüfausgabe";
+            this.prüfausgabeBindingSource.DataSource = this.projektzDatabaseBindingSource;
             // 
-            // iDPrüfungDataGridViewTextBoxColumn
+            // prüfausgabeTableAdapter
             // 
-            this.iDPrüfungDataGridViewTextBoxColumn.DataPropertyName = "IDPrüfung";
-            this.iDPrüfungDataGridViewTextBoxColumn.HeaderText = "IDPrüfung";
-            this.iDPrüfungDataGridViewTextBoxColumn.Name = "iDPrüfungDataGridViewTextBoxColumn";
-            this.iDPrüfungDataGridViewTextBoxColumn.ReadOnly = true;
+            this.prüfausgabeTableAdapter.ClearBeforeFill = true;
             // 
-            // iDKriteriumDataGridViewTextBoxColumn
+            // textDataGridViewTextBoxColumn
             // 
-            this.iDKriteriumDataGridViewTextBoxColumn.DataPropertyName = "IDKriterium";
-            this.iDKriteriumDataGridViewTextBoxColumn.HeaderText = "IDKriterium";
-            this.iDKriteriumDataGridViewTextBoxColumn.Name = "iDKriteriumDataGridViewTextBoxColumn";
-            this.iDKriteriumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.textDataGridViewTextBoxColumn.DataPropertyName = "Text";
+            this.textDataGridViewTextBoxColumn.HeaderText = "Text";
+            this.textDataGridViewTextBoxColumn.Name = "textDataGridViewTextBoxColumn";
+            this.textDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // messwertDataGridViewTextBoxColumn
             // 
@@ -241,15 +235,6 @@
             this.messwertDataGridViewTextBoxColumn.HeaderText = "Messwert";
             this.messwertDataGridViewTextBoxColumn.Name = "messwertDataGridViewTextBoxColumn";
             this.messwertDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prüfergebnisseBindingSource1
-            // 
-            this.prüfergebnisseBindingSource1.DataMember = "prüfergebnisse";
-            this.prüfergebnisseBindingSource1.DataSource = this.projektzDatabaseBindingSource;
-            // 
-            // prüfergebnisseTableAdapter
-            // 
-            this.prüfergebnisseTableAdapter.ClearBeforeFill = true;
             // 
             // Main
             // 
@@ -275,8 +260,7 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prüfergebnisseBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prüfergebnisseBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prüfausgabeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,11 +286,9 @@
         private System.Windows.Forms.ToolStripStatusLabel StatusStripCount;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDPrüfungDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDKriteriumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource prüfausgabeBindingSource;
+        private projektzDataSetTableAdapters.prüfausgabeTableAdapter prüfausgabeTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn textDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn messwertDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource prüfergebnisseBindingSource;
-        private System.Windows.Forms.BindingSource prüfergebnisseBindingSource1;
-        private projektzDataSetTableAdapters.prüfergebnisseTableAdapter prüfergebnisseTableAdapter;
     }
 }

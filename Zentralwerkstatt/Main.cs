@@ -49,18 +49,32 @@ namespace Zentralwerkstatt
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string Date = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            string Name = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
-            MySqlConnection conn = null;
-            conn = new MySqlConnection(cs);
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = conn;           
-            cmd.CommandText = "CREATE OR REPLACE VIEW Prüfausgabe AS SELECT prüfkriterien.Text, prüfergebnisse.Messwert FROM prüfkriterien INNER JOIN prüfergebnisse ON prüfkriterien.IDKriterium = prüfergebnisse.IDKriterium WHERE Prüfergebnisse.IDPrüfung IN (SELECT Prüfungen.IDPrüfung FROM Prüfungen INNER JOIN Geräte ON Prüfungen.Geräte_Barcode = Geräte.Geräte_Barcode INNER JOIN Gerätetypen ON Geräte.IDGerätetyp = Gerätetypen.IDGerätetyp WHERE Gerätetypen.Bezeichnung = '" + Name + "' AND Prüfungen.Datum = '" + Date +"')";           
+            try
+            {
+                string Date = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                string Name = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+                MySqlConnection conn = null;
+                conn = new MySqlConnection(cs);
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = "CREATE OR REPLACE VIEW Prüfausgabe AS SELECT prüfkriterien.Text, prüfergebnisse.Messwert FROM prüfkriterien INNER JOIN prüfergebnisse ON prüfkriterien.IDKriterium = prüfergebnisse.IDKriterium WHERE Prüfergebnisse.IDPrüfung IN (SELECT Prüfungen.IDPrüfung FROM Prüfungen INNER JOIN Geräte ON Prüfungen.Geräte_Barcode = Geräte.Geräte_Barcode INNER JOIN Gerätetypen ON Geräte.IDGerätetyp = Gerätetypen.IDGerätetyp WHERE Gerätetypen.Bezeichnung = @Name AND Prüfungen.Datum = @Date)";
+                DateTime Datum = Convert.ToDateTime(Date);
+                cmd.Parameters.AddWithValue("@Name", Name);
+                cmd.Parameters.AddWithValue("@Date", Datum);
+                cmd.Connection = conn;
+                cmd.ExecuteNonQuery();
+                // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
+                this.prüfausgabeTableAdapter.Fill(this.projektzDatabase.prüfausgabe);
+                dataGridView2.Visible = true;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void Main_Load(object sender, EventArgs e)
-        {
+        {           
         }
     }
 }
