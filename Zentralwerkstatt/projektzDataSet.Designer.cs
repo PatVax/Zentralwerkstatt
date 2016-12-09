@@ -919,8 +919,6 @@ namespace Zentralwerkstatt {
             
             private global::System.Data.DataColumn columnIDGerätetyp;
             
-            private global::System.Data.DataColumn columnName;
-            
             private global::System.Data.DataColumn columnAnschaffungsdatum;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -974,14 +972,6 @@ namespace Zentralwerkstatt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
-                get {
-                    return this.columnName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn AnschaffungsdatumColumn {
                 get {
                     return this.columnAnschaffungsdatum;
@@ -1025,12 +1015,11 @@ namespace Zentralwerkstatt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public geräteRow AddgeräteRow(int Geräte_Barcode, gerätetypenRow parentgerätetypenRowByGerät_IDGerätetyp_FK, string Name, System.DateTime Anschaffungsdatum) {
+            public geräteRow AddgeräteRow(int Geräte_Barcode, gerätetypenRow parentgerätetypenRowByGerät_IDGerätetyp_FK, System.DateTime Anschaffungsdatum) {
                 geräteRow rowgeräteRow = ((geräteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Geräte_Barcode,
                         null,
-                        Name,
                         Anschaffungsdatum};
                 if ((parentgerätetypenRowByGerät_IDGerätetyp_FK != null)) {
                     columnValuesArray[1] = parentgerätetypenRowByGerät_IDGerätetyp_FK[0];
@@ -1066,7 +1055,6 @@ namespace Zentralwerkstatt {
             internal void InitVars() {
                 this.columnGeräte_Barcode = base.Columns["Geräte_Barcode"];
                 this.columnIDGerätetyp = base.Columns["IDGerätetyp"];
-                this.columnName = base.Columns["Name"];
                 this.columnAnschaffungsdatum = base.Columns["Anschaffungsdatum"];
             }
             
@@ -1077,8 +1065,6 @@ namespace Zentralwerkstatt {
                 base.Columns.Add(this.columnGeräte_Barcode);
                 this.columnIDGerätetyp = new global::System.Data.DataColumn("IDGerätetyp", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIDGerätetyp);
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
                 this.columnAnschaffungsdatum = new global::System.Data.DataColumn("Anschaffungsdatum", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAnschaffungsdatum);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -1086,8 +1072,6 @@ namespace Zentralwerkstatt {
                 this.columnGeräte_Barcode.AllowDBNull = false;
                 this.columnGeräte_Barcode.Unique = true;
                 this.columnIDGerätetyp.AllowDBNull = false;
-                this.columnName.AllowDBNull = false;
-                this.columnName.MaxLength = 50;
                 this.columnAnschaffungsdatum.AllowDBNull = false;
             }
             
@@ -3392,17 +3376,6 @@ namespace Zentralwerkstatt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Name {
-                get {
-                    return ((string)(this[this.tablegeräte.NameColumn]));
-                }
-                set {
-                    this[this.tablegeräte.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime Anschaffungsdatum {
                 get {
                     return ((global::System.DateTime)(this[this.tablegeräte.AnschaffungsdatumColumn]));
@@ -4879,13 +4852,12 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             tableMapping.DataSetTable = "geräte";
             tableMapping.ColumnMappings.Add("Geräte_Barcode", "Geräte_Barcode");
             tableMapping.ColumnMappings.Add("IDGerätetyp", "IDGerätetyp");
-            tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("Anschaffungsdatum", "Anschaffungsdatum");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM `geräte` WHERE ((`Geräte_Barcode` = @p1) AND (`IDGerätetyp` = @p2) AN" +
-                "D (`Name` = @p3) AND (`Anschaffungsdatum` = @p4))";
+                "D (`Anschaffungsdatum` = @p3))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4905,14 +4877,6 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "Name";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -4921,8 +4885,8 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `geräte` (`Geräte_Barcode`, `IDGerätetyp`, `Name`, `Anschaffungsdatum" +
-                "`) VALUES (@p1, @p2, @p3, @p4)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `geräte` (`Geräte_Barcode`, `IDGerätetyp`, `Anschaffungsdatum`) VALUE" +
+                "S (@p1, @p2, @p3)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4940,13 +4904,6 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "Name";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -4954,9 +4911,9 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `geräte` SET `Geräte_Barcode` = @p1, `IDGerätetyp` = @p2, `Name` = @p3, `A" +
-                "nschaffungsdatum` = @p4 WHERE ((`Geräte_Barcode` = @p5) AND (`IDGerätetyp` = @p6" +
-                ") AND (`Name` = @p7) AND (`Anschaffungsdatum` = @p8))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `geräte` SET `Geräte_Barcode` = @p1, `IDGerätetyp` = @p2, `Anschaffungsdat" +
+                "um` = @p3 WHERE ((`Geräte_Barcode` = @p4) AND (`IDGerätetyp` = @p5) AND (`Anscha" +
+                "ffungsdatum` = @p6))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -4974,20 +4931,13 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "Name";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "Anschaffungsdatum";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -4995,7 +4945,7 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -5003,15 +4953,7 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "Name";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p8";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.Date;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
@@ -5033,8 +4975,7 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `Geräte_Barcode`, `IDGerätetyp`, `Name`, `Anschaffungsdatum` FROM `geräte`" +
-                "";
+            this._commandCollection[0].CommandText = "SELECT `Geräte_Barcode`, IDGerätetyp, Anschaffungsdatum FROM geräte";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5095,16 +5036,10 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, int p2, string p3, System.DateTime p4) {
+        public virtual int Delete(int p1, int p2, System.DateTime p3) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(p2));
-            if ((p3 == null)) {
-                throw new global::System.ArgumentNullException("p3");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(p3));
-            }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(p4));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(p3));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5125,16 +5060,10 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int p1, int p2, string p3, System.DateTime p4) {
+        public virtual int Insert(int p1, int p2, System.DateTime p3) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
-            if ((p3 == null)) {
-                throw new global::System.ArgumentNullException("p3");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
-            }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(p4));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(p3));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5155,25 +5084,13 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int p1, int p2, string p3, System.DateTime p4, int p5, int p6, string p7, System.DateTime p8) {
+        public virtual int Update(int p1, int p2, System.DateTime p3, int p4, int p5, System.DateTime p6) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
-            if ((p3 == null)) {
-                throw new global::System.ArgumentNullException("p3");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(p4));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(p3));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(p4));
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(p5));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(p6));
-            if ((p7 == null)) {
-                throw new global::System.ArgumentNullException("p7");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(p7));
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(p8));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(p6));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5194,8 +5111,8 @@ namespace Zentralwerkstatt.projektzDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int p2, string p3, System.DateTime p4, int p5, int p6, string p7, System.DateTime p8) {
-            return this.Update(p5, p2, p3, p4, p5, p6, p7, p8);
+        public virtual int Update(int p2, System.DateTime p3, int p4, int p5, System.DateTime p6) {
+            return this.Update(p4, p2, p3, p4, p5, p6);
         }
     }
     
