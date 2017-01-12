@@ -86,11 +86,6 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="projektzDatabase.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>projektzDatabase.xsd</DependentUpon>
-    </Compile>
     <Compile Include="projektzDataSet.cs">
       <DependentUpon>projektzDataSet.xsd</DependentUpon>
     </Compile>
@@ -118,17 +113,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="projektzDatabase.xsc">
-      <DependentUpon>projektzDatabase.xsd</DependentUpon>
-    </None>
-    <None Include="projektzDatabase.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>projektzDatabase.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="projektzDatabase.xss">
-      <DependentUpon>projektzDatabase.xsd</DependentUpon>
-    </None>
     <None Include="projektzDataSet.xsc">
       <DependentUpon>projektzDataSet.xsd</DependentUpon>
     </None>

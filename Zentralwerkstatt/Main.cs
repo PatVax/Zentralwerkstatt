@@ -10,11 +10,10 @@ namespace Zentralwerkstatt
             InitializeComponent();
             //Die Formtabelle mit den Werten aus der Datenbank füllen
             this.testTableAdapter.Fill(this.projektzDatabase.test);
-            this.prüfausgabeTableAdapter.ClearBeforeFill = true;
 
             //Eine manuelle Verbindung mit der Datenbank für eigene SQL-Abfragen einrichten
             int count = 0;
-            string cs = @"server=10.152.1.107;userid=fw;password=fw1;database=projektz";
+            string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
             MySqlConnection conn = null;
             conn = new MySqlConnection(cs);
             conn.Open();
@@ -54,7 +53,7 @@ namespace Zentralwerkstatt
             {
                 string Date = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 string Name = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                string cs = @"server=10.152.1.107;userid=fw;password=fw1;database=projektz";
+                string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
                 MySqlConnection conn = null;
                 conn = new MySqlConnection(cs);
                 conn.Open();
@@ -75,11 +74,7 @@ namespace Zentralwerkstatt
             }
         }
         private void Main_Load(object sender, EventArgs e)
-        {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase1.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.prüfausgabeTableAdapter1.Fill(this.projektzDatabase1.prüfausgabe);
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase1.test". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.testTableAdapter1.Fill(this.projektzDatabase1.test);
+        {           
         }
     }
 }
