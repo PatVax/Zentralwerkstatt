@@ -46,7 +46,7 @@ namespace Zentralwerkstatt
             //Bei schließen des Main-Programms, alle Fenster schließen
             Application.Exit();
         }
-
+         
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
