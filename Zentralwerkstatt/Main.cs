@@ -81,5 +81,10 @@ namespace Zentralwerkstatt
             // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase1.test". Sie können sie bei Bedarf verschieben oder entfernen.
             this.testTableAdapter1.Fill(this.projektzDatabase1.test);
         }
+
+        private void MenüLeiste_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

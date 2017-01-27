@@ -52,6 +52,7 @@
             this.BenutzertextBox.Name = "BenutzertextBox";
             this.BenutzertextBox.Size = new System.Drawing.Size(100, 20);
             this.BenutzertextBox.TabIndex = 1;
+            this.BenutzertextBox.TextChanged += new System.EventHandler(this.BenutzertextBox_TextChanged);
             // 
             // BenutzerHinzufügen
             // 
@@ -69,6 +70,7 @@
             this.PassworttextBox.Name = "PassworttextBox";
             this.PassworttextBox.Size = new System.Drawing.Size(100, 20);
             this.PassworttextBox.TabIndex = 4;
+            this.PassworttextBox.TextChanged += new System.EventHandler(this.PassworttextBox_TextChanged);
             // 
             // Benutzer
             // 
