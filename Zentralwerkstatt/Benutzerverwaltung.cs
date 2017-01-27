@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Security.Cryptography;
 
 namespace Zentralwerkstatt
 {
@@ -10,7 +9,7 @@ namespace Zentralwerkstatt
         {           
             InitializeComponent();
             //Füllen der Tabelle mit Daten aus der Datenbank
-            this.benutzerTableAdapter.Fill(this.ProjectZDatabase.benutzer);
+            this.benutzerTableAdapter.Fill(this.projektzDatabase.benutzer);
                    
         }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -21,9 +20,8 @@ namespace Zentralwerkstatt
 
         private void Zentralverwaltung_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase.benutzer". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.benutzerTableAdapter1.Fill(this.projektzDatabase.benutzer);
-
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase1.benutzer". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.benutzerTableAdapter.Fill(this.projektzDatabase.benutzer);
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Anmeldung));
             this.label1 = new System.Windows.Forms.Label();
             this.BenutzerTextBox = new System.Windows.Forms.TextBox();
@@ -38,10 +37,6 @@
             this.AbbrechenButton = new System.Windows.Forms.Button();
             this.PasswortText = new System.Windows.Forms.Label();
             this.AdminText = new System.Windows.Forms.Label();
-            this.DatabaseConnection = new System.Windows.Forms.BindingSource(this.components);
-            this.ProjectZDatabase = new Zentralwerkstatt.projektzDataSet();
-            ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -122,16 +117,6 @@
             this.AdminText.Text = "Fehlende Berechtigungen!";
             this.AdminText.Visible = false;
             // 
-            // DatabaseConnection
-            // 
-            this.DatabaseConnection.DataSource = this.ProjectZDatabase;
-            this.DatabaseConnection.Position = 0;
-            // 
-            // ProjectZDatabase
-            // 
-            this.ProjectZDatabase.DataSetName = "projektzDataSet";
-            this.ProjectZDatabase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // Anmeldung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,8 +137,6 @@
             this.Name = "Anmeldung";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Anmeldung";
-            ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,8 +151,6 @@
         private System.Windows.Forms.Button AnmeldenButton;
         private System.Windows.Forms.Button AbbrechenButton;
         private System.Windows.Forms.Label PasswortText;
-        private System.Windows.Forms.BindingSource DatabaseConnection;
-        private projektzDataSet ProjectZDatabase;
         private System.Windows.Forms.Label AdminText;
     }
 }
