@@ -80,10 +80,6 @@ namespace Zentralwerkstatt
             this.prüfausgabeTableAdapter.Fill(this.projektzDatabase.prüfausgabe);
             // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase.test". Sie können sie bei Bedarf verschieben oder entfernen.
             this.testTableAdapter.Fill(this.projektzDatabase.test);
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase1.test". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.testTableAdapter.Fill(this.projektzDatabase.test);
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase1.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.prüfausgabeTableAdapter.Fill(this.projektzDatabase.prüfausgabe);
         }
     }
 }
