@@ -76,10 +76,14 @@ namespace Zentralwerkstatt
         }
         private void Main_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase1.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.prüfausgabeTableAdapter1.Fill(this.projektzDatabase1.prüfausgabe);
             // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase1.test". Sie können sie bei Bedarf verschieben oder entfernen.
             this.testTableAdapter1.Fill(this.projektzDatabase1.test);
+        }
+
+        private void geräteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Geraeteverwaltung Form = new Geraeteverwaltung();
+            Form.Show();
         }
     }
 }
