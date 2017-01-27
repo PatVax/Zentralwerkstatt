@@ -25,5 +25,12 @@ namespace Zentralwerkstatt
             this.benutzerTableAdapter1.Fill(this.projektzDatabase.benutzer);
 
         }
+
+        private void AddUserButton_Click(object sender, EventArgs e)
+        {
+            NeuerBenutzer Form2 = new NeuerBenutzer();
+            Form2.Show();
+            this.Hide();
+        }
     }
 }

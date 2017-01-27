@@ -152,6 +152,7 @@
             this.Name = "Anmeldung";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Anmeldung";
+            this.Load += new System.EventHandler(this.Anmeldung_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).EndInit();
             this.ResumeLayout(false);

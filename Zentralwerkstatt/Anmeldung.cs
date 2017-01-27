@@ -116,5 +116,10 @@ namespace Zentralwerkstatt
                 AnmeldenButton_Click(AnmeldenButton, new KeyEventArgs(Keys.Enter));
             }
         }
+
+        private void Anmeldung_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

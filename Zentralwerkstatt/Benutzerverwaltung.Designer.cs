@@ -34,21 +34,21 @@
             this.IDBenutzer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.administratorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.benutzerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.projektzDatabase = new Zentralwerkstatt.projektzDatabase();
             this.ProjectZDatabase = new Zentralwerkstatt.projektzDataSet();
             this.DatabaseConnection = new System.Windows.Forms.BindingSource(this.components);
             this.benutzerTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.benutzerTableAdapter();
             this.AddUserButton = new System.Windows.Forms.Button();
             this.ChangeUserDataButton = new System.Windows.Forms.Button();
             this.RemoveUserButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.projektzDatabase = new Zentralwerkstatt.projektzDatabase();
-            this.benutzerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.benutzerTableAdapter1 = new Zentralwerkstatt.projektzDatabaseTableAdapters.benutzerTableAdapter();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -94,6 +94,16 @@
             this.administratorDataGridViewCheckBoxColumn.Name = "administratorDataGridViewCheckBoxColumn";
             this.administratorDataGridViewCheckBoxColumn.Visible = false;
             // 
+            // benutzerBindingSource1
+            // 
+            this.benutzerBindingSource1.DataMember = "benutzer";
+            this.benutzerBindingSource1.DataSource = this.projektzDatabase;
+            // 
+            // projektzDatabase
+            // 
+            this.projektzDatabase.DataSetName = "projektzDatabase";
+            this.projektzDatabase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // ProjectZDatabase
             // 
             this.ProjectZDatabase.CaseSensitive = true;
@@ -117,6 +127,7 @@
             this.AddUserButton.TabIndex = 3;
             this.AddUserButton.Text = "Neuer Benutzer";
             this.AddUserButton.UseVisualStyleBackColor = true;
+            this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
             // ChangeUserDataButton
             // 
@@ -136,23 +147,6 @@
             this.RemoveUserButton.Text = "Benutzer löschen";
             this.RemoveUserButton.UseVisualStyleBackColor = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(319, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 6;
-            // 
-            // projektzDatabase
-            // 
-            this.projektzDatabase.DataSetName = "projektzDatabase";
-            this.projektzDatabase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // benutzerBindingSource1
-            // 
-            this.benutzerBindingSource1.DataMember = "benutzer";
-            this.benutzerBindingSource1.DataSource = this.projektzDatabase;
-            // 
             // benutzerTableAdapter1
             // 
             this.benutzerTableAdapter1.ClearBeforeFill = true;
@@ -162,7 +156,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(719, 439);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.RemoveUserButton);
             this.Controls.Add(this.ChangeUserDataButton);
             this.Controls.Add(this.AddUserButton);
@@ -173,12 +166,11 @@
             this.Text = "Benutzerverwaltung";
             this.Load += new System.EventHandler(this.Zentralverwaltung_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectZDatabase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatabaseConnection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -193,10 +185,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDBenutzer;
         private System.Windows.Forms.DataGridViewTextBoxColumn benutzernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn administratorDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.TextBox textBox1;
         private projektzDatabase projektzDatabase;
         private System.Windows.Forms.BindingSource benutzerBindingSource1;
         private projektzDatabaseTableAdapters.benutzerTableAdapter benutzerTableAdapter1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
