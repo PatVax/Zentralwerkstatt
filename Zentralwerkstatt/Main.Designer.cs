@@ -98,15 +98,16 @@
             // benutzerToolStripMenuItem
             // 
             this.benutzerToolStripMenuItem.Name = "benutzerToolStripMenuItem";
-            this.benutzerToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.benutzerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.benutzerToolStripMenuItem.Text = "Benutzer";
             this.benutzerToolStripMenuItem.Click += new System.EventHandler(this.benutzerToolStripMenuItem_Click);
             // 
             // geräteToolStripMenuItem
             // 
             this.geräteToolStripMenuItem.Name = "geräteToolStripMenuItem";
-            this.geräteToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.geräteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.geräteToolStripMenuItem.Text = "Geräte";
+            this.geräteToolStripMenuItem.Click += new System.EventHandler(this.geräteToolStripMenuItem_Click);
             // 
             // ansichtToolStripMenuItem
             // 
@@ -171,7 +172,6 @@
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AllowUserToResizeColumns = false;
             this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

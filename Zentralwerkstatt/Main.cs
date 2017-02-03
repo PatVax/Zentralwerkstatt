@@ -81,5 +81,11 @@ namespace Zentralwerkstatt
             // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase.test". Sie können sie bei Bedarf verschieben oder entfernen.
             this.testTableAdapter.Fill(this.projektzDatabase.test);
         }
+
+        private void geräteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Geraeteverwaltung Form = new Geraeteverwaltung();
+            Form.Show();
+        }
     }
 }
