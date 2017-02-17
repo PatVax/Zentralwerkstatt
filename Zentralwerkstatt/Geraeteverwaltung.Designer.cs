@@ -30,23 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gerätetypenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projektzDatabase = new Zentralwerkstatt.projektzDatabase();
-            this.projektzDataSet = new Zentralwerkstatt.projektzDataSet();
-            this.gerätetypenTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.gerätetypenTableAdapter();
+            this.projektZDB = new Zentralwerkstatt.ProjektZDB();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.geräteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gerätetypenTableAdapter1 = new Zentralwerkstatt.projektzDatabaseTableAdapters.gerätetypenTableAdapter();
-            this.geräteBarcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gerätetypenTableAdapter = new Zentralwerkstatt.ProjektZDBTableAdapters.gerätetypenTableAdapter();
             this.barcodesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.barcodesTableAdapter = new Zentralwerkstatt.projektzDatabaseTableAdapters.barcodesTableAdapter();
+            this.barcodesTableAdapter = new Zentralwerkstatt.ProjektZDBTableAdapters.barcodesTableAdapter();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.geräteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barcodesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,34 +54,32 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.bezeichnungDataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn1});
             this.dataGridView1.DataSource = this.gerätetypenBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(173, 484);
+            this.dataGridView1.Size = new System.Drawing.Size(103, 484);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Bezeichnung";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Bezeichnung";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // gerätetypenBindingSource
             // 
             this.gerätetypenBindingSource.DataMember = "gerätetypen";
-            this.gerätetypenBindingSource.DataSource = this.projektzDatabase;
+            this.gerätetypenBindingSource.DataSource = this.projektZDB;
             // 
-            // projektzDatabase
+            // projektZDB
             // 
-            this.projektzDatabase.DataSetName = "projektzDatabase";
-            this.projektzDatabase.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // projektzDataSet
-            // 
-            this.projektzDataSet.DataSetName = "projektzDataSet";
-            this.projektzDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gerätetypenTableAdapter
-            // 
-            this.gerätetypenTableAdapter.ClearBeforeFill = true;
+            this.projektZDB.DataSetName = "ProjektZDB";
+            this.projektZDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridView2
             // 
@@ -97,49 +90,34 @@
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.geräteBarcodeDataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn2});
             this.dataGridView2.DataSource = this.barcodesBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(191, 12);
+            this.dataGridView2.Location = new System.Drawing.Point(121, 12);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(173, 484);
+            this.dataGridView2.Size = new System.Drawing.Size(103, 484);
             this.dataGridView2.TabIndex = 1;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // geräteBindingSource
+            // gerätetypenTableAdapter
             // 
-            this.geräteBindingSource.DataMember = "geräte";
-            this.geräteBindingSource.DataSource = this.projektzDatabase;
-            // 
-            // gerätetypenTableAdapter1
-            // 
-            this.gerätetypenTableAdapter1.ClearBeforeFill = true;
-            // 
-            // geräteBarcodeDataGridViewTextBoxColumn
-            // 
-            this.geräteBarcodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.geräteBarcodeDataGridViewTextBoxColumn.DataPropertyName = "Geräte_Barcode";
-            this.geräteBarcodeDataGridViewTextBoxColumn.HeaderText = "Barcodes";
-            this.geräteBarcodeDataGridViewTextBoxColumn.Name = "geräteBarcodeDataGridViewTextBoxColumn";
-            this.geräteBarcodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bezeichnungDataGridViewTextBoxColumn
-            // 
-            this.bezeichnungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "Geräte";
-            this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
-            this.bezeichnungDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gerätetypenTableAdapter.ClearBeforeFill = true;
             // 
             // barcodesBindingSource
             // 
             this.barcodesBindingSource.DataMember = "barcodes";
-            this.barcodesBindingSource.DataSource = this.projektzDatabase;
+            this.barcodesBindingSource.DataSource = this.projektZDB;
             // 
             // barcodesTableAdapter
             // 
             this.barcodesTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Geräte_Barcode";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Geräte_Barcode";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // Geraeteverwaltung
             // 
@@ -153,10 +131,8 @@
             this.Load += new System.EventHandler(this.Geraeteverwaltung_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDatabase)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.geräteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barcodesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -165,16 +141,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private projektzDataSet projektzDataSet;
-        private System.Windows.Forms.BindingSource gerätetypenBindingSource;
-        private projektzDataSetTableAdapters.gerätetypenTableAdapter gerätetypenTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private projektzDatabase projektzDatabase;
-        private System.Windows.Forms.BindingSource geräteBindingSource;
-        private projektzDatabaseTableAdapters.gerätetypenTableAdapter gerätetypenTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn geräteBarcodeDataGridViewTextBoxColumn;
+        private ProjektZDB projektZDB;
+        private System.Windows.Forms.BindingSource gerätetypenBindingSource;
+        private ProjektZDBTableAdapters.gerätetypenTableAdapter gerätetypenTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource barcodesBindingSource;
-        private projektzDatabaseTableAdapters.barcodesTableAdapter barcodesTableAdapter;
+        private ProjektZDBTableAdapters.barcodesTableAdapter barcodesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

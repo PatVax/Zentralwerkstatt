@@ -43,5 +43,16 @@ namespace Zentralwerkstatt.Properties {
                 return ((string)(this["projektzConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=10.152.0.32;user id=fw;password=fw1;persistsecurityinfo=True;database=proj" +
+            "ektz")]
+        public string projektzConnection {
+            get {
+                return ((string)(this["projektzConnection"]));
+            }
+        }
     }
 }

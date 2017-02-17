@@ -8,13 +8,9 @@ namespace Zentralwerkstatt
         public Main()
         {
             InitializeComponent();
-            //Die Formtabelle mit den Werten aus der Datenbank füllen
-            this.testTableAdapter.Fill(this.projektzDatabase.test);
-            this.prüfausgabeTableAdapter.ClearBeforeFill = true;
-
             //Eine manuelle Verbindung mit der Datenbank für eigene SQL-Abfragen einrichten
             int count = 0;
-            string cs = @"server=10.152.1.107;userid=fw;password=fw1;database=projektz";
+            string cs = @"server=10.152.0.32;userid=fw;password=fw1;database=projektz";
             MySqlConnection conn = null;
             conn = new MySqlConnection(cs);
             conn.Open();
@@ -54,7 +50,7 @@ namespace Zentralwerkstatt
             {
                 string Name = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 string Date = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                string cs = @"server=10.152.1.107;userid=fw;password=fw1;database=projektz";
+                string cs = @"server=10.152.0.32;userid=fw;password=fw1;database=projektz";
                 MySqlConnection conn = null;
                 conn = new MySqlConnection(cs);
                 conn.Open();
@@ -66,7 +62,7 @@ namespace Zentralwerkstatt
                 cmd.Connection = conn;
                 cmd.ExecuteNonQuery();
                 // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
-                this.prüfausgabeTableAdapter.Fill(this.projektzDatabase.prüfausgabe);
+                this.prüfausgabeTableAdapter.Fill(this.projektZDB.prüfausgabe);
                 dataGridView2.Visible = true;
             }
             catch (MySqlException ex)
@@ -76,10 +72,10 @@ namespace Zentralwerkstatt
         }
         private void Main_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.prüfausgabeTableAdapter.Fill(this.projektzDatabase.prüfausgabe);
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase.test". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.testTableAdapter.Fill(this.projektzDatabase.test);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektZDB.test". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.testTableAdapter.Fill(this.projektZDB.test);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektZDB.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.prüfausgabeTableAdapter.Fill(this.projektZDB.prüfausgabe);
         }
 
         private void geräteToolStripMenuItem_Click(object sender, EventArgs e)

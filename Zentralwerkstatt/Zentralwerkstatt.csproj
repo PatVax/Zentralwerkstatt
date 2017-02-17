@@ -92,18 +92,10 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="projektzDatabase.Designer.cs">
+    <Compile Include="ProjektZDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>projektzDatabase.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="projektzDataSet.cs">
-      <DependentUpon>projektzDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="projektzDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>projektzDataSet.xsd</DependentUpon>
+      <DependentUpon>ProjektZDB.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Anmeldung.resx">
@@ -127,27 +119,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="projektzDatabase.xsc">
-      <DependentUpon>projektzDatabase.xsd</DependentUpon>
+    <None Include="ProjektZDB.xsc">
+      <DependentUpon>ProjektZDB.xsd</DependentUpon>
     </None>
-    <None Include="projektzDatabase.xsd">
+    <None Include="ProjektZDB.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>projektzDatabase.Designer.cs</LastGenOutput>
+      <LastGenOutput>ProjektZDB.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="projektzDatabase.xss">
-      <DependentUpon>projektzDatabase.xsd</DependentUpon>
-    </None>
-    <None Include="projektzDataSet.xsc">
-      <DependentUpon>projektzDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="projektzDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>projektzDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="projektzDataSet.xss">
-      <DependentUpon>projektzDataSet.xsd</DependentUpon>
+    <None Include="ProjektZDB.xss">
+      <DependentUpon>ProjektZDB.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

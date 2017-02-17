@@ -20,21 +20,13 @@ namespace Zentralwerkstatt
 
         private void Geraeteverwaltung_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase.gerätetypen". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.gerätetypenTableAdapter1.Fill(this.projektzDatabase.gerätetypen);
-           
-
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektZDB.gerätetypen". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.gerätetypenTableAdapter.Fill(this.projektZDB.gerätetypen);
         }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string geraetename = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            string cs = @"server=10.152.1.107;userid=fw;password=fw1;database=projektz";
+            string cs = @"server=10.152.0.32;userid=fw;password=fw1;database=projektz";
             MySqlConnection conn = null;
             conn = new MySqlConnection(cs);
             conn.Open();
@@ -43,8 +35,8 @@ namespace Zentralwerkstatt
             cmd.Parameters.AddWithValue("@geraetename", geraetename);
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDatabase.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.barcodesTableAdapter.Fill(this.projektzDatabase.barcodes);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektZDB.barcodes". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.barcodesTableAdapter.Fill(this.projektZDB.barcodes);
         }
     }
 }
