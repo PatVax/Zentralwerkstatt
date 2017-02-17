@@ -34,10 +34,10 @@
             this.gerätetypenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projektZDB = new Zentralwerkstatt.ProjektZDB();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.gerätetypenTableAdapter = new Zentralwerkstatt.ProjektZDBTableAdapters.gerätetypenTableAdapter();
-            this.barcodesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.barcodesTableAdapter = new Zentralwerkstatt.ProjektZDBTableAdapters.barcodesTableAdapter();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barcodesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gerätetypenTableAdapter = new Zentralwerkstatt.ProjektZDBTableAdapters.gerätetypenTableAdapter();
+            this.barcodesTableAdapter = new Zentralwerkstatt.ProjektZDBTableAdapters.barcodesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDB)).BeginInit();
@@ -99,25 +99,25 @@
             this.dataGridView2.Size = new System.Drawing.Size(103, 484);
             this.dataGridView2.TabIndex = 1;
             // 
-            // gerätetypenTableAdapter
-            // 
-            this.gerätetypenTableAdapter.ClearBeforeFill = true;
-            // 
-            // barcodesBindingSource
-            // 
-            this.barcodesBindingSource.DataMember = "barcodes";
-            this.barcodesBindingSource.DataSource = this.projektZDB;
-            // 
-            // barcodesTableAdapter
-            // 
-            this.barcodesTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Geräte_Barcode";
             this.dataGridViewTextBoxColumn2.HeaderText = "Geräte_Barcode";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // barcodesBindingSource
+            // 
+            this.barcodesBindingSource.DataMember = "barcodes";
+            this.barcodesBindingSource.DataSource = this.projektZDB;
+            // 
+            // gerätetypenTableAdapter
+            // 
+            this.gerätetypenTableAdapter.ClearBeforeFill = true;
+            // 
+            // barcodesTableAdapter
+            // 
+            this.barcodesTableAdapter.ClearBeforeFill = true;
             // 
             // Geraeteverwaltung
             // 
