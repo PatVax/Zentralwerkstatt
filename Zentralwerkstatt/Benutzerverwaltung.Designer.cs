@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Zentralverwaltung));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IDBenutzer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.administratorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.AddUserButton = new System.Windows.Forms.Button();
@@ -145,10 +144,6 @@
         private ProjektZDBTableAdapters.benutzerTableAdapter benutzerTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn benutzernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn administratorDataGridViewCheckBoxColumn;
-        private projektzDatabase projektzDatabase;
-        private System.Windows.Forms.BindingSource benutzerBindingSource1;
-        private projektzDatabaseTableAdapters.benutzerTableAdapter benutzerTableAdapter1;
-        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 

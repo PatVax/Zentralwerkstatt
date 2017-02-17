@@ -20,7 +20,7 @@ namespace Zentralwerkstatt
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string cs = @"server=10.152.1.107;userid=fw;password=fw1;database=projektz";
+            string cs = @"server=10.152.0.32;userid=fw;password=fw1;database=projektz";
             MySqlConnection conn = null;
             conn = new MySqlConnection(cs);
             conn.Open();
@@ -35,7 +35,7 @@ namespace Zentralwerkstatt
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            AdminCheckbox.Checked;
+            
         }
 
         private void NeuerBenutzer_Load(object sender, EventArgs e)
