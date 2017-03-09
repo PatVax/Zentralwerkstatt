@@ -39,7 +39,7 @@
             this.projektZDB = new Zentralwerkstatt.ProjektZDB();
             this.benutzerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.benutzerTableAdapter = new Zentralwerkstatt.ProjektZDBTableAdapters.benutzerTableAdapter();
-            this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource)).BeginInit();

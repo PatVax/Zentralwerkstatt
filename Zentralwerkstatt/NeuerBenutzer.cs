@@ -26,6 +26,17 @@ namespace Zentralwerkstatt
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
+            string Benutzer = BenutzertextBox.Text;
+            string Passwort = PassworttextBox.Text;
+//
+//            string Administrator;
+//            if (AdminCheckbox.Checked = true)
+
+            cmd.CommandText = "INSERT INTO Benutzer (Benutzername, Passwort, Administrator) VALUES ('@Benutername', '@passwort', '@Administrator'";
+            cmd.Parameters.AddWithValue("@Benutzername", BenutzertextBox.Text);
+            cmd.Parameters.AddWithValue("@Passwort", PassworttextBox.Text);
+            cmd.Parameters.AddWithValue("@Administrator", AdminCheckbox.Checked);
+
         }
 
         private void Passwort_Click(object sender, EventArgs e)
