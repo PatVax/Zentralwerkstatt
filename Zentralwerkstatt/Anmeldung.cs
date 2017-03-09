@@ -17,10 +17,10 @@ namespace Zentralwerkstatt
                 conn = new MySqlConnection(cs);
                 conn.Open();
             }
-            catch(MySqlException)
+            catch(MySqlException ex)
             {
                 //Fehlertext, falls die Verbindung zur Datenbank nicht hergestellt werden konnte
-                MessageBox.Show("Die Verbindung zur Datenbank konnte nicht hergestellt werden");                         
+                MessageBox.Show($"Die Verbindung zur Datenbank konnte nicht hergestellt werden: {ex.Message}");                         
             }            
         }
         private void AnmeldenButton_Click(object sender, EventArgs e)
@@ -114,6 +114,11 @@ namespace Zentralwerkstatt
             {
                 AnmeldenButton_Click(AnmeldenButton, new KeyEventArgs(Keys.Enter));
             }
+        }
+
+        private void Connection_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

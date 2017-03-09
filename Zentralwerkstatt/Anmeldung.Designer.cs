@@ -37,6 +37,7 @@
             this.AbbrechenButton = new System.Windows.Forms.Button();
             this.PasswortText = new System.Windows.Forms.Label();
             this.AdminText = new System.Windows.Forms.Label();
+            this.Connection = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -117,11 +118,22 @@
             this.AdminText.Text = "Fehlende Berechtigungen!";
             this.AdminText.Visible = false;
             // 
+            // Connection
+            // 
+            this.Connection.Location = new System.Drawing.Point(310, 154);
+            this.Connection.Name = "Connection";
+            this.Connection.Size = new System.Drawing.Size(19, 23);
+            this.Connection.TabIndex = 8;
+            this.Connection.Text = "?";
+            this.Connection.UseVisualStyleBackColor = true;
+            this.Connection.Click += new System.EventHandler(this.Connection_Click);
+            // 
             // Anmeldung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 199);
+            this.Controls.Add(this.Connection);
             this.Controls.Add(this.AdminText);
             this.Controls.Add(this.PasswortText);
             this.Controls.Add(this.AbbrechenButton);
@@ -152,5 +164,6 @@
         private System.Windows.Forms.Button AbbrechenButton;
         private System.Windows.Forms.Label PasswortText;
         private System.Windows.Forms.Label AdminText;
+        private System.Windows.Forms.Button Connection;
     }
 }
