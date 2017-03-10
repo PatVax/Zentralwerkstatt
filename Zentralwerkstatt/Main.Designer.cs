@@ -36,7 +36,6 @@
             this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.benutzerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.geräteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ansichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,8 +65,7 @@
             // 
             this.MenüLeiste.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dateiToolStripMenuItem,
-            this.bearbeitenToolStripMenuItem,
-            this.ansichtToolStripMenuItem});
+            this.bearbeitenToolStripMenuItem});
             this.MenüLeiste.Location = new System.Drawing.Point(0, 0);
             this.MenüLeiste.Name = "MenüLeiste";
             this.MenüLeiste.Size = new System.Drawing.Size(692, 24);
@@ -111,12 +109,6 @@
             this.geräteToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.geräteToolStripMenuItem.Text = "Geräte";
             this.geräteToolStripMenuItem.Click += new System.EventHandler(this.geräteToolStripMenuItem_Click);
-            // 
-            // ansichtToolStripMenuItem
-            // 
-            this.ansichtToolStripMenuItem.Name = "ansichtToolStripMenuItem";
-            this.ansichtToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.ansichtToolStripMenuItem.Text = "Ansicht";
             // 
             // dataGridView1
             // 
@@ -289,7 +281,6 @@
         private System.Windows.Forms.MenuStrip MenüLeiste;
         private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bearbeitenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ansichtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem benutzerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem geräteToolStripMenuItem;
