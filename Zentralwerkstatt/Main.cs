@@ -44,7 +44,7 @@ namespace Zentralwerkstatt
             Application.Exit();
         }
          
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
