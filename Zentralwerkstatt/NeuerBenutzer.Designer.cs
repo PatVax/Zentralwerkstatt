@@ -34,6 +34,7 @@
             this.PassworttextBox = new System.Windows.Forms.TextBox();
             this.Benutzer = new System.Windows.Forms.Label();
             this.AdminCheckbox = new System.Windows.Forms.CheckBox();
+            this.buttonAbbrechen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Passwort
@@ -92,11 +93,22 @@
             this.AdminCheckbox.UseVisualStyleBackColor = true;
             this.AdminCheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // buttonAbbrechen
+            // 
+            this.buttonAbbrechen.Location = new System.Drawing.Point(172, 226);
+            this.buttonAbbrechen.Name = "buttonAbbrechen";
+            this.buttonAbbrechen.Size = new System.Drawing.Size(100, 23);
+            this.buttonAbbrechen.TabIndex = 6;
+            this.buttonAbbrechen.Text = "Abbrechen";
+            this.buttonAbbrechen.UseVisualStyleBackColor = true;
+            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
+            // 
             // NeuerBenutzer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.buttonAbbrechen);
             this.Controls.Add(this.AdminCheckbox);
             this.Controls.Add(this.PassworttextBox);
             this.Controls.Add(this.Benutzer);
@@ -119,5 +131,6 @@
         private System.Windows.Forms.TextBox PassworttextBox;
         private System.Windows.Forms.Label Benutzer;
         private System.Windows.Forms.CheckBox AdminCheckbox;
+        private System.Windows.Forms.Button buttonAbbrechen;
     }
 }

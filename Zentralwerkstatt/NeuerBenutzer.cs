@@ -25,18 +25,32 @@ namespace Zentralwerkstatt
             conn = new MySqlConnection(cs);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = conn;
+
+
             string Benutzer = BenutzertextBox.Text;
             string Passwort = PassworttextBox.Text;
-//
-//            string Administrator;
-//            if (AdminCheckbox.Checked = true)
+            bool Administrator = AdminCheckbox.Checked;
 
-            cmd.CommandText = "INSERT INTO Benutzer (Benutzername, Passwort, Administrator) VALUES ('@Benutername', '@passwort', '@Administrator'";
-            cmd.Parameters.AddWithValue("@Benutzername", BenutzertextBox.Text);
-            cmd.Parameters.AddWithValue("@Passwort", PassworttextBox.Text);
-            cmd.Parameters.AddWithValue("@Administrator", AdminCheckbox.Checked);
 
+            cmd.CommandText = "INSERT INTO Benutzer (Benutzername, Passwort, Administrator) VALUES (@Benutzername, md5(@Passwort), @Administrator)";
+            cmd.Parameters.AddWithValue("@Benutzername", Benutzer);
+            cmd.Parameters.AddWithValue("@Passwort", Passwort);
+            cmd.Parameters.AddWithValue("@Administrator", Administrator);
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+
+            string Adminpermission = "";
+
+            if (AdminCheckbox.Checked == true)
+            {
+                Adminpermission = "true";
+            }
+            else
+            {
+                Adminpermission = "false";
+            }
+            MessageBox.Show($"Ein Neuer Benutzer wurde angelegt:\nBenutzername:                 {Benutzer} \nAdministratorrechte:       {Adminpermission}");
+            this.Hide();
         }
 
         private void Passwort_Click(object sender, EventArgs e)
@@ -63,6 +77,11 @@ namespace Zentralwerkstatt
         private void PassworttextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonAbbrechen_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }
