@@ -31,5 +31,11 @@ namespace Zentralwerkstatt
             // TODO: Diese Codezeile lädt Daten in die Tabelle "projektZDB.barcodes". Sie können sie bei Bedarf verschieben oder entfernen.
             this.barcodesTableAdapter.Fill(this.projektZDB.barcodes);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Geraetetypen Form = new Geraetetypen();
+            Form.Show(); 
+        }
     }
 }
