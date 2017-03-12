@@ -79,6 +79,12 @@
     <Compile Include="Benutzerverwaltung.Designer.cs">
       <DependentUpon>Benutzerverwaltung.cs</DependentUpon>
     </Compile>
+    <Compile Include="Geraetetypen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Geraetetypen.Designer.cs">
+      <DependentUpon>Geraetetypen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Geraeteverwaltung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Benutzerverwaltung.resx">
       <DependentUpon>Benutzerverwaltung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geraetetypen.resx">
+      <DependentUpon>Geraetetypen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Geraeteverwaltung.resx">
       <DependentUpon>Geraeteverwaltung.cs</DependentUpon>
