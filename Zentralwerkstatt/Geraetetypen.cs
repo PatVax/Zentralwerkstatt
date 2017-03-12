@@ -24,8 +24,8 @@ namespace Zentralwerkstatt
 
         private void Geraetetypen_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektZDB.hersteller". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.herstellerTableAdapter.Fill(this.projektZDB.hersteller);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.prüfkriterien". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.prüfkriterienTableAdapter.Fill(this.projektzDataSet.prüfkriterien);
         }
 
         private void LabelFooter_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace Zentralwerkstatt
         {
             try
             {
-                this.prüfkriterienTableAdapter.FillBy(this.projektZDB.prüfkriterien);
+                this.prüfkriterienTableAdapter.Fill(this.projektzDataSet.prüfkriterien);
             }
             catch (System.Exception ex)
             {
