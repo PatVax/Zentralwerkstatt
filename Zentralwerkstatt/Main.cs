@@ -81,5 +81,12 @@ namespace Zentralwerkstatt
             Geraeteverwaltung Form = new Geraeteverwaltung();
             Form.Show();
         }
+
+        private void MenüLeiste_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+
     }
 }

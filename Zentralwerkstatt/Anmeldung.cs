@@ -111,10 +111,5 @@ namespace Zentralwerkstatt
                 AnmeldenButton_Click(AnmeldenButton, new KeyEventArgs(Keys.Enter));
             }
         }
-
-        private void Connection_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

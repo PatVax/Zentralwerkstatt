@@ -149,6 +149,7 @@
             this.Name = "Anmeldung";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Anmeldung";
+            this.Load += new System.EventHandler(this.Anmeldung_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
