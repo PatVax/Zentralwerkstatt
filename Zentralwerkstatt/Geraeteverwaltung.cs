@@ -30,6 +30,8 @@ namespace Zentralwerkstatt
             cmd.Parameters.AddWithValue("@geraetename", geraetename);
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.barcodes". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.barcodesTableAdapter.Fill(this.projektzDataSet.barcodes);
         }
     }
 }
