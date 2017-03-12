@@ -87,6 +87,16 @@
             this.AddUserButton.UseVisualStyleBackColor = true;
             this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
+            // Button_aktualisieren
+            // 
+            this.Button_aktualisieren.Location = new System.Drawing.Point(125, 410);
+            this.Button_aktualisieren.Name = "Button_aktualisieren";
+            this.Button_aktualisieren.Size = new System.Drawing.Size(75, 23);
+            this.Button_aktualisieren.TabIndex = 6;
+            this.Button_aktualisieren.Text = "Aktualisieren";
+            this.Button_aktualisieren.UseVisualStyleBackColor = true;
+            this.Button_aktualisieren.Click += new System.EventHandler(this.Button_aktualisieren_Click);
+            // 
             // ChangeUserDataButton
             // 
             this.ChangeUserDataButton.Location = new System.Drawing.Point(391, 410);
