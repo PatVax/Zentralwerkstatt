@@ -34,12 +34,11 @@
             this.AddUserButton = new System.Windows.Forms.Button();
             this.ChangeUserDataButton = new System.Windows.Forms.Button();
             this.RemoveUserButton = new System.Windows.Forms.Button();
-            this.projektZDB = new Zentralwerkstatt.ProjektZDB();
+            this.projektzDataSet = new Zentralwerkstatt.projektzDataSet();
             this.benutzerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.benutzerTableAdapter = new Zentralwerkstatt.ProjektZDBTableAdapters.benutzerTableAdapter();
-            this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.benutzerTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.benutzerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektZDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,8 +50,6 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.benutzernameDataGridViewTextBoxColumn});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView1.DataSource = this.benutzerBindingSource;
             this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -90,25 +87,19 @@
             this.RemoveUserButton.Text = "Benutzer löschen";
             this.RemoveUserButton.UseVisualStyleBackColor = true;
             // 
-            // projektZDB
+            // projektzDataSet
             // 
-            this.projektZDB.DataSetName = "ProjektZDB";
-            this.projektZDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.projektzDataSet.DataSetName = "projektzDataSet";
+            this.projektzDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // benutzerBindingSource
             // 
             this.benutzerBindingSource.DataMember = "benutzer";
-            this.benutzerBindingSource.DataSource = this.projektZDB;
+            this.benutzerBindingSource.DataSource = this.projektzDataSet;
             // 
             // benutzerTableAdapter
             // 
             this.benutzerTableAdapter.ClearBeforeFill = true;
-            // 
-            // benutzernameDataGridViewTextBoxColumn
-            // 
-            this.benutzernameDataGridViewTextBoxColumn.DataPropertyName = "Benutzername";
-            this.benutzernameDataGridViewTextBoxColumn.HeaderText = "Benutzername";
-            this.benutzernameDataGridViewTextBoxColumn.Name = "benutzernameDataGridViewTextBoxColumn";
             // 
             // Zentralverwaltung
             // 
@@ -125,7 +116,7 @@
             this.Text = "Benutzerverwaltung";
             this.Load += new System.EventHandler(this.Zentralverwaltung_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektZDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -136,10 +127,9 @@
         private System.Windows.Forms.Button AddUserButton;
         private System.Windows.Forms.Button ChangeUserDataButton;
         private System.Windows.Forms.Button RemoveUserButton;
-        private ProjektZDB projektZDB;
+        private projektzDataSet projektzDataSet;
         private System.Windows.Forms.BindingSource benutzerBindingSource;
-        private ProjektZDBTableAdapters.benutzerTableAdapter benutzerTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn benutzernameDataGridViewTextBoxColumn;
+        private projektzDataSetTableAdapters.benutzerTableAdapter benutzerTableAdapter;
     }
 }
 

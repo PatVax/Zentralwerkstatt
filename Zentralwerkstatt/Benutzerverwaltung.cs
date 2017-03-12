@@ -18,8 +18,8 @@ namespace Zentralwerkstatt
 
         private void Zentralverwaltung_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektZDB.benutzer". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.benutzerTableAdapter.Fill(this.projektZDB.benutzer);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.benutzer". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.benutzerTableAdapter.Fill(this.projektzDataSet.benutzer);
         }
     }
 }

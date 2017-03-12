@@ -12,7 +12,7 @@ namespace Zentralwerkstatt
             try
             {
                 //Verbindung mit der Datenbank herstellen, um eine mögliche fehlende Verbindung zu erkennen
-                string cs = @"server=10.152.0.32;userid=fw;password=fw1;database=projektz";
+                string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
                 MySqlConnection conn = null;
                 conn = new MySqlConnection(cs);
                 conn.Open();
@@ -30,16 +30,12 @@ namespace Zentralwerkstatt
             {
                 //Manuelle Datenanbindung zum erstellen von eigenen MySQL Abfragen
                 int count = 0;
-                string cs = @"server=10.152.0.32;userid=fw;password=fw1;database=projektz";
+                string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
                 string passwort = this.PasswortTextBox.Text;          
                 conn = new MySqlConnection(cs);
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                //MD5 md5 = MD5.Create(passwort);
-                //Abfrage zur Anmeldung mit verschlüsseltem Passworttext
-                //passwort = Convert.ToString(md5);
-                //MessageBox.Show(passwort);
                 cmd.CommandText = "SELECT * FROM benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort = md5('" + this.PasswortTextBox.Text + "')";
                 MySqlDataReader Reader;
                 Reader = cmd.ExecuteReader();
