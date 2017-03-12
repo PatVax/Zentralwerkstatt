@@ -62,6 +62,8 @@ namespace Zentralwerkstatt
                 cmd.Connection = conn;
                 cmd.ExecuteNonQuery();
                 dataGridView2.Visible = true;
+                // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
+                this.prüfausgabeTableAdapter.Fill(this.projektzDataSet.prüfausgabe);
             }
             catch (MySqlException ex)
             {
@@ -70,8 +72,6 @@ namespace Zentralwerkstatt
         }
         private void Main_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.prüfausgabeTableAdapter.Fill(this.projektzDataSet.prüfausgabe);
             // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.test". Sie können sie bei Bedarf verschieben oder entfernen.
             this.testTableAdapter.Fill(this.projektzDataSet.test);
         }
@@ -80,10 +80,6 @@ namespace Zentralwerkstatt
         {
             Geraeteverwaltung Form = new Geraeteverwaltung();
             Form.Show();
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
         }
     }
 }
