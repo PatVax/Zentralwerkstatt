@@ -13,8 +13,6 @@ namespace Zentralwerkstatt
 
         private void Geraeteverwaltung_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.barcodes". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.barcodesTableAdapter.Fill(this.projektzDataSet.barcodes);
             // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.gerätetypen". Sie können sie bei Bedarf verschieben oder entfernen.
             this.gerätetypenTableAdapter.Fill(this.projektzDataSet.gerätetypen);
         }
@@ -30,6 +28,8 @@ namespace Zentralwerkstatt
             cmd.Parameters.AddWithValue("@geraetename", geraetename);
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.barcodes". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.barcodesTableAdapter.Fill(this.projektzDataSet.barcodes);
         }
     }
 }
