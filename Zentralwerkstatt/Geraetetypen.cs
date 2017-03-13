@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Zentralwerkstatt
 {
@@ -71,6 +72,29 @@ namespace Zentralwerkstatt
             herstellerTableAdapter.Fill(projektzDataSet.hersteller);
             this.DropDownMenuHersteller.DataSource = this.herstellerBindingSource;
             DropDownMenuHersteller.Refresh();
+        }
+
+        private void LabelBezeichnung_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GeraetetypenHinzufuegenButton_Click(object sender, EventArgs e)
+        {
+            string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+            MySqlConnection conn = null;
+            conn = new MySqlConnection(cs);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand();
+
+            cmd.CommandText = "INSERT INTO gerätetypen (IDHersteller, HeaderText, FooterText, Bezeichnung) VALUES ((SELECT IDHersteller FROM Hersteller WHERE Bezeichnung = @IDH), @Header, @Footer, @Bezeichnung)";
+            cmd.Parameters.AddWithValue("@Header", textBox2.Text);
+            cmd.Parameters.AddWithValue("@Footer", textBox3.Text);
+            cmd.Parameters.AddWithValue("@Bezeichnung", textBox1.Text);
+            cmd.Parameters.AddWithValue("@IDH", DropDownMenuHersteller.Text);
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+            this.Close();
         }
     }
 }

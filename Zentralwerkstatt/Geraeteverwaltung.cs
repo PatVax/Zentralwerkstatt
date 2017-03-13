@@ -37,5 +37,50 @@ namespace Zentralwerkstatt
             Geraetetypen Form = new Geraetetypen();
             Form.Show(); 
         }
+
+        private void AktualisierenGeräte_Click(object sender, EventArgs e)
+        {
+            gerätetypenTableAdapter.Fill(projektzDataSet.gerätetypen);
+            this.dataGridView1.DataSource = this.gerätetypenBindingSource;
+            dataGridView1.Refresh();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            GerätBarcode Form = new GerätBarcode();
+            Form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Wollen sie das Gerät löschen?", "Sicher?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+                MySqlConnection conn = null;
+                conn = new MySqlConnection(cs);
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand();
+
+                string barcode = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+
+                cmd.CommandText = "DELETE FROM geräte WHERE Geräte_Barcode = @Barcode";
+                cmd.Parameters.AddWithValue("@Barcode", barcode);
+                
+                cmd.Connection = conn;
+                cmd.ExecuteNonQuery();
+
+                barcodesTableAdapter.Fill(projektzDataSet.barcodes);
+                this.dataGridView2.DataSource = this.barcodesBindingSource;
+                dataGridView2.Refresh();
+
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                
+            }
+           
+        }
     }
 }
