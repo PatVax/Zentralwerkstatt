@@ -41,17 +41,22 @@
             this.GeraetetypenHinzufuegenAbbrechenButton = new System.Windows.Forms.Button();
             this.LabelPrüfliste = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.projektzDataSet = new Zentralwerkstatt.projektzDataSet();
-            this.prüfkriterienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.prüfkriterienTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.prüfkriterienTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prüfkriterienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projektzDataSet = new Zentralwerkstatt.projektzDataSet();
+            this.prüfkriterienTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.prüfkriterienTableAdapter();
+            this.LabelBezeichnung = new System.Windows.Forms.Label();
+            this.gerätetypenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gerätetypenTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.gerätetypenTableAdapter();
+            this.herstellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.herstellerTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.herstellerTableAdapter();
+            this.HerstellerAktualisieren = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.fillByToolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prüfkriterienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.herstellerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -72,12 +77,15 @@
             // 
             // DropDownMenuHersteller
             // 
+            this.DropDownMenuHersteller.DataSource = this.herstellerBindingSource;
+            this.DropDownMenuHersteller.DisplayMember = "Bezeichnung";
             this.DropDownMenuHersteller.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DropDownMenuHersteller.FormattingEnabled = true;
             this.DropDownMenuHersteller.Location = new System.Drawing.Point(12, 68);
             this.DropDownMenuHersteller.Name = "DropDownMenuHersteller";
             this.DropDownMenuHersteller.Size = new System.Drawing.Size(238, 21);
             this.DropDownMenuHersteller.TabIndex = 3;
+            this.DropDownMenuHersteller.ValueMember = "Bezeichnung";
             this.DropDownMenuHersteller.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // NeuerHerstellerButton
@@ -86,8 +94,9 @@
             this.NeuerHerstellerButton.Name = "NeuerHerstellerButton";
             this.NeuerHerstellerButton.Size = new System.Drawing.Size(114, 21);
             this.NeuerHerstellerButton.TabIndex = 5;
-            this.NeuerHerstellerButton.Text = "Neuer Hersteller";
+            this.NeuerHerstellerButton.Text = "Hersteller bearbeiten";
             this.NeuerHerstellerButton.UseVisualStyleBackColor = true;
+            this.NeuerHerstellerButton.Click += new System.EventHandler(this.NeuerHerstellerButton_Click);
             // 
             // LabelHeader
             // 
@@ -165,38 +174,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(515, 218);
             this.dataGridView1.TabIndex = 13;
             // 
-            // fillByToolStrip
-            // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(914, 25);
-            this.fillByToolStrip.TabIndex = 14;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
-            // 
-            // projektzDataSet
-            // 
-            this.projektzDataSet.DataSetName = "projektzDataSet";
-            this.projektzDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // prüfkriterienBindingSource
-            // 
-            this.prüfkriterienBindingSource.DataMember = "prüfkriterien";
-            this.prüfkriterienBindingSource.DataSource = this.projektzDataSet;
-            // 
-            // prüfkriterienTableAdapter
-            // 
-            this.prüfkriterienTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -211,12 +188,64 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Anzeigeart";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
+            // prüfkriterienBindingSource
+            // 
+            this.prüfkriterienBindingSource.DataMember = "prüfkriterien";
+            this.prüfkriterienBindingSource.DataSource = this.projektzDataSet;
+            // 
+            // projektzDataSet
+            // 
+            this.projektzDataSet.DataSetName = "projektzDataSet";
+            this.projektzDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // prüfkriterienTableAdapter
+            // 
+            this.prüfkriterienTableAdapter.ClearBeforeFill = true;
+            // 
+            // LabelBezeichnung
+            // 
+            this.LabelBezeichnung.AutoSize = true;
+            this.LabelBezeichnung.Location = new System.Drawing.Point(9, 9);
+            this.LabelBezeichnung.Name = "LabelBezeichnung";
+            this.LabelBezeichnung.Size = new System.Drawing.Size(94, 13);
+            this.LabelBezeichnung.TabIndex = 15;
+            this.LabelBezeichnung.Text = "Gerätbezeichnung";
+            // 
+            // gerätetypenBindingSource
+            // 
+            this.gerätetypenBindingSource.DataMember = "gerätetypen";
+            this.gerätetypenBindingSource.DataSource = this.projektzDataSet;
+            // 
+            // gerätetypenTableAdapter
+            // 
+            this.gerätetypenTableAdapter.ClearBeforeFill = true;
+            // 
+            // herstellerBindingSource
+            // 
+            this.herstellerBindingSource.DataMember = "hersteller";
+            this.herstellerBindingSource.DataSource = this.projektzDataSet;
+            // 
+            // herstellerTableAdapter
+            // 
+            this.herstellerTableAdapter.ClearBeforeFill = true;
+            // 
+            // HerstellerAktualisieren
+            // 
+            this.HerstellerAktualisieren.Location = new System.Drawing.Point(169, 269);
+            this.HerstellerAktualisieren.Name = "HerstellerAktualisieren";
+            this.HerstellerAktualisieren.Size = new System.Drawing.Size(151, 28);
+            this.HerstellerAktualisieren.TabIndex = 16;
+            this.HerstellerAktualisieren.Text = "Hersteller aktualisieren";
+            this.HerstellerAktualisieren.UseVisualStyleBackColor = true;
+            this.HerstellerAktualisieren.Click += new System.EventHandler(this.HerstellerAktualisieren_Click);
+            // 
             // Geraetetypen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 319);
-            this.Controls.Add(this.fillByToolStrip);
+            this.Controls.Add(this.HerstellerAktualisieren);
+            this.Controls.Add(this.LabelBezeichnung);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.LabelPrüfliste);
             this.Controls.Add(this.GeraetetypenHinzufuegenAbbrechenButton);
@@ -230,13 +259,13 @@
             this.Controls.Add(this.LabelHersteller);
             this.Controls.Add(this.textBox1);
             this.Name = "Geraetetypen";
-            this.Text = "Gerätetypen hinzufügen";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Geraetetypen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prüfkriterienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.herstellerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,12 +284,16 @@
         private System.Windows.Forms.Label LabelPrüfliste;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox DropDownMenuHersteller;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
         private projektzDataSet projektzDataSet;
         private System.Windows.Forms.BindingSource prüfkriterienBindingSource;
         private projektzDataSetTableAdapters.prüfkriterienTableAdapter prüfkriterienTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Label LabelBezeichnung;
+        private System.Windows.Forms.BindingSource gerätetypenBindingSource;
+        private projektzDataSetTableAdapters.gerätetypenTableAdapter gerätetypenTableAdapter;
+        private System.Windows.Forms.BindingSource herstellerBindingSource;
+        private projektzDataSetTableAdapters.herstellerTableAdapter herstellerTableAdapter;
+        private System.Windows.Forms.Button HerstellerAktualisieren;
     }
 }
