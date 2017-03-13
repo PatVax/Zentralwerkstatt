@@ -116,6 +116,12 @@
     <Compile Include="Pruefliste.Designer.cs">
       <DependentUpon>Pruefliste.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prueflistebearbeiten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prueflistebearbeiten.Designer.cs">
+      <DependentUpon>Prueflistebearbeiten.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Anmeldung.resx">
       <DependentUpon>Anmeldung.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="Pruefliste.resx">
       <DependentUpon>Pruefliste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prueflistebearbeiten.resx">
+      <DependentUpon>Prueflistebearbeiten.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="projektzDataSet.xsc">
       <DependentUpon>projektzDataSet.xsd</DependentUpon>
