@@ -35,7 +35,7 @@ namespace Zentralwerkstatt
 
         private void RemoveUserButton_Click(object sender, EventArgs e)
         {
-            string cs = @"server=10.152.0.32;userid=fw;password=fw1;database=projektz";
+            string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
             MySqlConnection conn = null;
             conn = new MySqlConnection(cs);
             conn.Open();
