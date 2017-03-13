@@ -9,9 +9,7 @@ namespace Zentralwerkstatt
 
         public Zentralverwaltung()
         {           
-            InitializeComponent();
-
-                   
+            InitializeComponent();       
         }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

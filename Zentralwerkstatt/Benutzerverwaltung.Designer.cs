@@ -31,14 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Zentralverwaltung));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.administratorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.benutzerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projektzDataSet = new Zentralwerkstatt.projektzDataSet();
             this.AddUserButton = new System.Windows.Forms.Button();
             this.ChangeUserDataButton = new System.Windows.Forms.Button();
             this.RemoveUserButton = new System.Windows.Forms.Button();
+            this.Button_aktualisieren = new System.Windows.Forms.Button();
             this.benutzerTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.benutzerTableAdapter();
-            this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.administratorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).BeginInit();
@@ -67,6 +68,19 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
+            // benutzernameDataGridViewTextBoxColumn
+            // 
+            this.benutzernameDataGridViewTextBoxColumn.HeaderText = "Benutzername";
+            this.benutzernameDataGridViewTextBoxColumn.Name = "benutzernameDataGridViewTextBoxColumn";
+            this.benutzernameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // administratorDataGridViewCheckBoxColumn
+            // 
+            this.administratorDataGridViewCheckBoxColumn.DataPropertyName = "Administrator";
+            this.administratorDataGridViewCheckBoxColumn.HeaderText = "Administrator";
+            this.administratorDataGridViewCheckBoxColumn.Name = "administratorDataGridViewCheckBoxColumn";
+            this.administratorDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
             // benutzerBindingSource
             // 
             this.benutzerBindingSource.DataMember = "benutzer";
@@ -87,16 +101,6 @@
             this.AddUserButton.UseVisualStyleBackColor = true;
             this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
-            // Button_aktualisieren
-            // 
-            this.Button_aktualisieren.Location = new System.Drawing.Point(125, 410);
-            this.Button_aktualisieren.Name = "Button_aktualisieren";
-            this.Button_aktualisieren.Size = new System.Drawing.Size(75, 23);
-            this.Button_aktualisieren.TabIndex = 6;
-            this.Button_aktualisieren.Text = "Aktualisieren";
-            this.Button_aktualisieren.UseVisualStyleBackColor = true;
-            this.Button_aktualisieren.Click += new System.EventHandler(this.Button_aktualisieren_Click);
-            // 
             // ChangeUserDataButton
             // 
             this.ChangeUserDataButton.Location = new System.Drawing.Point(391, 410);
@@ -114,23 +118,21 @@
             this.RemoveUserButton.TabIndex = 5;
             this.RemoveUserButton.Text = "Benutzer löschen";
             this.RemoveUserButton.UseVisualStyleBackColor = true;
+            this.RemoveUserButton.Click += new System.EventHandler(this.RemoveUserButton_Click);
+            // 
+            // Button_aktualisieren
+            // 
+            this.Button_aktualisieren.Location = new System.Drawing.Point(125, 410);
+            this.Button_aktualisieren.Name = "Button_aktualisieren";
+            this.Button_aktualisieren.Size = new System.Drawing.Size(75, 23);
+            this.Button_aktualisieren.TabIndex = 6;
+            this.Button_aktualisieren.Text = "Aktualisieren";
+            this.Button_aktualisieren.UseVisualStyleBackColor = true;
+            this.Button_aktualisieren.Click += new System.EventHandler(this.Button_aktualisieren_Click);
             // 
             // benutzerTableAdapter
             // 
             this.benutzerTableAdapter.ClearBeforeFill = true;
-            // 
-            // benutzernameDataGridViewTextBoxColumn
-            // 
-            this.benutzernameDataGridViewTextBoxColumn.HeaderText = "Benutzername";
-            this.benutzernameDataGridViewTextBoxColumn.Name = "benutzernameDataGridViewTextBoxColumn";
-            this.benutzernameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // administratorDataGridViewCheckBoxColumn
-            // 
-            this.administratorDataGridViewCheckBoxColumn.DataPropertyName = "Administrator";
-            this.administratorDataGridViewCheckBoxColumn.HeaderText = "Administrator";
-            this.administratorDataGridViewCheckBoxColumn.Name = "administratorDataGridViewCheckBoxColumn";
-            this.administratorDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // Zentralverwaltung
             // 
@@ -158,6 +160,7 @@
         private System.Windows.Forms.Button AddUserButton;
         private System.Windows.Forms.Button ChangeUserDataButton;
         private System.Windows.Forms.Button RemoveUserButton;
+        private System.Windows.Forms.Button Button_aktualisieren;
         private projektzDataSet projektzDataSet;
         private System.Windows.Forms.BindingSource benutzerBindingSource;
         private projektzDataSetTableAdapters.benutzerTableAdapter benutzerTableAdapter;
