@@ -94,6 +94,8 @@ namespace Zentralwerkstatt
             cmd.Parameters.AddWithValue("@IDH", DropDownMenuHersteller.Text);
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
+            Pruefliste Form = new Pruefliste();
+            Form.Show();
             this.Close();
         }
     }
