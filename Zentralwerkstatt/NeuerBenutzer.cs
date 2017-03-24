@@ -32,7 +32,7 @@ namespace Zentralwerkstatt
             bool Administrator = AdminCheckbox.Checked;
 
 
-            cmd.CommandText = "INSERT INTO Benutzer (Benutzername, Passwort, Administrator) VALUES (@Benutzername, md5(@Passwort), @Administrator)";
+            cmd.CommandText = "INSERT INTO benutzer (benutzername, passwort, administrator) VALUES (@Benutzername, md5(@Passwort), @Administrator)";
             cmd.Parameters.AddWithValue("@Benutzername", Benutzer);
             cmd.Parameters.AddWithValue("@Passwort", Passwort);
             cmd.Parameters.AddWithValue("@Administrator", Administrator);

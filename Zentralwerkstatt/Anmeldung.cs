@@ -36,7 +36,7 @@ namespace Zentralwerkstatt
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM Benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort = md5('" + this.PasswortTextBox.Text + "')";
+                cmd.CommandText = "SELECT * FROM benutzer WHERE benutzername = '" + this.BenutzerTextBox.Text + "' AND passwort = md5('" + this.PasswortTextBox.Text + "')";
                 MySqlDataReader Reader;
                 Reader = cmd.ExecuteReader();
                 while (Reader.Read())
@@ -48,7 +48,7 @@ namespace Zentralwerkstatt
                 {
                     //Administrator-Abfrage
                     Reader.Close();
-                    cmd.CommandText = "SELECT * FROM Benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort = md5('" + this.PasswortTextBox.Text + "') AND Administrator = true";
+                    cmd.CommandText = "SELECT * FROM benutzer WHERE benutzername = '" + this.BenutzerTextBox.Text + "' AND passwort = md5('" + this.PasswortTextBox.Text + "') AND administrator = true";
                     Reader = cmd.ExecuteReader();
                     count = 0;
                     while (Reader.Read())

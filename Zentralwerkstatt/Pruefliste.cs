@@ -33,7 +33,7 @@ namespace Zentralwerkstatt
                     Prüfliste.SelectAll();
                     string Text = Prüfliste.SelectedRows[i].Cells[0].Value.ToString();
                     string Anzeigeart = Prüfliste.SelectedRows[i].Cells[1].Value.ToString();
-                    cmd.CommandText = ("INSERT INTO Prüfkriterien(IDGerätetyp, Text, Anzeigeart) VALUES (@IDGerätetyp, @Text, @Anzeigeart)");
+                    cmd.CommandText = ("INSERT INTO pruefkriterien(idgeraetetyp, text, anzeigeart) VALUES (@IDGerätetyp, @Text, @Anzeigeart)");
                     cmd.Parameters.AddWithValue("@IDGerätetyp", IDGerätetyp);
                     cmd.Parameters.AddWithValue("@Text", Text);
                     cmd.Parameters.AddWithValue("@Anzeigeart", Anzeigeart);
