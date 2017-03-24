@@ -24,7 +24,7 @@ namespace Zentralwerkstatt
             conn = new MySqlConnection(cs);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = "CREATE OR REPLACE VIEW Barcodes AS SELECT Geräte.Geräte_Barcode FROM Geräte INNER JOIN Gerätetypen ON Geräte.IDGerätetyp = Gerätetypen.IDGerätetyp WHERE Gerätetypen.Bezeichnung = @geraetename";
+            cmd.CommandText = "CREATE OR REPLACE VIEW barcodes AS SELECT geräte.geräte_barcode FROM geräte INNER JOIN gerätetypen ON geräte.idgerätetyp = gerätetypen.idgerätetyp WHERE gerätetypen.bezeichnung = @geraetename";
             cmd.Parameters.AddWithValue("@geraetename", geraetename);
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
@@ -65,7 +65,7 @@ namespace Zentralwerkstatt
 
                 string barcode = dataGridView2.CurrentRow.Cells[0].Value.ToString();
 
-                cmd.CommandText = "DELETE FROM geräte WHERE Geräte_Barcode = @Barcode";
+                cmd.CommandText = "DELETE FROM geraete WHERE geraete_barcode = @Barcode";
                 cmd.Parameters.AddWithValue("@Barcode", barcode);
                 
                 cmd.Connection = conn;

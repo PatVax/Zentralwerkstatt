@@ -41,7 +41,7 @@ namespace Zentralwerkstatt
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
 
-            cmd.CommandText = "DELETE FROM BENUTZER WHERE Benutzername = @Benutzername";
+            cmd.CommandText = "DELETE FROM benutzer WHERE benutzername = @Benutzername";
             cmd.Parameters.AddWithValue("@Benutzername", dataGridView1.CurrentRow.Cells[0].Value.ToString());
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();

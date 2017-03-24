@@ -55,7 +55,7 @@ namespace Zentralwerkstatt
                 conn = new MySqlConnection(cs);
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
-                cmd.CommandText = "CREATE OR REPLACE VIEW Prüfausgabe AS SELECT prüfkriterien.Text, prüfergebnisse.Messwert FROM prüfkriterien INNER JOIN prüfergebnisse ON prüfkriterien.IDKriterium = prüfergebnisse.IDKriterium WHERE Prüfergebnisse.IDPrüfung IN (SELECT Prüfungen.IDPrüfung FROM Prüfungen INNER JOIN Geräte ON Prüfungen.Geräte_Barcode = Geräte.Geräte_Barcode INNER JOIN Gerätetypen ON Geräte.IDGerätetyp = Gerätetypen.IDGerätetyp WHERE Gerätetypen.Bezeichnung = @Name AND Prüfungen.Datum = @Date)";
+                cmd.CommandText = "CREATE OR REPLACE VIEW pruefausgabe AS SELECT pruefkriterien.text, pruefergebnisse.messwert FROM pruefkriterien INNER JOIN pruefergebnisse ON pruefkriterien.idkriterium = pruefergebnisse.idkriterium WHERE pruefergebnisse.idpruefung IN (SELECT pruefungen.idpruefung FROM pruefungen INNER JOIN geraete ON pruefungen.geraete_barcode = geraete.geraete_barcode INNER JOIN geraetetypen ON geraete.idgeraetetyp = geraetetypen.idgGeraetetyp WHERE geraetetypen.bezeichnung = @Name AND pruefungen.datum = @Date)";
                 DateTime Datum = Convert.ToDateTime(Date);
                 cmd.Parameters.AddWithValue("@Name", Name);
                 cmd.Parameters.AddWithValue("@Date", Datum);

@@ -87,7 +87,7 @@ namespace Zentralwerkstatt
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
 
-            cmd.CommandText = "INSERT INTO gerätetypen (IDHersteller, HeaderText, FooterText, Bezeichnung) VALUES ((SELECT IDHersteller FROM Hersteller WHERE Bezeichnung = @IDH), @Header, @Footer, @Bezeichnung)";
+            cmd.CommandText = "INSERT INTO geraetetypen (idhersteller, headertext, footertext, bezeichnung) VALUES ((SELECT idhersteller FROM hersteller WHERE bezeichnung = @IDH), @Header, @Footer, @Bezeichnung)";
             cmd.Parameters.AddWithValue("@Header", textBox2.Text);
             cmd.Parameters.AddWithValue("@Footer", textBox3.Text);
             cmd.Parameters.AddWithValue("@Bezeichnung", textBox1.Text);

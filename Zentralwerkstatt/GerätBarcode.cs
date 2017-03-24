@@ -32,7 +32,7 @@ namespace Zentralwerkstatt
             foreach (var ListBoxItem in listBox1.Items)
             {
 
-                cmd.CommandText = "INSERT INTO geräte (Geräte_Barcode, IDGerätetyp, Anschaffungsdatum, IDFahrzeug) VALUES (@Barcode, (SELECT IDGerätetyp FROM gerätetypen WHERE Bezeichnung = @Gerätetyp), @datum, 1)";
+                cmd.CommandText = "INSERT INTO geraete (geraete_barcode, idgeraetetyp, anschaffungsdatum, idfahrzeug) VALUES (@Barcode, (SELECT idgeraetetyp FROM geraetetypen WHERE bezeichnung = @Gerätetyp), @datum, 1)";
                 cmd.Parameters.AddWithValue("@Barcode", ListBoxItem.ToString());
                 cmd.Parameters.AddWithValue("@Gerätetyp", comboBox1.Text);
                 cmd.Parameters.AddWithValue("@datum", textBox2.Text);
