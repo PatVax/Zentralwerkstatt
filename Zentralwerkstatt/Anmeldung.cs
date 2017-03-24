@@ -12,7 +12,7 @@ namespace Zentralwerkstatt
             try
             {
                 //Verbindung mit der Datenbank herstellen, um eine mögliche fehlende Verbindung zu erkennen
-                string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
+                string cs = @"server=87.79.76.247;user=Zentralwerkstatt;password=fjonkheerdb;database=ProjektZ";
                 MySqlConnection conn = null;
                 conn = new MySqlConnection(cs);
                 conn.Open();
@@ -30,7 +30,7 @@ namespace Zentralwerkstatt
             {
                 //Manuelle Datenanbindung zum erstellen von eigenen MySQL Abfragen
                 int count = 0;
-                string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
+                string cs = @"server=87.79.76.247;user=Zentralwerkstatt;password=fjonkheerdb;database=ProjektZ";
                 string passwort = this.PasswortTextBox.Text;          
                 conn = new MySqlConnection(cs);
                 conn.Open();

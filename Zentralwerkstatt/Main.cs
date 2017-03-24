@@ -10,7 +10,7 @@ namespace Zentralwerkstatt
             InitializeComponent();
             //Eine manuelle Verbindung mit der Datenbank für eigene SQL-Abfragen einrichten
             int count = 0;
-            string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
+            string cs = @"server=87.79.76.247;user=Zentralwerkstatt;password=fjonkheerdb;database=ProjektZ";
             MySqlConnection conn = null;
             conn = new MySqlConnection(cs);
             conn.Open();
@@ -50,7 +50,7 @@ namespace Zentralwerkstatt
             {
                 string Name = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 string Date = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
+                string cs = @"server=87.79.76.247;user=Zentralwerkstatt;password=fjonkheerdb;database=ProjektZ";
                 MySqlConnection conn = null;
                 conn = new MySqlConnection(cs);
                 conn.Open();

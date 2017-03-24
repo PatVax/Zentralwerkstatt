@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
@@ -113,6 +113,11 @@
       <DependentUpon>NeuerBenutzer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjektZDatabase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjektZDatabase.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ProjektZDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -170,6 +175,17 @@
     <EmbeddedResource Include="Prueflistebearbeiten.resx">
       <DependentUpon>Prueflistebearbeiten.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ProjektZDatabase.xsc">
+      <DependentUpon>ProjektZDatabase.xsd</DependentUpon>
+    </None>
+    <None Include="ProjektZDatabase.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjektZDatabase.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjektZDatabase.xss">
+      <DependentUpon>ProjektZDatabase.xsd</DependentUpon>
+    </None>
     <None Include="ProjektZDataSet.xsc">
       <DependentUpon>ProjektZDataSet.xsd</DependentUpon>
     </None>
