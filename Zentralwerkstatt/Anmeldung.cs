@@ -12,7 +12,7 @@ namespace Zentralwerkstatt
             try
             {
                 //Verbindung mit der Datenbank herstellen, um eine mögliche fehlende Verbindung zu erkennen
-                string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+                string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
                 MySqlConnection conn = null;
                 conn = new MySqlConnection(cs);
                 conn.Open();
@@ -20,7 +20,7 @@ namespace Zentralwerkstatt
             catch(MySqlException ex)
             {
                 //Fehlertext, falls die Verbindung zur Datenbank nicht hergestellt werden konnte
-                MessageBox.Show($"Die Verbindung zur Datenbank konnte nicht hergestellt werden: {ex.Message}");                         
+                MessageBox.Show(String.Format("Die Verbindung zur Datenbank konnte nicht hergestellt werden: {0}", ex.Message));                         
             }            
         }
         private void AnmeldenButton_Click(object sender, EventArgs e)
@@ -30,13 +30,13 @@ namespace Zentralwerkstatt
             {
                 //Manuelle Datenanbindung zum erstellen von eigenen MySQL Abfragen
                 int count = 0;
-                string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+                string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
                 string passwort = this.PasswortTextBox.Text;          
                 conn = new MySqlConnection(cs);
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort = md5('" + this.PasswortTextBox.Text + "')";
+                cmd.CommandText = "SELECT * FROM Benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort = md5('" + this.PasswortTextBox.Text + "')";
                 MySqlDataReader Reader;
                 Reader = cmd.ExecuteReader();
                 while (Reader.Read())
@@ -48,7 +48,7 @@ namespace Zentralwerkstatt
                 {
                     //Administrator-Abfrage
                     Reader.Close();
-                    cmd.CommandText = "SELECT * FROM benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort = md5('" + this.PasswortTextBox.Text + "') AND Administrator = true";
+                    cmd.CommandText = "SELECT * FROM Benutzer WHERE Benutzername = '" + this.BenutzerTextBox.Text + "' AND Passwort = md5('" + this.PasswortTextBox.Text + "') AND Administrator = true";
                     Reader = cmd.ExecuteReader();
                     count = 0;
                     while (Reader.Read())
@@ -80,10 +80,10 @@ namespace Zentralwerkstatt
                 }
                 Reader.Close();
             }
-            catch (MySqlException)
+            catch (MySqlException ex)
             {
                 //erneute Fehlermeldung, falls die Verbindung zur Datenbank immer noch nicht hergestellt wurde
-                MessageBox.Show("Die Verbindung zur Datenbank konnte nicht hergestellt werden");
+                MessageBox.Show(String.Format("Die Verbindung zur Datenbank konnte nicht hergestellt werden: {0}", ex.Message));
             }
             if (conn != null)
             {

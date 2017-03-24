@@ -25,12 +25,9 @@ namespace Zentralwerkstatt
 
         private void Geraetetypen_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'projektzDataSet.hersteller' table. You can move, or remove it, as needed.
-            this.herstellerTableAdapter.Fill(this.projektzDataSet.hersteller);
-            // TODO: This line of code loads data into the 'projektzDataSet.gerätetypen' table. You can move, or remove it, as needed.
-            this.gerätetypenTableAdapter.Fill(this.projektzDataSet.gerätetypen);
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.prüfkriterien". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.prüfkriterienTableAdapter.Fill(this.projektzDataSet.prüfkriterien);
+            // TODO: This line of code loads data into the 'projektZDataSet.Hersteller' table. You can move, or remove it, as needed.
+            this.herstellerTableAdapter.Fill(this.projektZDataSet.Hersteller);
+            
         }
 
         private void LabelFooter_Click(object sender, EventArgs e)
@@ -43,18 +40,7 @@ namespace Zentralwerkstatt
             this.Close();
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.prüfkriterienTableAdapter.Fill(this.projektzDataSet.prüfkriterien);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
+        
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -69,7 +55,7 @@ namespace Zentralwerkstatt
 
         private void HerstellerAktualisieren_Click(object sender, EventArgs e)
         {
-            herstellerTableAdapter.Fill(projektzDataSet.hersteller);
+            herstellerTableAdapter.Fill(projektZDataSet.Hersteller);
             this.DropDownMenuHersteller.DataSource = this.herstellerBindingSource;
             DropDownMenuHersteller.Refresh();
         }
@@ -81,13 +67,13 @@ namespace Zentralwerkstatt
 
         private void GeraetetypenHinzufuegenButton_Click(object sender, EventArgs e)
         {
-            string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+            string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
             MySqlConnection conn = null;
             conn = new MySqlConnection(cs);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
 
-            cmd.CommandText = "INSERT INTO gerätetypen (IDHersteller, HeaderText, FooterText, Bezeichnung) VALUES ((SELECT IDHersteller FROM Hersteller WHERE Bezeichnung = @IDH), @Header, @Footer, @Bezeichnung)";
+            cmd.CommandText = "INSERT INTO Gerätetypen (IDHersteller, HeaderText, FooterText, Bezeichnung) VALUES ((SELECT IDHersteller FROM Hersteller WHERE Bezeichnung = @IDH), @Header, @Footer, @Bezeichnung)";
             cmd.Parameters.AddWithValue("@Header", textBox2.Text);
             cmd.Parameters.AddWithValue("@Footer", textBox3.Text);
             cmd.Parameters.AddWithValue("@Bezeichnung", textBox1.Text);

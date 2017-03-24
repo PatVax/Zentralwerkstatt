@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.projektzDataSet = new Zentralwerkstatt.projektzDataSet();
-            this.herstellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.herstellerTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.herstellerTableAdapter();
-            this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Übernehmen = new System.Windows.Forms.Button();
             this.Abbrechen = new System.Windows.Forms.Button();
+            this.projektZDataSet = new Zentralwerkstatt.ProjektZDataSet();
+            this.herstellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.herstellerTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.HerstellerTableAdapter();
+            this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.herstellerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,27 +53,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(260, 321);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // projektzDataSet
-            // 
-            this.projektzDataSet.DataSetName = "projektzDataSet";
-            this.projektzDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // herstellerBindingSource
-            // 
-            this.herstellerBindingSource.DataMember = "hersteller";
-            this.herstellerBindingSource.DataSource = this.projektzDataSet;
-            // 
-            // herstellerTableAdapter
-            // 
-            this.herstellerTableAdapter.ClearBeforeFill = true;
-            // 
-            // bezeichnungDataGridViewTextBoxColumn
-            // 
-            this.bezeichnungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
             // 
             // Übernehmen
             // 
@@ -95,6 +74,28 @@
             this.Abbrechen.UseVisualStyleBackColor = true;
             this.Abbrechen.Click += new System.EventHandler(this.Abbrechen_Click);
             // 
+            // projektZDataSet
+            // 
+            this.projektZDataSet.DataSetName = "ProjektZDataSet";
+            this.projektZDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // herstellerBindingSource
+            // 
+            this.herstellerBindingSource.DataMember = "Hersteller";
+            this.herstellerBindingSource.DataSource = this.projektZDataSet;
+            // 
+            // herstellerTableAdapter
+            // 
+            this.herstellerTableAdapter.ClearBeforeFill = true;
+            // 
+            // bezeichnungDataGridViewTextBoxColumn
+            // 
+            this.bezeichnungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "Bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn.FillWeight = 1000F;
+            this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "Bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
+            // 
             // HerstellerAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,7 +108,7 @@
             this.Text = "Hersteller bearbeiten";
             this.Load += new System.EventHandler(this.HerstellerAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.herstellerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -116,11 +117,11 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private projektzDataSet projektzDataSet;
-        private System.Windows.Forms.BindingSource herstellerBindingSource;
-        private projektzDataSetTableAdapters.herstellerTableAdapter herstellerTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button Übernehmen;
         private System.Windows.Forms.Button Abbrechen;
+        private ProjektZDataSet projektZDataSet;
+        private System.Windows.Forms.BindingSource herstellerBindingSource;
+        private ProjektZDataSetTableAdapters.HerstellerTableAdapter herstellerTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
     }
 }

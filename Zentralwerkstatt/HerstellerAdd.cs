@@ -29,8 +29,8 @@ namespace Zentralwerkstatt
 
         private void HerstellerAdd_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'projektzDataSet.hersteller' table. You can move, or remove it, as needed.
-            this.herstellerTableAdapter.Fill(this.projektzDataSet.hersteller);
+            // TODO: This line of code loads data into the 'projektZDataSet.Hersteller' table. You can move, or remove it, as needed.
+            this.herstellerTableAdapter.Fill(this.projektZDataSet.Hersteller);
 
         }
 
@@ -41,7 +41,7 @@ namespace Zentralwerkstatt
 
         private void Übernehmen_Click(object sender, EventArgs e)
         {
-            this.herstellerTableAdapter.Update(projektzDataSet);
+            //this.herstellerTableAdapter.Update(projektz);
             this.Close();
         }
     }

@@ -19,11 +19,6 @@ namespace Zentralwerkstatt
 
         private void Prueflistebearbeiten_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.gerätetypen". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.gerätetypenTableAdapter.Fill(this.projektzDataSet.gerätetypen);
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.prüfkriterien". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.prüfkriterienTableAdapter.Fill(this.projektzDataSet.prüfkriterien);
-
         }
     }
 }

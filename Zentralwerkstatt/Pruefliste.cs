@@ -13,8 +13,9 @@ namespace Zentralwerkstatt
 
         private void Pruefliste_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.gerätetypen". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.gerätetypenTableAdapter.Fill(this.projektzDataSet.gerätetypen);
+            // TODO: This line of code loads data into the 'projektZDataSet.Gerätetypen' table. You can move, or remove it, as needed.
+            this.gerätetypenTableAdapter.Fill(this.projektZDataSet.Gerätetypen);
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -23,7 +24,7 @@ namespace Zentralwerkstatt
             {
                 string IDGerätetyp = Gerätetypen.CurrentRow.Cells[0].Value.ToString();
                 MySqlConnection conn = null;
-                string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+                string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
                 conn = new MySqlConnection(cs);
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
@@ -40,10 +41,11 @@ namespace Zentralwerkstatt
                     cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
                 }
+                this.Close();
             }
             catch(Exception ex)
             {
-                MessageBox.Show($"Es gab ein Problem beim Einfügen einer neuen Prüfliste: {ex.Message}");
+                MessageBox.Show(String.Format("Es gab ein Problem beim Einfügen einer neuen Prüfliste: {0}", (ex.Message)));
             }
         }
         private void button3_Click(object sender, EventArgs e)

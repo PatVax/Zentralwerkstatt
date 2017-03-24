@@ -20,7 +20,7 @@ namespace Zentralwerkstatt
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string cs = @"server=10.152.0.32;userid=fw;password=fw1;database=projektz";
+            string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
             MySqlConnection conn = null;
             conn = new MySqlConnection(cs);
             conn.Open();
@@ -49,7 +49,7 @@ namespace Zentralwerkstatt
             {
                 Adminpermission = "false";
             }
-            MessageBox.Show($"Ein Neuer Benutzer wurde angelegt:\nBenutzername:                 {Benutzer} \nAdministratorrechte:       {Adminpermission}");
+            MessageBox.Show(String.Format("Ein Neuer Benutzer wurde angelegt:\nBenutzername:                 {0} \nAdministratorrechte:       {1}", Benutzer, Adminpermission));
             this.Hide();
         }
 

@@ -39,18 +39,12 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.GeraetetypenHinzufuegenButton = new System.Windows.Forms.Button();
             this.GeraetetypenHinzufuegenAbbrechenButton = new System.Windows.Forms.Button();
-            this.prüfkriterienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projektzDataSet = new Zentralwerkstatt.projektzDataSet();
-            this.prüfkriterienTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.prüfkriterienTableAdapter();
             this.LabelBezeichnung = new System.Windows.Forms.Label();
-            this.gerätetypenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gerätetypenTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.gerätetypenTableAdapter();
-            this.herstellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.herstellerTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.herstellerTableAdapter();
             this.HerstellerAktualisieren = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.prüfkriterienBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).BeginInit();
+            this.projektZDataSet = new Zentralwerkstatt.ProjektZDataSet();
+            this.herstellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.herstellerTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.HerstellerTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.herstellerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,20 +142,6 @@
             this.GeraetetypenHinzufuegenAbbrechenButton.UseVisualStyleBackColor = true;
             this.GeraetetypenHinzufuegenAbbrechenButton.Click += new System.EventHandler(this.GeraetetypenHinzufuegenAbbrechenButton_Click);
             // 
-            // prüfkriterienBindingSource
-            // 
-            this.prüfkriterienBindingSource.DataMember = "prüfkriterien";
-            this.prüfkriterienBindingSource.DataSource = this.projektzDataSet;
-            // 
-            // projektzDataSet
-            // 
-            this.projektzDataSet.DataSetName = "projektzDataSet";
-            this.projektzDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // prüfkriterienTableAdapter
-            // 
-            this.prüfkriterienTableAdapter.ClearBeforeFill = true;
-            // 
             // LabelBezeichnung
             // 
             this.LabelBezeichnung.AutoSize = true;
@@ -172,24 +152,6 @@
             this.LabelBezeichnung.Text = "Gerätbezeichnung";
             this.LabelBezeichnung.Click += new System.EventHandler(this.LabelBezeichnung_Click);
             // 
-            // gerätetypenBindingSource
-            // 
-            this.gerätetypenBindingSource.DataMember = "gerätetypen";
-            this.gerätetypenBindingSource.DataSource = this.projektzDataSet;
-            // 
-            // gerätetypenTableAdapter
-            // 
-            this.gerätetypenTableAdapter.ClearBeforeFill = true;
-            // 
-            // herstellerBindingSource
-            // 
-            this.herstellerBindingSource.DataMember = "hersteller";
-            this.herstellerBindingSource.DataSource = this.projektzDataSet;
-            // 
-            // herstellerTableAdapter
-            // 
-            this.herstellerTableAdapter.ClearBeforeFill = true;
-            // 
             // HerstellerAktualisieren
             // 
             this.HerstellerAktualisieren.Location = new System.Drawing.Point(169, 269);
@@ -199,6 +161,20 @@
             this.HerstellerAktualisieren.Text = "Hersteller aktualisieren";
             this.HerstellerAktualisieren.UseVisualStyleBackColor = true;
             this.HerstellerAktualisieren.Click += new System.EventHandler(this.HerstellerAktualisieren_Click);
+            // 
+            // projektZDataSet
+            // 
+            this.projektZDataSet.DataSetName = "ProjektZDataSet";
+            this.projektZDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // herstellerBindingSource
+            // 
+            this.herstellerBindingSource.DataMember = "Hersteller";
+            this.herstellerBindingSource.DataSource = this.projektZDataSet;
+            // 
+            // herstellerTableAdapter
+            // 
+            this.herstellerTableAdapter.ClearBeforeFill = true;
             // 
             // Geraetetypen
             // 
@@ -220,9 +196,7 @@
             this.Name = "Geraetetypen";
             this.Text = " ";
             this.Load += new System.EventHandler(this.Geraetetypen_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.prüfkriterienBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.herstellerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -240,14 +214,10 @@
         private System.Windows.Forms.Button GeraetetypenHinzufuegenButton;
         private System.Windows.Forms.Button GeraetetypenHinzufuegenAbbrechenButton;
         private System.Windows.Forms.ComboBox DropDownMenuHersteller;
-        private projektzDataSet projektzDataSet;
-        private System.Windows.Forms.BindingSource prüfkriterienBindingSource;
-        private projektzDataSetTableAdapters.prüfkriterienTableAdapter prüfkriterienTableAdapter;
         private System.Windows.Forms.Label LabelBezeichnung;
-        private System.Windows.Forms.BindingSource gerätetypenBindingSource;
-        private projektzDataSetTableAdapters.gerätetypenTableAdapter gerätetypenTableAdapter;
-        private System.Windows.Forms.BindingSource herstellerBindingSource;
-        private projektzDataSetTableAdapters.herstellerTableAdapter herstellerTableAdapter;
         private System.Windows.Forms.Button HerstellerAktualisieren;
+        private ProjektZDataSet projektZDataSet;
+        private System.Windows.Forms.BindingSource herstellerBindingSource;
+        private ProjektZDataSetTableAdapters.HerstellerTableAdapter herstellerTableAdapter;
     }
 }

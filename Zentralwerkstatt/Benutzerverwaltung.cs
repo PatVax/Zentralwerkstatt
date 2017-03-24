@@ -19,8 +19,8 @@ namespace Zentralwerkstatt
 
         private void Zentralverwaltung_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.benutzer". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.benutzerTableAdapter.Fill(this.projektzDataSet.benutzer);
+            // TODO: This line of code loads data into the 'projektZDataSet.Benutzer' table. You can move, or remove it, as needed.
+            this.benutzerTableAdapter.Fill(this.projektZDataSet.Benutzer);
         }
 
         private void AddUserButton_Click(object sender, EventArgs e)
@@ -35,22 +35,22 @@ namespace Zentralwerkstatt
 
         private void RemoveUserButton_Click(object sender, EventArgs e)
         {
-            string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+            string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
             MySqlConnection conn = null;
             conn = new MySqlConnection(cs);
             conn.Open();
             MySqlCommand cmd = new MySqlCommand();
 
-            cmd.CommandText = "DELETE FROM BENUTZER WHERE Benutzername = @Benutzername";
+            cmd.CommandText = "DELETE FROM Benutzer WHERE Benutzername = @Benutzername";
             cmd.Parameters.AddWithValue("@Benutzername", dataGridView1.CurrentRow.Cells[0].Value.ToString());
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
-            this.benutzerTableAdapter.Fill(this.projektzDataSet.benutzer);
+            this.benutzerTableAdapter.Fill(this.projektZDataSet.Benutzer);
         }
 
         private void Button_aktualisieren_Click(object sender, EventArgs e)
         {
-            this.benutzerTableAdapter.Fill(this.projektzDataSet.benutzer);
+            this.benutzerTableAdapter.Fill(this.projektZDataSet.Benutzer);
         }
     }
 }

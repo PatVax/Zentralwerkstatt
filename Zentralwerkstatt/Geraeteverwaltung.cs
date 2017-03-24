@@ -13,13 +13,15 @@ namespace Zentralwerkstatt
 
         private void Geraeteverwaltung_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.gerätetypen". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.gerätetypenTableAdapter.Fill(this.projektzDataSet.gerätetypen);
+            // TODO: This line of code loads data into the 'projektZDataSet.Barcodes' table. You can move, or remove it, as needed.
+            this.barcodesTableAdapter.Fill(this.projektZDataSet.Barcodes);
+            // TODO: This line of code loads data into the 'projektZDataSet.Gerätetypen' table. You can move, or remove it, as needed.
+            this.gerätetypenTableAdapter.Fill(this.projektZDataSet.Gerätetypen);
         }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string geraetename = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+            string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
             MySqlConnection conn = null;
             conn = new MySqlConnection(cs);
             conn.Open();
@@ -29,7 +31,7 @@ namespace Zentralwerkstatt
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.barcodes". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.barcodesTableAdapter.Fill(this.projektzDataSet.barcodes);
+            this.barcodesTableAdapter.Fill(this.projektZDataSet.Barcodes);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace Zentralwerkstatt
 
         private void AktualisierenGeräte_Click(object sender, EventArgs e)
         {
-            gerätetypenTableAdapter.Fill(projektzDataSet.gerätetypen);
+            gerätetypenTableAdapter.Fill(projektZDataSet.Gerätetypen);
             this.dataGridView1.DataSource = this.gerätetypenBindingSource;
             dataGridView1.Refresh();
         }
@@ -57,7 +59,7 @@ namespace Zentralwerkstatt
             if (dialogResult == DialogResult.Yes)
             {
 
-                string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+                string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
                 MySqlConnection conn = null;
                 conn = new MySqlConnection(cs);
                 conn.Open();
@@ -65,13 +67,13 @@ namespace Zentralwerkstatt
 
                 string barcode = dataGridView2.CurrentRow.Cells[0].Value.ToString();
 
-                cmd.CommandText = "DELETE FROM geräte WHERE Geräte_Barcode = @Barcode";
+                cmd.CommandText = "DELETE FROM Geräte WHERE Geräte_Barcode = @Barcode";
                 cmd.Parameters.AddWithValue("@Barcode", barcode);
                 
                 cmd.Connection = conn;
                 cmd.ExecuteNonQuery();
 
-                barcodesTableAdapter.Fill(projektzDataSet.barcodes);
+                barcodesTableAdapter.Fill(projektZDataSet.Barcodes);
                 this.dataGridView2.DataSource = this.barcodesBindingSource;
                 dataGridView2.Refresh();
 
@@ -81,6 +83,12 @@ namespace Zentralwerkstatt
                 
             }
            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Pruefliste Form = new Pruefliste();
+            Form.Show();
         }
     }
 }

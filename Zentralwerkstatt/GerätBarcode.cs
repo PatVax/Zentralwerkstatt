@@ -23,7 +23,7 @@ namespace Zentralwerkstatt
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+            string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
             MySqlConnection conn = null;
             conn = new MySqlConnection(cs);
             conn.Open();
@@ -32,7 +32,7 @@ namespace Zentralwerkstatt
             foreach (var ListBoxItem in listBox1.Items)
             {
 
-                cmd.CommandText = "INSERT INTO geräte (Geräte_Barcode, IDGerätetyp, Anschaffungsdatum, IDFahrzeug) VALUES (@Barcode, (SELECT IDGerätetyp FROM gerätetypen WHERE Bezeichnung = @Gerätetyp), @datum, 1)";
+                cmd.CommandText = "INSERT INTO Geräte (Geräte_Barcode, IDGerätetyp, Anschaffungsdatum, IDFahrzeug) VALUES (@Barcode, (SELECT IDGerätetyp FROM gerätetypen WHERE Bezeichnung = @Gerätetyp), @datum, 1)";
                 cmd.Parameters.AddWithValue("@Barcode", ListBoxItem.ToString());
                 cmd.Parameters.AddWithValue("@Gerätetyp", comboBox1.Text);
                 cmd.Parameters.AddWithValue("@datum", textBox2.Text);
@@ -63,8 +63,8 @@ namespace Zentralwerkstatt
 
         private void GerätBarcode_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'projektzDataSet.gerätetypen' table. You can move, or remove it, as needed.
-            this.gerätetypenTableAdapter.Fill(this.projektzDataSet.gerätetypen);
+            // TODO: This line of code loads data into the 'projektZDataSet.Gerätetypen' table. You can move, or remove it, as needed.
+            this.gerätetypenTableAdapter.Fill(this.projektZDataSet.Gerätetypen);
 
         }
 

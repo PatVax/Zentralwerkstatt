@@ -10,7 +10,7 @@ namespace Zentralwerkstatt
             InitializeComponent();
             //Eine manuelle Verbindung mit der Datenbank für eigene SQL-Abfragen einrichten
             int count = 0;
-            string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+            string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
             MySqlConnection conn = null;
             conn = new MySqlConnection(cs);
             conn.Open();
@@ -50,12 +50,12 @@ namespace Zentralwerkstatt
             {
                 string Name = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 string Date = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                string cs = @"server=localhost;userid=root;password=adminit;database=projektz";
+                string cs = @"server=16.15.113.200;user=zwdb;password=zwdb;database=ProjektZ";
                 MySqlConnection conn = null;
                 conn = new MySqlConnection(cs);
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
-                cmd.CommandText = "CREATE OR REPLACE VIEW Prüfausgabe AS SELECT prüfkriterien.Text, prüfergebnisse.Messwert FROM prüfkriterien INNER JOIN prüfergebnisse ON prüfkriterien.IDKriterium = prüfergebnisse.IDKriterium WHERE Prüfergebnisse.IDPrüfung IN (SELECT Prüfungen.IDPrüfung FROM Prüfungen INNER JOIN Geräte ON Prüfungen.Geräte_Barcode = Geräte.Geräte_Barcode INNER JOIN Gerätetypen ON Geräte.IDGerätetyp = Gerätetypen.IDGerätetyp WHERE Gerätetypen.Bezeichnung = @Name AND Prüfungen.Datum = @Date)";
+                cmd.CommandText = "CREATE OR REPLACE VIEW Prüfausgabe AS SELECT Prüfkriterien.Text, Prüfergebnisse.Messwert FROM Prüfkriterien INNER JOIN Prüfergebnisse ON Prüfkriterien.IDKriterium = Prüfergebnisse.IDKriterium WHERE Prüfergebnisse.IDPrüfung IN (SELECT Prüfungen.IDPrüfung FROM Prüfungen INNER JOIN Geräte ON Prüfungen.Geräte_Barcode = Geräte.Geräte_Barcode INNER JOIN Gerätetypen ON Geräte.IDGerätetyp = Gerätetypen.IDGerätetyp WHERE Gerätetypen.Bezeichnung = @Name AND Prüfungen.Datum = @Date)";
                 DateTime Datum = Convert.ToDateTime(Date);
                 cmd.Parameters.AddWithValue("@Name", Name);
                 cmd.Parameters.AddWithValue("@Date", Datum);
@@ -63,7 +63,7 @@ namespace Zentralwerkstatt
                 cmd.ExecuteNonQuery();
                 dataGridView2.Visible = true;
                 // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
-                this.prüfausgabeTableAdapter.Fill(this.projektzDataSet.prüfausgabe);
+                this.prüfausgabeTableAdapter.Fill(this.projektZDataSet.Prüfausgabe);
             }
             catch (MySqlException ex)
             {
@@ -72,8 +72,10 @@ namespace Zentralwerkstatt
         }
         private void Main_Load(object sender, EventArgs e)
         {
-            // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.test". Sie können sie bei Bedarf verschieben oder entfernen.
-            this.testTableAdapter.Fill(this.projektzDataSet.test);
+            // TODO: This line of code loads data into the 'projektZDataSet.Prüfausgabe' table. You can move, or remove it, as needed.
+            this.prüfausgabeTableAdapter.Fill(this.projektZDataSet.Prüfausgabe);
+            // TODO: This line of code loads data into the 'projektZDataSet.Test' table. You can move, or remove it, as needed.
+            this.testTableAdapter.Fill(this.projektZDataSet.Test);
         }
 
         private void geräteToolStripMenuItem_Click(object sender, EventArgs e)

@@ -33,22 +33,22 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.gerätetypenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projektzDataSet = new Zentralwerkstatt.projektzDataSet();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.gerätetypenTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.gerätetypenTableAdapter();
             this.button4 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).BeginInit();
+            this.projektZDataSet = new Zentralwerkstatt.ProjektZDataSet();
+            this.gerätetypenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gerätetypenTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.GerätetypenTableAdapter();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -88,16 +88,6 @@
             this.comboBox1.TabIndex = 3;
             this.comboBox1.ValueMember = "Bezeichnung";
             // 
-            // gerätetypenBindingSource
-            // 
-            this.gerätetypenBindingSource.DataMember = "gerätetypen";
-            this.gerätetypenBindingSource.DataSource = this.projektzDataSet;
-            // 
-            // projektzDataSet
-            // 
-            this.projektzDataSet.DataSetName = "projektzDataSet";
-            this.projektzDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -136,10 +126,6 @@
             this.button3.Text = "Hinzufügen";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // gerätetypenTableAdapter
-            // 
-            this.gerätetypenTableAdapter.ClearBeforeFill = true;
             // 
             // button4
             // 
@@ -192,6 +178,20 @@
             this.textBox2.Text = "YYYY-MM-DD";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
+            // projektZDataSet
+            // 
+            this.projektZDataSet.DataSetName = "ProjektZDataSet";
+            this.projektZDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gerätetypenBindingSource
+            // 
+            this.gerätetypenBindingSource.DataMember = "Gerätetypen";
+            this.gerätetypenBindingSource.DataSource = this.projektZDataSet;
+            // 
+            // gerätetypenTableAdapter
+            // 
+            this.gerätetypenTableAdapter.ClearBeforeFill = true;
+            // 
             // GerätBarcode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,10 +212,10 @@
             this.Name = "GerätBarcode";
             this.Text = "GerätBarcode";
             this.Load += new System.EventHandler(this.GerätBarcode_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,14 +231,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private projektzDataSet projektzDataSet;
-        private System.Windows.Forms.BindingSource gerätetypenBindingSource;
-        private projektzDataSetTableAdapters.gerätetypenTableAdapter gerätetypenTableAdapter;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel StatusCount;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
+        private ProjektZDataSet projektZDataSet;
+        private System.Windows.Forms.BindingSource gerätetypenBindingSource;
+        private ProjektZDataSetTableAdapters.GerätetypenTableAdapter gerätetypenTableAdapter;
     }
 }

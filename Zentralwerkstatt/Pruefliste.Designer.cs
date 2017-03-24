@@ -33,20 +33,20 @@
             this.Prueftext = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anzeigeart = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Gerätetypen = new System.Windows.Forms.DataGridView();
-            this.iDGerÃtetypDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gerätetypenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projektzDataSet = new Zentralwerkstatt.projektzDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.gerätetypenTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.gerätetypenTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.projektZDataSet = new Zentralwerkstatt.ProjektZDataSet();
+            this.gerätetypenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gerätetypenTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.GerätetypenTableAdapter();
+            this.iDGerätetypDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Prüfliste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Gerätetypen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // Prüfliste
@@ -90,8 +90,8 @@
             this.Gerätetypen.AutoGenerateColumns = false;
             this.Gerätetypen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Gerätetypen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDGerÃtetypDataGridViewTextBoxColumn,
-            this.bezeichnungDataGridViewTextBoxColumn});
+            this.iDGerätetypDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1});
             this.Gerätetypen.DataSource = this.gerätetypenBindingSource;
             this.Gerätetypen.Location = new System.Drawing.Point(12, 12);
             this.Gerätetypen.Name = "Gerätetypen";
@@ -99,33 +99,6 @@
             this.Gerätetypen.RowHeadersVisible = false;
             this.Gerätetypen.Size = new System.Drawing.Size(173, 563);
             this.Gerätetypen.TabIndex = 1;
-            // 
-            // iDGerÃtetypDataGridViewTextBoxColumn
-            // 
-            this.iDGerÃtetypDataGridViewTextBoxColumn.DataPropertyName = "IDGerÃ¤tetyp";
-            this.iDGerÃtetypDataGridViewTextBoxColumn.HeaderText = "IDGerÃ¤tetyp";
-            this.iDGerÃtetypDataGridViewTextBoxColumn.Name = "iDGerÃtetypDataGridViewTextBoxColumn";
-            this.iDGerÃtetypDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDGerÃtetypDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // bezeichnungDataGridViewTextBoxColumn
-            // 
-            this.bezeichnungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn.FillWeight = 1000F;
-            this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
-            this.bezeichnungDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gerätetypenBindingSource
-            // 
-            this.gerätetypenBindingSource.DataMember = "gerätetypen";
-            this.gerätetypenBindingSource.DataSource = this.projektzDataSet;
-            // 
-            // projektzDataSet
-            // 
-            this.projektzDataSet.DataSetName = "projektzDataSet";
-            this.projektzDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -146,10 +119,6 @@
             this.button3.Text = "Abbrechen";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // gerätetypenTableAdapter
-            // 
-            this.gerätetypenTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -181,6 +150,39 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "mm = Messwert";
             // 
+            // projektZDataSet
+            // 
+            this.projektZDataSet.DataSetName = "ProjektZDataSet";
+            this.projektZDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gerätetypenBindingSource
+            // 
+            this.gerätetypenBindingSource.DataMember = "Gerätetypen";
+            this.gerätetypenBindingSource.DataSource = this.projektZDataSet;
+            // 
+            // gerätetypenTableAdapter
+            // 
+            this.gerätetypenTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDGerätetypDataGridViewTextBoxColumn
+            // 
+            this.iDGerätetypDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.iDGerätetypDataGridViewTextBoxColumn.DataPropertyName = "IDGerätetyp";
+            this.iDGerätetypDataGridViewTextBoxColumn.FillWeight = 1000F;
+            this.iDGerätetypDataGridViewTextBoxColumn.HeaderText = "IDGerätetyp";
+            this.iDGerätetypDataGridViewTextBoxColumn.Name = "iDGerätetypDataGridViewTextBoxColumn";
+            this.iDGerätetypDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDGerätetypDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Bezeichnung";
+            this.dataGridViewTextBoxColumn1.FillWeight = 1000F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Bezeichnung";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
             // Pruefliste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,8 +200,8 @@
             this.Load += new System.EventHandler(this.Pruefliste_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Prüfliste)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Gerätetypen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,9 +213,6 @@
         private System.Windows.Forms.DataGridView Gerätetypen;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
-        private projektzDataSet projektzDataSet;
-        private System.Windows.Forms.BindingSource gerätetypenBindingSource;
-        private projektzDataSetTableAdapters.gerätetypenTableAdapter gerätetypenTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDGerÃtetypDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prueftext;
@@ -221,5 +220,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private ProjektZDataSet projektZDataSet;
+        private System.Windows.Forms.BindingSource gerätetypenBindingSource;
+        private ProjektZDataSetTableAdapters.GerätetypenTableAdapter gerätetypenTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDGerätetypDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

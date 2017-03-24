@@ -31,18 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Zentralverwaltung));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.administratorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.benutzerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projektzDataSet = new Zentralwerkstatt.projektzDataSet();
             this.AddUserButton = new System.Windows.Forms.Button();
             this.ChangeUserDataButton = new System.Windows.Forms.Button();
             this.RemoveUserButton = new System.Windows.Forms.Button();
             this.Button_aktualisieren = new System.Windows.Forms.Button();
-            this.benutzerTableAdapter = new Zentralwerkstatt.projektzDataSetTableAdapters.benutzerTableAdapter();
+            this.projektZDataSet = new Zentralwerkstatt.ProjektZDataSet();
+            this.benutzerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.benutzerTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.BenutzerTableAdapter();
+            this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.administratorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -67,29 +67,6 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // benutzernameDataGridViewTextBoxColumn
-            // 
-            this.benutzernameDataGridViewTextBoxColumn.HeaderText = "Benutzername";
-            this.benutzernameDataGridViewTextBoxColumn.Name = "benutzernameDataGridViewTextBoxColumn";
-            this.benutzernameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // administratorDataGridViewCheckBoxColumn
-            // 
-            this.administratorDataGridViewCheckBoxColumn.DataPropertyName = "Administrator";
-            this.administratorDataGridViewCheckBoxColumn.HeaderText = "Administrator";
-            this.administratorDataGridViewCheckBoxColumn.Name = "administratorDataGridViewCheckBoxColumn";
-            this.administratorDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // benutzerBindingSource
-            // 
-            this.benutzerBindingSource.DataMember = "benutzer";
-            this.benutzerBindingSource.DataSource = this.projektzDataSet;
-            // 
-            // projektzDataSet
-            // 
-            this.projektzDataSet.DataSetName = "projektzDataSet";
-            this.projektzDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // AddUserButton
             // 
@@ -130,9 +107,33 @@
             this.Button_aktualisieren.UseVisualStyleBackColor = true;
             this.Button_aktualisieren.Click += new System.EventHandler(this.Button_aktualisieren_Click);
             // 
+            // projektZDataSet
+            // 
+            this.projektZDataSet.DataSetName = "ProjektZDataSet";
+            this.projektZDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // benutzerBindingSource
+            // 
+            this.benutzerBindingSource.DataMember = "Benutzer";
+            this.benutzerBindingSource.DataSource = this.projektZDataSet;
+            // 
             // benutzerTableAdapter
             // 
             this.benutzerTableAdapter.ClearBeforeFill = true;
+            // 
+            // benutzernameDataGridViewTextBoxColumn
+            // 
+            this.benutzernameDataGridViewTextBoxColumn.DataPropertyName = "Benutzername";
+            this.benutzernameDataGridViewTextBoxColumn.HeaderText = "Benutzername";
+            this.benutzernameDataGridViewTextBoxColumn.Name = "benutzernameDataGridViewTextBoxColumn";
+            this.benutzernameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // administratorDataGridViewCheckBoxColumn
+            // 
+            this.administratorDataGridViewCheckBoxColumn.DataPropertyName = "Administrator";
+            this.administratorDataGridViewCheckBoxColumn.HeaderText = "Administrator";
+            this.administratorDataGridViewCheckBoxColumn.Name = "administratorDataGridViewCheckBoxColumn";
+            this.administratorDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // Zentralverwaltung
             // 
@@ -149,8 +150,8 @@
             this.Text = "Benutzerverwaltung";
             this.Load += new System.EventHandler(this.Zentralverwaltung_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projektzDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -161,9 +162,9 @@
         private System.Windows.Forms.Button ChangeUserDataButton;
         private System.Windows.Forms.Button RemoveUserButton;
         private System.Windows.Forms.Button Button_aktualisieren;
-        private projektzDataSet projektzDataSet;
+        private ProjektZDataSet projektZDataSet;
         private System.Windows.Forms.BindingSource benutzerBindingSource;
-        private projektzDataSetTableAdapters.benutzerTableAdapter benutzerTableAdapter;
+        private ProjektZDataSetTableAdapters.BenutzerTableAdapter benutzerTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn benutzernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn administratorDataGridViewCheckBoxColumn;
     }
