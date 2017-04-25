@@ -43,7 +43,7 @@
             this.HerstellerAktualisieren = new System.Windows.Forms.Button();
             this.projektZDataSet = new Zentralwerkstatt.ProjektZDataSet();
             this.herstellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.herstellerTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.HerstellerTableAdapter();
+            this.herstellerTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.herstellerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.herstellerBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -218,6 +218,6 @@
         private System.Windows.Forms.Button HerstellerAktualisieren;
         private ProjektZDataSet projektZDataSet;
         private System.Windows.Forms.BindingSource herstellerBindingSource;
-        private ProjektZDataSetTableAdapters.HerstellerTableAdapter herstellerTableAdapter;
+        private ProjektZDataSetTableAdapters.herstellerTableAdapter herstellerTableAdapter;
     }
 }

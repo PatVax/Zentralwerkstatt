@@ -38,10 +38,10 @@
             this.AktualisierenGeräte = new System.Windows.Forms.Button();
             this.projektZDataSet = new Zentralwerkstatt.ProjektZDataSet();
             this.gerätetypenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gerätetypenTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.GerätetypenTableAdapter();
+            this.gerätetypenTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.geraetetypenTableAdapter();
             this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.barcodesTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.BarcodesTableAdapter();
+            this.barcodesTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.barcodesTableAdapter();
             this.geräteBarcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -209,10 +209,10 @@
         private System.Windows.Forms.Button AktualisierenGeräte;
         private ProjektZDataSet projektZDataSet;
         private System.Windows.Forms.BindingSource gerätetypenBindingSource;
-        private ProjektZDataSetTableAdapters.GerätetypenTableAdapter gerätetypenTableAdapter;
+        private ProjektZDataSetTableAdapters.geraetetypenTableAdapter gerätetypenTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource barcodesBindingSource;
-        private ProjektZDataSetTableAdapters.BarcodesTableAdapter barcodesTableAdapter;
+        private ProjektZDataSetTableAdapters.barcodesTableAdapter barcodesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn geräteBarcodeDataGridViewTextBoxColumn;
     }
 }

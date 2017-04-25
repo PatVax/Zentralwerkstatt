@@ -32,7 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.MenüLeiste = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.übergabephpErstellenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.schließenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.benutzerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.geräteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,18 +47,18 @@
             this.StatusStripCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.messwertDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prüfausgabeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.TestTableAdapter();
-            this.prüfausgabeTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.PrüfausgabeTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pruefausgabeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.testTableAdapter();
+            this.pruefausgabeTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.pruefausgabeTableAdapter();
             this.MenüLeiste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prüfausgabeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pruefausgabeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // MenüLeiste
@@ -73,16 +75,31 @@
             // dateiToolStripMenuItem
             // 
             this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
+            this.übergabephpErstellenToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.schließenToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
             this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.dateiToolStripMenuItem.Text = "Datei";
             // 
-            // toolStripMenuItem1
+            // übergabephpErstellenToolStripMenuItem
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(77, 22);
-            this.toolStripMenuItem1.Text = " ";
+            this.übergabephpErstellenToolStripMenuItem.Name = "übergabephpErstellenToolStripMenuItem";
+            this.übergabephpErstellenToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.übergabephpErstellenToolStripMenuItem.Text = "Übergabe.php erstellen";
+            this.übergabephpErstellenToolStripMenuItem.Click += new System.EventHandler(this.übergabephpErstellenToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(193, 6);
+            // 
+            // schließenToolStripMenuItem
+            // 
+            this.schließenToolStripMenuItem.Name = "schließenToolStripMenuItem";
+            this.schließenToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.schließenToolStripMenuItem.Text = "Schließen";
+            this.schließenToolStripMenuItem.Click += new System.EventHandler(this.schließenToolStripMenuItem_Click);
             // 
             // bearbeitenToolStripMenuItem
             // 
@@ -132,17 +149,15 @@
             // 
             // bezeichnungDataGridViewTextBoxColumn
             // 
-            this.bezeichnungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn.FillWeight = 1000F;
-            this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "Bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "bezeichnung";
             this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
             this.bezeichnungDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // datumDataGridViewTextBoxColumn
             // 
-            this.datumDataGridViewTextBoxColumn.DataPropertyName = "Datum";
-            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "datum";
             this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
             this.datumDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -189,9 +204,9 @@
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.textDataGridViewTextBoxColumn,
-            this.messwertDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.prüfausgabeBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.dataGridView2.DataSource = this.pruefausgabeBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(322, 27);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -201,34 +216,32 @@
             this.dataGridView2.TabIndex = 4;
             this.dataGridView2.Visible = false;
             // 
-            // textDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.textDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.textDataGridViewTextBoxColumn.DataPropertyName = "Text";
-            this.textDataGridViewTextBoxColumn.FillWeight = 10000F;
-            this.textDataGridViewTextBoxColumn.HeaderText = "Text";
-            this.textDataGridViewTextBoxColumn.Name = "textDataGridViewTextBoxColumn";
-            this.textDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "text";
+            this.dataGridViewTextBoxColumn1.HeaderText = "text";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // messwertDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.messwertDataGridViewTextBoxColumn.DataPropertyName = "Messwert";
-            this.messwertDataGridViewTextBoxColumn.HeaderText = "Messwert";
-            this.messwertDataGridViewTextBoxColumn.Name = "messwertDataGridViewTextBoxColumn";
-            this.messwertDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "messwert";
+            this.dataGridViewTextBoxColumn2.HeaderText = "messwert";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // prüfausgabeBindingSource
+            // pruefausgabeBindingSource
             // 
-            this.prüfausgabeBindingSource.DataMember = "Prüfausgabe";
-            this.prüfausgabeBindingSource.DataSource = this.projektZDataSet;
+            this.pruefausgabeBindingSource.DataMember = "pruefausgabe";
+            this.pruefausgabeBindingSource.DataSource = this.projektZDataSet;
             // 
             // testTableAdapter
             // 
             this.testTableAdapter.ClearBeforeFill = true;
             // 
-            // prüfausgabeTableAdapter
+            // pruefausgabeTableAdapter
             // 
-            this.prüfausgabeTableAdapter.ClearBeforeFill = true;
+            this.pruefausgabeTableAdapter.ClearBeforeFill = true;
             // 
             // Main
             // 
@@ -253,7 +266,7 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prüfausgabeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pruefausgabeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,22 +277,26 @@
         private System.Windows.Forms.MenuStrip MenüLeiste;
         private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bearbeitenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem benutzerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem geräteToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripStatusLabel StatusStripText;
         private System.Windows.Forms.ToolStripStatusLabel StatusStripCount;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private ProjektZDataSet projektZDataSet;
         private System.Windows.Forms.BindingSource testBindingSource;
-        private ProjektZDataSetTableAdapters.TestTableAdapter testTableAdapter;
+        private ProjektZDataSetTableAdapters.testTableAdapter testTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource prüfausgabeBindingSource;
-        private ProjektZDataSetTableAdapters.PrüfausgabeTableAdapter prüfausgabeTableAdapter;
+        private ProjektZDataSetTableAdapters.pruefausgabeTableAdapter pruefausgabeTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn textDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn messwertDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.BindingSource pruefausgabeBindingSource;
+        private System.Windows.Forms.ToolStripMenuItem übergabephpErstellenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem schließenToolStripMenuItem;
     }
 }

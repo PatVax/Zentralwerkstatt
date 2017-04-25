@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Configuration;
+using System.IO;
+using System.Text;
+using System.Security.Cryptography;
+
 namespace Zentralwerkstatt
 {
     public partial class Main : Form
@@ -10,7 +15,8 @@ namespace Zentralwerkstatt
             InitializeComponent();
             //Eine manuelle Verbindung mit der Datenbank für eigene SQL-Abfragen einrichten
             int count = 0;
-            string cs = @"server=87.79.76.247;user=Zentralwerkstatt;password=fjonkheerdb;database=ProjektZ";
+            string cs = ConfigurationManager.ConnectionStrings
+                ["Zentralwerkstatt.Properties.Settings.projektzConnectionString"].ConnectionString;
             MySqlConnection conn = null;
             conn = new MySqlConnection(cs);
             conn.Open();
@@ -18,7 +24,7 @@ namespace Zentralwerkstatt
             cmd.Connection = conn;
 
             //Zählen der Datensätze in der Tabelle
-            cmd.CommandText = "SELECT * FROM Test";
+            cmd.CommandText = "SELECT * FROM test";
             MySqlDataReader Reader;
             Reader = cmd.ExecuteReader();
             while (Reader.Read())
@@ -50,7 +56,8 @@ namespace Zentralwerkstatt
             {
                 string Name = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 string Date = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                string cs = @"server=87.79.76.247;user=Zentralwerkstatt;password=fjonkheerdb;database=ProjektZ";
+                string cs = ConfigurationManager.ConnectionStrings
+                    ["Zentralwerkstatt.Properties.Settings.projektzConnectionString"].ConnectionString;
                 MySqlConnection conn = null;
                 conn = new MySqlConnection(cs);
                 conn.Open();
@@ -63,7 +70,7 @@ namespace Zentralwerkstatt
                 cmd.ExecuteNonQuery();
                 dataGridView2.Visible = true;
                 // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
-                this.prüfausgabeTableAdapter.Fill(this.projektZDataSet.Prüfausgabe);
+                this.pruefausgabeTableAdapter.Fill(this.projektZDataSet.pruefausgabe);
             }
             catch (MySqlException ex)
             {
@@ -73,9 +80,9 @@ namespace Zentralwerkstatt
         private void Main_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'projektZDataSet.Prüfausgabe' table. You can move, or remove it, as needed.
-            this.prüfausgabeTableAdapter.Fill(this.projektZDataSet.Prüfausgabe);
+            this.pruefausgabeTableAdapter.Fill(this.projektZDataSet.pruefausgabe);
             // TODO: This line of code loads data into the 'projektZDataSet.Test' table. You can move, or remove it, as needed.
-            this.testTableAdapter.Fill(this.projektZDataSet.Test);
+            this.testTableAdapter.Fill(this.projektZDataSet.test);
         }
 
         private void geräteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,11 +91,15 @@ namespace Zentralwerkstatt
             Form.Show();
         }
 
-        private void MenüLeiste_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void schließenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
-
+        private void übergabephpErstellenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreatePHP phpForm = new CreatePHP();
+            phpForm.ShowDialog(this);
+        }
     }
 }

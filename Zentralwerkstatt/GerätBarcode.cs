@@ -64,7 +64,7 @@ namespace Zentralwerkstatt
         private void GerätBarcode_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'projektZDataSet.Gerätetypen' table. You can move, or remove it, as needed.
-            this.gerätetypenTableAdapter.Fill(this.projektZDataSet.Gerätetypen);
+            this.gerätetypenTableAdapter.Fill(this.projektZDataSet.geraetetypen);
 
         }
 

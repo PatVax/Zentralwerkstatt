@@ -20,7 +20,7 @@ namespace Zentralwerkstatt
         private void Zentralverwaltung_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'projektZDataSet.Benutzer' table. You can move, or remove it, as needed.
-            this.benutzerTableAdapter.Fill(this.projektZDataSet.Benutzer);
+            this.benutzerTableAdapter.Fill(this.projektZDataSet.benutzer);
         }
 
         private void AddUserButton_Click(object sender, EventArgs e)
@@ -45,12 +45,12 @@ namespace Zentralwerkstatt
             cmd.Parameters.AddWithValue("@Benutzername", dataGridView1.CurrentRow.Cells[0].Value.ToString());
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
-            this.benutzerTableAdapter.Fill(this.projektZDataSet.Benutzer);
+            this.benutzerTableAdapter.Fill(this.projektZDataSet.benutzer);
         }
 
         private void Button_aktualisieren_Click(object sender, EventArgs e)
         {
-            this.benutzerTableAdapter.Fill(this.projektZDataSet.Benutzer);
+            this.benutzerTableAdapter.Fill(this.projektZDataSet.benutzer);
         }
     }
 }

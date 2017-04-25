@@ -37,7 +37,7 @@
             this.Button_aktualisieren = new System.Windows.Forms.Button();
             this.projektZDataSet = new Zentralwerkstatt.ProjektZDataSet();
             this.benutzerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.benutzerTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.BenutzerTableAdapter();
+            this.benutzerTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.benutzerTableAdapter();
             this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.administratorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -164,7 +164,7 @@
         private System.Windows.Forms.Button Button_aktualisieren;
         private ProjektZDataSet projektZDataSet;
         private System.Windows.Forms.BindingSource benutzerBindingSource;
-        private ProjektZDataSetTableAdapters.BenutzerTableAdapter benutzerTableAdapter;
+        private ProjektZDataSetTableAdapters.benutzerTableAdapter benutzerTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn benutzernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn administratorDataGridViewCheckBoxColumn;
     }

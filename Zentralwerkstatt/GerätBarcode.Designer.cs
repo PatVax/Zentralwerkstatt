@@ -45,7 +45,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.projektZDataSet = new Zentralwerkstatt.ProjektZDataSet();
             this.gerätetypenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gerätetypenTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.GerätetypenTableAdapter();
+            this.gerätetypenTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.geraetetypenTableAdapter();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).BeginInit();
@@ -239,6 +239,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private ProjektZDataSet projektZDataSet;
         private System.Windows.Forms.BindingSource gerätetypenBindingSource;
-        private ProjektZDataSetTableAdapters.GerätetypenTableAdapter gerätetypenTableAdapter;
+        private ProjektZDataSetTableAdapters.geraetetypenTableAdapter gerätetypenTableAdapter;
     }
 }

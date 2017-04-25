@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Configuration;
 using MySql.Data.MySqlClient;
 
 namespace Zentralwerkstatt
@@ -12,10 +13,7 @@ namespace Zentralwerkstatt
             try
             {
                 //Verbindung mit der Datenbank herstellen, um eine mögliche fehlende Verbindung zu erkennen
-                string cs = @"server=87.79.76.247;user=Zentralwerkstatt;password=fjonkheerdb;database=ProjektZ";
-                MySqlConnection conn = null;
-                conn = new MySqlConnection(cs);
-                conn.Open();
+                DBUtils.CONNECTION.Open();
             }
             catch(MySqlException ex)
             {
@@ -25,14 +23,12 @@ namespace Zentralwerkstatt
         }
         private void AnmeldenButton_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = null;
+            MySqlConnection conn = DBUtils.CONNECTION;
             try
             {
                 //Manuelle Datenanbindung zum erstellen von eigenen MySQL Abfragen
                 int count = 0;
-                string cs = @"server=87.79.76.247;user=Zentralwerkstatt;password=fjonkheerdb;database=ProjektZ";
-                string passwort = this.PasswortTextBox.Text;          
-                conn = new MySqlConnection(cs);
+                string passwort = this.PasswortTextBox.Text;
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
@@ -60,8 +56,8 @@ namespace Zentralwerkstatt
                     {
 
                         Main Form2 = new Main();
-                        Form2.Show();
                         this.Hide();
+                        Form2.Show();
                     }
                     //Falls der Benutzer keine Administratorrechte hat, gib einen Fehlertext aus
                     else
@@ -110,6 +106,12 @@ namespace Zentralwerkstatt
             {
                 AnmeldenButton_Click(AnmeldenButton, new KeyEventArgs(Keys.Enter));
             }
+        }
+
+        private void Connection_Click(object sender, EventArgs e)
+        {
+            EditConnection editConnectionForm = new EditConnection();
+            editConnectionForm.ShowDialog(this);
         }
     }
 }

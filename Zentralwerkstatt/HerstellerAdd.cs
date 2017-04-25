@@ -30,7 +30,7 @@ namespace Zentralwerkstatt
         private void HerstellerAdd_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'projektZDataSet.Hersteller' table. You can move, or remove it, as needed.
-            this.herstellerTableAdapter.Fill(this.projektZDataSet.Hersteller);
+            this.herstellerTableAdapter.Fill(this.projektZDataSet.hersteller);
 
         }
 
