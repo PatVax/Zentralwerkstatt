@@ -1,4 +1,6 @@
-﻿namespace Zentralwerkstatt
+﻿using Zentralwerkstatt.DataSets;
+
+namespace Zentralwerkstatt
 {
     partial class Pruefliste
     {
@@ -38,9 +40,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.projektZDataSet = new Zentralwerkstatt.ProjektZDataSet();
+            this.projektZDataSet = new ProjektZDataSet();
             this.gerätetypenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gerätetypenTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.geraetetypenTableAdapter();
+            this.gerätetypenTableAdapter = new DataSets.ProjektZDataSetTableAdapters.geraetetypenTableAdapter();
             this.iDGerätetypDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Prüfliste)).BeginInit();
@@ -213,8 +215,6 @@
         private System.Windows.Forms.DataGridView Gerätetypen;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDGeraetetypDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prueftext;
         private System.Windows.Forms.DataGridViewComboBoxColumn Anzeigeart;
         private System.Windows.Forms.Label label1;
@@ -222,7 +222,7 @@
         private System.Windows.Forms.Label label3;
         private ProjektZDataSet projektZDataSet;
         private System.Windows.Forms.BindingSource gerätetypenBindingSource;
-        private ProjektZDataSetTableAdapters.geraetetypenTableAdapter gerätetypenTableAdapter;
+        private DataSets.ProjektZDataSetTableAdapters.geraetetypenTableAdapter gerätetypenTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDGerätetypDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }

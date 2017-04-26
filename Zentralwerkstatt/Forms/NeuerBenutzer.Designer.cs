@@ -45,7 +45,6 @@
             this.Passwort.Size = new System.Drawing.Size(53, 13);
             this.Passwort.TabIndex = 0;
             this.Passwort.Text = "Passwort:";
-            this.Passwort.Click += new System.EventHandler(this.Passwort_Click);
             // 
             // BenutzertextBox
             // 
@@ -53,25 +52,25 @@
             this.BenutzertextBox.Name = "BenutzertextBox";
             this.BenutzertextBox.Size = new System.Drawing.Size(100, 20);
             this.BenutzertextBox.TabIndex = 1;
-            this.BenutzertextBox.TextChanged += new System.EventHandler(this.BenutzertextBox_TextChanged);
+            this.BenutzertextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
             // 
             // BenutzerHinzufügen
             // 
             this.BenutzerHinzufügen.Location = new System.Drawing.Point(15, 226);
             this.BenutzerHinzufügen.Name = "BenutzerHinzufügen";
             this.BenutzerHinzufügen.Size = new System.Drawing.Size(100, 23);
-            this.BenutzerHinzufügen.TabIndex = 2;
+            this.BenutzerHinzufügen.TabIndex = 4;
             this.BenutzerHinzufügen.Text = "Hinzufügen";
             this.BenutzerHinzufügen.UseVisualStyleBackColor = true;
-            this.BenutzerHinzufügen.Click += new System.EventHandler(this.button1_Click);
+            this.BenutzerHinzufügen.Click += new System.EventHandler(this.BenutzerHinzufügen_Click);
             // 
             // PassworttextBox
             // 
             this.PassworttextBox.Location = new System.Drawing.Point(71, 32);
             this.PassworttextBox.Name = "PassworttextBox";
             this.PassworttextBox.Size = new System.Drawing.Size(100, 20);
-            this.PassworttextBox.TabIndex = 4;
-            this.PassworttextBox.TextChanged += new System.EventHandler(this.PassworttextBox_TextChanged);
+            this.PassworttextBox.TabIndex = 2;
+            this.PassworttextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
             // 
             // Benutzer
             // 
@@ -88,17 +87,17 @@
             this.AdminCheckbox.Location = new System.Drawing.Point(16, 58);
             this.AdminCheckbox.Name = "AdminCheckbox";
             this.AdminCheckbox.Size = new System.Drawing.Size(86, 17);
-            this.AdminCheckbox.TabIndex = 5;
+            this.AdminCheckbox.TabIndex = 3;
             this.AdminCheckbox.Text = "Administrator";
             this.AdminCheckbox.UseVisualStyleBackColor = true;
-            this.AdminCheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.AdminCheckbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
             // 
             // buttonAbbrechen
             // 
             this.buttonAbbrechen.Location = new System.Drawing.Point(172, 226);
             this.buttonAbbrechen.Name = "buttonAbbrechen";
             this.buttonAbbrechen.Size = new System.Drawing.Size(100, 23);
-            this.buttonAbbrechen.TabIndex = 6;
+            this.buttonAbbrechen.TabIndex = 5;
             this.buttonAbbrechen.Text = "Abbrechen";
             this.buttonAbbrechen.UseVisualStyleBackColor = true;
             this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
@@ -117,7 +116,6 @@
             this.Controls.Add(this.Passwort);
             this.Name = "NeuerBenutzer";
             this.Text = "NeuerBenutzer";
-            this.Load += new System.EventHandler(this.NeuerBenutzer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

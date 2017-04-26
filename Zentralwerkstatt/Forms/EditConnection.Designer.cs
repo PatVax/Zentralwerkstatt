@@ -169,6 +169,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditConnection";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MySQL Verbindung";
             this.ResumeLayout(false);
             this.PerformLayout();

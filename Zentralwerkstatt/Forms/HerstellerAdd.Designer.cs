@@ -1,4 +1,6 @@
-﻿namespace Zentralwerkstatt
+﻿using Zentralwerkstatt.DataSets;
+
+namespace Zentralwerkstatt
 {
     partial class HerstellerAdd
     {
@@ -32,9 +34,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Übernehmen = new System.Windows.Forms.Button();
             this.Abbrechen = new System.Windows.Forms.Button();
-            this.projektZDataSet = new Zentralwerkstatt.ProjektZDataSet();
+            this.projektZDataSet = new ProjektZDataSet();
             this.herstellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.herstellerTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.herstellerTableAdapter();
+            this.herstellerTableAdapter = new DataSets.ProjektZDataSetTableAdapters.herstellerTableAdapter();
             this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
@@ -121,7 +123,7 @@
         private System.Windows.Forms.Button Abbrechen;
         private ProjektZDataSet projektZDataSet;
         private System.Windows.Forms.BindingSource herstellerBindingSource;
-        private ProjektZDataSetTableAdapters.herstellerTableAdapter herstellerTableAdapter;
+        private DataSets.ProjektZDataSetTableAdapters.herstellerTableAdapter herstellerTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
     }
 }

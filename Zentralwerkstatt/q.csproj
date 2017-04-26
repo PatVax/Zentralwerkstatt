@@ -69,115 +69,124 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Anmeldung.cs">
+    <Compile Include="Forms\Anmeldung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Anmeldung.Designer.cs">
+    <Compile Include="Forms\Anmeldung.Designer.cs">
       <DependentUpon>Anmeldung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Benutzerverwaltung.cs">
+    <Compile Include="Forms\Benutzerverwaltung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Benutzerverwaltung.Designer.cs">
+    <Compile Include="Forms\Benutzerverwaltung.Designer.cs">
       <DependentUpon>Benutzerverwaltung.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreatePHP.cs">
+    <Compile Include="Forms\CreatePHP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreatePHP.Designer.cs">
+    <Compile Include="Forms\CreatePHP.Designer.cs">
       <DependentUpon>CreatePHP.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBUtils.cs" />
-    <Compile Include="EditConnection.cs">
+    <Compile Include="Forms\NeuesFahrzeug.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditConnection.Designer.cs">
+    <Compile Include="Forms\NeuesFahrzeug.Designer.cs">
+      <DependentUpon>NeuesFahrzeug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\DBUtils.cs" />
+    <Compile Include="Forms\EditConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditConnection.Designer.cs">
       <DependentUpon>EditConnection.cs</DependentUpon>
     </Compile>
-    <Compile Include="Geraetetypen.cs">
+    <Compile Include="Forms\Geraetetypen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Geraetetypen.Designer.cs">
+    <Compile Include="Forms\Geraetetypen.Designer.cs">
       <DependentUpon>Geraetetypen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Geraeteverwaltung.cs">
+    <Compile Include="Forms\Geraeteverwaltung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Geraeteverwaltung.Designer.cs">
+    <Compile Include="Forms\Geraeteverwaltung.Designer.cs">
       <DependentUpon>Geraeteverwaltung.cs</DependentUpon>
     </Compile>
-    <Compile Include="GerätBarcode.cs">
+    <Compile Include="Forms\GeraetBarcode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GerätBarcode.Designer.cs">
-      <DependentUpon>GerätBarcode.cs</DependentUpon>
+    <Compile Include="Forms\GeraetBarcode.Designer.cs">
+      <DependentUpon>GeraetBarcode.cs</DependentUpon>
     </Compile>
-    <Compile Include="HerstellerAdd.cs">
+    <Compile Include="Forms\HerstellerAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HerstellerAdd.Designer.cs">
+    <Compile Include="Forms\HerstellerAdd.Designer.cs">
       <DependentUpon>HerstellerAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="NeuerBenutzer.cs">
+    <Compile Include="Forms\NeuerBenutzer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NeuerBenutzer.Designer.cs">
+    <Compile Include="Forms\NeuerBenutzer.Designer.cs">
       <DependentUpon>NeuerBenutzer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="ProjektZDataSet.Designer.cs">
+    <Compile Include="DataSets\ProjektZDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjektZDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pruefliste.cs">
+    <Compile Include="Forms\Pruefliste.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pruefliste.Designer.cs">
+    <Compile Include="Forms\Pruefliste.Designer.cs">
       <DependentUpon>Pruefliste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prueflistebearbeiten.cs">
+    <Compile Include="Forms\Prueflistebearbeiten.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prueflistebearbeiten.Designer.cs">
+    <Compile Include="Forms\Prueflistebearbeiten.Designer.cs">
       <DependentUpon>Prueflistebearbeiten.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Anmeldung.resx">
+    <EmbeddedResource Include="Forms\Anmeldung.resx">
       <DependentUpon>Anmeldung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Benutzerverwaltung.resx">
+    <EmbeddedResource Include="Forms\Benutzerverwaltung.resx">
       <DependentUpon>Benutzerverwaltung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreatePHP.resx">
+    <EmbeddedResource Include="Forms\CreatePHP.resx">
       <DependentUpon>CreatePHP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditConnection.resx">
+    <EmbeddedResource Include="Forms\EditConnection.resx">
       <DependentUpon>EditConnection.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Geraetetypen.resx">
+    <EmbeddedResource Include="Forms\Geraetetypen.resx">
       <DependentUpon>Geraetetypen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Geraeteverwaltung.resx">
+    <EmbeddedResource Include="Forms\Geraeteverwaltung.resx">
       <DependentUpon>Geraeteverwaltung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GerätBarcode.resx">
-      <DependentUpon>GerätBarcode.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\GeraetBarcode.resx">
+      <DependentUpon>GeraetBarcode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HerstellerAdd.resx">
+    <EmbeddedResource Include="Forms\HerstellerAdd.resx">
       <DependentUpon>HerstellerAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NeuerBenutzer.resx">
+    <EmbeddedResource Include="Forms\NeuerBenutzer.resx">
       <DependentUpon>NeuerBenutzer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NeuesFahrzeug.resx">
+      <DependentUpon>NeuesFahrzeug.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -189,21 +198,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Pruefliste.resx">
+    <EmbeddedResource Include="Forms\Pruefliste.resx">
       <DependentUpon>Pruefliste.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prueflistebearbeiten.resx">
+    <EmbeddedResource Include="Forms\Prueflistebearbeiten.resx">
       <DependentUpon>Prueflistebearbeiten.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ProjektZDataSet.xsc">
+    <None Include="DataSets\ProjektZDataSet.xsc">
       <DependentUpon>ProjektZDataSet.xsd</DependentUpon>
     </None>
-    <None Include="ProjektZDataSet.xsd">
+    <None Include="DataSets\ProjektZDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ProjektZDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ProjektZDataSet.xss">
+    <None Include="DataSets\ProjektZDataSet.xss">
       <DependentUpon>ProjektZDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">

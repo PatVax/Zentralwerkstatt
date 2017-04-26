@@ -23,6 +23,13 @@ namespace Zentralwerkstatt
             return BitConverter.ToString(ha.Hash).ToLower().Replace("-", "");
         }
 
+        public static string EncodeMD5(string passwort)
+        {
+            HashAlgorithm ha = MD5.Create();
+            ha.ComputeHash(Encoding.UTF8.GetBytes(passwort));
+            return BitConverter.ToString(ha.Hash).ToLower().Replace("-", "");
+        }
+
         public static string CreatePHPScript(List<string> list)
         {
             string outputString = PRE_PHP_SCRIPT;
@@ -234,7 +241,15 @@ namespace Zentralwerkstatt
         public static MySqlCommand COMMAND {
             get
             {
-                return new MySqlCommand(null, CONNECTION);
+                try
+                {
+                    MySqlConnection conn = CONNECTION;
+                    conn.Open();
+                    return new MySqlCommand(null, conn);
+                } catch (MySqlException ex)
+                {
+                    throw ex;
+                }
             }
         }
     }

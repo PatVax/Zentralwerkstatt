@@ -11,11 +11,11 @@ using MySql.Data.MySqlClient;
 
 namespace Zentralwerkstatt
 {
-    public partial class GerätBarcode : Form
+    public partial class GeraetBarcode : Form
     {
         int Count = 0;
             
-        public GerätBarcode()
+        public GeraetBarcode()
         {
             InitializeComponent();
             this.StatusCount.Text = Convert.ToString(Count);
@@ -61,10 +61,10 @@ namespace Zentralwerkstatt
             textBox1.Focus();
         }
 
-        private void GerätBarcode_Load(object sender, EventArgs e)
+        private void GeraetBarcode_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'projektZDataSet.Gerätetypen' table. You can move, or remove it, as needed.
-            this.gerätetypenTableAdapter.Fill(this.projektZDataSet.geraetetypen);
+            this.geraetetypenTableAdapter.Fill(this.projektZDataSet.geraetetypen);
 
         }
 

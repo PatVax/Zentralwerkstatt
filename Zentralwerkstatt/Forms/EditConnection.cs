@@ -60,7 +60,6 @@ namespace Zentralwerkstatt
 
         private void EditConnection_KeyDown(object sender, KeyEventArgs e)
         {
-
             switch (e.KeyCode)
             {
                 case Keys.Enter:

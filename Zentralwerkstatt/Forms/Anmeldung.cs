@@ -23,16 +23,12 @@ namespace Zentralwerkstatt
         }
         private void AnmeldenButton_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = DBUtils.CONNECTION;
             try
             {
                 //Manuelle Datenanbindung zum erstellen von eigenen MySQL Abfragen
                 int count = 0;
-                string passwort = this.PasswortTextBox.Text;
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM benutzer WHERE benutzername = '" + this.BenutzerTextBox.Text + "' AND passwort = md5('" + this.PasswortTextBox.Text + "')";
+                MySqlCommand cmd = DBUtils.COMMAND;
+                cmd.CommandText = "SELECT * FROM benutzer WHERE benutzername = '" + this.BenutzerTextBox.Text + "' AND passwort = '" + DBUtils.EncodeMD5(this.PasswortTextBox.Text) + "'";
                 MySqlDataReader Reader;
                 Reader = cmd.ExecuteReader();
                 while (Reader.Read())
@@ -44,7 +40,7 @@ namespace Zentralwerkstatt
                 {
                     //Administrator-Abfrage
                     Reader.Close();
-                    cmd.CommandText = "SELECT * FROM benutzer WHERE benutzername = '" + this.BenutzerTextBox.Text + "' AND passwort = md5('" + this.PasswortTextBox.Text + "') AND administrator = true";
+                    cmd.CommandText = "SELECT * FROM benutzer WHERE benutzername = '" + this.BenutzerTextBox.Text + "' AND passwort = '" + DBUtils.EncodeMD5(this.PasswortTextBox.Text) + "' AND administrator = true";
                     Reader = cmd.ExecuteReader();
                     count = 0;
                     while (Reader.Read())
@@ -81,10 +77,6 @@ namespace Zentralwerkstatt
                 //erneute Fehlermeldung, falls die Verbindung zur Datenbank immer noch nicht hergestellt wurde
                 MessageBox.Show(String.Format("Die Verbindung zur Datenbank konnte nicht hergestellt werden: {0}", ex.Message));
             }
-            if (conn != null)
-            {
-                conn.Close();
-            } 
         }
         private void PasswortTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -99,7 +91,7 @@ namespace Zentralwerkstatt
             Application.Exit();
         }
 
-        private void PasswortTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void Anmelden_KeyDown(object sender, KeyEventArgs e)
         {
             //Wenn Enter gedrückt wird, aktiviere den AnmeldenButton
             if (e.KeyValue == (char)13)

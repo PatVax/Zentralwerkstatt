@@ -17,16 +17,6 @@ namespace Zentralwerkstatt
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HerstellerHinzuButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void HerstellerAdd_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'projektZDataSet.Hersteller' table. You can move, or remove it, as needed.
@@ -41,7 +31,8 @@ namespace Zentralwerkstatt
 
         private void Übernehmen_Click(object sender, EventArgs e)
         {
-            //this.herstellerTableAdapter.Update(projektz);
+            this.herstellerBindingSource.EndEdit();
+            this.herstellerTableAdapter.Update(this.projektZDataSet.hersteller);
             this.Close();
         }
     }

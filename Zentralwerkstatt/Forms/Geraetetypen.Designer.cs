@@ -1,4 +1,6 @@
-﻿namespace Zentralwerkstatt
+﻿using Zentralwerkstatt.DataSets;
+
+namespace Zentralwerkstatt
 {
     partial class Geraetetypen
     {
@@ -32,6 +34,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.LabelHersteller = new System.Windows.Forms.Label();
             this.DropDownMenuHersteller = new System.Windows.Forms.ComboBox();
+            this.herstellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projektZDataSet = new Zentralwerkstatt.DataSets.ProjektZDataSet();
             this.NeuerHerstellerButton = new System.Windows.Forms.Button();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -41,19 +45,23 @@
             this.GeraetetypenHinzufuegenAbbrechenButton = new System.Windows.Forms.Button();
             this.LabelBezeichnung = new System.Windows.Forms.Label();
             this.HerstellerAktualisieren = new System.Windows.Forms.Button();
-            this.projektZDataSet = new Zentralwerkstatt.ProjektZDataSet();
-            this.herstellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.herstellerTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.herstellerTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
+            this.herstellerTableAdapter = new Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters.herstellerTableAdapter();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnNeuesFahrzeug = new System.Windows.Forms.Button();
+            this.fahrzeugeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fahrzeugeTableAdapter = new Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters.fahrzeugeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.herstellerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fahrzeugeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 29);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(465, 20);
+            this.textBox1.Size = new System.Drawing.Size(473, 20);
             this.textBox1.TabIndex = 1;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
             // 
             // LabelHersteller
             // 
@@ -73,16 +81,25 @@
             this.DropDownMenuHersteller.Location = new System.Drawing.Point(12, 68);
             this.DropDownMenuHersteller.Name = "DropDownMenuHersteller";
             this.DropDownMenuHersteller.Size = new System.Drawing.Size(345, 21);
-            this.DropDownMenuHersteller.TabIndex = 3;
+            this.DropDownMenuHersteller.TabIndex = 2;
             this.DropDownMenuHersteller.ValueMember = "Bezeichnung";
-            this.DropDownMenuHersteller.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // herstellerBindingSource
+            // 
+            this.herstellerBindingSource.DataMember = "Hersteller";
+            this.herstellerBindingSource.DataSource = this.projektZDataSet;
+            // 
+            // projektZDataSet
+            // 
+            this.projektZDataSet.DataSetName = "DataSets.ProjektZDataSet";
+            this.projektZDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // NeuerHerstellerButton
             // 
             this.NeuerHerstellerButton.Location = new System.Drawing.Point(363, 68);
             this.NeuerHerstellerButton.Name = "NeuerHerstellerButton";
-            this.NeuerHerstellerButton.Size = new System.Drawing.Size(114, 21);
-            this.NeuerHerstellerButton.TabIndex = 5;
+            this.NeuerHerstellerButton.Size = new System.Drawing.Size(122, 21);
+            this.NeuerHerstellerButton.TabIndex = 3;
             this.NeuerHerstellerButton.Text = "Hersteller bearbeiten";
             this.NeuerHerstellerButton.UseVisualStyleBackColor = true;
             this.NeuerHerstellerButton.Click += new System.EventHandler(this.NeuerHerstellerButton_Click);
@@ -90,54 +107,54 @@
             // LabelHeader
             // 
             this.LabelHeader.AutoSize = true;
-            this.LabelHeader.Location = new System.Drawing.Point(13, 92);
+            this.LabelHeader.Location = new System.Drawing.Point(13, 119);
             this.LabelHeader.Name = "LabelHeader";
             this.LabelHeader.Size = new System.Drawing.Size(58, 13);
-            this.LabelHeader.TabIndex = 6;
+            this.LabelHeader.TabIndex = 5;
             this.LabelHeader.Text = "Überschrift";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 108);
+            this.textBox2.Location = new System.Drawing.Point(12, 135);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(465, 60);
-            this.textBox2.TabIndex = 7;
+            this.textBox2.Size = new System.Drawing.Size(473, 60);
+            this.textBox2.TabIndex = 4;
             // 
             // LabelFooter
             // 
             this.LabelFooter.AutoSize = true;
-            this.LabelFooter.Location = new System.Drawing.Point(13, 171);
+            this.LabelFooter.Location = new System.Drawing.Point(13, 198);
             this.LabelFooter.Name = "LabelFooter";
             this.LabelFooter.Size = new System.Drawing.Size(97, 13);
-            this.LabelFooter.TabIndex = 8;
+            this.LabelFooter.TabIndex = 7;
             this.LabelFooter.Text = "Schlussbemerkung";
-            this.LabelFooter.Click += new System.EventHandler(this.LabelFooter_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 187);
+            this.textBox3.Location = new System.Drawing.Point(12, 214);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(465, 60);
-            this.textBox3.TabIndex = 9;
+            this.textBox3.Size = new System.Drawing.Size(473, 60);
+            this.textBox3.TabIndex = 5;
             // 
             // GeraetetypenHinzufuegenButton
             // 
-            this.GeraetetypenHinzufuegenButton.Location = new System.Drawing.Point(12, 269);
+            this.GeraetetypenHinzufuegenButton.Location = new System.Drawing.Point(12, 280);
             this.GeraetetypenHinzufuegenButton.Name = "GeraetetypenHinzufuegenButton";
-            this.GeraetetypenHinzufuegenButton.Size = new System.Drawing.Size(151, 28);
-            this.GeraetetypenHinzufuegenButton.TabIndex = 10;
+            this.GeraetetypenHinzufuegenButton.Size = new System.Drawing.Size(154, 28);
+            this.GeraetetypenHinzufuegenButton.TabIndex = 6;
             this.GeraetetypenHinzufuegenButton.Text = "Hinzufügen";
             this.GeraetetypenHinzufuegenButton.UseVisualStyleBackColor = true;
             this.GeraetetypenHinzufuegenButton.Click += new System.EventHandler(this.GeraetetypenHinzufuegenButton_Click);
             // 
             // GeraetetypenHinzufuegenAbbrechenButton
             // 
-            this.GeraetetypenHinzufuegenAbbrechenButton.Location = new System.Drawing.Point(326, 269);
+            this.GeraetetypenHinzufuegenAbbrechenButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.GeraetetypenHinzufuegenAbbrechenButton.Location = new System.Drawing.Point(331, 280);
             this.GeraetetypenHinzufuegenAbbrechenButton.Name = "GeraetetypenHinzufuegenAbbrechenButton";
-            this.GeraetetypenHinzufuegenAbbrechenButton.Size = new System.Drawing.Size(151, 28);
-            this.GeraetetypenHinzufuegenAbbrechenButton.TabIndex = 11;
+            this.GeraetetypenHinzufuegenAbbrechenButton.Size = new System.Drawing.Size(154, 28);
+            this.GeraetetypenHinzufuegenAbbrechenButton.TabIndex = 8;
             this.GeraetetypenHinzufuegenAbbrechenButton.Text = "Abbrechen";
             this.GeraetetypenHinzufuegenAbbrechenButton.UseVisualStyleBackColor = true;
             this.GeraetetypenHinzufuegenAbbrechenButton.Click += new System.EventHandler(this.GeraetetypenHinzufuegenAbbrechenButton_Click);
@@ -150,37 +167,61 @@
             this.LabelBezeichnung.Size = new System.Drawing.Size(94, 13);
             this.LabelBezeichnung.TabIndex = 15;
             this.LabelBezeichnung.Text = "Gerätbezeichnung";
-            this.LabelBezeichnung.Click += new System.EventHandler(this.LabelBezeichnung_Click);
             // 
             // HerstellerAktualisieren
             // 
-            this.HerstellerAktualisieren.Location = new System.Drawing.Point(169, 269);
+            this.HerstellerAktualisieren.Location = new System.Drawing.Point(172, 280);
             this.HerstellerAktualisieren.Name = "HerstellerAktualisieren";
-            this.HerstellerAktualisieren.Size = new System.Drawing.Size(151, 28);
-            this.HerstellerAktualisieren.TabIndex = 16;
+            this.HerstellerAktualisieren.Size = new System.Drawing.Size(153, 28);
+            this.HerstellerAktualisieren.TabIndex = 7;
             this.HerstellerAktualisieren.Text = "Hersteller aktualisieren";
             this.HerstellerAktualisieren.UseVisualStyleBackColor = true;
             this.HerstellerAktualisieren.Click += new System.EventHandler(this.HerstellerAktualisieren_Click);
-            // 
-            // projektZDataSet
-            // 
-            this.projektZDataSet.DataSetName = "ProjektZDataSet";
-            this.projektZDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // herstellerBindingSource
-            // 
-            this.herstellerBindingSource.DataMember = "Hersteller";
-            this.herstellerBindingSource.DataSource = this.projektZDataSet;
             // 
             // herstellerTableAdapter
             // 
             this.herstellerTableAdapter.ClearBeforeFill = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.fahrzeugeBindingSource;
+            this.comboBox1.DisplayMember = "kennzeichen";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 95);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(345, 21);
+            this.comboBox1.TabIndex = 16;
+            this.comboBox1.ValueMember = "kennzeichen";
+            // 
+            // btnNeuesFahrzeug
+            // 
+            this.btnNeuesFahrzeug.Location = new System.Drawing.Point(363, 95);
+            this.btnNeuesFahrzeug.Name = "btnNeuesFahrzeug";
+            this.btnNeuesFahrzeug.Size = new System.Drawing.Size(122, 23);
+            this.btnNeuesFahrzeug.TabIndex = 17;
+            this.btnNeuesFahrzeug.Text = "Fahrzeuge bearbeiten";
+            this.btnNeuesFahrzeug.UseVisualStyleBackColor = true;
+            this.btnNeuesFahrzeug.Click += new System.EventHandler(this.btnNeuesFahrzeug_Click);
+            // 
+            // fahrzeugeBindingSource
+            // 
+            this.fahrzeugeBindingSource.DataMember = "fahrzeuge";
+            this.fahrzeugeBindingSource.DataSource = this.projektZDataSet;
+            // 
+            // fahrzeugeTableAdapter
+            // 
+            this.fahrzeugeTableAdapter.ClearBeforeFill = true;
+            // 
             // Geraetetypen
             // 
+            this.AcceptButton = this.GeraetetypenHinzufuegenButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 319);
+            this.CancelButton = this.GeraetetypenHinzufuegenAbbrechenButton;
+            this.ClientSize = new System.Drawing.Size(497, 318);
+            this.Controls.Add(this.btnNeuesFahrzeug);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.HerstellerAktualisieren);
             this.Controls.Add(this.LabelBezeichnung);
             this.Controls.Add(this.GeraetetypenHinzufuegenAbbrechenButton);
@@ -193,11 +234,15 @@
             this.Controls.Add(this.DropDownMenuHersteller);
             this.Controls.Add(this.LabelHersteller);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Geraetetypen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = " ";
             this.Load += new System.EventHandler(this.Geraetetypen_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.herstellerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fahrzeugeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,6 +263,10 @@
         private System.Windows.Forms.Button HerstellerAktualisieren;
         private ProjektZDataSet projektZDataSet;
         private System.Windows.Forms.BindingSource herstellerBindingSource;
-        private ProjektZDataSetTableAdapters.herstellerTableAdapter herstellerTableAdapter;
+        private DataSets.ProjektZDataSetTableAdapters.herstellerTableAdapter herstellerTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnNeuesFahrzeug;
+        private System.Windows.Forms.BindingSource fahrzeugeBindingSource;
+        private DataSets.ProjektZDataSetTableAdapters.fahrzeugeTableAdapter fahrzeugeTableAdapter;
     }
 }

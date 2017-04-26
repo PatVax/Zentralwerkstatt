@@ -15,13 +15,8 @@ namespace Zentralwerkstatt
             InitializeComponent();
             //Eine manuelle Verbindung mit der Datenbank für eigene SQL-Abfragen einrichten
             int count = 0;
-            string cs = ConfigurationManager.ConnectionStrings
-                ["Zentralwerkstatt.Properties.Settings.projektzConnectionString"].ConnectionString;
-            MySqlConnection conn = null;
-            conn = new MySqlConnection(cs);
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = conn;
+
+            MySqlCommand cmd = DBUtils.COMMAND;
 
             //Zählen der Datensätze in der Tabelle
             cmd.CommandText = "SELECT * FROM test";
@@ -41,7 +36,7 @@ namespace Zentralwerkstatt
         {
             //Öffnen der Benutzerverwaltung
             Zentralverwaltung Form = new Zentralverwaltung();
-            Form.Show();
+            Form.ShowDialog();
         }
 
         private void Main_Close(object sender, FormClosingEventArgs e)
@@ -54,23 +49,11 @@ namespace Zentralwerkstatt
         {
             try
             {
-                string Name = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                string Date = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                string cs = ConfigurationManager.ConnectionStrings
-                    ["Zentralwerkstatt.Properties.Settings.projektzConnectionString"].ConnectionString;
-                MySqlConnection conn = null;
-                conn = new MySqlConnection(cs);
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.CommandText = "CREATE OR REPLACE VIEW pruefausgabe AS SELECT pruefkriterien.text, pruefergebnisse.messwert FROM pruefkriterien INNER JOIN pruefergebnisse ON pruefkriterien.idkriterium = pruefergebnisse.idkriterium WHERE pruefergebnisse.idpruefung IN (SELECT pruefungen.idpruefung FROM pruefungen INNER JOIN geraete ON pruefungen.geraete_barcode = geraete.geraete_barcode INNER JOIN geraetetypen ON geraete.idgeraetetyp = geraetetypen.idgGeraetetyp WHERE geraetetypen.bezeichnung = @Name AND pruefungen.datum = @Date)";
-                DateTime Datum = Convert.ToDateTime(Date);
-                cmd.Parameters.AddWithValue("@Name", Name);
-                cmd.Parameters.AddWithValue("@Date", Datum);
-                cmd.Connection = conn;
-                cmd.ExecuteNonQuery();
+                int idPruefung = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value.ToString());
+                MySqlCommand cmd = DBUtils.COMMAND;
                 dataGridView2.Visible = true;
                 // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
-                this.pruefausgabeTableAdapter.Fill(this.projektZDataSet.pruefausgabe);
+                this.pruefausgabeTableAdapter.FillBy(this.projektZDataSet.pruefausgabe, idPruefung);
             }
             catch (MySqlException ex)
             {
@@ -88,7 +71,7 @@ namespace Zentralwerkstatt
         private void geräteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Geraeteverwaltung Form = new Geraeteverwaltung();
-            Form.Show();
+            Form.ShowDialog();
         }
 
         private void schließenToolStripMenuItem_Click(object sender, EventArgs e)

@@ -1,6 +1,8 @@
-﻿namespace Zentralwerkstatt
+﻿using Zentralwerkstatt.DataSets;
+
+namespace Zentralwerkstatt
 {
-    partial class GerätBarcode
+    partial class GeraetBarcode
     {
         /// <summary>
         /// Required designer variable.
@@ -43,9 +45,9 @@
             this.StatusCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.projektZDataSet = new Zentralwerkstatt.ProjektZDataSet();
+            this.projektZDataSet = new ProjektZDataSet();
             this.gerätetypenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gerätetypenTableAdapter = new Zentralwerkstatt.ProjektZDataSetTableAdapters.geraetetypenTableAdapter();
+            this.geraetetypenTableAdapter = new DataSets.ProjektZDataSetTableAdapters.geraetetypenTableAdapter();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).BeginInit();
@@ -190,7 +192,7 @@
             // 
             // gerätetypenTableAdapter
             // 
-            this.gerätetypenTableAdapter.ClearBeforeFill = true;
+            this.geraetetypenTableAdapter.ClearBeforeFill = true;
             // 
             // GerätBarcode
             // 
@@ -211,7 +213,7 @@
             this.Controls.Add(this.label1);
             this.Name = "GerätBarcode";
             this.Text = "GerätBarcode";
-            this.Load += new System.EventHandler(this.GerätBarcode_Load);
+            this.Load += new System.EventHandler(this.GeraetBarcode_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).EndInit();
@@ -239,6 +241,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private ProjektZDataSet projektZDataSet;
         private System.Windows.Forms.BindingSource gerätetypenBindingSource;
-        private ProjektZDataSetTableAdapters.geraetetypenTableAdapter gerätetypenTableAdapter;
+        private DataSets.ProjektZDataSetTableAdapters.geraetetypenTableAdapter geraetetypenTableAdapter;
     }
 }

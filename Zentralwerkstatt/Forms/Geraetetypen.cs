@@ -18,21 +18,13 @@ namespace Zentralwerkstatt
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Geraetetypen_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'projektZDataSet.fahrzeuge' table. You can move, or remove it, as needed.
+            this.fahrzeugeTableAdapter.Fill(this.projektZDataSet.fahrzeuge);
             // TODO: This line of code loads data into the 'projektZDataSet.Hersteller' table. You can move, or remove it, as needed.
             this.herstellerTableAdapter.Fill(this.projektZDataSet.hersteller);
             
-        }
-
-        private void LabelFooter_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void GeraetetypenHinzufuegenAbbrechenButton_Click(object sender, EventArgs e)
@@ -40,17 +32,11 @@ namespace Zentralwerkstatt
             this.Close();
         }
 
-        
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void NeuerHerstellerButton_Click(object sender, EventArgs e)
         {
             HerstellerAdd Form = new HerstellerAdd();
-            Form.Show();
+            Form.ShowDialog();
+            HerstellerAktualisieren_Click(sender, e);
         }
 
         private void HerstellerAktualisieren_Click(object sender, EventArgs e)
@@ -60,29 +46,37 @@ namespace Zentralwerkstatt
             DropDownMenuHersteller.Refresh();
         }
 
-        private void LabelBezeichnung_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void GeraetetypenHinzufuegenButton_Click(object sender, EventArgs e)
         {
-            string cs = @"server=87.79.76.247;user=Zentralwerkstatt;password=fjonkheerdb;database=ProjektZ";
-            MySqlConnection conn = null;
-            conn = new MySqlConnection(cs);
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand();
+            MySqlCommand cmd = DBUtils.COMMAND;
 
             cmd.CommandText = "INSERT INTO geraetetypen (idhersteller, headertext, footertext, bezeichnung) VALUES ((SELECT idhersteller FROM hersteller WHERE bezeichnung = @IDH), @Header, @Footer, @Bezeichnung)";
             cmd.Parameters.AddWithValue("@Header", textBox2.Text);
             cmd.Parameters.AddWithValue("@Footer", textBox3.Text);
             cmd.Parameters.AddWithValue("@Bezeichnung", textBox1.Text);
             cmd.Parameters.AddWithValue("@IDH", DropDownMenuHersteller.Text);
-            cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             Pruefliste Form = new Pruefliste();
             Form.Show();
             this.Close();
+        }
+
+        private void OnKeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    GeraetetypenHinzufuegenButton_Click(sender, e);
+                    break;
+                case Keys.Escape:
+                    GeraetetypenHinzufuegenAbbrechenButton_Click(sender, e);
+                    break;
+            }
+        }
+
+        private void btnNeuesFahrzeug_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

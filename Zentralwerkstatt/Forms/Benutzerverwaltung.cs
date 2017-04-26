@@ -26,24 +26,16 @@ namespace Zentralwerkstatt
         private void AddUserButton_Click(object sender, EventArgs e)
         {
             NeuerBenutzer Form2 = new NeuerBenutzer();
-            Form2.Show();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            Form2.ShowDialog();
+            benutzerTableAdapter.Fill(this.projektZDataSet.benutzer);
         }
 
         private void RemoveUserButton_Click(object sender, EventArgs e)
         {
-            string cs = @"server=87.79.76.247;user=Zentralwerkstatt;password=fjonkheerdb;database=ProjektZ";
-            MySqlConnection conn = null;
-            conn = new MySqlConnection(cs);
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand();
+            MySqlCommand cmd = DBUtils.COMMAND;
 
             cmd.CommandText = "DELETE FROM benutzer WHERE benutzername = @Benutzername";
             cmd.Parameters.AddWithValue("@Benutzername", dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             this.benutzerTableAdapter.Fill(this.projektZDataSet.benutzer);
         }
@@ -51,6 +43,12 @@ namespace Zentralwerkstatt
         private void Button_aktualisieren_Click(object sender, EventArgs e)
         {
             this.benutzerTableAdapter.Fill(this.projektZDataSet.benutzer);
+        }
+
+        private void ChangeUserDataButton_Click(object sender, EventArgs e)
+        {
+            this.benutzerBindingSource.EndEdit();
+            benutzerTableAdapter.Update(this.projektZDataSet.benutzer);
         }
     }
 }
