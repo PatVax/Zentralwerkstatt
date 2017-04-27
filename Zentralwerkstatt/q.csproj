@@ -93,6 +93,11 @@
     <Compile Include="Forms\NeuesFahrzeug.Designer.cs">
       <DependentUpon>NeuesFahrzeug.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\ProjektZDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjektZDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Utils\DBUtils.cs" />
     <Compile Include="Forms\EditConnection.cs">
       <SubType>Form</SubType>
@@ -137,11 +142,6 @@
       <DependentUpon>NeuerBenutzer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="DataSets\ProjektZDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjektZDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\Pruefliste.cs">
       <SubType>Form</SubType>
