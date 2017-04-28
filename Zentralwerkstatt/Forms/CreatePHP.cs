@@ -45,11 +45,13 @@ namespace Zentralwerkstatt
                 try
                 {
                     writer.Write(txtPort.Text != "" ? 
-                        DBUtils.CreatePHPScript(txtHost.Text, Convert.ToUInt32(txtPort.Text), txtUser.Text, txtPassword.Text, txtDB.Text) : 
+                        DBUtils.CreatePHPScript(txtHost.Text, txtUser.Text, txtPassword.Text, txtDB.Text, Convert.ToUInt32(txtPort.Text)) : 
                         DBUtils.CreatePHPScript(txtHost.Text, txtUser.Text, txtPassword.Text, txtDB.Text));
-                }catch(FormatException)
+                }catch(FormatException ex)
                 {
-                    writer.Write(DBUtils.CreatePHPScript(txtHost.Text, 3306, txtUser.Text, txtPassword.Text, txtDB.Text));
+                    MessageBox.Show(String.Format("Die Eingabe für Portnummer ist ungültig: {0}", ex.Message));
+                    txtPort.Focus();
+                    return;
                 }
             }
             this.Close();

@@ -48,14 +48,14 @@ namespace Zentralwerkstatt
             return BitConverter.ToString(ha.Hash).ToLower().Replace("-", "");
         }
 
-        public static string CreatePHPScript(List<string> list)
+        private static string CreatePHPScript(List<string> list)
         {
             string outputString = PRE_PHP_SCRIPT;
             for (int i = 0; i < list.Count; i++)
             {
                 if (i == 2)
                 {
-                    outputString = outputString.Replace("{" + i + "}", EncodePasswort(list[i]));
+                    outputString = outputString.Replace("{" + i + "}", list[i]);
                     continue;
                 }
                 outputString = outputString.Replace("{" + i + "}", list[i]);
@@ -63,50 +63,17 @@ namespace Zentralwerkstatt
             return outputString;
         }
 
-        public static string CreatePHPScript(string host, string user, string password, string database)
+        public static string CreatePHPScript(string host, string user, string password, string database, uint? port = null)
         {
             List<string> list = new List<string>();
 
-            list.Add(host);
+            list.Add(port == null ? host : String.Format("{0}:{1}", host, port));
             list.Add(user);
             list.Add(EncodePasswort(password));
             list.Add(password);
             list.Add(database);
 
-            string outputString = PRE_PHP_SCRIPT;
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (i == 2)
-                {
-                    outputString = outputString.Replace("{" + i + "}", EncodePasswort(list[i]));
-                    continue;
-                }
-                outputString = outputString.Replace("{" + i + "}", list[i]);
-            }
-            return outputString;
-        }
-
-        public static string CreatePHPScript(string host, uint port, string user, string password, string database)
-        {
-            List<string> list = new List<string>();
-
-            list.Add(String.Format("{0}:{1}", host, port));
-            list.Add(user);
-            list.Add(EncodePasswort(password));
-            list.Add(password);
-            list.Add(database);
-
-            string outputString = PRE_PHP_SCRIPT;
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (i == 2)
-                {
-                    outputString = outputString.Replace("{" + i + "}", EncodePasswort(list[i]));
-                    continue;
-                }
-                outputString = outputString.Replace("{" + i + "}", list[i]);
-            }
-            return outputString;
+            return CreatePHPScript(list);
         }
 
         public static void EditConnectionConfiguration(string connectionString, bool savePassword = false)
