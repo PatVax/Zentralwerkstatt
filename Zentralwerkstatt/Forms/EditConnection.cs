@@ -24,23 +24,26 @@ namespace Zentralwerkstatt
             txtPort.Text = builder.Port.ToString();
             txtUser.Text = builder.UserID;
             txtPassword.Text = builder.Password;
+            chkboxSavePassword.Checked = DBUtils.SAVE_DB_PASSWORD;
             txtDB.Text = builder.Database;
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
+            bool oldCheckBoxState = chkboxSavePassword.Checked;
+
             string oldConnectionString = DBUtils.CONNECTION_STRING;
 
             try
             {
 
-                DBUtils.EditConnectionConfiguration(txtHost.Text, Convert.ToUInt32(txtPort.Text), txtUser.Text, txtPassword.Text, txtDB.Text);
+                DBUtils.EditConnectionConfiguration(txtHost.Text, txtUser.Text, txtPassword.Text, txtDB.Text, Convert.ToUInt32(txtPort.Text), chkboxSavePassword.Checked);
 
                 //Verbindung mit der Datenbank herstellen, um eine mögliche fehlende Verbindung zu erkennen
                 DBUtils.CONNECTION.Open();
             }catch (MySqlException ex)
             {
-                DBUtils.EditConnectionConfiguration(oldConnectionString);
+                DBUtils.EditConnectionConfiguration(oldConnectionString, oldCheckBoxState);
 
                 //Fehlertext, falls die Verbindung zur Datenbank nicht hergestellt werden konnte
                 MessageBox.Show(String.Format("Die Verbindung zur Datenbank konnte nicht hergestellt werden: {0}", ex.Message));
@@ -59,19 +62,6 @@ namespace Zentralwerkstatt
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void EditConnection_KeyDown(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Enter:
-                    btnAccept_Click(sender, e);
-                    break;
-                case Keys.Escape:
-                    btnCancel_Click(sender, e);
-                    break;
-            }
         }
     }
 }

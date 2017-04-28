@@ -14,11 +14,15 @@ namespace Zentralwerkstatt
             {
                 //Verbindung mit der Datenbank herstellen, um eine mögliche fehlende Verbindung zu erkennen
                 DBUtils.CONNECTION.Open();
+
+                BenutzerTextBox.Text = ConfigurationManager.AppSettings["user"];
             }
             catch(MySqlException ex)
             {
                 //Fehlertext, falls die Verbindung zur Datenbank nicht hergestellt werden konnte
-                MessageBox.Show(String.Format("Die Verbindung zur Datenbank konnte nicht hergestellt werden: {0}", ex.Message));                         
+                MessageBox.Show(String.Format("Die Verbindung zur Datenbank konnte nicht hergestellt werden: {0}", ex.Message));
+
+                new EditConnection().ShowDialog();
             }            
         }
         private void AnmeldenButton_Click(object sender, EventArgs e)
@@ -50,6 +54,13 @@ namespace Zentralwerkstatt
                     //Wenn der gefundene Benutzer auch Administrator ist, öffne Main.cs
                     if (count == 1)
                     {
+                        Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+                        config.AppSettings.Settings.Remove("user");
+                        config.AppSettings.Settings.Add("user", BenutzerTextBox.Text);
+                        config.Save();
+
+                        ConfigurationManager.RefreshSection("appSettings");
 
                         Main Form2 = new Main();
                         this.Hide();
@@ -93,11 +104,7 @@ namespace Zentralwerkstatt
 
         private void Anmelden_KeyDown(object sender, KeyEventArgs e)
         {
-            //Wenn Enter gedrückt wird, aktiviere den AnmeldenButton
-            if (e.KeyValue == (char)13)
-            {
-                AnmeldenButton_Click(AnmeldenButton, new KeyEventArgs(Keys.Enter));
-            }
+
         }
 
         private void Connection_Click(object sender, EventArgs e)

@@ -40,6 +40,7 @@
             this.txtDB = new System.Windows.Forms.TextBox();
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.chkboxSavePassword = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblHost
@@ -47,45 +48,45 @@
             this.lblHost.AutoSize = true;
             this.lblHost.Location = new System.Drawing.Point(70, 15);
             this.lblHost.Name = "lblHost";
-            this.lblHost.Size = new System.Drawing.Size(32, 13);
+            this.lblHost.Size = new System.Drawing.Size(29, 13);
             this.lblHost.TabIndex = 0;
-            this.lblHost.Text = "Host:";
+            this.lblHost.Text = "Host";
             // 
             // lblPort
             // 
             this.lblPort.AutoSize = true;
             this.lblPort.Location = new System.Drawing.Point(73, 41);
             this.lblPort.Name = "lblPort";
-            this.lblPort.Size = new System.Drawing.Size(29, 13);
+            this.lblPort.Size = new System.Drawing.Size(26, 13);
             this.lblPort.TabIndex = 1;
-            this.lblPort.Text = "Port:";
+            this.lblPort.Text = "Port";
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Location = new System.Drawing.Point(50, 67);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(52, 13);
+            this.lblUser.Size = new System.Drawing.Size(49, 13);
             this.lblUser.TabIndex = 2;
-            this.lblUser.Text = "Benutzer:";
+            this.lblUser.Text = "Benutzer";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(49, 93);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(53, 13);
+            this.lblPassword.Size = new System.Drawing.Size(50, 13);
             this.lblPassword.TabIndex = 3;
-            this.lblPassword.Text = "Passwort:";
+            this.lblPassword.Text = "Passwort";
             // 
             // lblDB
             // 
             this.lblDB.AutoSize = true;
-            this.lblDB.Location = new System.Drawing.Point(13, 119);
+            this.lblDB.Location = new System.Drawing.Point(13, 142);
             this.lblDB.Name = "lblDB";
-            this.lblDB.Size = new System.Drawing.Size(89, 13);
+            this.lblDB.Size = new System.Drawing.Size(86, 13);
             this.lblDB.TabIndex = 4;
-            this.lblDB.Text = "Datenbankname:";
+            this.lblDB.Text = "Datenbankname";
             // 
             // txtHost
             // 
@@ -93,7 +94,6 @@
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(172, 20);
             this.txtHost.TabIndex = 5;
-            this.txtHost.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditConnection_KeyDown);
             // 
             // txtPort
             // 
@@ -101,7 +101,6 @@
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(172, 20);
             this.txtPort.TabIndex = 6;
-            this.txtPort.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditConnection_KeyDown);
             // 
             // txtUser
             // 
@@ -109,7 +108,6 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(172, 20);
             this.txtUser.TabIndex = 7;
-            this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditConnection_KeyDown);
             // 
             // txtPassword
             // 
@@ -118,41 +116,54 @@
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(172, 20);
             this.txtPassword.TabIndex = 8;
-            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditConnection_KeyDown);
             // 
             // txtDB
             // 
-            this.txtDB.Location = new System.Drawing.Point(127, 116);
+            this.txtDB.Location = new System.Drawing.Point(127, 139);
             this.txtDB.Name = "txtDB";
             this.txtDB.Size = new System.Drawing.Size(172, 20);
-            this.txtDB.TabIndex = 9;
-            this.txtDB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditConnection_KeyDown);
+            this.txtDB.TabIndex = 10;
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(16, 148);
+            this.btnAccept.Location = new System.Drawing.Point(16, 165);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(94, 23);
-            this.btnAccept.TabIndex = 10;
+            this.btnAccept.TabIndex = 11;
             this.btnAccept.Text = "Übernehmen";
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(205, 148);
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(205, 165);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 23);
-            this.btnCancel.TabIndex = 11;
+            this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Abbrechen";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // chkboxSavePassword
+            // 
+            this.chkboxSavePassword.AutoSize = true;
+            this.chkboxSavePassword.Location = new System.Drawing.Point(-1, 116);
+            this.chkboxSavePassword.Name = "chkboxSavePassword";
+            this.chkboxSavePassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.chkboxSavePassword.Size = new System.Drawing.Size(145, 17);
+            this.chkboxSavePassword.TabIndex = 9;
+            this.chkboxSavePassword.Text = "         Passwort speichern";
+            this.chkboxSavePassword.UseVisualStyleBackColor = true;
+            // 
             // EditConnection
             // 
+            this.AcceptButton = this.btnAccept;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(311, 181);
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(311, 206);
+            this.Controls.Add(this.chkboxSavePassword);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.txtDB);
@@ -190,5 +201,6 @@
         private System.Windows.Forms.TextBox txtDB;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.CheckBox chkboxSavePassword;
     }
 }

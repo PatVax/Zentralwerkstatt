@@ -137,7 +137,6 @@
         private DataSets.ProjektZDataSet projektZDataSet;
         private System.Windows.Forms.BindingSource fahrzeugeBindingSource;
         private DataSets.ProjektZDataSetTableAdapters.fahrzeugeTableAdapter fahrzeugeTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idstandortDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource fahrzeugestandorteBindingSource;
         private System.Windows.Forms.BindingSource standorteBindingSource;
         private DataSets.ProjektZDataSetTableAdapters.standorteTableAdapter standorteTableAdapter;

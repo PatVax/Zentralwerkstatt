@@ -89,6 +89,7 @@
             // 
             // AbbrechenButton
             // 
+            this.AbbrechenButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.AbbrechenButton.Location = new System.Drawing.Point(195, 154);
             this.AbbrechenButton.Name = "AbbrechenButton";
             this.AbbrechenButton.Size = new System.Drawing.Size(94, 23);
@@ -131,8 +132,10 @@
             // 
             // Anmeldung
             // 
+            this.AcceptButton = this.AnmeldenButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.AbbrechenButton;
             this.ClientSize = new System.Drawing.Size(341, 199);
             this.Controls.Add(this.Connection);
             this.Controls.Add(this.AdminText);

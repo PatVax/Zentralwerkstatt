@@ -31,5 +31,22 @@ namespace Zentralwerkstatt.Properties {
                 return ((string)(this["projektzConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public bool saveDBPassword {
+            get {
+                return ((bool)(this["saveDBPassword"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string user {
+            get {
+                return ((string)(this["user"]));
+            }
+        }
     }
 }

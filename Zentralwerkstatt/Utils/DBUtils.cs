@@ -23,6 +23,14 @@ namespace Zentralwerkstatt
             }
         }
 
+        public static string SAVE_DB_PASSWORD_NAME
+        {
+            get
+            {
+                return "Zentralwerkstatt.Properties.Settings.saveDBPassword";
+            }
+        }
+
         public static string EncodePasswort(string passwort)
         {
             HashAlgorithm ha = SHA1.Create();
@@ -101,70 +109,33 @@ namespace Zentralwerkstatt
             return outputString;
         }
 
-        public static void EditConnectionConfiguration(string connectionString)
+        public static void EditConnectionConfiguration(string connectionString, bool savePassword = false)
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
-            ACTUAL_CONNECTION_STRING = GetStringBuilder(connectionString).ToString();
+            ACTUAL_CONNECTION_STRING = connectionString;
 
             config.ConnectionStrings.ConnectionStrings.Remove(CONNECTION_SETTINGS_NAME);
             config.ConnectionStrings.ConnectionStrings.
                 Add(new ConnectionStringSettings(CONNECTION_SETTINGS_NAME,
                 connectionString));
 
-            config.Save();
-
-            ConfigurationManager.RefreshSection("connectionStrings");
-        }
-
-        public static void EditConnectionConfiguration(MySqlConnectionStringBuilder connectionStringBuilder)
-        {
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
-            config.ConnectionStrings.ConnectionStrings.Remove(CONNECTION_SETTINGS_NAME);
-            config.ConnectionStrings.ConnectionStrings.
-                Add(new ConnectionStringSettings(CONNECTION_SETTINGS_NAME,
-                connectionStringBuilder.ToString()));
+            config.AppSettings.Settings.Remove(SAVE_DB_PASSWORD_NAME);
+            config.AppSettings.Settings.Add(SAVE_DB_PASSWORD_NAME, savePassword.ToString());
 
             config.Save();
 
             ConfigurationManager.RefreshSection("connectionStrings");
+
+            ConfigurationManager.RefreshSection("appSettings");
         }
 
-        public static void EditConnectionConfiguration(string host, string user, string password, string database)
+        public static void EditConnectionConfiguration(string host, string user, string password, string database, uint? port = null, bool savePassword = false)
         {
             PASSWORD = password;
 
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
-            ACTUAL_CONNECTION_STRING = GetStringBuilder(host, user, database).ToString() + ";password=";
-
-            config.ConnectionStrings.ConnectionStrings.Remove(CONNECTION_SETTINGS_NAME);
-            config.ConnectionStrings.ConnectionStrings.
-                Add(new ConnectionStringSettings(CONNECTION_SETTINGS_NAME,
-                GetStringBuilder(host, user, database).ToString()));
-
-            config.Save();
-
-            ConfigurationManager.RefreshSection("connectionStrings");
-        }
-
-        public static void EditConnectionConfiguration(string host, uint port, string user, string password, string database)
-        {
-            PASSWORD = password;
-
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
-            ACTUAL_CONNECTION_STRING = GetStringBuilder(host, port, user, database).ToString() + ";password=";
-
-            config.ConnectionStrings.ConnectionStrings.Remove(CONNECTION_SETTINGS_NAME);
-            config.ConnectionStrings.ConnectionStrings.
-                Add(new ConnectionStringSettings(CONNECTION_SETTINGS_NAME,
-                GetStringBuilder(host, port, user, database).ToString()));
-
-            config.Save();
-
-            ConfigurationManager.RefreshSection("connectionStrings");
+            EditConnectionConfiguration(GetStringBuilder(host, user, database, port).ToString() + 
+                (savePassword ? ";password=" + password : ";password="), savePassword);
         }
 
         public static MySqlConnectionStringBuilder GetStringBuilder(string connectionString)
@@ -172,15 +143,9 @@ namespace Zentralwerkstatt
             return new MySqlConnectionStringBuilder(connectionString);
         }
 
-        public static MySqlConnectionStringBuilder GetStringBuilder(string host, string user, string database)
+        public static MySqlConnectionStringBuilder GetStringBuilder(string host, string user, string database, uint? port = null)
         {
-            return new MySqlConnectionStringBuilder(String.Format(PRE_CONNECTION_STRING,
-                        host, user, database));
-        }
-
-        public static MySqlConnectionStringBuilder GetStringBuilder(string host, uint port, string user, string database)
-        {
-            return new MySqlConnectionStringBuilder(String.Format(PRE_CONNECTION_STRING_PORT,
+            return new MySqlConnectionStringBuilder(String.Format(port.HasValue ? PRE_CONNECTION_STRING_PORT : PRE_CONNECTION_STRING,
                         host, port, user, database));
         }
 
@@ -189,14 +154,9 @@ namespace Zentralwerkstatt
                 return new MySqlConnection(connectionString);
         }
 
-        public static MySqlConnection GetConnection(string host, string user, string database)
+        public static MySqlConnection GetConnection(string host, string user, string database, uint? port = null)
         {
-            return new MySqlConnection(GetStringBuilder(host, user, database).ToString());
-        }
-
-        public static MySqlConnection GetConnection(string host, uint port, string user, string database)
-        {
-            return new MySqlConnection(GetStringBuilder(host, port, user, database).ToString());
+            return new MySqlConnection(GetStringBuilder(host, user, database, port).ToString());
         }
 
         public static MySqlCommand GetCommand(string cmd)
@@ -224,7 +184,8 @@ namespace Zentralwerkstatt
                 {
                     ACTUAL_CONNECTION_STRING = Properties.Settings.Default.projektzConnectionString;
                     return ACTUAL_CONNECTION_STRING;
-                }catch(NullReferenceException)
+                }
+                catch (NullReferenceException)
                 {
                     try
                     {
@@ -258,6 +219,12 @@ namespace Zentralwerkstatt
             get
             {
                 return Properties.Resources.preConnectionStringPort;
+            }
+        }
+
+        public static bool SAVE_DB_PASSWORD { get
+            {
+                return ConfigurationManager.AppSettings[SAVE_DB_PASSWORD_NAME] == "True" ? true : false;
             }
         }
 
