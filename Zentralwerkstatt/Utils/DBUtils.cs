@@ -11,7 +11,17 @@ namespace Zentralwerkstatt
 {
     static class DBUtils
     {
-        public static string CONNECTION_SETTINGS_NAME = "Zentralwerkstatt.Properties.Settings.projektzConnectionString";
+        public static string ACTUAL_CONNECTION_STRING { get; private set; }
+
+        public static string PASSWORD { get; private set; }
+
+        public static string CONNECTION_SETTINGS_NAME
+        {
+            get
+            {
+                return "Zentralwerkstatt.Properties.Settings.projektzConnectionString";
+            }
+        }
 
         public static string EncodePasswort(string passwort)
         {
@@ -95,6 +105,8 @@ namespace Zentralwerkstatt
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
+            ACTUAL_CONNECTION_STRING = GetStringBuilder(connectionString).ToString();
+
             config.ConnectionStrings.ConnectionStrings.Remove(CONNECTION_SETTINGS_NAME);
             config.ConnectionStrings.ConnectionStrings.
                 Add(new ConnectionStringSettings(CONNECTION_SETTINGS_NAME,
@@ -121,12 +133,16 @@ namespace Zentralwerkstatt
 
         public static void EditConnectionConfiguration(string host, string user, string password, string database)
         {
+            PASSWORD = password;
+
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            ACTUAL_CONNECTION_STRING = GetStringBuilder(host, user, database).ToString() + ";password=";
 
             config.ConnectionStrings.ConnectionStrings.Remove(CONNECTION_SETTINGS_NAME);
             config.ConnectionStrings.ConnectionStrings.
                 Add(new ConnectionStringSettings(CONNECTION_SETTINGS_NAME,
-                GetStringBuilder(host, user, password, database).ToString()));
+                GetStringBuilder(host, user, database).ToString()));
 
             config.Save();
 
@@ -135,12 +151,16 @@ namespace Zentralwerkstatt
 
         public static void EditConnectionConfiguration(string host, uint port, string user, string password, string database)
         {
+            PASSWORD = password;
+
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            ACTUAL_CONNECTION_STRING = GetStringBuilder(host, port, user, database).ToString() + ";password=";
 
             config.ConnectionStrings.ConnectionStrings.Remove(CONNECTION_SETTINGS_NAME);
             config.ConnectionStrings.ConnectionStrings.
                 Add(new ConnectionStringSettings(CONNECTION_SETTINGS_NAME,
-                GetStringBuilder(host, port, user, password, database).ToString()));
+                GetStringBuilder(host, port, user, database).ToString()));
 
             config.Save();
 
@@ -152,16 +172,16 @@ namespace Zentralwerkstatt
             return new MySqlConnectionStringBuilder(connectionString);
         }
 
-        public static MySqlConnectionStringBuilder GetStringBuilder(string host, string user, string password, string database)
+        public static MySqlConnectionStringBuilder GetStringBuilder(string host, string user, string database)
         {
             return new MySqlConnectionStringBuilder(String.Format(PRE_CONNECTION_STRING,
-                        host, user, password, database));
+                        host, user, database));
         }
 
-        public static MySqlConnectionStringBuilder GetStringBuilder(string host, uint port, string user, string password, string database)
+        public static MySqlConnectionStringBuilder GetStringBuilder(string host, uint port, string user, string database)
         {
             return new MySqlConnectionStringBuilder(String.Format(PRE_CONNECTION_STRING_PORT,
-                        host, port, user, password, database));
+                        host, port, user, database));
         }
 
         public static MySqlConnection GetConnection(string connectionString)
@@ -169,16 +189,14 @@ namespace Zentralwerkstatt
                 return new MySqlConnection(connectionString);
         }
 
-        public static MySqlConnection GetConnection(string host, string user, string password, string database)
+        public static MySqlConnection GetConnection(string host, string user, string database)
         {
-            return new MySqlConnection(String.Format(PRE_CONNECTION_STRING,
-                        host, user, password, database));
+            return new MySqlConnection(GetStringBuilder(host, user, database).ToString());
         }
 
-        public static MySqlConnection GetConnection(string host, uint port, string user, string password, string database)
+        public static MySqlConnection GetConnection(string host, uint port, string user, string database)
         {
-            return new MySqlConnection(String.Format(PRE_CONNECTION_STRING_PORT,
-                        host, port, user, password, database));
+            return new MySqlConnection(GetStringBuilder(host, port, user, database).ToString());
         }
 
         public static MySqlCommand GetCommand(string cmd)
@@ -195,7 +213,7 @@ namespace Zentralwerkstatt
         public static MySqlConnection CONNECTION {
             get
             {
-                return new MySqlConnection(CONNECTION_STRING);
+                return new MySqlConnection(BUILDER.ToString());
             }
         }
 
@@ -204,12 +222,17 @@ namespace Zentralwerkstatt
             {
                 try
                 {
-                    return ConfigurationManager.
-                      ConnectionStrings[CONNECTION_SETTINGS_NAME].
-                          ConnectionString;
+                    ACTUAL_CONNECTION_STRING = Properties.Settings.Default.projektzConnectionString;
+                    return ACTUAL_CONNECTION_STRING;
                 }catch(NullReferenceException)
                 {
-                    return "";
+                    try
+                    {
+                        return ConfigurationManager.ConnectionStrings[CONNECTION_SETTINGS_NAME].ConnectionString;
+                    }catch(NullReferenceException)
+                    {
+                        return "";
+                    }
                 }
             }
         }

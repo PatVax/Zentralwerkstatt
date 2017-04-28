@@ -29,14 +29,19 @@ namespace Zentralwerkstatt
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
+            string oldConnectionString = DBUtils.CONNECTION_STRING;
+
             try
             {
+
+                DBUtils.EditConnectionConfiguration(txtHost.Text, Convert.ToUInt32(txtPort.Text), txtUser.Text, txtPassword.Text, txtDB.Text);
+
                 //Verbindung mit der Datenbank herstellen, um eine mögliche fehlende Verbindung zu erkennen
-                    MySqlConnection conn = DBUtils.GetConnection(
-                        txtHost.Text, Convert.ToUInt32(txtPort.Text), txtUser.Text, txtPassword.Text, txtDB.Text);
-                    conn.Open();
+                DBUtils.CONNECTION.Open();
             }catch (MySqlException ex)
             {
+                DBUtils.EditConnectionConfiguration(oldConnectionString);
+
                 //Fehlertext, falls die Verbindung zur Datenbank nicht hergestellt werden konnte
                 MessageBox.Show(String.Format("Die Verbindung zur Datenbank konnte nicht hergestellt werden: {0}", ex.Message));
                 txtHost.Focus();
@@ -47,8 +52,6 @@ namespace Zentralwerkstatt
                 txtPort.Focus();
                 return;
             }
-
-            DBUtils.EditConnectionConfiguration(txtHost.Text, Convert.ToUInt32(txtPort.Text), txtUser.Text, txtPassword.Text, txtDB.Text);
 
             this.Close();
         }

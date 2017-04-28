@@ -61,7 +61,7 @@ namespace Zentralwerkstatt.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to server={0};user={1};password={2};database={3}.
+        ///   Looks up a localized string similar to server={0};user={1};password=;database={2}.
         /// </summary>
         internal static string preConnectionString {
             get {
@@ -70,7 +70,7 @@ namespace Zentralwerkstatt.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to server={0};port={1};user={2};password={3};database={4}.
+        ///   Looks up a localized string similar to server={0};port={1};user={2};password=;database={3}.
         /// </summary>
         internal static string preConnectionStringPort {
             get {

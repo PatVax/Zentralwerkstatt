@@ -98,6 +98,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjektZDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.cs" />
     <Compile Include="Utils\DBUtils.cs" />
     <Compile Include="Forms\EditConnection.cs">
       <SubType>Form</SubType>
