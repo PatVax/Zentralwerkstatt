@@ -16,12 +16,10 @@ namespace Zentralwerkstatt
             //Eine manuelle Verbindung mit der Datenbank für eigene SQL-Abfragen einrichten
             int count = 0;
 
-            MySqlCommand cmd = DBUtils.COMMAND;
+            MySqlCommand cmd = DBUtils.GetCommand("SELECT * FROM test");
 
             //Zählen der Datensätze in der Tabelle
-            cmd.CommandText = "SELECT * FROM test";
-            MySqlDataReader Reader;
-            Reader = cmd.ExecuteReader();
+            MySqlDataReader Reader = cmd.ExecuteReader();
             while (Reader.Read())
             {
                 count = count + 1;
@@ -49,11 +47,14 @@ namespace Zentralwerkstatt
         {
             try
             {
-                int idPruefung = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value.ToString());
+                int idPruefung = Convert.ToInt32(dataGridView1.CurrentRow.Cells[4].Value.ToString());
                 MySqlCommand cmd = DBUtils.COMMAND;
                 dataGridView2.Visible = true;
+                lblBemerkungen.Visible = true;
+                txtBemerkungen.Visible = true;
                 // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
                 this.pruefausgabeTableAdapter.FillBy(this.projektZDataSet.pruefausgabe, idPruefung);
+                this.txtBemerkungen.Lines = this.testTableAdapter.FillBemerkungenByID(idPruefung).ToString().Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
             }
             catch (MySqlException ex)
             {

@@ -63,5 +63,20 @@ namespace Zentralwerkstatt
         {
             this.Close();
         }
+
+        private void EditConnection_Shown(object sender, EventArgs e)
+        {
+            try
+            {
+                Control currentControl = txtHost;
+                if (!string.IsNullOrEmpty(currentControl.Text))
+                    while (!string.IsNullOrEmpty((currentControl = this.GetNextControl(currentControl, true)).Text)) ;
+                if (currentControl.TabIndex == 1) return;
+                currentControl.Focus();
+            }catch(NullReferenceException)
+            {
+                return;
+            }
+        }
     }
 }

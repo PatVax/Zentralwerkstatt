@@ -56,7 +56,6 @@
             this.BenutzerTextBox.Size = new System.Drawing.Size(192, 20);
             this.BenutzerTextBox.TabIndex = 1;
             this.BenutzerTextBox.TextChanged += new System.EventHandler(this.PasswortTextBox_TextChanged);
-            this.BenutzerTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Anmelden_KeyDown);
             // 
             // label2
             // 
@@ -75,7 +74,6 @@
             this.PasswortTextBox.Size = new System.Drawing.Size(192, 20);
             this.PasswortTextBox.TabIndex = 3;
             this.PasswortTextBox.TextChanged += new System.EventHandler(this.PasswortTextBox_TextChanged);
-            this.PasswortTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Anmelden_KeyDown);
             // 
             // AnmeldenButton
             // 
@@ -153,6 +151,7 @@
             this.Name = "Anmeldung";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Anmeldung";
+            this.Shown += new System.EventHandler(this.Anmeldung_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

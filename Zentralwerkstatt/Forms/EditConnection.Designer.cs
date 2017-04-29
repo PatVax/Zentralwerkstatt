@@ -182,6 +182,7 @@
             this.Name = "EditConnection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MySQL Verbindung";
+            this.Shown += new System.EventHandler(this.EditConnection_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

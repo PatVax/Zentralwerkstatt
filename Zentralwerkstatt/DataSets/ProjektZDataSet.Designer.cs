@@ -4367,6 +4367,8 @@ namespace Zentralwerkstatt.DataSets {
             
             private global::System.Data.DataColumn columnidpruefung;
             
+            private global::System.Data.DataColumn columnbemerkungen;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public testDataTable() {
@@ -4434,6 +4436,14 @@ namespace Zentralwerkstatt.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn bemerkungenColumn {
+                get {
+                    return this.columnbemerkungen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4469,13 +4479,14 @@ namespace Zentralwerkstatt.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public testRow AddtestRow(string bezeichnung, string geraete_barcode, System.DateTime datum) {
+            public testRow AddtestRow(string bezeichnung, string geraete_barcode, System.DateTime datum, string bemerkungen) {
                 testRow rowtestRow = ((testRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         bezeichnung,
                         geraete_barcode,
                         datum,
-                        null};
+                        null,
+                        bemerkungen};
                 rowtestRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtestRow);
                 return rowtestRow;
@@ -4502,6 +4513,7 @@ namespace Zentralwerkstatt.DataSets {
                 this.columngeraete_barcode = base.Columns["geraete_barcode"];
                 this.columndatum = base.Columns["datum"];
                 this.columnidpruefung = base.Columns["idpruefung"];
+                this.columnbemerkungen = base.Columns["bemerkungen"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4515,6 +4527,8 @@ namespace Zentralwerkstatt.DataSets {
                 base.Columns.Add(this.columndatum);
                 this.columnidpruefung = new global::System.Data.DataColumn("idpruefung", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidpruefung);
+                this.columnbemerkungen = new global::System.Data.DataColumn("bemerkungen", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbemerkungen);
                 this.columnbezeichnung.AllowDBNull = false;
                 this.columngeraete_barcode.AllowDBNull = false;
                 this.columndatum.AllowDBNull = false;
@@ -5702,6 +5716,34 @@ namespace Zentralwerkstatt.DataSets {
                 set {
                     this[this.tabletest.idpruefungColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string bemerkungen {
+                get {
+                    try {
+                        return ((string)(this[this.tabletest.bemerkungenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'bemerkungen\' in table \'test\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletest.bemerkungenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsbemerkungenNull() {
+                return this.IsNull(this.tabletest.bemerkungenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetbemerkungenNull() {
+                this[this.tabletest.bemerkungenColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10816,6 +10858,7 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("geraete_barcode", "geraete_barcode");
             tableMapping.ColumnMappings.Add("datum", "datum");
             tableMapping.ColumnMappings.Add("idpruefung", "idpruefung");
+            tableMapping.ColumnMappings.Add("bemerkungen", "bemerkungen");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -10829,11 +10872,24 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[1];
+            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[2];
             this._commandCollection[0] = new global::Devart.Data.MySql.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT bezeichnung, geraete_barcode, datum, idpruefung FROM projektz.test";
+            this._commandCollection[0].CommandText = "SELECT        bezeichnung, geraete_barcode, datum, idpruefung, bemerkungen\r\nFROM " +
+                "           test";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        bemerkungen\r\nFROM            test\r\nWHERE        (idpruefung = :idPr" +
+                "uefung)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Devart.Data.MySql.MySqlParameter param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "idPruefung";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
+            param.IsNullable = true;
+            param.SourceColumn = "idpruefung";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10858,6 +10914,35 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
             ProjektZDataSet.testDataTable dataTable = new ProjektZDataSet.testDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object FillBemerkungenByID(int idPruefung) {
+            global::Devart.Data.MySql.MySqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(idPruefung));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     

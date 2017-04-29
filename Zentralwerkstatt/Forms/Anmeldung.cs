@@ -102,15 +102,15 @@ namespace Zentralwerkstatt
             Application.Exit();
         }
 
-        private void Anmelden_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
         private void Connection_Click(object sender, EventArgs e)
         {
             EditConnection editConnectionForm = new EditConnection();
             editConnectionForm.ShowDialog(this);
+        }
+        
+        private void Anmeldung_Shown(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(BenutzerTextBox.Text)) PasswortTextBox.Focus();
         }
     }
 }

@@ -128,7 +128,7 @@ namespace Zentralwerkstatt
 
         public static MySqlCommand GetCommand(string cmd)
         {
-            return new MySqlCommand(cmd, CONNECTION);
+            return new MySqlCommand(cmd, OPENED_CONNECTION);
         }
 
         public static MySqlConnectionStringBuilder BUILDER {
@@ -141,6 +141,16 @@ namespace Zentralwerkstatt
             get
             {
                 return new MySqlConnection(BUILDER.ToString());
+            }
+        }
+
+        public static MySqlConnection OPENED_CONNECTION
+        {
+            get
+            {
+                MySqlConnection conn = new MySqlConnection(BUILDER.ToString());
+                conn.Open();
+                return conn;
             }
         }
 
@@ -200,9 +210,7 @@ namespace Zentralwerkstatt
             {
                 try
                 {
-                    MySqlConnection conn = CONNECTION;
-                    conn.Open();
-                    return new MySqlCommand(null, conn);
+                    return new MySqlCommand(null, OPENED_CONNECTION);
                 } catch (MySqlException ex)
                 {
                     throw ex;
