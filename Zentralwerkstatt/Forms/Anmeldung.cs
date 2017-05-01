@@ -31,8 +31,10 @@ namespace Zentralwerkstatt
             {
                 //Manuelle Datenanbindung zum erstellen von eigenen MySQL Abfragen
                 int count = 0;
-                MySqlCommand cmd = DBUtils.COMMAND;
-                cmd.CommandText = "SELECT * FROM benutzer WHERE benutzername = '" + this.BenutzerTextBox.Text + "' AND passwort = '" + DBUtils.EncodeMD5(this.PasswortTextBox.Text) + "'";
+                MySqlCommand cmd = DBUtils.GetCommand("SELECT * FROM benutzer WHERE benutzername = '" + 
+                    this.BenutzerTextBox.Text + 
+                    "' AND passwort = '" + 
+                    DBUtils.EncodeMD5(this.PasswortTextBox.Text) + "'");
                 MySqlDataReader Reader;
                 Reader = cmd.ExecuteReader();
                 while (Reader.Read())
@@ -44,7 +46,11 @@ namespace Zentralwerkstatt
                 {
                     //Administrator-Abfrage
                     Reader.Close();
-                    cmd.CommandText = "SELECT * FROM benutzer WHERE benutzername = '" + this.BenutzerTextBox.Text + "' AND passwort = '" + DBUtils.EncodeMD5(this.PasswortTextBox.Text) + "' AND administrator = true";
+                    cmd = DBUtils.GetCommand("SELECT * FROM benutzer WHERE benutzername = '" + 
+                        this.BenutzerTextBox.Text + 
+                        "' AND passwort = '" + 
+                        DBUtils.EncodeMD5(this.PasswortTextBox.Text) + 
+                        "' AND administrator = true");
                     Reader = cmd.ExecuteReader();
                     count = 0;
                     while (Reader.Read())

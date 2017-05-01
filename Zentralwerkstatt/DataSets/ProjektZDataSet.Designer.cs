@@ -50,6 +50,14 @@ namespace Zentralwerkstatt.DataSets {
         
         private testDataTable tabletest;
         
+        private barcodesUpDataTable tablebarcodesUp;
+        
+        private barcodesDownDataTable tablebarcodesDown;
+        
+        private fahrzeuge_standorteUpDataTable tablefahrzeuge_standorteUp;
+        
+        private fahrzeuge_standorteDownDataTable tablefahrzeuge_standorteDown;
+        
         private global::System.Data.DataRelation relationfahrzeug_idstandort_fk;
         
         private global::System.Data.DataRelation relationgeraet_idfahrzeug_fk;
@@ -134,6 +142,18 @@ namespace Zentralwerkstatt.DataSets {
                 }
                 if ((ds.Tables["test"] != null)) {
                     base.Tables.Add(new testDataTable(ds.Tables["test"]));
+                }
+                if ((ds.Tables["barcodesUp"] != null)) {
+                    base.Tables.Add(new barcodesUpDataTable(ds.Tables["barcodesUp"]));
+                }
+                if ((ds.Tables["barcodesDown"] != null)) {
+                    base.Tables.Add(new barcodesDownDataTable(ds.Tables["barcodesDown"]));
+                }
+                if ((ds.Tables["fahrzeuge_standorteUp"] != null)) {
+                    base.Tables.Add(new fahrzeuge_standorteUpDataTable(ds.Tables["fahrzeuge_standorteUp"]));
+                }
+                if ((ds.Tables["fahrzeuge_standorteDown"] != null)) {
+                    base.Tables.Add(new fahrzeuge_standorteDownDataTable(ds.Tables["fahrzeuge_standorteDown"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -285,6 +305,46 @@ namespace Zentralwerkstatt.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public barcodesUpDataTable barcodesUp {
+            get {
+                return this.tablebarcodesUp;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public barcodesDownDataTable barcodesDown {
+            get {
+                return this.tablebarcodesDown;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public fahrzeuge_standorteUpDataTable fahrzeuge_standorteUp {
+            get {
+                return this.tablefahrzeuge_standorteUp;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public fahrzeuge_standorteDownDataTable fahrzeuge_standorteDown {
+            get {
+                return this.tablefahrzeuge_standorteDown;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -388,6 +448,18 @@ namespace Zentralwerkstatt.DataSets {
                 }
                 if ((ds.Tables["test"] != null)) {
                     base.Tables.Add(new testDataTable(ds.Tables["test"]));
+                }
+                if ((ds.Tables["barcodesUp"] != null)) {
+                    base.Tables.Add(new barcodesUpDataTable(ds.Tables["barcodesUp"]));
+                }
+                if ((ds.Tables["barcodesDown"] != null)) {
+                    base.Tables.Add(new barcodesDownDataTable(ds.Tables["barcodesDown"]));
+                }
+                if ((ds.Tables["fahrzeuge_standorteUp"] != null)) {
+                    base.Tables.Add(new fahrzeuge_standorteUpDataTable(ds.Tables["fahrzeuge_standorteUp"]));
+                }
+                if ((ds.Tables["fahrzeuge_standorteDown"] != null)) {
+                    base.Tables.Add(new fahrzeuge_standorteDownDataTable(ds.Tables["fahrzeuge_standorteDown"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -500,6 +572,30 @@ namespace Zentralwerkstatt.DataSets {
                     this.tabletest.InitVars();
                 }
             }
+            this.tablebarcodesUp = ((barcodesUpDataTable)(base.Tables["barcodesUp"]));
+            if ((initTable == true)) {
+                if ((this.tablebarcodesUp != null)) {
+                    this.tablebarcodesUp.InitVars();
+                }
+            }
+            this.tablebarcodesDown = ((barcodesDownDataTable)(base.Tables["barcodesDown"]));
+            if ((initTable == true)) {
+                if ((this.tablebarcodesDown != null)) {
+                    this.tablebarcodesDown.InitVars();
+                }
+            }
+            this.tablefahrzeuge_standorteUp = ((fahrzeuge_standorteUpDataTable)(base.Tables["fahrzeuge_standorteUp"]));
+            if ((initTable == true)) {
+                if ((this.tablefahrzeuge_standorteUp != null)) {
+                    this.tablefahrzeuge_standorteUp.InitVars();
+                }
+            }
+            this.tablefahrzeuge_standorteDown = ((fahrzeuge_standorteDownDataTable)(base.Tables["fahrzeuge_standorteDown"]));
+            if ((initTable == true)) {
+                if ((this.tablefahrzeuge_standorteDown != null)) {
+                    this.tablefahrzeuge_standorteDown.InitVars();
+                }
+            }
             this.relationfahrzeug_idstandort_fk = this.Relations["fahrzeug_idstandort_fk"];
             this.relationgeraet_idfahrzeug_fk = this.Relations["geraet_idfahrzeug_fk"];
             this.relationgeraet_idgeräütetyp_fk = this.Relations["geraet_idgeräütetyp_fk"];
@@ -545,6 +641,14 @@ namespace Zentralwerkstatt.DataSets {
             base.Tables.Add(this.tablepruefausgabe);
             this.tabletest = new testDataTable();
             base.Tables.Add(this.tabletest);
+            this.tablebarcodesUp = new barcodesUpDataTable();
+            base.Tables.Add(this.tablebarcodesUp);
+            this.tablebarcodesDown = new barcodesDownDataTable();
+            base.Tables.Add(this.tablebarcodesDown);
+            this.tablefahrzeuge_standorteUp = new fahrzeuge_standorteUpDataTable();
+            base.Tables.Add(this.tablefahrzeuge_standorteUp);
+            this.tablefahrzeuge_standorteDown = new fahrzeuge_standorteDownDataTable();
+            base.Tables.Add(this.tablefahrzeuge_standorteDown);
             this.relationfahrzeug_idstandort_fk = new global::System.Data.DataRelation("fahrzeug_idstandort_fk", new global::System.Data.DataColumn[] {
                         this.tablestandorte.idstandortColumn}, new global::System.Data.DataColumn[] {
                         this.tablefahrzeuge.idstandortColumn}, false);
@@ -663,6 +767,30 @@ namespace Zentralwerkstatt.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializebarcodesUp() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializebarcodesDown() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializefahrzeuge_standorteUp() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializefahrzeuge_standorteDown() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -754,6 +882,18 @@ namespace Zentralwerkstatt.DataSets {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void testRowChangeEventHandler(object sender, testRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void barcodesUpRowChangeEventHandler(object sender, barcodesUpRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void barcodesDownRowChangeEventHandler(object sender, barcodesDownRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void fahrzeuge_standorteUpRowChangeEventHandler(object sender, fahrzeuge_standorteUpRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void fahrzeuge_standorteDownRowChangeEventHandler(object sender, fahrzeuge_standorteDownRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3525,6 +3665,12 @@ namespace Zentralwerkstatt.DataSets {
             
             private global::System.Data.DataColumn columnhersteller;
             
+            private global::System.Data.DataColumn columnfahrzeug;
+            
+            private global::System.Data.DataColumn columnkennzeichen;
+            
+            private global::System.Data.DataColumn columnbezeichnung;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public barcodesDataTable() {
@@ -3592,6 +3738,30 @@ namespace Zentralwerkstatt.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fahrzeugColumn {
+                get {
+                    return this.columnfahrzeug;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kennzeichenColumn {
+                get {
+                    return this.columnkennzeichen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn bezeichnungColumn {
+                get {
+                    return this.columnbezeichnung;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3627,13 +3797,16 @@ namespace Zentralwerkstatt.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public barcodesRow AddbarcodesRow(string geraete_barcode, string seriennummer, System.DateTime anschaffungsdatum, string hersteller) {
+            public barcodesRow AddbarcodesRow(string geraete_barcode, string seriennummer, System.DateTime anschaffungsdatum, string hersteller, string fahrzeug, string kennzeichen, string bezeichnung) {
                 barcodesRow rowbarcodesRow = ((barcodesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         geraete_barcode,
                         seriennummer,
                         anschaffungsdatum,
-                        hersteller};
+                        hersteller,
+                        fahrzeug,
+                        kennzeichen,
+                        bezeichnung};
                 rowbarcodesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowbarcodesRow);
                 return rowbarcodesRow;
@@ -3667,6 +3840,9 @@ namespace Zentralwerkstatt.DataSets {
                 this.columnseriennummer = base.Columns["seriennummer"];
                 this.columnanschaffungsdatum = base.Columns["anschaffungsdatum"];
                 this.columnhersteller = base.Columns["hersteller"];
+                this.columnfahrzeug = base.Columns["fahrzeug"];
+                this.columnkennzeichen = base.Columns["kennzeichen"];
+                this.columnbezeichnung = base.Columns["bezeichnung"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3680,12 +3856,20 @@ namespace Zentralwerkstatt.DataSets {
                 base.Columns.Add(this.columnanschaffungsdatum);
                 this.columnhersteller = new global::System.Data.DataColumn("hersteller", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhersteller);
+                this.columnfahrzeug = new global::System.Data.DataColumn("fahrzeug", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfahrzeug);
+                this.columnkennzeichen = new global::System.Data.DataColumn("kennzeichen", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkennzeichen);
+                this.columnbezeichnung = new global::System.Data.DataColumn("bezeichnung", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbezeichnung);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columngeraete_barcode}, true));
                 this.columngeraete_barcode.AllowDBNull = false;
                 this.columngeraete_barcode.Unique = true;
                 this.columnanschaffungsdatum.AllowDBNull = false;
                 this.columnhersteller.AllowDBNull = false;
+                this.columnfahrzeug.AllowDBNull = false;
+                this.columnbezeichnung.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3825,6 +4009,10 @@ namespace Zentralwerkstatt.DataSets {
             
             private global::System.Data.DataColumn columnstandort;
             
+            private global::System.Data.DataColumn columnidfahrzeug;
+            
+            private global::System.Data.DataColumn columntostring;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public fahrzeuge_standorteDataTable() {
@@ -3884,6 +4072,22 @@ namespace Zentralwerkstatt.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idfahrzeugColumn {
+                get {
+                    return this.columnidfahrzeug;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn tostringColumn {
+                get {
+                    return this.columntostring;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3919,12 +4123,14 @@ namespace Zentralwerkstatt.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public fahrzeuge_standorteRow Addfahrzeuge_standorteRow(string bezeichnung, string kennzeichen, string standort) {
+            public fahrzeuge_standorteRow Addfahrzeuge_standorteRow(string bezeichnung, string kennzeichen, string standort, int idfahrzeug, string tostring) {
                 fahrzeuge_standorteRow rowfahrzeuge_standorteRow = ((fahrzeuge_standorteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         bezeichnung,
                         kennzeichen,
-                        standort};
+                        standort,
+                        idfahrzeug,
+                        tostring};
                 rowfahrzeuge_standorteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfahrzeuge_standorteRow);
                 return rowfahrzeuge_standorteRow;
@@ -3950,6 +4156,8 @@ namespace Zentralwerkstatt.DataSets {
                 this.columnbezeichnung = base.Columns["bezeichnung"];
                 this.columnkennzeichen = base.Columns["kennzeichen"];
                 this.columnstandort = base.Columns["standort"];
+                this.columnidfahrzeug = base.Columns["idfahrzeug"];
+                this.columntostring = base.Columns["tostring"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3961,8 +4169,16 @@ namespace Zentralwerkstatt.DataSets {
                 base.Columns.Add(this.columnkennzeichen);
                 this.columnstandort = new global::System.Data.DataColumn("standort", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstandort);
+                this.columnidfahrzeug = new global::System.Data.DataColumn("idfahrzeug", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidfahrzeug);
+                this.columntostring = new global::System.Data.DataColumn("tostring", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntostring);
                 this.columnbezeichnung.AllowDBNull = false;
                 this.columnstandort.AllowDBNull = false;
+                this.columnidfahrzeug.AutoIncrementSeed = -1;
+                this.columnidfahrzeug.AutoIncrementStep = -1;
+                this.columnidfahrzeug.AllowDBNull = false;
+                this.columntostring.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4622,6 +4838,1288 @@ namespace Zentralwerkstatt.DataSets {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "testDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class barcodesUpDataTable : global::System.Data.TypedTableBase<barcodesUpRow> {
+            
+            private global::System.Data.DataColumn columngeraete_barcode;
+            
+            private global::System.Data.DataColumn columnseriennummer;
+            
+            private global::System.Data.DataColumn columnanschaffungsdatum;
+            
+            private global::System.Data.DataColumn columnhersteller;
+            
+            private global::System.Data.DataColumn columnfahrzeug;
+            
+            private global::System.Data.DataColumn columnkennzeichen;
+            
+            private global::System.Data.DataColumn columnbezeichnung;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesUpDataTable() {
+                this.TableName = "barcodesUp";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal barcodesUpDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected barcodesUpDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn geraete_barcodeColumn {
+                get {
+                    return this.columngeraete_barcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn seriennummerColumn {
+                get {
+                    return this.columnseriennummer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn anschaffungsdatumColumn {
+                get {
+                    return this.columnanschaffungsdatum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn herstellerColumn {
+                get {
+                    return this.columnhersteller;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fahrzeugColumn {
+                get {
+                    return this.columnfahrzeug;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kennzeichenColumn {
+                get {
+                    return this.columnkennzeichen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn bezeichnungColumn {
+                get {
+                    return this.columnbezeichnung;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesUpRow this[int index] {
+                get {
+                    return ((barcodesUpRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event barcodesUpRowChangeEventHandler barcodesUpRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event barcodesUpRowChangeEventHandler barcodesUpRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event barcodesUpRowChangeEventHandler barcodesUpRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event barcodesUpRowChangeEventHandler barcodesUpRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddbarcodesUpRow(barcodesUpRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesUpRow AddbarcodesUpRow(string geraete_barcode, string seriennummer, System.DateTime anschaffungsdatum, string hersteller, string fahrzeug, string kennzeichen, string bezeichnung) {
+                barcodesUpRow rowbarcodesUpRow = ((barcodesUpRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        geraete_barcode,
+                        seriennummer,
+                        anschaffungsdatum,
+                        hersteller,
+                        fahrzeug,
+                        kennzeichen,
+                        bezeichnung};
+                rowbarcodesUpRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowbarcodesUpRow);
+                return rowbarcodesUpRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesUpRow FindBygeraete_barcode(string geraete_barcode) {
+                return ((barcodesUpRow)(this.Rows.Find(new object[] {
+                            geraete_barcode})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                barcodesUpDataTable cln = ((barcodesUpDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new barcodesUpDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columngeraete_barcode = base.Columns["geraete_barcode"];
+                this.columnseriennummer = base.Columns["seriennummer"];
+                this.columnanschaffungsdatum = base.Columns["anschaffungsdatum"];
+                this.columnhersteller = base.Columns["hersteller"];
+                this.columnfahrzeug = base.Columns["fahrzeug"];
+                this.columnkennzeichen = base.Columns["kennzeichen"];
+                this.columnbezeichnung = base.Columns["bezeichnung"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columngeraete_barcode = new global::System.Data.DataColumn("geraete_barcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngeraete_barcode);
+                this.columnseriennummer = new global::System.Data.DataColumn("seriennummer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseriennummer);
+                this.columnanschaffungsdatum = new global::System.Data.DataColumn("anschaffungsdatum", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnanschaffungsdatum);
+                this.columnhersteller = new global::System.Data.DataColumn("hersteller", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhersteller);
+                this.columnfahrzeug = new global::System.Data.DataColumn("fahrzeug", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfahrzeug);
+                this.columnkennzeichen = new global::System.Data.DataColumn("kennzeichen", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkennzeichen);
+                this.columnbezeichnung = new global::System.Data.DataColumn("bezeichnung", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbezeichnung);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columngeraete_barcode}, true));
+                this.columngeraete_barcode.AllowDBNull = false;
+                this.columngeraete_barcode.Unique = true;
+                this.columnanschaffungsdatum.AllowDBNull = false;
+                this.columnhersteller.AllowDBNull = false;
+                this.columnfahrzeug.AllowDBNull = false;
+                this.columnbezeichnung.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesUpRow NewbarcodesUpRow() {
+                return ((barcodesUpRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new barcodesUpRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(barcodesUpRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.barcodesUpRowChanged != null)) {
+                    this.barcodesUpRowChanged(this, new barcodesUpRowChangeEvent(((barcodesUpRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.barcodesUpRowChanging != null)) {
+                    this.barcodesUpRowChanging(this, new barcodesUpRowChangeEvent(((barcodesUpRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.barcodesUpRowDeleted != null)) {
+                    this.barcodesUpRowDeleted(this, new barcodesUpRowChangeEvent(((barcodesUpRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.barcodesUpRowDeleting != null)) {
+                    this.barcodesUpRowDeleting(this, new barcodesUpRowChangeEvent(((barcodesUpRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovebarcodesUpRow(barcodesUpRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ProjektZDataSet ds = new ProjektZDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "barcodesUpDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class barcodesDownDataTable : global::System.Data.TypedTableBase<barcodesDownRow> {
+            
+            private global::System.Data.DataColumn columngeraete_barcode;
+            
+            private global::System.Data.DataColumn columnseriennummer;
+            
+            private global::System.Data.DataColumn columnanschaffungsdatum;
+            
+            private global::System.Data.DataColumn columnhersteller;
+            
+            private global::System.Data.DataColumn columnfahrzeug;
+            
+            private global::System.Data.DataColumn columnkennzeichen;
+            
+            private global::System.Data.DataColumn columnbezeichnung;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesDownDataTable() {
+                this.TableName = "barcodesDown";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal barcodesDownDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected barcodesDownDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn geraete_barcodeColumn {
+                get {
+                    return this.columngeraete_barcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn seriennummerColumn {
+                get {
+                    return this.columnseriennummer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn anschaffungsdatumColumn {
+                get {
+                    return this.columnanschaffungsdatum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn herstellerColumn {
+                get {
+                    return this.columnhersteller;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fahrzeugColumn {
+                get {
+                    return this.columnfahrzeug;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kennzeichenColumn {
+                get {
+                    return this.columnkennzeichen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn bezeichnungColumn {
+                get {
+                    return this.columnbezeichnung;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesDownRow this[int index] {
+                get {
+                    return ((barcodesDownRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event barcodesDownRowChangeEventHandler barcodesDownRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event barcodesDownRowChangeEventHandler barcodesDownRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event barcodesDownRowChangeEventHandler barcodesDownRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event barcodesDownRowChangeEventHandler barcodesDownRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddbarcodesDownRow(barcodesDownRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesDownRow AddbarcodesDownRow(string geraete_barcode, string seriennummer, System.DateTime anschaffungsdatum, string hersteller, string fahrzeug, string kennzeichen, string bezeichnung) {
+                barcodesDownRow rowbarcodesDownRow = ((barcodesDownRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        geraete_barcode,
+                        seriennummer,
+                        anschaffungsdatum,
+                        hersteller,
+                        fahrzeug,
+                        kennzeichen,
+                        bezeichnung};
+                rowbarcodesDownRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowbarcodesDownRow);
+                return rowbarcodesDownRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesDownRow FindBygeraete_barcode(string geraete_barcode) {
+                return ((barcodesDownRow)(this.Rows.Find(new object[] {
+                            geraete_barcode})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                barcodesDownDataTable cln = ((barcodesDownDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new barcodesDownDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columngeraete_barcode = base.Columns["geraete_barcode"];
+                this.columnseriennummer = base.Columns["seriennummer"];
+                this.columnanschaffungsdatum = base.Columns["anschaffungsdatum"];
+                this.columnhersteller = base.Columns["hersteller"];
+                this.columnfahrzeug = base.Columns["fahrzeug"];
+                this.columnkennzeichen = base.Columns["kennzeichen"];
+                this.columnbezeichnung = base.Columns["bezeichnung"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columngeraete_barcode = new global::System.Data.DataColumn("geraete_barcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columngeraete_barcode);
+                this.columnseriennummer = new global::System.Data.DataColumn("seriennummer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnseriennummer);
+                this.columnanschaffungsdatum = new global::System.Data.DataColumn("anschaffungsdatum", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnanschaffungsdatum);
+                this.columnhersteller = new global::System.Data.DataColumn("hersteller", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhersteller);
+                this.columnfahrzeug = new global::System.Data.DataColumn("fahrzeug", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfahrzeug);
+                this.columnkennzeichen = new global::System.Data.DataColumn("kennzeichen", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkennzeichen);
+                this.columnbezeichnung = new global::System.Data.DataColumn("bezeichnung", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbezeichnung);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columngeraete_barcode}, true));
+                this.columngeraete_barcode.AllowDBNull = false;
+                this.columngeraete_barcode.Unique = true;
+                this.columnanschaffungsdatum.AllowDBNull = false;
+                this.columnhersteller.AllowDBNull = false;
+                this.columnfahrzeug.AllowDBNull = false;
+                this.columnbezeichnung.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesDownRow NewbarcodesDownRow() {
+                return ((barcodesDownRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new barcodesDownRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(barcodesDownRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.barcodesDownRowChanged != null)) {
+                    this.barcodesDownRowChanged(this, new barcodesDownRowChangeEvent(((barcodesDownRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.barcodesDownRowChanging != null)) {
+                    this.barcodesDownRowChanging(this, new barcodesDownRowChangeEvent(((barcodesDownRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.barcodesDownRowDeleted != null)) {
+                    this.barcodesDownRowDeleted(this, new barcodesDownRowChangeEvent(((barcodesDownRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.barcodesDownRowDeleting != null)) {
+                    this.barcodesDownRowDeleting(this, new barcodesDownRowChangeEvent(((barcodesDownRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovebarcodesDownRow(barcodesDownRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ProjektZDataSet ds = new ProjektZDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "barcodesDownDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class fahrzeuge_standorteUpDataTable : global::System.Data.TypedTableBase<fahrzeuge_standorteUpRow> {
+            
+            private global::System.Data.DataColumn columnbezeichnung;
+            
+            private global::System.Data.DataColumn columnkennzeichen;
+            
+            private global::System.Data.DataColumn columnstandort;
+            
+            private global::System.Data.DataColumn columnidfahrzeug;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fahrzeuge_standorteUpDataTable() {
+                this.TableName = "fahrzeuge_standorteUp";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fahrzeuge_standorteUpDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected fahrzeuge_standorteUpDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn bezeichnungColumn {
+                get {
+                    return this.columnbezeichnung;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kennzeichenColumn {
+                get {
+                    return this.columnkennzeichen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn standortColumn {
+                get {
+                    return this.columnstandort;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idfahrzeugColumn {
+                get {
+                    return this.columnidfahrzeug;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fahrzeuge_standorteUpRow this[int index] {
+                get {
+                    return ((fahrzeuge_standorteUpRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fahrzeuge_standorteUpRowChangeEventHandler fahrzeuge_standorteUpRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fahrzeuge_standorteUpRowChangeEventHandler fahrzeuge_standorteUpRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fahrzeuge_standorteUpRowChangeEventHandler fahrzeuge_standorteUpRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fahrzeuge_standorteUpRowChangeEventHandler fahrzeuge_standorteUpRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addfahrzeuge_standorteUpRow(fahrzeuge_standorteUpRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fahrzeuge_standorteUpRow Addfahrzeuge_standorteUpRow(string bezeichnung, string kennzeichen, string standort, int idfahrzeug) {
+                fahrzeuge_standorteUpRow rowfahrzeuge_standorteUpRow = ((fahrzeuge_standorteUpRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        bezeichnung,
+                        kennzeichen,
+                        standort,
+                        idfahrzeug};
+                rowfahrzeuge_standorteUpRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowfahrzeuge_standorteUpRow);
+                return rowfahrzeuge_standorteUpRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                fahrzeuge_standorteUpDataTable cln = ((fahrzeuge_standorteUpDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new fahrzeuge_standorteUpDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnbezeichnung = base.Columns["bezeichnung"];
+                this.columnkennzeichen = base.Columns["kennzeichen"];
+                this.columnstandort = base.Columns["standort"];
+                this.columnidfahrzeug = base.Columns["idfahrzeug"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnbezeichnung = new global::System.Data.DataColumn("bezeichnung", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbezeichnung);
+                this.columnkennzeichen = new global::System.Data.DataColumn("kennzeichen", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkennzeichen);
+                this.columnstandort = new global::System.Data.DataColumn("standort", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstandort);
+                this.columnidfahrzeug = new global::System.Data.DataColumn("idfahrzeug", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidfahrzeug);
+                this.columnbezeichnung.AllowDBNull = false;
+                this.columnkennzeichen.AllowDBNull = false;
+                this.columnstandort.AllowDBNull = false;
+                this.columnidfahrzeug.AutoIncrementSeed = -1;
+                this.columnidfahrzeug.AutoIncrementStep = -1;
+                this.columnidfahrzeug.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fahrzeuge_standorteUpRow Newfahrzeuge_standorteUpRow() {
+                return ((fahrzeuge_standorteUpRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new fahrzeuge_standorteUpRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(fahrzeuge_standorteUpRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.fahrzeuge_standorteUpRowChanged != null)) {
+                    this.fahrzeuge_standorteUpRowChanged(this, new fahrzeuge_standorteUpRowChangeEvent(((fahrzeuge_standorteUpRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.fahrzeuge_standorteUpRowChanging != null)) {
+                    this.fahrzeuge_standorteUpRowChanging(this, new fahrzeuge_standorteUpRowChangeEvent(((fahrzeuge_standorteUpRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.fahrzeuge_standorteUpRowDeleted != null)) {
+                    this.fahrzeuge_standorteUpRowDeleted(this, new fahrzeuge_standorteUpRowChangeEvent(((fahrzeuge_standorteUpRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.fahrzeuge_standorteUpRowDeleting != null)) {
+                    this.fahrzeuge_standorteUpRowDeleting(this, new fahrzeuge_standorteUpRowChangeEvent(((fahrzeuge_standorteUpRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removefahrzeuge_standorteUpRow(fahrzeuge_standorteUpRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ProjektZDataSet ds = new ProjektZDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "fahrzeuge_standorteUpDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class fahrzeuge_standorteDownDataTable : global::System.Data.TypedTableBase<fahrzeuge_standorteDownRow> {
+            
+            private global::System.Data.DataColumn columnbezeichnung;
+            
+            private global::System.Data.DataColumn columnkennzeichen;
+            
+            private global::System.Data.DataColumn columnstandort;
+            
+            private global::System.Data.DataColumn columnidfahrzeug;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fahrzeuge_standorteDownDataTable() {
+                this.TableName = "fahrzeuge_standorteDown";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fahrzeuge_standorteDownDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected fahrzeuge_standorteDownDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn bezeichnungColumn {
+                get {
+                    return this.columnbezeichnung;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn kennzeichenColumn {
+                get {
+                    return this.columnkennzeichen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn standortColumn {
+                get {
+                    return this.columnstandort;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idfahrzeugColumn {
+                get {
+                    return this.columnidfahrzeug;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fahrzeuge_standorteDownRow this[int index] {
+                get {
+                    return ((fahrzeuge_standorteDownRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fahrzeuge_standorteDownRowChangeEventHandler fahrzeuge_standorteDownRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fahrzeuge_standorteDownRowChangeEventHandler fahrzeuge_standorteDownRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fahrzeuge_standorteDownRowChangeEventHandler fahrzeuge_standorteDownRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event fahrzeuge_standorteDownRowChangeEventHandler fahrzeuge_standorteDownRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addfahrzeuge_standorteDownRow(fahrzeuge_standorteDownRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fahrzeuge_standorteDownRow Addfahrzeuge_standorteDownRow(string bezeichnung, string kennzeichen, string standort, int idfahrzeug) {
+                fahrzeuge_standorteDownRow rowfahrzeuge_standorteDownRow = ((fahrzeuge_standorteDownRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        bezeichnung,
+                        kennzeichen,
+                        standort,
+                        idfahrzeug};
+                rowfahrzeuge_standorteDownRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowfahrzeuge_standorteDownRow);
+                return rowfahrzeuge_standorteDownRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                fahrzeuge_standorteDownDataTable cln = ((fahrzeuge_standorteDownDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new fahrzeuge_standorteDownDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnbezeichnung = base.Columns["bezeichnung"];
+                this.columnkennzeichen = base.Columns["kennzeichen"];
+                this.columnstandort = base.Columns["standort"];
+                this.columnidfahrzeug = base.Columns["idfahrzeug"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnbezeichnung = new global::System.Data.DataColumn("bezeichnung", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbezeichnung);
+                this.columnkennzeichen = new global::System.Data.DataColumn("kennzeichen", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkennzeichen);
+                this.columnstandort = new global::System.Data.DataColumn("standort", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstandort);
+                this.columnidfahrzeug = new global::System.Data.DataColumn("idfahrzeug", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidfahrzeug);
+                this.columnbezeichnung.AllowDBNull = false;
+                this.columnkennzeichen.AllowDBNull = false;
+                this.columnstandort.AllowDBNull = false;
+                this.columnidfahrzeug.AutoIncrementSeed = -1;
+                this.columnidfahrzeug.AutoIncrementStep = -1;
+                this.columnidfahrzeug.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fahrzeuge_standorteDownRow Newfahrzeuge_standorteDownRow() {
+                return ((fahrzeuge_standorteDownRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new fahrzeuge_standorteDownRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(fahrzeuge_standorteDownRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.fahrzeuge_standorteDownRowChanged != null)) {
+                    this.fahrzeuge_standorteDownRowChanged(this, new fahrzeuge_standorteDownRowChangeEvent(((fahrzeuge_standorteDownRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.fahrzeuge_standorteDownRowChanging != null)) {
+                    this.fahrzeuge_standorteDownRowChanging(this, new fahrzeuge_standorteDownRowChangeEvent(((fahrzeuge_standorteDownRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.fahrzeuge_standorteDownRowDeleted != null)) {
+                    this.fahrzeuge_standorteDownRowDeleted(this, new fahrzeuge_standorteDownRowChangeEvent(((fahrzeuge_standorteDownRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.fahrzeuge_standorteDownRowDeleting != null)) {
+                    this.fahrzeuge_standorteDownRowDeleting(this, new fahrzeuge_standorteDownRowChangeEvent(((fahrzeuge_standorteDownRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removefahrzeuge_standorteDownRow(fahrzeuge_standorteDownRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ProjektZDataSet ds = new ProjektZDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "fahrzeuge_standorteDownDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -5547,6 +7045,44 @@ namespace Zentralwerkstatt.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fahrzeug {
+                get {
+                    return ((string)(this[this.tablebarcodes.fahrzeugColumn]));
+                }
+                set {
+                    this[this.tablebarcodes.fahrzeugColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kennzeichen {
+                get {
+                    try {
+                        return ((string)(this[this.tablebarcodes.kennzeichenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kennzeichen\' in table \'barcodes\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebarcodes.kennzeichenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string bezeichnung {
+                get {
+                    return ((string)(this[this.tablebarcodes.bezeichnungColumn]));
+                }
+                set {
+                    this[this.tablebarcodes.bezeichnungColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsseriennummerNull() {
                 return this.IsNull(this.tablebarcodes.seriennummerColumn);
             }
@@ -5555,6 +7091,18 @@ namespace Zentralwerkstatt.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetseriennummerNull() {
                 this[this.tablebarcodes.seriennummerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IskennzeichenNull() {
+                return this.IsNull(this.tablebarcodes.kennzeichenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetkennzeichenNull() {
+                this[this.tablebarcodes.kennzeichenColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5612,6 +7160,33 @@ namespace Zentralwerkstatt.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idfahrzeug {
+                get {
+                    return ((int)(this[this.tablefahrzeuge_standorte.idfahrzeugColumn]));
+                }
+                set {
+                    this[this.tablefahrzeuge_standorte.idfahrzeugColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string tostring {
+                get {
+                    try {
+                        return ((string)(this[this.tablefahrzeuge_standorte.tostringColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tostring\' in table \'fahrzeuge_standorte\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefahrzeuge_standorte.tostringColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IskennzeichenNull() {
                 return this.IsNull(this.tablefahrzeuge_standorte.kennzeichenColumn);
             }
@@ -5620,6 +7195,18 @@ namespace Zentralwerkstatt.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetkennzeichenNull() {
                 this[this.tablefahrzeuge_standorte.kennzeichenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstostringNull() {
+                return this.IsNull(this.tablefahrzeuge_standorte.tostringColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettostringNull() {
+                this[this.tablefahrzeuge_standorte.tostringColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5744,6 +7331,376 @@ namespace Zentralwerkstatt.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetbemerkungenNull() {
                 this[this.tabletest.bemerkungenColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class barcodesUpRow : global::System.Data.DataRow {
+            
+            private barcodesUpDataTable tablebarcodesUp;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal barcodesUpRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablebarcodesUp = ((barcodesUpDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string geraete_barcode {
+                get {
+                    return ((string)(this[this.tablebarcodesUp.geraete_barcodeColumn]));
+                }
+                set {
+                    this[this.tablebarcodesUp.geraete_barcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string seriennummer {
+                get {
+                    try {
+                        return ((string)(this[this.tablebarcodesUp.seriennummerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'seriennummer\' in table \'barcodesUp\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebarcodesUp.seriennummerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime anschaffungsdatum {
+                get {
+                    return ((global::System.DateTime)(this[this.tablebarcodesUp.anschaffungsdatumColumn]));
+                }
+                set {
+                    this[this.tablebarcodesUp.anschaffungsdatumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string hersteller {
+                get {
+                    return ((string)(this[this.tablebarcodesUp.herstellerColumn]));
+                }
+                set {
+                    this[this.tablebarcodesUp.herstellerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fahrzeug {
+                get {
+                    return ((string)(this[this.tablebarcodesUp.fahrzeugColumn]));
+                }
+                set {
+                    this[this.tablebarcodesUp.fahrzeugColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kennzeichen {
+                get {
+                    try {
+                        return ((string)(this[this.tablebarcodesUp.kennzeichenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kennzeichen\' in table \'barcodesUp\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebarcodesUp.kennzeichenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string bezeichnung {
+                get {
+                    return ((string)(this[this.tablebarcodesUp.bezeichnungColumn]));
+                }
+                set {
+                    this[this.tablebarcodesUp.bezeichnungColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsseriennummerNull() {
+                return this.IsNull(this.tablebarcodesUp.seriennummerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetseriennummerNull() {
+                this[this.tablebarcodesUp.seriennummerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IskennzeichenNull() {
+                return this.IsNull(this.tablebarcodesUp.kennzeichenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetkennzeichenNull() {
+                this[this.tablebarcodesUp.kennzeichenColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class barcodesDownRow : global::System.Data.DataRow {
+            
+            private barcodesDownDataTable tablebarcodesDown;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal barcodesDownRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablebarcodesDown = ((barcodesDownDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string geraete_barcode {
+                get {
+                    return ((string)(this[this.tablebarcodesDown.geraete_barcodeColumn]));
+                }
+                set {
+                    this[this.tablebarcodesDown.geraete_barcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string seriennummer {
+                get {
+                    try {
+                        return ((string)(this[this.tablebarcodesDown.seriennummerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'seriennummer\' in table \'barcodesDown\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebarcodesDown.seriennummerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime anschaffungsdatum {
+                get {
+                    return ((global::System.DateTime)(this[this.tablebarcodesDown.anschaffungsdatumColumn]));
+                }
+                set {
+                    this[this.tablebarcodesDown.anschaffungsdatumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string hersteller {
+                get {
+                    return ((string)(this[this.tablebarcodesDown.herstellerColumn]));
+                }
+                set {
+                    this[this.tablebarcodesDown.herstellerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fahrzeug {
+                get {
+                    return ((string)(this[this.tablebarcodesDown.fahrzeugColumn]));
+                }
+                set {
+                    this[this.tablebarcodesDown.fahrzeugColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kennzeichen {
+                get {
+                    try {
+                        return ((string)(this[this.tablebarcodesDown.kennzeichenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kennzeichen\' in table \'barcodesDown\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablebarcodesDown.kennzeichenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string bezeichnung {
+                get {
+                    return ((string)(this[this.tablebarcodesDown.bezeichnungColumn]));
+                }
+                set {
+                    this[this.tablebarcodesDown.bezeichnungColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsseriennummerNull() {
+                return this.IsNull(this.tablebarcodesDown.seriennummerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetseriennummerNull() {
+                this[this.tablebarcodesDown.seriennummerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IskennzeichenNull() {
+                return this.IsNull(this.tablebarcodesDown.kennzeichenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetkennzeichenNull() {
+                this[this.tablebarcodesDown.kennzeichenColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class fahrzeuge_standorteUpRow : global::System.Data.DataRow {
+            
+            private fahrzeuge_standorteUpDataTable tablefahrzeuge_standorteUp;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fahrzeuge_standorteUpRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablefahrzeuge_standorteUp = ((fahrzeuge_standorteUpDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string bezeichnung {
+                get {
+                    return ((string)(this[this.tablefahrzeuge_standorteUp.bezeichnungColumn]));
+                }
+                set {
+                    this[this.tablefahrzeuge_standorteUp.bezeichnungColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kennzeichen {
+                get {
+                    return ((string)(this[this.tablefahrzeuge_standorteUp.kennzeichenColumn]));
+                }
+                set {
+                    this[this.tablefahrzeuge_standorteUp.kennzeichenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string standort {
+                get {
+                    return ((string)(this[this.tablefahrzeuge_standorteUp.standortColumn]));
+                }
+                set {
+                    this[this.tablefahrzeuge_standorteUp.standortColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idfahrzeug {
+                get {
+                    return ((int)(this[this.tablefahrzeuge_standorteUp.idfahrzeugColumn]));
+                }
+                set {
+                    this[this.tablefahrzeuge_standorteUp.idfahrzeugColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class fahrzeuge_standorteDownRow : global::System.Data.DataRow {
+            
+            private fahrzeuge_standorteDownDataTable tablefahrzeuge_standorteDown;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal fahrzeuge_standorteDownRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablefahrzeuge_standorteDown = ((fahrzeuge_standorteDownDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string bezeichnung {
+                get {
+                    return ((string)(this[this.tablefahrzeuge_standorteDown.bezeichnungColumn]));
+                }
+                set {
+                    this[this.tablefahrzeuge_standorteDown.bezeichnungColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string kennzeichen {
+                get {
+                    return ((string)(this[this.tablefahrzeuge_standorteDown.kennzeichenColumn]));
+                }
+                set {
+                    this[this.tablefahrzeuge_standorteDown.kennzeichenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string standort {
+                get {
+                    return ((string)(this[this.tablefahrzeuge_standorteDown.standortColumn]));
+                }
+                set {
+                    this[this.tablefahrzeuge_standorteDown.standortColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idfahrzeug {
+                get {
+                    return ((int)(this[this.tablefahrzeuge_standorteDown.idfahrzeugColumn]));
+                }
+                set {
+                    this[this.tablefahrzeuge_standorteDown.idfahrzeugColumn] = value;
+                }
             }
         }
         
@@ -6175,6 +8132,142 @@ namespace Zentralwerkstatt.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public testRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class barcodesUpRowChangeEvent : global::System.EventArgs {
+            
+            private barcodesUpRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesUpRowChangeEvent(barcodesUpRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesUpRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class barcodesDownRowChangeEvent : global::System.EventArgs {
+            
+            private barcodesDownRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesDownRowChangeEvent(barcodesDownRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public barcodesDownRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class fahrzeuge_standorteUpRowChangeEvent : global::System.EventArgs {
+            
+            private fahrzeuge_standorteUpRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fahrzeuge_standorteUpRowChangeEvent(fahrzeuge_standorteUpRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fahrzeuge_standorteUpRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class fahrzeuge_standorteDownRowChangeEvent : global::System.EventArgs {
+            
+            private fahrzeuge_standorteDownRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fahrzeuge_standorteDownRowChangeEvent(fahrzeuge_standorteDownRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public fahrzeuge_standorteDownRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8336,11 +10429,16 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[1];
+            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[2];
             this._commandCollection[0] = new global::Devart.Data.MySql.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idhersteller, bezeichnung FROM projektz.hersteller";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        idhersteller\r\nFROM            projektz.hersteller ORDER BY idherste" +
+                "ller ASC LIMIT :index , 1";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8482,6 +10580,34 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object GetIDByDropDownRowIndex() {
+            global::Devart.Data.MySql.MySqlCommand command = this.CommandCollection[1];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
             }
         }
     }
@@ -10264,6 +12390,9 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("seriennummer", "seriennummer");
             tableMapping.ColumnMappings.Add("anschaffungsdatum", "anschaffungsdatum");
             tableMapping.ColumnMappings.Add("hersteller", "hersteller");
+            tableMapping.ColumnMappings.Add("fahrzeug", "fahrzeug");
+            tableMapping.ColumnMappings.Add("kennzeichen", "kennzeichen");
+            tableMapping.ColumnMappings.Add("bezeichnung", "bezeichnung");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -10277,16 +12406,17 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[2];
+            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[3];
             this._commandCollection[0] = new global::Devart.Data.MySql.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        geraete_barcode, seriennummer, anschaffungsdatum, hersteller\r\nFROM " +
-                "           barcodes";
+            this._commandCollection[0].CommandText = "SELECT        geraete_barcode, seriennummer, anschaffungsdatum, hersteller, fahrz" +
+                "eug, kennzeichen, bezeichnung\r\nFROM            barcodes";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Devart.Data.MySql.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT anschaffungsdatum, geraete_barcode, hersteller, seriennummer FROM barcodes" +
-                " WHERE (bezeichnung = :bezeichnung)";
+            this._commandCollection[1].CommandText = "SELECT        anschaffungsdatum, bezeichnung, fahrzeug, geraete_barcode, herstell" +
+                "er, kennzeichen, seriennummer\r\nFROM            barcodes\r\nWHERE        (bezeichnu" +
+                "ng = :bezeichnung)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Devart.Data.MySql.MySqlParameter param = new global::Devart.Data.MySql.MySqlParameter();
             param.ParameterName = "bezeichnung";
@@ -10295,6 +12425,19 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "bezeichnung";
             this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        anschaffungsdatum, bezeichnung, fahrzeug, geraete_barcode, herstell" +
+                "er, kennzeichen, seriennummer\r\nFROM            barcodes\r\nWHERE        (herstelle" +
+                "r = :hersteller)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "hersteller";
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.VarChar;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "hersteller";
+            this._commandCollection[2].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10325,7 +12468,7 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(ProjektZDataSet.barcodesDataTable dataTable, string bezeichnung) {
+        public virtual int FillByGeraetetyp(ProjektZDataSet.barcodesDataTable dataTable, string bezeichnung) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((bezeichnung == null)) {
                 throw new global::System.ArgumentNullException("bezeichnung");
@@ -10344,13 +12487,49 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual ProjektZDataSet.barcodesDataTable GetDataBy(string bezeichnung) {
+        public virtual ProjektZDataSet.barcodesDataTable GetDataByGeraetetyp(string bezeichnung) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((bezeichnung == null)) {
                 throw new global::System.ArgumentNullException("bezeichnung");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(bezeichnung));
+            }
+            ProjektZDataSet.barcodesDataTable dataTable = new ProjektZDataSet.barcodesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByHersteller(ProjektZDataSet.barcodesDataTable dataTable, string hersteller) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((hersteller == null)) {
+                throw new global::System.ArgumentNullException("hersteller");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(hersteller));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjektZDataSet.barcodesDataTable GetDataByHersteller(string hersteller) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((hersteller == null)) {
+                throw new global::System.ArgumentNullException("hersteller");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(hersteller));
             }
             ProjektZDataSet.barcodesDataTable dataTable = new ProjektZDataSet.barcodesDataTable();
             this.Adapter.Fill(dataTable);
@@ -10482,6 +12661,8 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("bezeichnung", "bezeichnung");
             tableMapping.ColumnMappings.Add("kennzeichen", "kennzeichen");
             tableMapping.ColumnMappings.Add("standort", "standort");
+            tableMapping.ColumnMappings.Add("idfahrzeug", "idfahrzeug");
+            tableMapping.ColumnMappings.Add("tostring", "tostring");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -10495,11 +12676,29 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[1];
+            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[3];
             this._commandCollection[0] = new global::Devart.Data.MySql.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT bezeichnung, kennzeichen, standort FROM projektz.fahrzeuge_standorte";
+            this._commandCollection[0].CommandText = "SELECT        bezeichnung, kennzeichen, standort, idfahrzeug, CONCAT(bezeichnung," +
+                " CONCAT(\': \', CONCAT(kennzeichen, CONCAT(\' (\', CONCAT(standort, \')\'))))) AS tost" +
+                "ring\r\nFROM            fahrzeuge_standorte";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT bezeichnung, idfahrzeug, kennzeichen, standort FROM fahrzeuge_standorte WH" +
+                "ERE (standort = :standort)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Devart.Data.MySql.MySqlParameter param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "standort";
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.VarChar;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "standort";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        MAX(idfahrzeug) + 1 AS newid\r\nFROM            fahrzeuge_standorte";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10524,6 +12723,70 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
             ProjektZDataSet.fahrzeuge_standorteDataTable dataTable = new ProjektZDataSet.fahrzeuge_standorteDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(ProjektZDataSet.fahrzeuge_standorteDataTable dataTable, string standort) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((standort == null)) {
+                throw new global::System.ArgumentNullException("standort");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(standort));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjektZDataSet.fahrzeuge_standorteDataTable GetDataBy(string standort) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((standort == null)) {
+                throw new global::System.ArgumentNullException("standort");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(standort));
+            }
+            ProjektZDataSet.fahrzeuge_standorteDataTable dataTable = new ProjektZDataSet.fahrzeuge_standorteDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<long> GetNewID() {
+            global::Devart.Data.MySql.MySqlCommand command = this.CommandCollection[2];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<long>();
+            }
+            else {
+                return new global::System.Nullable<long>(((long)(returnValue)));
+            }
         }
     }
     
@@ -10947,6 +13210,1048 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class barcodesTableAdapterUp : global::System.ComponentModel.Component {
+        
+        private global::Devart.Data.MySql.MySqlDataAdapter _adapter;
+        
+        private global::Devart.Data.MySql.MySqlConnection _connection;
+        
+        private global::System.Data.Common.DbTransaction _transaction;
+        
+        private global::Devart.Data.MySql.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public barcodesTableAdapterUp() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::Devart.Data.MySql.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::Devart.Data.MySql.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Devart.Data.MySql.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.Common.DbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::Devart.Data.MySql.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Devart.Data.MySql.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "barcodesUp";
+            tableMapping.ColumnMappings.Add("geraete_barcode", "geraete_barcode");
+            tableMapping.ColumnMappings.Add("seriennummer", "seriennummer");
+            tableMapping.ColumnMappings.Add("anschaffungsdatum", "anschaffungsdatum");
+            tableMapping.ColumnMappings.Add("hersteller", "hersteller");
+            tableMapping.ColumnMappings.Add("fahrzeug", "fahrzeug");
+            tableMapping.ColumnMappings.Add("kennzeichen", "kennzeichen");
+            tableMapping.ColumnMappings.Add("bezeichnung", "bezeichnung");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Devart.Data.MySql.MySqlConnection();
+            this._connection.ConnectionString = global::Zentralwerkstatt.Properties.Settings.Default.projektzConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[3];
+            this._commandCollection[0] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        geraete_barcode, seriennummer, anschaffungsdatum, hersteller, fahrz" +
+                "eug, kennzeichen, bezeichnung\r\nFROM            barcodes";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT anschaffungsdatum, bezeichnung, fahrzeug, geraete_barcode, hersteller, ken" +
+                "nzeichen, seriennummer FROM barcodes WHERE (bezeichnung = :bezeichnung)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Devart.Data.MySql.MySqlParameter param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "bezeichnung";
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.VarChar;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "bezeichnung";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT anschaffungsdatum, bezeichnung, fahrzeug, geraete_barcode, hersteller, ken" +
+                "nzeichen, seriennummer FROM barcodes WHERE (hersteller = :hersteller)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "hersteller";
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.VarChar;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "hersteller";
+            this._commandCollection[2].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ProjektZDataSet.barcodesUpDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ProjektZDataSet.barcodesUpDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            ProjektZDataSet.barcodesUpDataTable dataTable = new ProjektZDataSet.barcodesUpDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByGeraetetyp(ProjektZDataSet.barcodesUpDataTable dataTable, string bezeichnung) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((bezeichnung == null)) {
+                throw new global::System.ArgumentNullException("bezeichnung");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(bezeichnung));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjektZDataSet.barcodesUpDataTable GetDataByGeraetetyp(string bezeichnung) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((bezeichnung == null)) {
+                throw new global::System.ArgumentNullException("bezeichnung");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(bezeichnung));
+            }
+            ProjektZDataSet.barcodesUpDataTable dataTable = new ProjektZDataSet.barcodesUpDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByHersteller(ProjektZDataSet.barcodesUpDataTable dataTable, string hersteller) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((hersteller == null)) {
+                throw new global::System.ArgumentNullException("hersteller");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(hersteller));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjektZDataSet.barcodesUpDataTable GetDataByHersteller(string hersteller) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((hersteller == null)) {
+                throw new global::System.ArgumentNullException("hersteller");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(hersteller));
+            }
+            ProjektZDataSet.barcodesUpDataTable dataTable = new ProjektZDataSet.barcodesUpDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class barcodesTableAdapterDown : global::System.ComponentModel.Component {
+        
+        private global::Devart.Data.MySql.MySqlDataAdapter _adapter;
+        
+        private global::Devart.Data.MySql.MySqlConnection _connection;
+        
+        private global::System.Data.Common.DbTransaction _transaction;
+        
+        private global::Devart.Data.MySql.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public barcodesTableAdapterDown() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::Devart.Data.MySql.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::Devart.Data.MySql.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Devart.Data.MySql.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.Common.DbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::Devart.Data.MySql.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Devart.Data.MySql.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "barcodesDown";
+            tableMapping.ColumnMappings.Add("geraete_barcode", "geraete_barcode");
+            tableMapping.ColumnMappings.Add("seriennummer", "seriennummer");
+            tableMapping.ColumnMappings.Add("anschaffungsdatum", "anschaffungsdatum");
+            tableMapping.ColumnMappings.Add("hersteller", "hersteller");
+            tableMapping.ColumnMappings.Add("fahrzeug", "fahrzeug");
+            tableMapping.ColumnMappings.Add("kennzeichen", "kennzeichen");
+            tableMapping.ColumnMappings.Add("bezeichnung", "bezeichnung");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Devart.Data.MySql.MySqlConnection();
+            this._connection.ConnectionString = global::Zentralwerkstatt.Properties.Settings.Default.projektzConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[3];
+            this._commandCollection[0] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        geraete_barcode, seriennummer, anschaffungsdatum, hersteller, fahrz" +
+                "eug, kennzeichen, bezeichnung\r\nFROM            barcodes";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT anschaffungsdatum, bezeichnung, fahrzeug, geraete_barcode, hersteller, ken" +
+                "nzeichen, seriennummer FROM barcodes WHERE (bezeichnung = :bezeichnung)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Devart.Data.MySql.MySqlParameter param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "bezeichnung";
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.VarChar;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "bezeichnung";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT anschaffungsdatum, bezeichnung, fahrzeug, geraete_barcode, hersteller, ken" +
+                "nzeichen, seriennummer FROM barcodes WHERE (hersteller = :hersteller)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "hersteller";
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.VarChar;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "hersteller";
+            this._commandCollection[2].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ProjektZDataSet.barcodesDownDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ProjektZDataSet.barcodesDownDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            ProjektZDataSet.barcodesDownDataTable dataTable = new ProjektZDataSet.barcodesDownDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByGeraetetyp(ProjektZDataSet.barcodesDownDataTable dataTable, string bezeichnung) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((bezeichnung == null)) {
+                throw new global::System.ArgumentNullException("bezeichnung");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(bezeichnung));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjektZDataSet.barcodesDownDataTable GetDataByGeraetetyp(string bezeichnung) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((bezeichnung == null)) {
+                throw new global::System.ArgumentNullException("bezeichnung");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(bezeichnung));
+            }
+            ProjektZDataSet.barcodesDownDataTable dataTable = new ProjektZDataSet.barcodesDownDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByHersteller(ProjektZDataSet.barcodesDownDataTable dataTable, string hersteller) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((hersteller == null)) {
+                throw new global::System.ArgumentNullException("hersteller");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(hersteller));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjektZDataSet.barcodesDownDataTable GetDataByHersteller(string hersteller) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((hersteller == null)) {
+                throw new global::System.ArgumentNullException("hersteller");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(hersteller));
+            }
+            ProjektZDataSet.barcodesDownDataTable dataTable = new ProjektZDataSet.barcodesDownDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class fahrzeuge_standorteUpTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Devart.Data.MySql.MySqlDataAdapter _adapter;
+        
+        private global::Devart.Data.MySql.MySqlConnection _connection;
+        
+        private global::System.Data.Common.DbTransaction _transaction;
+        
+        private global::Devart.Data.MySql.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public fahrzeuge_standorteUpTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::Devart.Data.MySql.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::Devart.Data.MySql.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Devart.Data.MySql.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.Common.DbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::Devart.Data.MySql.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Devart.Data.MySql.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "fahrzeuge_standorteUp";
+            tableMapping.ColumnMappings.Add("bezeichnung", "bezeichnung");
+            tableMapping.ColumnMappings.Add("kennzeichen", "kennzeichen");
+            tableMapping.ColumnMappings.Add("standort", "standort");
+            tableMapping.ColumnMappings.Add("idfahrzeug", "idfahrzeug");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Devart.Data.MySql.MySqlConnection();
+            this._connection.ConnectionString = global::Zentralwerkstatt.Properties.Settings.Default.projektzConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[3];
+            this._commandCollection[0] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        bezeichnung, kennzeichen, standort, idfahrzeug\r\nFROM            fah" +
+                "rzeuge_standorte";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT bezeichnung, idfahrzeug, kennzeichen, standort FROM fahrzeuge_standorte WH" +
+                "ERE (standort = :standort)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Devart.Data.MySql.MySqlParameter param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "standort";
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.VarChar;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "standort";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        MAX(idfahrzeug) + 1 AS newid\r\nFROM            fahrzeuge_standorte";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ProjektZDataSet.fahrzeuge_standorteUpDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ProjektZDataSet.fahrzeuge_standorteUpDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            ProjektZDataSet.fahrzeuge_standorteUpDataTable dataTable = new ProjektZDataSet.fahrzeuge_standorteUpDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(ProjektZDataSet.fahrzeuge_standorteUpDataTable dataTable, string standort) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((standort == null)) {
+                throw new global::System.ArgumentNullException("standort");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(standort));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjektZDataSet.fahrzeuge_standorteUpDataTable GetDataBy(string standort) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((standort == null)) {
+                throw new global::System.ArgumentNullException("standort");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(standort));
+            }
+            ProjektZDataSet.fahrzeuge_standorteUpDataTable dataTable = new ProjektZDataSet.fahrzeuge_standorteUpDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<long> GetNewID() {
+            global::Devart.Data.MySql.MySqlCommand command = this.CommandCollection[2];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<long>();
+            }
+            else {
+                return new global::System.Nullable<long>(((long)(returnValue)));
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class fahrzeuge_standorteDownTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Devart.Data.MySql.MySqlDataAdapter _adapter;
+        
+        private global::Devart.Data.MySql.MySqlConnection _connection;
+        
+        private global::System.Data.Common.DbTransaction _transaction;
+        
+        private global::Devart.Data.MySql.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public fahrzeuge_standorteDownTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::Devart.Data.MySql.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::Devart.Data.MySql.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Devart.Data.MySql.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.Common.DbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::Devart.Data.MySql.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Devart.Data.MySql.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "fahrzeuge_standorteDown";
+            tableMapping.ColumnMappings.Add("bezeichnung", "bezeichnung");
+            tableMapping.ColumnMappings.Add("kennzeichen", "kennzeichen");
+            tableMapping.ColumnMappings.Add("standort", "standort");
+            tableMapping.ColumnMappings.Add("idfahrzeug", "idfahrzeug");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Devart.Data.MySql.MySqlConnection();
+            this._connection.ConnectionString = global::Zentralwerkstatt.Properties.Settings.Default.projektzConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[3];
+            this._commandCollection[0] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        bezeichnung, kennzeichen, standort, idfahrzeug\r\nFROM            fah" +
+                "rzeuge_standorte";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT bezeichnung, idfahrzeug, kennzeichen, standort FROM fahrzeuge_standorte WH" +
+                "ERE (standort = :standort)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Devart.Data.MySql.MySqlParameter param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "standort";
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.VarChar;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "standort";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        MAX(idfahrzeug) + 1 AS newid\r\nFROM            fahrzeuge_standorte";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ProjektZDataSet.fahrzeuge_standorteDownDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ProjektZDataSet.fahrzeuge_standorteDownDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            ProjektZDataSet.fahrzeuge_standorteDownDataTable dataTable = new ProjektZDataSet.fahrzeuge_standorteDownDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(ProjektZDataSet.fahrzeuge_standorteDownDataTable dataTable, string standort) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((standort == null)) {
+                throw new global::System.ArgumentNullException("standort");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(standort));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjektZDataSet.fahrzeuge_standorteDownDataTable GetDataBy(string standort) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((standort == null)) {
+                throw new global::System.ArgumentNullException("standort");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(standort));
+            }
+            ProjektZDataSet.fahrzeuge_standorteDownDataTable dataTable = new ProjektZDataSet.fahrzeuge_standorteDownDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object GetNewID() {
+            global::Devart.Data.MySql.MySqlCommand command = this.CommandCollection[2];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11223,21 +14528,21 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(ProjektZDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._herstellerTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.hersteller.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._herstellerTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._standorteTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.standorte.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._standorteTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._herstellerTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.hersteller.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._herstellerTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11314,19 +14619,19 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(ProjektZDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._herstellerTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.hersteller.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._herstellerTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._standorteTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.standorte.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._standorteTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._herstellerTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.hersteller.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._herstellerTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11452,19 +14757,19 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._standorteTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.standorte.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._standorteTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._herstellerTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.hersteller.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._herstellerTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._standorteTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.standorte.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._standorteTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

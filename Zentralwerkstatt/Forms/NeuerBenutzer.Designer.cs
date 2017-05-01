@@ -52,7 +52,6 @@
             this.BenutzertextBox.Name = "BenutzertextBox";
             this.BenutzertextBox.Size = new System.Drawing.Size(100, 20);
             this.BenutzertextBox.TabIndex = 1;
-            this.BenutzertextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
             // 
             // BenutzerHinzufügen
             // 
@@ -70,7 +69,6 @@
             this.PassworttextBox.Name = "PassworttextBox";
             this.PassworttextBox.Size = new System.Drawing.Size(100, 20);
             this.PassworttextBox.TabIndex = 2;
-            this.PassworttextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
             // 
             // Benutzer
             // 
@@ -90,10 +88,10 @@
             this.AdminCheckbox.TabIndex = 3;
             this.AdminCheckbox.Text = "Administrator";
             this.AdminCheckbox.UseVisualStyleBackColor = true;
-            this.AdminCheckbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
             // 
             // buttonAbbrechen
             // 
+            this.buttonAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonAbbrechen.Location = new System.Drawing.Point(172, 226);
             this.buttonAbbrechen.Name = "buttonAbbrechen";
             this.buttonAbbrechen.Size = new System.Drawing.Size(100, 23);
@@ -104,8 +102,10 @@
             // 
             // NeuerBenutzer
             // 
+            this.AcceptButton = this.BenutzerHinzufügen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonAbbrechen;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.buttonAbbrechen);
             this.Controls.Add(this.AdminCheckbox);

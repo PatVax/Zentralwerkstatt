@@ -62,17 +62,17 @@ namespace Zentralwerkstatt
             this.Close();
         }
 
-        private void CreatePHP_KeyDown(object sender, KeyEventArgs e)
+        private void CreatePHP_Shown(object sender, EventArgs e)
         {
-            switch(e.KeyCode)
+            try
             {
-                case Keys.Enter:
-                    btnAccept_Click(sender, e);
-                    break;
-                case Keys.Escape:
-                    btnCancel_Click(sender, e);
-                    break;
+                Control currentControl = txtHost;
+                if (!string.IsNullOrEmpty(currentControl.Text))
+                    while (!string.IsNullOrEmpty((currentControl = this.GetNextControl(currentControl, true)).Text)) ;
+                if (currentControl.TabIndex == 1) return;
+                currentControl.Focus();
             }
+            catch (NullReferenceException) { return; }
         }
     }
 }

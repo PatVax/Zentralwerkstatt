@@ -5,6 +5,7 @@ using System.Configuration;
 using System.IO;
 using System.Text;
 using System.Security.Cryptography;
+using System.Collections.Generic;
 
 namespace Zentralwerkstatt
 {
@@ -34,7 +35,7 @@ namespace Zentralwerkstatt
         {
             //Öffnen der Benutzerverwaltung
             Zentralverwaltung Form = new Zentralverwaltung();
-            Form.ShowDialog();
+            Form.Show();
         }
 
         private void Main_Close(object sender, FormClosingEventArgs e)
@@ -54,7 +55,12 @@ namespace Zentralwerkstatt
                 txtBemerkungen.Visible = true;
                 // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
                 this.pruefausgabeTableAdapter.FillBy(this.projektZDataSet.pruefausgabe, idPruefung);
-                this.txtBemerkungen.Lines = this.testTableAdapter.FillBemerkungenByID(idPruefung).ToString().Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
+                List<string> bemerkungenList = new List<string>();
+                foreach (string s in this.testTableAdapter.FillBemerkungenByID(idPruefung).ToString().Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    bemerkungenList.AddRange(new string[] { s, "" });
+                }
+                this.txtBemerkungen.Lines = bemerkungenList.ToArray();
             }
             catch (MySqlException ex)
             {
@@ -72,7 +78,7 @@ namespace Zentralwerkstatt
         private void geräteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Geraeteverwaltung Form = new Geraeteverwaltung();
-            Form.ShowDialog();
+            Form.Show();
         }
 
         private void schließenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,6 +90,14 @@ namespace Zentralwerkstatt
         {
             CreatePHP phpForm = new CreatePHP();
             phpForm.ShowDialog(this);
+        }
+
+        private void aktualiesierenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'projektZDataSet.Prüfausgabe' table. You can move, or remove it, as needed.
+            this.pruefausgabeTableAdapter.Fill(this.projektZDataSet.pruefausgabe);
+            // TODO: This line of code loads data into the 'projektZDataSet.Test' table. You can move, or remove it, as needed.
+            this.testTableAdapter.Fill(this.projektZDataSet.test);
         }
     }
 }

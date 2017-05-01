@@ -23,38 +23,30 @@ namespace Zentralwerkstatt
             this.Close();
         }
 
-        private void OnKeyDown(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Enter:
-                    BenutzerHinzufügen_Click(sender, e);
-                    break;
-                case Keys.Escape:
-                    buttonAbbrechen_Click(sender, e);
-                    break;
-            }
-        }
-
         private void BenutzerHinzufügen_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmd = DBUtils.COMMAND;
-
-
+            if(BenutzertextBox.Text == "")
+            {
+                MessageBox.Show("Benutzer konnte nicht angelegt werden.\nDie Benutzername darf nicht leer bleiben");
+                return;
+            }
             string Benutzer = BenutzertextBox.Text;
             string Passwort = DBUtils.EncodeMD5(PassworttextBox.Text);
             bool Administrator = AdminCheckbox.Checked;
 
+            try
+            {
+                MySqlCommand cmd = DBUtils.GetCommand("INSERT INTO benutzer (benutzername, passwort, administrator) VALUES (@Benutzername, @Passwort, @Administrator)");
+                cmd.Parameters.AddWithValue("@Benutzername", Benutzer);
+                cmd.Parameters.AddWithValue("@Passwort", Passwort);
+                cmd.Parameters.AddWithValue("@Administrator", Administrator);
+                cmd.ExecuteNonQuery();
+            }catch(MySqlException)
+            {
+                MessageBox.Show(String.Format("Benutzer konnte nicht angelegt werden.\nMöglicherweise existiert die Benutzername '{0}' schon", Benutzer));
+            }
 
-            cmd.CommandText = "INSERT INTO benutzer (benutzername, passwort, administrator) VALUES (@Benutzername, @Passwort, @Administrator)";
-            cmd.Parameters.AddWithValue("@Benutzername", Benutzer);
-            cmd.Parameters.AddWithValue("@Passwort", Passwort);
-            cmd.Parameters.AddWithValue("@Administrator", Administrator);
-            cmd.ExecuteNonQuery();
-
-            string Adminpermission = AdminCheckbox.Checked ? "true" : "false";
-
-            MessageBox.Show(String.Format("Ein Neuer Benutzer wurde angelegt:\nBenutzername:                 {0} \nAdministratorrechte:       {1}", Benutzer, Adminpermission));
+            MessageBox.Show(String.Format("Ein Neuer Benutzer wurde angelegt:\nBenutzername:                 {0} \nAdministratorrechte:       {1}", Benutzer, AdminCheckbox.Checked ? "true" : "false"));
             this.Close();
         }
     }

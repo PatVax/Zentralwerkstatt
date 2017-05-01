@@ -26,6 +26,8 @@ namespace Zentralwerkstatt.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.178.11;port=3306;user id=Zentralwerkstatt;database=projektz;passwo" +
+            "rd=fjonkheerdb")]
         public string projektzConnectionString {
             get {
                 return ((string)(this["projektzConnectionString"]));

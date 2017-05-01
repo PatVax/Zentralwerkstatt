@@ -32,12 +32,20 @@ namespace Zentralwerkstatt
 
         private void RemoveUserButton_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmd = DBUtils.COMMAND;
-
-            cmd.CommandText = "DELETE FROM benutzer WHERE benutzername = @Benutzername";
-            cmd.Parameters.AddWithValue("@Benutzername", dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            cmd.ExecuteNonQuery();
-            this.benutzerTableAdapter.Fill(this.projektZDataSet.benutzer);
+            DialogResult dialogResult = MessageBox.Show("Wollen sie den Benutzer löschen?", "Sicher?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    MySqlCommand cmd = DBUtils.GetCommand("DELETE FROM benutzer WHERE benutzername = @Benutzername");
+                    cmd.Parameters.AddWithValue("@Benutzername", dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                    cmd.ExecuteNonQuery();
+                    this.benutzerTableAdapter.Fill(this.projektZDataSet.benutzer);
+                }catch(MySqlException ex)
+                {
+                    MessageBox.Show("Benutzer konnte nicht gelöscht werden da zugehörige Prüfungen existieren: " + ex.Message);
+                }
+            }
         }
 
         private void Button_aktualisieren_Click(object sender, EventArgs e)

@@ -73,10 +73,7 @@ namespace Zentralwerkstatt
                     while (!string.IsNullOrEmpty((currentControl = this.GetNextControl(currentControl, true)).Text)) ;
                 if (currentControl.TabIndex == 1) return;
                 currentControl.Focus();
-            }catch(NullReferenceException)
-            {
-                return;
-            }
+            }catch(NullReferenceException) { return; }
         }
     }
 }

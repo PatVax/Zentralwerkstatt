@@ -44,6 +44,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(205, 148);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 23);
@@ -68,7 +69,6 @@
             this.txtDB.Name = "txtDB";
             this.txtDB.Size = new System.Drawing.Size(172, 20);
             this.txtDB.TabIndex = 21;
-            this.txtDB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CreatePHP_KeyDown);
             // 
             // txtPassword
             // 
@@ -77,7 +77,6 @@
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(172, 20);
             this.txtPassword.TabIndex = 20;
-            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CreatePHP_KeyDown);
             // 
             // txtUser
             // 
@@ -85,7 +84,6 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(172, 20);
             this.txtUser.TabIndex = 19;
-            this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CreatePHP_KeyDown);
             // 
             // txtPort
             // 
@@ -93,7 +91,6 @@
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(172, 20);
             this.txtPort.TabIndex = 18;
-            this.txtPort.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CreatePHP_KeyDown);
             // 
             // txtHost
             // 
@@ -101,7 +98,6 @@
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(172, 20);
             this.txtHost.TabIndex = 17;
-            this.txtHost.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CreatePHP_KeyDown);
             // 
             // lblDB
             // 
@@ -150,8 +146,10 @@
             // 
             // CreatePHP
             // 
+            this.AcceptButton = this.btnAccept;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(311, 181);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
@@ -167,6 +165,7 @@
             this.Controls.Add(this.lblHost);
             this.Name = "CreatePHP";
             this.Text = "PHP-Script erstellen";
+            this.Shown += new System.EventHandler(this.CreatePHP_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
