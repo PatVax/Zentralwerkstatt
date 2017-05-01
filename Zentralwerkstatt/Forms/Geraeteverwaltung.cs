@@ -118,6 +118,11 @@ namespace Zentralwerkstatt
                 MessageBox.Show("Bezeichnung darf nicht leer bleiben: " + ex.Message);
                 this.geraetetypenBindingSource.CancelEdit();
             }
+            catch (DBConcurrencyException ex)
+            {
+                MessageBox.Show("Gerätetyp existiert bereits: " + ex.Message);
+                this.herstellerBindingSource.CancelEdit();
+            }
             geraetetypenTableAdapter.Fill(projektZDataSet.geraetetypen);
         }
 

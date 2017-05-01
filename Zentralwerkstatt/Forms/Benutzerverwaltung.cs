@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Zentralwerkstatt
 {
@@ -10,11 +11,6 @@ namespace Zentralwerkstatt
         public Zentralverwaltung()
         {           
             InitializeComponent();       
-        }
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            MessageBox.Show(id);
         }
 
         private void Zentralverwaltung_Load(object sender, EventArgs e)
@@ -55,8 +51,13 @@ namespace Zentralwerkstatt
 
         private void ChangeUserDataButton_Click(object sender, EventArgs e)
         {
-            this.benutzerBindingSource.EndEdit();
-            benutzerTableAdapter.Update(this.projektZDataSet.benutzer);
+            try
+            {
+                this.benutzerBindingSource.EndEdit();
+                benutzerTableAdapter.Update(this.projektZDataSet.benutzer);
+                MessageBox.Show("Benutzerdaten wurden geändert");
+            }
+            catch (DBConcurrencyException) { }
         }
     }
 }

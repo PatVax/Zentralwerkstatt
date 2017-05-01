@@ -33,15 +33,15 @@ namespace Zentralwerkstatt
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Zentralverwaltung));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.administratorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.benutzerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projektZDataSet = new ProjektZDataSet();
+            this.projektZDataSet = new Zentralwerkstatt.DataSets.ProjektZDataSet();
             this.AddUserButton = new System.Windows.Forms.Button();
             this.ChangeUserDataButton = new System.Windows.Forms.Button();
             this.RemoveUserButton = new System.Windows.Forms.Button();
             this.Button_aktualisieren = new System.Windows.Forms.Button();
-            this.benutzerTableAdapter = new DataSets.ProjektZDataSetTableAdapters.benutzerTableAdapter();
-            this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.administratorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.benutzerTableAdapter = new Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters.benutzerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
@@ -69,7 +69,25 @@ namespace Zentralwerkstatt
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(203, 392);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // benutzernameDataGridViewTextBoxColumn
+            // 
+            this.benutzernameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.benutzernameDataGridViewTextBoxColumn.DataPropertyName = "benutzername";
+            this.benutzernameDataGridViewTextBoxColumn.HeaderText = "Benutzer";
+            this.benutzernameDataGridViewTextBoxColumn.Name = "benutzernameDataGridViewTextBoxColumn";
+            // 
+            // administratorDataGridViewCheckBoxColumn
+            // 
+            this.administratorDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.administratorDataGridViewCheckBoxColumn.DataPropertyName = "administrator";
+            this.administratorDataGridViewCheckBoxColumn.FalseValue = "0";
+            this.administratorDataGridViewCheckBoxColumn.HeaderText = "Admin";
+            this.administratorDataGridViewCheckBoxColumn.Name = "administratorDataGridViewCheckBoxColumn";
+            this.administratorDataGridViewCheckBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.administratorDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.administratorDataGridViewCheckBoxColumn.TrueValue = "1";
+            this.administratorDataGridViewCheckBoxColumn.Width = 61;
             // 
             // benutzerBindingSource
             // 
@@ -127,25 +145,6 @@ namespace Zentralwerkstatt
             // benutzerTableAdapter
             // 
             this.benutzerTableAdapter.ClearBeforeFill = true;
-            // 
-            // benutzernameDataGridViewTextBoxColumn
-            // 
-            this.benutzernameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.benutzernameDataGridViewTextBoxColumn.DataPropertyName = "benutzername";
-            this.benutzernameDataGridViewTextBoxColumn.HeaderText = "Benutzer";
-            this.benutzernameDataGridViewTextBoxColumn.Name = "benutzernameDataGridViewTextBoxColumn";
-            // 
-            // administratorDataGridViewCheckBoxColumn
-            // 
-            this.administratorDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.administratorDataGridViewCheckBoxColumn.DataPropertyName = "administrator";
-            this.administratorDataGridViewCheckBoxColumn.FalseValue = "0";
-            this.administratorDataGridViewCheckBoxColumn.HeaderText = "Admin";
-            this.administratorDataGridViewCheckBoxColumn.Name = "administratorDataGridViewCheckBoxColumn";
-            this.administratorDataGridViewCheckBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.administratorDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.administratorDataGridViewCheckBoxColumn.TrueValue = "1";
-            this.administratorDataGridViewCheckBoxColumn.Width = 61;
             // 
             // Zentralverwaltung
             // 

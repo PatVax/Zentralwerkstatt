@@ -99,6 +99,11 @@ namespace Zentralwerkstatt
                     MessageBox.Show("Hersteller existiert bereits: " + ex.Message);
                     this.herstellerBindingSource.CancelEdit();
                 }
+                catch(DBConcurrencyException ex)
+                {
+                    MessageBox.Show("Hersteller existiert bereits: " + ex.Message);
+                    this.herstellerBindingSource.CancelEdit();
+                }
             }
             herstellerTableAdapter.Fill(projektZDataSet.hersteller);
             refreshBarcodeTables(sender, e);

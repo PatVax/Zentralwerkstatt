@@ -68,6 +68,11 @@ namespace Zentralwerkstatt.Forms
                     MessageBox.Show("Standort existiert bereits: " + ex.Message);
                     this.standorteBindingSource.CancelEdit();
                 }
+                catch (DBConcurrencyException ex)
+                {
+                    MessageBox.Show("Standort existiert bereits: " + ex.Message);
+                    this.standorteBindingSource.CancelEdit();
+                }
             }
             standorteTableAdapter.Fill(projektZDataSet.standorte);
             refreshFahrzeugeTables(sender, e);

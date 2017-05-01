@@ -10436,9 +10436,24 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Devart.Data.MySql.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        idhersteller\r\nFROM            projektz.hersteller ORDER BY idherste" +
-                "ller ASC LIMIT :index , 1";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].CommandText = "projektz.getHerstellerIDByIndex";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            global::Devart.Data.MySql.MySqlParameter param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "(Result)";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            this._commandCollection[1].Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "tableindex";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10586,8 +10601,20 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object GetIDByDropDownRowIndex() {
+        public virtual object getHerstellerIDByIndex(global::System.Nullable<int> @__Result_, global::System.Nullable<int> tableindex) {
             global::Devart.Data.MySql.MySqlCommand command = this.CommandCollection[1];
+            if ((@__Result_.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(@__Result_.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((tableindex.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(tableindex.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -14248,6 +14275,91 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
             else {
                 return ((object)(returnValue));
             }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.IDbCommand[] _commandCollection;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.IDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.IDbCommand[1];
+            this._commandCollection[0] = new global::Devart.Data.MySql.MySqlCommand();
+            ((global::Devart.Data.MySql.MySqlCommand)(this._commandCollection[0])).Connection = new global::Devart.Data.MySql.MySqlConnection(global::Zentralwerkstatt.Properties.Settings.Default.projektzConnectionString);
+            ((global::Devart.Data.MySql.MySqlCommand)(this._commandCollection[0])).CommandText = "projektz.getHerstellerIDByIndex";
+            ((global::Devart.Data.MySql.MySqlCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            global::Devart.Data.MySql.MySqlParameter param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "(Result)";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Devart.Data.MySql.MySqlCommand)(this._commandCollection[0])).Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "tableindex";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            ((global::Devart.Data.MySql.MySqlCommand)(this._commandCollection[0])).Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int getHerstellerIDByIndex(global::System.Nullable<int> @__Result_, global::System.Nullable<int> tableindex) {
+            global::Devart.Data.MySql.MySqlCommand command = ((global::Devart.Data.MySql.MySqlCommand)(this.CommandCollection[0]));
+            if ((@__Result_.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(@__Result_.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((tableindex.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(tableindex.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

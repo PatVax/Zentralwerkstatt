@@ -51,11 +51,11 @@ namespace Zentralwerkstatt
         {
             MySqlCommand cmd = DBUtils.COMMAND;
 
-            cmd.CommandText = "INSERT INTO geraetetypen (idhersteller, headertext, footertext, bezeichnung) VALUES ((SELECT idhersteller FROM hersteller WHERE idhersteller = @IDH), @Header, @Footer, @Bezeichnung)";
+            cmd.CommandText = "INSERT INTO geraetetypen (idhersteller, headertext, footertext, bezeichnung) VALUES ((SELECT idhersteller FROM hersteller WHERE bezeichnung = @IDH), @Header, @Footer, @Bezeichnung)";
             cmd.Parameters.AddWithValue("@Header", textBox2.Text);
             cmd.Parameters.AddWithValue("@Footer", textBox3.Text);
             cmd.Parameters.AddWithValue("@Bezeichnung", textBox1.Text);
-            cmd.Parameters.AddWithValue("@IDH", projektZDataSet.hersteller.AsEnumerable().Take(DropDownMenuHersteller.SelectedIndex).ToArray()[DropDownMenuHersteller.SelectedIndex].idhersteller);
+            cmd.Parameters.AddWithValue("@IDH", DropDownMenuHersteller.Text);
             cmd.ExecuteNonQuery();
             Pruefliste Form = new Pruefliste();
             Form.Show();
