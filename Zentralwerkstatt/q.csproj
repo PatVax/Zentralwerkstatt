@@ -36,6 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Zentralwerkstatt.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -78,6 +79,12 @@
     <Compile Include="Forms\Benutzerverwaltung.Designer.cs">
       <DependentUpon>Benutzerverwaltung.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreatePHP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,11 +97,17 @@
     <Compile Include="Forms\DateTimeDialog.Designer.cs">
       <DependentUpon>DateTimeDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NeuesFahrzeug.cs">
+    <Compile Include="Forms\Fahrzeugenverwaltung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NeuesFahrzeug.Designer.cs">
-      <DependentUpon>NeuesFahrzeug.cs</DependentUpon>
+    <Compile Include="Forms\Fahrzeugenverwaltung.Designer.cs">
+      <DependentUpon>Fahrzeugenverwaltung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Standortverwaltung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Standortverwaltung.Designer.cs">
+      <DependentUpon>Standortverwaltung.cs</DependentUpon>
     </Compile>
     <Compile Include="DataSets\ProjektZDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -165,6 +178,9 @@
     <EmbeddedResource Include="Forms\Benutzerverwaltung.resx">
       <DependentUpon>Benutzerverwaltung.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreatePHP.resx">
       <DependentUpon>CreatePHP.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditConnection.resx">
       <DependentUpon>EditConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Fahrzeugenverwaltung.resx">
+      <DependentUpon>Fahrzeugenverwaltung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Geraetetypen.resx">
       <DependentUpon>Geraetetypen.cs</DependentUpon>
@@ -192,8 +211,8 @@
     <EmbeddedResource Include="Forms\NeuerBenutzer.resx">
       <DependentUpon>NeuerBenutzer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NeuesFahrzeug.resx">
-      <DependentUpon>NeuesFahrzeug.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Standortverwaltung.resx">
+      <DependentUpon>Standortverwaltung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

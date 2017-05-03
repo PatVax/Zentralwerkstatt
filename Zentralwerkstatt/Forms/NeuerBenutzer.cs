@@ -11,8 +11,14 @@ using MySql.Data.MySqlClient;
 
 namespace Zentralwerkstatt
 {
+    /// <summary>
+    /// Eine Form zur Anlegen von neuen Benutzern
+    /// </summary>
     public partial class NeuerBenutzer : Form
     {
+        /// <summary>
+        /// Erstellt eine Instanz der NeuerBenutzer Form
+        /// </summary>
         public NeuerBenutzer()
         {
             InitializeComponent();
@@ -25,6 +31,7 @@ namespace Zentralwerkstatt
 
         private void BenutzerHinzufügen_Click(object sender, EventArgs e)
         {
+            //Abbrechen wenn Benutzertextbox leer ist
             if(BenutzertextBox.Text == "")
             {
                 MessageBox.Show("Benutzer konnte nicht angelegt werden.\nDie Benutzername darf nicht leer bleiben");
@@ -33,7 +40,7 @@ namespace Zentralwerkstatt
             string Benutzer = BenutzertextBox.Text;
             string Passwort = DBUtils.EncodeMD5(PassworttextBox.Text);
             bool Administrator = AdminCheckbox.Checked;
-
+            //Neuen Benutzer anlegen
             try
             {
                 MySqlCommand cmd = DBUtils.GetCommand("INSERT INTO benutzer (benutzername, passwort, administrator) VALUES (@Benutzername, @Passwort, @Administrator)");

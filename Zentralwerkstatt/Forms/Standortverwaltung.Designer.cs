@@ -1,6 +1,6 @@
 ﻿namespace Zentralwerkstatt.Forms
 {
-    partial class NeuesFahrzeug
+    partial class Standortverwaltung
     {
         /// <summary>
         /// Required designer variable.
@@ -212,9 +212,8 @@
             this.fahrzeuge_standorteUpDataGridView.VirtualMode = true;
             this.fahrzeuge_standorteUpDataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.fahrzeuge_standorteDataGridView_CellBeginEdit);
             this.fahrzeuge_standorteUpDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.fahrzeuge_standorteDataGridView_CellEndEdit);
-            this.fahrzeuge_standorteUpDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.fahrzeuge_standorteUpDataGridView_DataError);
+            this.fahrzeuge_standorteUpDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.fahrzeuge_standorteDataGridView_DataError);
             this.fahrzeuge_standorteUpDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.fahrzeuge_standorteDataGridView_RowHeaderMouseDoubleClick);
-            this.fahrzeuge_standorteUpDataGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.fahrzeuge_standorteDataGridView_RowLeave);
             this.fahrzeuge_standorteUpDataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.fahrzeuge_standorteDataGridView_UserDeletedRow);
             this.fahrzeuge_standorteUpDataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.fahrzeuge_standorteDataGridView_UserDeletingRow);
             // 
@@ -302,8 +301,8 @@
             this.fahrzeuge_standorteDownDataGridView.TabIndex = 0;
             this.fahrzeuge_standorteDownDataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.fahrzeuge_standorteDataGridView_CellBeginEdit);
             this.fahrzeuge_standorteDownDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.fahrzeuge_standorteDataGridView_CellEndEdit);
+            this.fahrzeuge_standorteDownDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.fahrzeuge_standorteDataGridView_DataError);
             this.fahrzeuge_standorteDownDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.fahrzeuge_standorteDataGridView_RowHeaderMouseDoubleClick);
-            this.fahrzeuge_standorteDownDataGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.fahrzeuge_standorteDataGridView_RowLeave);
             this.fahrzeuge_standorteDownDataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.fahrzeuge_standorteDataGridView_UserDeletedRow);
             this.fahrzeuge_standorteDownDataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.fahrzeuge_standorteDataGridView_UserDeletingRow);
             // 
@@ -351,7 +350,9 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.benutzerTableAdapter = null;
+            this.tableAdapterManager.fahrzeugeDownTableAdapter = null;
             this.tableAdapterManager.fahrzeugeTableAdapter = null;
+            this.tableAdapterManager.fahrzeugeUpTableAdapter = null;
             this.tableAdapterManager.geraeteTableAdapter = null;
             this.tableAdapterManager.geraetetypenTableAdapter = null;
             this.tableAdapterManager.herstellerTableAdapter = null;
@@ -369,13 +370,13 @@
             // 
             this.fahrzeuge_standorteDownTableAdapter.ClearBeforeFill = true;
             // 
-            // NeuesFahrzeug
+            // Standortverwaltung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 496);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "NeuesFahrzeug";
+            this.Name = "Standortverwaltung";
             this.Text = "NeuesFahrzeug";
             this.Load += new System.EventHandler(this.NeuesFahrzeug_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

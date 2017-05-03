@@ -12,8 +12,14 @@ using Zentralwerkstatt.Forms;
 
 namespace Zentralwerkstatt
 {
+    /// <summary>
+    /// Eine Form zur hinzufügen eines Neues Gerätetyps
+    /// </summary>
     public partial class Geraetetypen : Form
     {
+        /// <summary>
+        /// Erstellt eine Instanz der Geraetetypen Form
+        /// </summary>
         public Geraetetypen()
         {
             InitializeComponent();
@@ -51,11 +57,11 @@ namespace Zentralwerkstatt
         {
             MySqlCommand cmd = DBUtils.COMMAND;
 
-            cmd.CommandText = "INSERT INTO geraetetypen (idhersteller, headertext, footertext, bezeichnung) VALUES ((SELECT idhersteller FROM hersteller WHERE bezeichnung = @IDH), @Header, @Footer, @Bezeichnung)";
+            cmd.CommandText = "INSERT INTO geraetetypen (idhersteller, headertext, footertext, bezeichnung) VALUES (@IDH, @Header, @Footer, @Bezeichnung)";
             cmd.Parameters.AddWithValue("@Header", textBox2.Text);
             cmd.Parameters.AddWithValue("@Footer", textBox3.Text);
             cmd.Parameters.AddWithValue("@Bezeichnung", textBox1.Text);
-            cmd.Parameters.AddWithValue("@IDH", DropDownMenuHersteller.Text);
+            cmd.Parameters.AddWithValue("@IDH", DropDownMenuHersteller.SelectedValue);
             cmd.ExecuteNonQuery();
             Pruefliste Form = new Pruefliste();
             Form.Show();
@@ -64,7 +70,7 @@ namespace Zentralwerkstatt
 
         private void btnNeuesFahrzeug_Click(object sender, EventArgs e)
         {
-            NeuesFahrzeug form = new NeuesFahrzeug();
+            Standortverwaltung form = new Standortverwaltung();
             form.ShowDialog();
             Aktualisieren();
         }

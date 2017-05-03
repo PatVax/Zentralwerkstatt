@@ -46,6 +46,7 @@ namespace Zentralwerkstatt
             this.anschaffungsdatumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fahrzeugDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kennzeichenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idgeraetetyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodesUpBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnUpToDown = new System.Windows.Forms.Button();
             this.comboBoxUp = new System.Windows.Forms.ComboBox();
@@ -57,6 +58,7 @@ namespace Zentralwerkstatt
             this.anschaffungsdatumDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fahrzeugDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kennzeichenDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodesDownBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnDownToUp = new System.Windows.Forms.Button();
             this.comboBoxDown = new System.Windows.Forms.ComboBox();
@@ -188,17 +190,19 @@ namespace Zentralwerkstatt
             this.seriennummerDataGridViewTextBoxColumn,
             this.anschaffungsdatumDataGridViewTextBoxColumn,
             this.fahrzeugDataGridViewTextBoxColumn,
-            this.kennzeichenDataGridViewTextBoxColumn});
+            this.kennzeichenDataGridViewTextBoxColumn,
+            this.idgeraetetyp});
             this.dataGridViewUp.DataSource = this.barcodesUpBindingSource;
             this.dataGridViewUp.Location = new System.Drawing.Point(0, 29);
             this.dataGridViewUp.MultiSelect = false;
             this.dataGridViewUp.Name = "dataGridViewUp";
             this.dataGridViewUp.ReadOnly = true;
+            this.dataGridViewUp.RowHeadersVisible = false;
             this.dataGridViewUp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewUp.Size = new System.Drawing.Size(705, 230);
             this.dataGridViewUp.TabIndex = 3;
             this.dataGridViewUp.CancelRowEdit += new System.Windows.Forms.QuestionEventHandler(this.dataGridView_CancelRowEdit);
-            this.dataGridViewUp.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUp_CellContentDoubleClick);
+            this.dataGridViewUp.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUp_CellDoubleClick);
             // 
             // bezeichnungDataGridViewTextBoxColumn1
             // 
@@ -254,6 +258,14 @@ namespace Zentralwerkstatt
             this.kennzeichenDataGridViewTextBoxColumn.ReadOnly = true;
             this.kennzeichenDataGridViewTextBoxColumn.Width = 94;
             // 
+            // idgeraetetyp
+            // 
+            this.idgeraetetyp.DataPropertyName = "idgeraetetyp";
+            this.idgeraetetyp.HeaderText = "idgeraetetyp";
+            this.idgeraetetyp.Name = "idgeraetetyp";
+            this.idgeraetetyp.ReadOnly = true;
+            this.idgeraetetyp.Visible = false;
+            // 
             // barcodesUpBindingSource
             // 
             this.barcodesUpBindingSource.DataMember = "barcodesUp";
@@ -261,9 +273,9 @@ namespace Zentralwerkstatt
             // 
             // btnUpToDown
             // 
-            this.btnUpToDown.Location = new System.Drawing.Point(131, 2);
+            this.btnUpToDown.Location = new System.Drawing.Point(206, 4);
             this.btnUpToDown.Name = "btnUpToDown";
-            this.btnUpToDown.Size = new System.Drawing.Size(136, 23);
+            this.btnUpToDown.Size = new System.Drawing.Size(136, 21);
             this.btnUpToDown.TabIndex = 3;
             this.btnUpToDown.Text = "Nach unten verschieben";
             this.btnUpToDown.UseVisualStyleBackColor = true;
@@ -277,8 +289,9 @@ namespace Zentralwerkstatt
             this.comboBoxUp.FormattingEnabled = true;
             this.comboBoxUp.Location = new System.Drawing.Point(3, 4);
             this.comboBoxUp.Name = "comboBoxUp";
-            this.comboBoxUp.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxUp.Size = new System.Drawing.Size(197, 21);
             this.comboBoxUp.TabIndex = 0;
+            this.comboBoxUp.ValueMember = "idhersteller";
             this.comboBoxUp.SelectedIndexChanged += new System.EventHandler(this.refreshBarcodeTables);
             // 
             // herstellerBindingSourceUp
@@ -301,17 +314,19 @@ namespace Zentralwerkstatt
             this.seriennummerDataGridViewTextBoxColumn1,
             this.anschaffungsdatumDataGridViewTextBoxColumn1,
             this.fahrzeugDataGridViewTextBoxColumn1,
-            this.kennzeichenDataGridViewTextBoxColumn1});
+            this.kennzeichenDataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn1});
             this.dataGridViewDown.DataSource = this.barcodesDownBindingSource;
             this.dataGridViewDown.Location = new System.Drawing.Point(0, 26);
             this.dataGridViewDown.MultiSelect = false;
             this.dataGridViewDown.Name = "dataGridViewDown";
             this.dataGridViewDown.ReadOnly = true;
+            this.dataGridViewDown.RowHeadersVisible = false;
             this.dataGridViewDown.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDown.Size = new System.Drawing.Size(705, 231);
             this.dataGridViewDown.TabIndex = 4;
             this.dataGridViewDown.CancelRowEdit += new System.Windows.Forms.QuestionEventHandler(this.dataGridView_CancelRowEdit);
-            this.dataGridViewDown.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDown_CellContentDoubleClick);
+            this.dataGridViewDown.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDown_CellDoubleClick);
             // 
             // bezeichnungDataGridViewTextBoxColumn2
             // 
@@ -367,6 +382,14 @@ namespace Zentralwerkstatt
             this.kennzeichenDataGridViewTextBoxColumn1.ReadOnly = true;
             this.kennzeichenDataGridViewTextBoxColumn1.Width = 94;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idgeraetetyp";
+            this.dataGridViewTextBoxColumn1.HeaderText = "idgeraetetyp";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
             // barcodesDownBindingSource
             // 
             this.barcodesDownBindingSource.DataMember = "barcodesDown";
@@ -374,9 +397,9 @@ namespace Zentralwerkstatt
             // 
             // btnDownToUp
             // 
-            this.btnDownToUp.Location = new System.Drawing.Point(131, 1);
+            this.btnDownToUp.Location = new System.Drawing.Point(206, 3);
             this.btnDownToUp.Name = "btnDownToUp";
-            this.btnDownToUp.Size = new System.Drawing.Size(136, 23);
+            this.btnDownToUp.Size = new System.Drawing.Size(136, 21);
             this.btnDownToUp.TabIndex = 4;
             this.btnDownToUp.Text = "Nach oben verschieben";
             this.btnDownToUp.UseVisualStyleBackColor = true;
@@ -390,8 +413,9 @@ namespace Zentralwerkstatt
             this.comboBoxDown.FormattingEnabled = true;
             this.comboBoxDown.Location = new System.Drawing.Point(3, 3);
             this.comboBoxDown.Name = "comboBoxDown";
-            this.comboBoxDown.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDown.Size = new System.Drawing.Size(197, 21);
             this.comboBoxDown.TabIndex = 0;
+            this.comboBoxDown.ValueMember = "idhersteller";
             this.comboBoxDown.SelectedIndexChanged += new System.EventHandler(this.refreshBarcodeTables);
             // 
             // herstellerBindingSourceDown
@@ -457,19 +481,21 @@ namespace Zentralwerkstatt
         private DataSets.ProjektZDataSetTableAdapters.barcodesTableAdapterUp barcodesTableAdapterUp;
         private System.Windows.Forms.BindingSource barcodesDownBindingSource;
         private DataSets.ProjektZDataSetTableAdapters.barcodesTableAdapterDown barcodesTableAdapterDown;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idherstellerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn geraetebarcodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn seriennummerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn anschaffungsdatumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fahrzeugDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kennzeichenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idgeraetetyp;
         private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn geraetebarcodeDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn seriennummerDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn anschaffungsdatumDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fahrzeugDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn kennzeichenDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idherstellerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

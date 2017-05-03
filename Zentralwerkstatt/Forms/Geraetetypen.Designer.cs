@@ -45,9 +45,7 @@ namespace Zentralwerkstatt
             this.GeraetetypenHinzufuegenAbbrechenButton = new System.Windows.Forms.Button();
             this.LabelBezeichnung = new System.Windows.Forms.Label();
             this.herstellerTableAdapter = new Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters.herstellerTableAdapter();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.fahrzeugestandorteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnNeuesFahrzeug = new System.Windows.Forms.Button();
             this.fahrzeuge_standorteTableAdapter = new Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters.fahrzeuge_standorteTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.herstellerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
@@ -80,7 +78,7 @@ namespace Zentralwerkstatt
             this.DropDownMenuHersteller.Name = "DropDownMenuHersteller";
             this.DropDownMenuHersteller.Size = new System.Drawing.Size(345, 21);
             this.DropDownMenuHersteller.TabIndex = 2;
-            this.DropDownMenuHersteller.ValueMember = "Bezeichnung";
+            this.DropDownMenuHersteller.ValueMember = "idhersteller";
             // 
             // herstellerBindingSource
             // 
@@ -105,7 +103,7 @@ namespace Zentralwerkstatt
             // LabelHeader
             // 
             this.LabelHeader.AutoSize = true;
-            this.LabelHeader.Location = new System.Drawing.Point(13, 119);
+            this.LabelHeader.Location = new System.Drawing.Point(13, 92);
             this.LabelHeader.Name = "LabelHeader";
             this.LabelHeader.Size = new System.Drawing.Size(58, 13);
             this.LabelHeader.TabIndex = 5;
@@ -113,7 +111,7 @@ namespace Zentralwerkstatt
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 135);
+            this.textBox2.Location = new System.Drawing.Point(12, 108);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(473, 60);
@@ -122,7 +120,7 @@ namespace Zentralwerkstatt
             // LabelFooter
             // 
             this.LabelFooter.AutoSize = true;
-            this.LabelFooter.Location = new System.Drawing.Point(13, 198);
+            this.LabelFooter.Location = new System.Drawing.Point(13, 171);
             this.LabelFooter.Name = "LabelFooter";
             this.LabelFooter.Size = new System.Drawing.Size(97, 13);
             this.LabelFooter.TabIndex = 7;
@@ -130,7 +128,7 @@ namespace Zentralwerkstatt
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 214);
+            this.textBox3.Location = new System.Drawing.Point(12, 187);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(473, 60);
@@ -138,7 +136,7 @@ namespace Zentralwerkstatt
             // 
             // GeraetetypenHinzufuegenButton
             // 
-            this.GeraetetypenHinzufuegenButton.Location = new System.Drawing.Point(12, 280);
+            this.GeraetetypenHinzufuegenButton.Location = new System.Drawing.Point(12, 253);
             this.GeraetetypenHinzufuegenButton.Name = "GeraetetypenHinzufuegenButton";
             this.GeraetetypenHinzufuegenButton.Size = new System.Drawing.Size(154, 28);
             this.GeraetetypenHinzufuegenButton.TabIndex = 6;
@@ -149,7 +147,7 @@ namespace Zentralwerkstatt
             // GeraetetypenHinzufuegenAbbrechenButton
             // 
             this.GeraetetypenHinzufuegenAbbrechenButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.GeraetetypenHinzufuegenAbbrechenButton.Location = new System.Drawing.Point(331, 280);
+            this.GeraetetypenHinzufuegenAbbrechenButton.Location = new System.Drawing.Point(331, 253);
             this.GeraetetypenHinzufuegenAbbrechenButton.Name = "GeraetetypenHinzufuegenAbbrechenButton";
             this.GeraetetypenHinzufuegenAbbrechenButton.Size = new System.Drawing.Size(154, 28);
             this.GeraetetypenHinzufuegenAbbrechenButton.TabIndex = 8;
@@ -170,32 +168,10 @@ namespace Zentralwerkstatt
             // 
             this.herstellerTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.fahrzeugestandorteBindingSource;
-            this.comboBox1.DisplayMember = "tostring";
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 95);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(345, 21);
-            this.comboBox1.TabIndex = 16;
-            this.comboBox1.ValueMember = "tostring";
-            // 
             // fahrzeugestandorteBindingSource
             // 
             this.fahrzeugestandorteBindingSource.DataMember = "fahrzeuge_standorte";
             this.fahrzeugestandorteBindingSource.DataSource = this.projektZDataSet;
-            // 
-            // btnNeuesFahrzeug
-            // 
-            this.btnNeuesFahrzeug.Location = new System.Drawing.Point(363, 95);
-            this.btnNeuesFahrzeug.Name = "btnNeuesFahrzeug";
-            this.btnNeuesFahrzeug.Size = new System.Drawing.Size(122, 23);
-            this.btnNeuesFahrzeug.TabIndex = 17;
-            this.btnNeuesFahrzeug.Text = "Fahrzeuge bearbeiten";
-            this.btnNeuesFahrzeug.UseVisualStyleBackColor = true;
-            this.btnNeuesFahrzeug.Click += new System.EventHandler(this.btnNeuesFahrzeug_Click);
             // 
             // fahrzeuge_standorteTableAdapter
             // 
@@ -207,9 +183,7 @@ namespace Zentralwerkstatt
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.GeraetetypenHinzufuegenAbbrechenButton;
-            this.ClientSize = new System.Drawing.Size(497, 318);
-            this.Controls.Add(this.btnNeuesFahrzeug);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(497, 291);
             this.Controls.Add(this.LabelBezeichnung);
             this.Controls.Add(this.GeraetetypenHinzufuegenAbbrechenButton);
             this.Controls.Add(this.GeraetetypenHinzufuegenButton);
@@ -250,8 +224,6 @@ namespace Zentralwerkstatt
         private ProjektZDataSet projektZDataSet;
         private System.Windows.Forms.BindingSource herstellerBindingSource;
         private DataSets.ProjektZDataSetTableAdapters.herstellerTableAdapter herstellerTableAdapter;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btnNeuesFahrzeug;
         private System.Windows.Forms.BindingSource fahrzeugestandorteBindingSource;
         private DataSets.ProjektZDataSetTableAdapters.fahrzeuge_standorteTableAdapter fahrzeuge_standorteTableAdapter;
     }

@@ -12,14 +12,22 @@ using MySql.Data.MySqlClient;
 
 namespace Zentralwerkstatt
 {
+    /// <summary>
+    /// Eine Form zur ändern der Dataset-Datenbankverbindung
+    /// </summary>
     public partial class EditConnection : Form
     {
+        /// <summary>
+        /// Erstellt eine Instanz der EditConnection Form
+        /// </summary>
         public EditConnection()
         {
             InitializeComponent();
 
+            //Aktuellgespeicherte Verbindung als ConnectionStringBuilder laden
             MySqlConnectionStringBuilder builder = DBUtils.BUILDER;
 
+            //Verbindungsdaten in die Textboxen schreiben
             txtHost.Text = builder.Server;
             txtPort.Text = builder.Port.ToString();
             txtUser.Text = builder.UserID;
@@ -30,42 +38,54 @@ namespace Zentralwerkstatt
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
+            //Alte Verbindungsdaten zwischenspeichern
             bool oldCheckBoxState = chkboxSavePassword.Checked;
 
             string oldConnectionString = DBUtils.CONNECTION_STRING;
 
             try
             {
-
+                //Verbindungsconfig ändern
                 DBUtils.EditConnectionConfiguration(txtHost.Text, txtUser.Text, txtPassword.Text, txtDB.Text, Convert.ToUInt32(txtPort.Text), chkboxSavePassword.Checked);
 
                 //Verbindung mit der Datenbank herstellen, um eine mögliche fehlende Verbindung zu erkennen
                 DBUtils.CONNECTION.Open();
-            }catch (MySqlException ex)
+            }
+            //Falls Verbindung fehlgeschlagen ist
+            catch (MySqlException ex)
             {
+                //Verbindungsconfig zurücksetzen
                 DBUtils.EditConnectionConfiguration(oldConnectionString, oldCheckBoxState);
 
                 //Fehlertext, falls die Verbindung zur Datenbank nicht hergestellt werden konnte
                 MessageBox.Show(String.Format("Die Verbindung zur Datenbank konnte nicht hergestellt werden: {0}", ex.Message));
+                //Focus auf Host-Eingabefeld verschieben
                 txtHost.Focus();
                 return;
-            }catch(FormatException ex)
+            }
+            //Falls Portnummer eine ungültige Eingabe ist
+            catch (FormatException ex)
             {
+                //Fehlermeldung
                 MessageBox.Show(String.Format("Die Eingabe für Portnummer ist ungültig: {0}", ex.Message));
+                //Focus auf Port-Eingabefeld verschieben
                 txtPort.Focus();
                 return;
             }
 
+            //Dialog schließen
             this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            //Dialog schließen
             this.Close();
         }
 
         private void EditConnection_Shown(object sender, EventArgs e)
         {
+            //Focus auf die erste leere Textbox verschieben
             try
             {
                 Control currentControl = txtHost;

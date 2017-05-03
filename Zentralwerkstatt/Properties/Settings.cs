@@ -16,6 +16,7 @@ namespace Zentralwerkstatt.Properties
                     case "projektzConnectionString":
                         try
                         {
+                            //Wenn Passwort in den aktuellen connectionString nicht enthalten ist, aus der Programminstanz entnehmen
                             return string.IsNullOrEmpty(DBUtils.GetStringBuilder(DBUtils.ACTUAL_CONNECTION_STRING).Password) ?
                             DBUtils.ACTUAL_CONNECTION_STRING.Replace("password=", "password=" + DBUtils.PASSWORD) :
                             DBUtils.ACTUAL_CONNECTION_STRING;

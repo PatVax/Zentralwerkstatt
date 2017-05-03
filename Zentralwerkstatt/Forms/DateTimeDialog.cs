@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Zentralwerkstatt.Forms
 {
+    /// <summary>
+    /// Eine Form zum Datumauswahl
+    /// </summary>
     public partial class DateTimeDialog : Form
     {
+        /// <summary>
+        /// Erstellt eine Instanz des DateTimeDialogs zum wählen von Datum
+        /// </summary>
+        /// <param name="currentDate">Voreingestelltes Datum</param>
+        /// <param name="maxDate">Maximal wählbares Datum</param>
         public DateTimeDialog(DateTime currentDate, DateTime maxDate)
         {
             InitializeComponent();
+
+            //Datetimepicker konfiguration
             dateTimePicker1.Value = currentDate;
             dateTimePicker1.MaxDate = maxDate;
             dateTimePicker1.Checked = true;
@@ -22,20 +32,24 @@ namespace Zentralwerkstatt.Forms
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            //dateTimePicker1.Checked = true;
+            //Dialog Schließen
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            //Dialog Schließen
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
-
+        /// <summary>
+        /// Ausgewähltes Datum
+        /// </summary>
         public DateTime Value {
             get
             {
+                //Gewähltes Datum zurückgeben
                 return dateTimePicker1.Value;
             }
         }
