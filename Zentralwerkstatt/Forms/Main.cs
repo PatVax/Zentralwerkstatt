@@ -61,10 +61,10 @@ namespace Zentralwerkstatt
                 lblBemerkungen.Visible = true;
                 txtBemerkungen.Visible = true;
                 // TODO: Diese Codezeile lädt Daten in die Tabelle "projektzDataSet.prüfausgabe". Sie können sie bei Bedarf verschieben oder entfernen.
-                this.pruefausgabeTableAdapter.FillBy(this.projektZDataSet.pruefausgabe, idPruefung);
+                this.pruefausgabeTableAdapter.FillByPruefung(this.projektZDataSet.pruefausgabe, idPruefung);
                 //Bemerkungenfeld füllen
                 List<string> bemerkungenList = new List<string>();
-                foreach (string s in this.testTableAdapter.FillBemerkungenByID(idPruefung).ToString().Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries))
+                foreach (string s in this.testTableAdapter.GetBemerkungenByID(idPruefung).ToString().Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries))
                 {
                     bemerkungenList.AddRange(new string[] { s, "" });
                 }
@@ -75,6 +75,7 @@ namespace Zentralwerkstatt
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void Main_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'projektZDataSet.Prüfausgabe' table. You can move, or remove it, as needed.

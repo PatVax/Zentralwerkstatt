@@ -81,7 +81,7 @@ namespace Zentralwerkstatt
                 cmd.Parameters.AddWithValue("@Password", DBUtils.EncodeMD5(form.passwordResult));
                 cmd.Parameters.AddWithValue("@IDB", dataGridView1.SelectedRows[0].Cells[2].Value.ToString());
                 cmd.ExecuteNonQuery();
-                MessageBox.Show(String.Format("Passwort für Benutzer: {0} wurde erfolgreich beendet", dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                MessageBox.Show(String.Format("Passwort für Benutzer: {0} wurde erfolgreich geändert", dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
             }
             Button_aktualisieren.PerformClick();
         }

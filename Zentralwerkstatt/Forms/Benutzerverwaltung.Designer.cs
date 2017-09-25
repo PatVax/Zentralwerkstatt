@@ -33,17 +33,17 @@ namespace Zentralwerkstatt
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Zentralverwaltung));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idbenutzer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.benutzerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projektZDataSet = new Zentralwerkstatt.DataSets.ProjektZDataSet();
             this.AddUserButton = new System.Windows.Forms.Button();
             this.ChangeUserDataButton = new System.Windows.Forms.Button();
             this.RemoveUserButton = new System.Windows.Forms.Button();
             this.Button_aktualisieren = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
+            this.benutzerTableAdapter = new Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters.benutzerTableAdapter();
             this.benutzernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.administratorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.benutzerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projektZDataSet = new Zentralwerkstatt.DataSets.ProjektZDataSet();
-            this.benutzerTableAdapter = new Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters.benutzerTableAdapter();
+            this.idbenutzer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.benutzerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
@@ -76,12 +76,15 @@ namespace Zentralwerkstatt
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
-            // idbenutzer
+            // benutzerBindingSource
             // 
-            this.idbenutzer.DataPropertyName = "idbenutzer";
-            this.idbenutzer.HeaderText = "idbenutzer";
-            this.idbenutzer.Name = "idbenutzer";
-            this.idbenutzer.Visible = false;
+            this.benutzerBindingSource.DataMember = "Benutzer";
+            this.benutzerBindingSource.DataSource = this.projektZDataSet;
+            // 
+            // projektZDataSet
+            // 
+            this.projektZDataSet.DataSetName = "ProjektZDataSet";
+            this.projektZDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // AddUserButton
             // 
@@ -136,6 +139,10 @@ namespace Zentralwerkstatt
             this.btnChangePassword.UseVisualStyleBackColor = true;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
+            // benutzerTableAdapter
+            // 
+            this.benutzerTableAdapter.ClearBeforeFill = true;
+            // 
             // benutzernameDataGridViewTextBoxColumn
             // 
             this.benutzernameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -147,27 +154,20 @@ namespace Zentralwerkstatt
             // 
             this.administratorDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.administratorDataGridViewCheckBoxColumn.DataPropertyName = "administrator";
-            this.administratorDataGridViewCheckBoxColumn.FalseValue = "0";
+            this.administratorDataGridViewCheckBoxColumn.FalseValue = "false";
             this.administratorDataGridViewCheckBoxColumn.HeaderText = "Admin";
             this.administratorDataGridViewCheckBoxColumn.Name = "administratorDataGridViewCheckBoxColumn";
             this.administratorDataGridViewCheckBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.administratorDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.administratorDataGridViewCheckBoxColumn.TrueValue = "1";
+            this.administratorDataGridViewCheckBoxColumn.TrueValue = "true";
             this.administratorDataGridViewCheckBoxColumn.Width = 61;
             // 
-            // benutzerBindingSource
+            // idbenutzer
             // 
-            this.benutzerBindingSource.DataMember = "Benutzer";
-            this.benutzerBindingSource.DataSource = this.projektZDataSet;
-            // 
-            // projektZDataSet
-            // 
-            this.projektZDataSet.DataSetName = "ProjektZDataSet";
-            this.projektZDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // benutzerTableAdapter
-            // 
-            this.benutzerTableAdapter.ClearBeforeFill = true;
+            this.idbenutzer.DataPropertyName = "idbenutzer";
+            this.idbenutzer.HeaderText = "idbenutzer";
+            this.idbenutzer.Name = "idbenutzer";
+            this.idbenutzer.Visible = false;
             // 
             // Zentralverwaltung
             // 
@@ -200,10 +200,10 @@ namespace Zentralwerkstatt
         private ProjektZDataSet projektZDataSet;
         private System.Windows.Forms.BindingSource benutzerBindingSource;
         private DataSets.ProjektZDataSetTableAdapters.benutzerTableAdapter benutzerTableAdapter;
+        private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.DataGridViewTextBoxColumn benutzernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn administratorDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idbenutzer;
-        private System.Windows.Forms.Button btnChangePassword;
     }
 }
 

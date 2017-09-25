@@ -67,6 +67,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSets\projektzDataSet.cs">
+      <DependentUpon>projektzDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Anmeldung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,10 +112,10 @@
     <Compile Include="Forms\Standortverwaltung.Designer.cs">
       <DependentUpon>Standortverwaltung.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataSets\ProjektZDataSet.Designer.cs">
+    <Compile Include="DataSets\projektzDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProjektZDataSet.xsd</DependentUpon>
+      <DependentUpon>projektzDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="Utils\DBUtils.cs" />
@@ -230,16 +233,16 @@
     <EmbeddedResource Include="Forms\Prueflistebearbeiten.resx">
       <DependentUpon>Prueflistebearbeiten.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSets\ProjektZDataSet.xsc">
-      <DependentUpon>ProjektZDataSet.xsd</DependentUpon>
+    <None Include="DataSets\projektzDataSet.xsc">
+      <DependentUpon>projektzDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DataSets\ProjektZDataSet.xsd">
+    <None Include="DataSets\projektzDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ProjektZDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>projektzDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSets\ProjektZDataSet.xss">
-      <DependentUpon>ProjektZDataSet.xsd</DependentUpon>
+    <None Include="DataSets\projektzDataSet.xss">
+      <DependentUpon>projektzDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -269,6 +272,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

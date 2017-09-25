@@ -2,19 +2,19 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Zentralwerkstatt.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="projektzConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=192.168.178.11;port=3306;user id=Zentralwerkstatt;database=projektz;password=fjonkheerdb&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;Devart.Data.MySql&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=192.168.178.11;port=3306;user id=Zentralwerkstatt;database=projektz;password=fjonkheerdb</Value>
-    </Setting>
     <Setting Name="saveDBPassword" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="user" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="projektzConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=192.168.126.11;user id=PatVax;password=Pvatx0xtavP;persistsecurityinfo=True;database=projektz&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=192.168.126.11;user id=PatVax;password=Pvatx0xtavP;persistsecurityinfo=True;database=projektz</Value>
     </Setting>
   </Settings>
 </SettingsFile>

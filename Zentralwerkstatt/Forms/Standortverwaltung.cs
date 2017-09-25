@@ -47,8 +47,8 @@ namespace Zentralwerkstatt.Forms
         {
             try
             {
-                this.fahrzeuge_standorteDownTableAdapter.FillBy(this.projektZDataSet.fahrzeuge_standorteDown, comboBoxDown.Text);
-                this.fahrzeuge_standorteUpTableAdapter.FillBy(this.projektZDataSet.fahrzeuge_standorteUp, comboBoxUp.Text);
+                this.fahrzeuge_standorteDownTableAdapter.FillByStandort(this.projektZDataSet.fahrzeuge_standorteDown, comboBoxDown.Text);
+                this.fahrzeuge_standorteUpTableAdapter.FillByStandort(this.projektZDataSet.fahrzeuge_standorteUp, comboBoxUp.Text);
             }
             catch (NullReferenceException) { }
         }

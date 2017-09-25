@@ -28,7 +28,6 @@ namespace Zentralwerkstatt
         private void Geraeteverwaltung_Load(object sender, EventArgs e)
         {
             this.geraetetypenTableAdapter.Fill(this.projektZDataSet.geraetetypen);
-            this.barcodesTableAdapter.FillByGeraetetyp(this.projektZDataSet.barcodes, Convert.ToInt32(geraetetypenDataGridView[1, 0].Value));
         }
 
         #region MenuItemBehavior

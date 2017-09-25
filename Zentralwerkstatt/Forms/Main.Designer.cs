@@ -39,6 +39,7 @@ namespace Zentralwerkstatt
             this.übergabephpErstellenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aktualiesierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ausloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.schließenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.benutzerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,11 +53,6 @@ namespace Zentralwerkstatt
             this.pruefausgabeTableAdapter = new Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters.pruefausgabeTableAdapter();
             this.testTableAdapter = new Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters.testTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bemerkungen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.geraetebarcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idpruefungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +61,11 @@ namespace Zentralwerkstatt
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ausloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.idpruefungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.geraetebarcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bemerkungen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MenüLeiste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
@@ -125,6 +125,13 @@ namespace Zentralwerkstatt
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(193, 6);
+            // 
+            // ausloggenToolStripMenuItem
+            // 
+            this.ausloggenToolStripMenuItem.Name = "ausloggenToolStripMenuItem";
+            this.ausloggenToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.ausloggenToolStripMenuItem.Text = "Ausloggen";
+            this.ausloggenToolStripMenuItem.Click += new System.EventHandler(this.ausloggenToolStripMenuItem_Click);
             // 
             // schließenToolStripMenuItem
             // 
@@ -227,49 +234,6 @@ namespace Zentralwerkstatt
             this.dataGridView1.Size = new System.Drawing.Size(156, 619);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // bezeichnungDataGridViewTextBoxColumn
-            // 
-            this.bezeichnungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
-            this.bezeichnungDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bezeichnungDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // bemerkungen
-            // 
-            this.bemerkungen.DataPropertyName = "bemerkungen";
-            this.bemerkungen.HeaderText = "Bemerkungen";
-            this.bemerkungen.Name = "bemerkungen";
-            this.bemerkungen.ReadOnly = true;
-            this.bemerkungen.Visible = false;
-            // 
-            // geraetebarcodeDataGridViewTextBoxColumn
-            // 
-            this.geraetebarcodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.geraetebarcodeDataGridViewTextBoxColumn.DataPropertyName = "geraete_barcode";
-            this.geraetebarcodeDataGridViewTextBoxColumn.HeaderText = "Barcode";
-            this.geraetebarcodeDataGridViewTextBoxColumn.Name = "geraetebarcodeDataGridViewTextBoxColumn";
-            this.geraetebarcodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.geraetebarcodeDataGridViewTextBoxColumn.Width = 72;
-            // 
-            // datumDataGridViewTextBoxColumn
-            // 
-            this.datumDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
-            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
-            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
-            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
-            this.datumDataGridViewTextBoxColumn.Width = 63;
-            // 
-            // idpruefungDataGridViewTextBoxColumn
-            // 
-            this.idpruefungDataGridViewTextBoxColumn.DataPropertyName = "idpruefung";
-            this.idpruefungDataGridViewTextBoxColumn.HeaderText = "idpruefung";
-            this.idpruefungDataGridViewTextBoxColumn.Name = "idpruefungDataGridViewTextBoxColumn";
-            this.idpruefungDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idpruefungDataGridViewTextBoxColumn.Visible = false;
             // 
             // dataGridView2
             // 
@@ -393,12 +357,48 @@ namespace Zentralwerkstatt
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // ausloggenToolStripMenuItem
+            // idpruefungDataGridViewTextBoxColumn
             // 
-            this.ausloggenToolStripMenuItem.Name = "ausloggenToolStripMenuItem";
-            this.ausloggenToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.ausloggenToolStripMenuItem.Text = "Ausloggen";
-            this.ausloggenToolStripMenuItem.Click += new System.EventHandler(this.ausloggenToolStripMenuItem_Click);
+            this.idpruefungDataGridViewTextBoxColumn.DataPropertyName = "idpruefung";
+            this.idpruefungDataGridViewTextBoxColumn.HeaderText = "idpruefung";
+            this.idpruefungDataGridViewTextBoxColumn.Name = "idpruefungDataGridViewTextBoxColumn";
+            this.idpruefungDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idpruefungDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // datumDataGridViewTextBoxColumn
+            // 
+            this.datumDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datumDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // geraetebarcodeDataGridViewTextBoxColumn
+            // 
+            this.geraetebarcodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.geraetebarcodeDataGridViewTextBoxColumn.DataPropertyName = "geraete_barcode";
+            this.geraetebarcodeDataGridViewTextBoxColumn.HeaderText = "Barcode";
+            this.geraetebarcodeDataGridViewTextBoxColumn.Name = "geraetebarcodeDataGridViewTextBoxColumn";
+            this.geraetebarcodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.geraetebarcodeDataGridViewTextBoxColumn.Width = 72;
+            // 
+            // bemerkungen
+            // 
+            this.bemerkungen.DataPropertyName = "bemerkungen";
+            this.bemerkungen.HeaderText = "Bemerkungen";
+            this.bemerkungen.Name = "bemerkungen";
+            this.bemerkungen.ReadOnly = true;
+            this.bemerkungen.Visible = false;
+            // 
+            // bezeichnungDataGridViewTextBoxColumn
+            // 
+            this.bezeichnungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "Bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
+            this.bezeichnungDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bezeichnungDataGridViewTextBoxColumn.Width = 94;
             // 
             // Main
             // 
@@ -467,11 +467,11 @@ namespace Zentralwerkstatt
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.ToolStripMenuItem ausloggenToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn bezeichnungDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bemerkungen;
         private System.Windows.Forms.DataGridViewTextBoxColumn geraetebarcodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idpruefungDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripMenuItem ausloggenToolStripMenuItem;
     }
 }

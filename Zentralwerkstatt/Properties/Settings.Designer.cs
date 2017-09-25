@@ -12,7 +12,7 @@ namespace Zentralwerkstatt.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.1.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -20,17 +20,6 @@ namespace Zentralwerkstatt.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.178.11;port=3306;user id=Zentralwerkstatt;database=projektz;passwo" +
-            "rd=fjonkheerdb")]
-        public string projektzConnectionString {
-            get {
-                return ((string)(this["projektzConnectionString"]));
             }
         }
         
@@ -48,6 +37,17 @@ namespace Zentralwerkstatt.Properties {
         public string user {
             get {
                 return ((string)(this["user"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.126.11;user id=PatVax;password=Pvatx0xtavP;persistsecurityinfo=Tru" +
+            "e;database=projektz")]
+        public string projektzConnectionString {
+            get {
+                return ((string)(this["projektzConnectionString"]));
             }
         }
     }
