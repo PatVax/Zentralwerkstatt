@@ -79,7 +79,7 @@ namespace Zentralwerkstatt.Forms
                     MessageBox.Show("Spalte: Standort darf nicht leer bleiben: " + ex.Message);
                     this.standorteBindingSource.CancelEdit();
                 }
-                catch (Devart.Data.MySql.MySqlException ex)
+                catch (MySqlException ex)
                 {
                     MessageBox.Show(String.Format("Standort: {0} existiert bereits: ", ((DataGridView)sender)[1, e.RowIndex].Value.ToString()) + ex.Message);
                     this.standorteBindingSource.CancelEdit();
@@ -103,7 +103,7 @@ namespace Zentralwerkstatt.Forms
                 this.standorteBindingSource.EndEdit();
                 this.standorteTableAdapter.Update(projektZDataSet.standorte);
             }
-            catch (Devart.Data.MySql.MySqlException ex)
+            catch (MySqlException ex)
             {
                 //Fehlermeldung
                 MessageBox.Show("Standort konnte nicht gelöscht werden da zugehörige Fahrzeuge existieren: " + ex.Message);

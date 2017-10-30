@@ -44,7 +44,7 @@ namespace Zentralwerkstatt.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.126.11;user id=PatVax;password=Pvatx0xtavP;persistsecurityinfo=Tru" +
-            "e;database=projektz")]
+            "e;database=projektz;SslMode=none")]
         public string projektzConnectionString {
             get {
                 return ((string)(this["projektzConnectionString"]));

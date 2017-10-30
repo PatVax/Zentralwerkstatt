@@ -19,7 +19,7 @@ namespace Zentralwerkstatt.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,7 +61,7 @@ namespace Zentralwerkstatt.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to server={0};user={1};password=;database={2}.
+        ///   Looks up a localized string similar to server={0};user={1};password=;database={2};sslmode=none.
         /// </summary>
         internal static string preConnectionString {
             get {
@@ -70,7 +70,7 @@ namespace Zentralwerkstatt.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to server={0};port={1};user={2};password=;database={3}.
+        ///   Looks up a localized string similar to server={0};port={1};user={2};password=;database={3};sslmode=none.
         /// </summary>
         internal static string preConnectionStringPort {
             get {

@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="preConnectionString" xml:space="preserve">
-    <value>server={0};user={1};password=;database={2}</value>
+    <value>server={0};user={1};password=;database={2};sslmode=none</value>
   </data>
   <data name="preConnectionStringPort" xml:space="preserve">
-    <value>server={0};port={1};user={2};password=;database={3}</value>
+    <value>server={0};port={1};user={2};password=;database={3};sslmode=none</value>
   </data>
   <data name="preUebergabeString" xml:space="preserve">
     <value>&lt;?php

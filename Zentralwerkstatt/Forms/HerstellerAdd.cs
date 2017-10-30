@@ -116,7 +116,7 @@ namespace Zentralwerkstatt
                     MessageBox.Show("Spalte: Hersteller darf nicht leer bleiben: " + ex.Message);
                     this.herstellerBindingSource.CancelEdit();
                 }
-                catch(Devart.Data.MySql.MySqlException ex)
+                catch(MySqlException ex)
                 {
                     MessageBox.Show(String.Format("Hersteller: {0} existiert bereits: ", ((DataGridView)sender)[1, e.RowIndex]) + ex.Message);
                     this.herstellerBindingSource.CancelEdit();
@@ -135,7 +135,7 @@ namespace Zentralwerkstatt
                 this.herstellerBindingSource.EndEdit();
                 this.herstellerTableAdapter.Update(projektZDataSet.hersteller);
             }
-            catch (Devart.Data.MySql.MySqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show("Hersteller konnte nicht gelöscht werden da zugehörige Gerätetypen existieren: " + ex.Message);
                 this.herstellerBindingSource.CancelEdit();

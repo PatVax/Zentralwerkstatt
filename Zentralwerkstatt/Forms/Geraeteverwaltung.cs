@@ -268,7 +268,7 @@ namespace Zentralwerkstatt
                 this.geraetetypenBindingSource.EndEdit();
                 this.geraetetypenTableAdapter.Update(projektZDataSet.geraetetypen);
             }
-            catch (Devart.Data.MySql.MySqlException ex)
+            catch (MySqlException ex)
             {
                 //Fehlermeldung falls nicht möglich
                 MessageBox.Show("Gerätetyp konnte nicht gelöscht werden da zugehörige Geräte existieren: " + ex.Message);
