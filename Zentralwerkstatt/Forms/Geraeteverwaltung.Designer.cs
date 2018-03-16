@@ -62,6 +62,7 @@ namespace Zentralwerkstatt
             this.verwaltenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prueflistenansichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herstelleransichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fahrzeugenansichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.standortenansichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aktualisierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.process1 = new System.Diagnostics.Process();
@@ -70,7 +71,6 @@ namespace Zentralwerkstatt
             this.herstellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters.TableAdapterManager();
             this.herstellerTableAdapter = new Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters.herstellerTableAdapter();
-            this.fahrzeugenansichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.geraetetypenDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.geraetetypenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
@@ -376,6 +376,13 @@ namespace Zentralwerkstatt
             this.herstelleransichtToolStripMenuItem.Text = "Herstelleransicht";
             this.herstelleransichtToolStripMenuItem.Click += new System.EventHandler(this.herstelleransichtToolStripMenuItem_Click);
             // 
+            // fahrzeugenansichtToolStripMenuItem
+            // 
+            this.fahrzeugenansichtToolStripMenuItem.Name = "fahrzeugenansichtToolStripMenuItem";
+            this.fahrzeugenansichtToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.fahrzeugenansichtToolStripMenuItem.Text = "Fahrzeugenansicht";
+            this.fahrzeugenansichtToolStripMenuItem.Click += new System.EventHandler(this.fahrzeugenansichtToolStripMenuItem_Click_1);
+            // 
             // standortenansichtToolStripMenuItem
             // 
             this.standortenansichtToolStripMenuItem.Name = "standortenansichtToolStripMenuItem";
@@ -432,13 +439,6 @@ namespace Zentralwerkstatt
             // herstellerTableAdapter
             // 
             this.herstellerTableAdapter.ClearBeforeFill = true;
-            // 
-            // fahrzeugenansichtToolStripMenuItem
-            // 
-            this.fahrzeugenansichtToolStripMenuItem.Name = "fahrzeugenansichtToolStripMenuItem";
-            this.fahrzeugenansichtToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.fahrzeugenansichtToolStripMenuItem.Text = "Fahrzeugenansicht";
-            this.fahrzeugenansichtToolStripMenuItem.Click += new System.EventHandler(this.fahrzeugenansichtToolStripMenuItem_Click_1);
             // 
             // Geraeteverwaltung
             // 

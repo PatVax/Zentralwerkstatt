@@ -55,6 +55,9 @@ namespace Zentralwerkstatt
 
         private void GeraetetypenHinzufuegenButton_Click(object sender, EventArgs e)
         {
+
+            Geraetetyp geraetetyp = new Geraetetyp((long)DropDownMenuHersteller.SelectedValue, textBox1.Text, textBox2.Text, textBox3.Text);
+
             MySqlCommand cmd = DBUtils.COMMAND;
 
             cmd.CommandText = "INSERT INTO geraetetypen (idhersteller, headertext, footertext, bezeichnung) VALUES (@IDH, @Header, @Footer, @Bezeichnung)";
@@ -62,17 +65,10 @@ namespace Zentralwerkstatt
             cmd.Parameters.AddWithValue("@Footer", textBox3.Text);
             cmd.Parameters.AddWithValue("@Bezeichnung", textBox1.Text);
             cmd.Parameters.AddWithValue("@IDH", DropDownMenuHersteller.SelectedValue);
-            cmd.ExecuteNonQuery();
-            Pruefliste Form = new Pruefliste();
-            Form.Show();
+            
+            AddPruefliste Form = new AddPruefliste(geraetetyp);
+            Form.ShowDialog();
             this.Close();
-        }
-
-        private void btnNeuesFahrzeug_Click(object sender, EventArgs e)
-        {
-            Standortverwaltung form = new Standortverwaltung();
-            form.ShowDialog();
-            Aktualisieren();
         }
     }
 }

@@ -11,6 +11,9 @@ namespace Zentralwerkstatt
     /// </summary>
     public partial class Zentralverwaltung : Form
     {
+
+        private bool IsInactivShowing = false;
+
         /// <summary>
         /// Erstellt eine Instanz der Zentralwerkstatt Form
         /// </summary>
@@ -22,19 +25,19 @@ namespace Zentralwerkstatt
         private void Zentralverwaltung_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'projektZDataSet.Benutzer' table. You can move, or remove it, as needed.
-            this.benutzerTableAdapter.Fill(this.projektZDataSet.benutzer);
+            this.benutzerTableAdapter.FillAktiv(this.projektZDataSet.benutzer);
         }
 
-        private void AddUserButton_Click(object sender, EventArgs e)
+        private void BtnAddUser_Click(object sender, EventArgs e)
         {
             //Neuen Benutzer anlegen
-            NeuerBenutzer Form2 = new NeuerBenutzer();
-            Form2.ShowDialog();
+            NeuerBenutzer neuerBenutzerForm = new NeuerBenutzer();
+            neuerBenutzerForm.ShowDialog();
 
-            Button_aktualisieren.PerformClick();
+            btnRefreshData.PerformClick();
         }
 
-        private void RemoveUserButton_Click(object sender, EventArgs e)
+        private void BtnRemoveUser_Click(object sender, EventArgs e)
         {
             //Benutzer Löschen nach einer Abfrage
             DialogResult dialogResult = MessageBox.Show("Wollen sie den Benutzer löschen?", "Sicher?", MessageBoxButtons.YesNo);
@@ -43,34 +46,28 @@ namespace Zentralwerkstatt
                 try
                 {
                     MySqlCommand cmd = DBUtils.GetCommand("DELETE FROM benutzer WHERE benutzername = @Benutzername");
-                    cmd.Parameters.AddWithValue("@Benutzername", dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                    cmd.Parameters.AddWithValue("@Benutzername", benutzerDataGridView.CurrentRow.Cells[0].Value.ToString());
                     cmd.ExecuteNonQuery();
-                    this.benutzerTableAdapter.Fill(this.projektZDataSet.benutzer);
+                    this.benutzerTableAdapter.FillAktiv(this.projektZDataSet.benutzer);
                 }catch(MySqlException ex)
                 {
                     //Fehlermeldung falls Benutzer nicht löschbar ist
                     MessageBox.Show("Benutzer konnte nicht gelöscht werden da zugehörige Prüfungen existieren: " + ex.Message);
                 }
             }
-            Button_aktualisieren.PerformClick();
+            btnRefreshData.PerformClick();
         }
 
-        private void Button_aktualisieren_Click(object sender, EventArgs e)
-        {
-            //Neufüllen der Tabelle
-            this.benutzerTableAdapter.Fill(this.projektZDataSet.benutzer);
-        }
-
-        private void ChangeUserDataButton_Click(object sender, EventArgs e)
+        private void BtnChangeUserData_Click(object sender, EventArgs e)
         {
             //Benutzerdaten ändern
             this.benutzerBindingSource.EndEdit();
             benutzerTableAdapter.Update(this.projektZDataSet.benutzer);
             MessageBox.Show("Benutzerdaten wurden geändert");
-            Button_aktualisieren.PerformClick();
+            btnRefreshData.PerformClick();
         }
 
-        private void btnChangePassword_Click(object sender, EventArgs e)
+        private void BtnChangePassword_Click(object sender, EventArgs e)
         {
             //Passwort für den Benutzer ändern
             ChangePassword form = new ChangePassword();
@@ -78,15 +75,15 @@ namespace Zentralwerkstatt
             if(form.DialogResult == DialogResult.OK)
             {
                 MySqlCommand cmd = DBUtils.GetCommand("UPDATE benutzer SET passwort = @Password WHERE idbenutzer = @IDB");
-                cmd.Parameters.AddWithValue("@Password", DBUtils.EncodeMD5(form.passwordResult));
-                cmd.Parameters.AddWithValue("@IDB", dataGridView1.SelectedRows[0].Cells[2].Value.ToString());
+                cmd.Parameters.AddWithValue("@Password", DBUtils.EncodeMD5(form.PasswordResult));
+                cmd.Parameters.AddWithValue("@IDB", benutzerDataGridView.SelectedRows[0].Cells[2].Value.ToString());
                 cmd.ExecuteNonQuery();
-                MessageBox.Show(String.Format("Passwort für Benutzer: {0} wurde erfolgreich geändert", dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                MessageBox.Show(String.Format("Passwort für Benutzer: {0} wurde erfolgreich geändert", benutzerDataGridView.SelectedRows[0].Cells[0].Value.ToString()));
             }
-            Button_aktualisieren.PerformClick();
+            btnRefreshData.PerformClick();
         }
 
-        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        private void BenutzerDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             //Fehlerbehandlung
             switch(e.Exception.GetType().Name)
@@ -100,6 +97,26 @@ namespace Zentralwerkstatt
                 default:
                     e.ThrowException = true;
                     return;
+            }
+        }
+
+        private void BtnAktivShow_Click(object sender, EventArgs e)
+        {
+            this.IsInactivShowing = !this.IsInactivShowing;
+            btnAktivShow.Text = this.IsInactivShowing ? "Aktive Benutzer anzeigen" : "Alle Benutzer anzeigen";
+            btnRefreshData.PerformClick();
+        }
+
+        private void BtnRefreshData_Click(object sender, EventArgs e)
+        {
+            //Neufüllen der Tabelle
+            if (this.IsInactivShowing)
+            {
+                this.benutzerTableAdapter.FillAll(this.projektZDataSet.benutzer);
+            }
+            else
+            {
+                this.benutzerTableAdapter.FillAktiv(this.projektZDataSet.benutzer);
             }
         }
     }

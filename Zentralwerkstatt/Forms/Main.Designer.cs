@@ -61,11 +61,11 @@ namespace Zentralwerkstatt
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.idpruefungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.geraetebarcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bemerkungen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bezeichnungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bemerkungen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.geraetebarcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idpruefungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MenüLeiste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
@@ -357,22 +357,22 @@ namespace Zentralwerkstatt
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // idpruefungDataGridViewTextBoxColumn
+            // bezeichnungDataGridViewTextBoxColumn
             // 
-            this.idpruefungDataGridViewTextBoxColumn.DataPropertyName = "idpruefung";
-            this.idpruefungDataGridViewTextBoxColumn.HeaderText = "idpruefung";
-            this.idpruefungDataGridViewTextBoxColumn.Name = "idpruefungDataGridViewTextBoxColumn";
-            this.idpruefungDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idpruefungDataGridViewTextBoxColumn.Visible = false;
+            this.bezeichnungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "Bezeichnung";
+            this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
+            this.bezeichnungDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bezeichnungDataGridViewTextBoxColumn.Width = 94;
             // 
-            // datumDataGridViewTextBoxColumn
+            // bemerkungen
             // 
-            this.datumDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
-            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
-            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
-            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
-            this.datumDataGridViewTextBoxColumn.Width = 63;
+            this.bemerkungen.DataPropertyName = "bemerkungen";
+            this.bemerkungen.HeaderText = "Bemerkungen";
+            this.bemerkungen.Name = "bemerkungen";
+            this.bemerkungen.ReadOnly = true;
+            this.bemerkungen.Visible = false;
             // 
             // geraetebarcodeDataGridViewTextBoxColumn
             // 
@@ -383,22 +383,22 @@ namespace Zentralwerkstatt
             this.geraetebarcodeDataGridViewTextBoxColumn.ReadOnly = true;
             this.geraetebarcodeDataGridViewTextBoxColumn.Width = 72;
             // 
-            // bemerkungen
+            // datumDataGridViewTextBoxColumn
             // 
-            this.bemerkungen.DataPropertyName = "bemerkungen";
-            this.bemerkungen.HeaderText = "Bemerkungen";
-            this.bemerkungen.Name = "bemerkungen";
-            this.bemerkungen.ReadOnly = true;
-            this.bemerkungen.Visible = false;
+            this.datumDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.datumDataGridViewTextBoxColumn.DataPropertyName = "datum";
+            this.datumDataGridViewTextBoxColumn.HeaderText = "Datum";
+            this.datumDataGridViewTextBoxColumn.Name = "datumDataGridViewTextBoxColumn";
+            this.datumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.datumDataGridViewTextBoxColumn.Width = 63;
             // 
-            // bezeichnungDataGridViewTextBoxColumn
+            // idpruefungDataGridViewTextBoxColumn
             // 
-            this.bezeichnungDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.bezeichnungDataGridViewTextBoxColumn.DataPropertyName = "bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn.HeaderText = "Bezeichnung";
-            this.bezeichnungDataGridViewTextBoxColumn.Name = "bezeichnungDataGridViewTextBoxColumn";
-            this.bezeichnungDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bezeichnungDataGridViewTextBoxColumn.Width = 94;
+            this.idpruefungDataGridViewTextBoxColumn.DataPropertyName = "idpruefung";
+            this.idpruefungDataGridViewTextBoxColumn.HeaderText = "idpruefung";
+            this.idpruefungDataGridViewTextBoxColumn.Name = "idpruefungDataGridViewTextBoxColumn";
+            this.idpruefungDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idpruefungDataGridViewTextBoxColumn.Visible = false;
             // 
             // Main
             // 

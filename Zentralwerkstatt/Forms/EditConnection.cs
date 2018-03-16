@@ -32,21 +32,21 @@ namespace Zentralwerkstatt
             txtPort.Text = builder.Port.ToString();
             txtUser.Text = builder.UserID;
             txtPassword.Text = builder.Password;
-            chkboxSavePassword.Checked = DBUtils.SAVE_DB_PASSWORD;
+            chkSavePassword.Checked = DBUtils.SAVE_DB_PASSWORD;
             txtDB.Text = builder.Database;
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
             //Alte Verbindungsdaten zwischenspeichern
-            bool oldCheckBoxState = chkboxSavePassword.Checked;
+            bool oldCheckBoxState = chkSavePassword.Checked;
 
             string oldConnectionString = DBUtils.CONNECTION_STRING;
 
             try
             {
                 //Verbindungsconfig ändern
-                DBUtils.EditConnectionConfiguration(txtHost.Text, txtUser.Text, txtPassword.Text, txtDB.Text, Convert.ToUInt32(txtPort.Text), chkboxSavePassword.Checked);
+                DBUtils.EditConnectionConfiguration(txtHost.Text, txtUser.Text, txtPassword.Text, txtDB.Text, Convert.ToUInt32(txtPort.Text), chkSavePassword.Checked);
 
                 //Verbindung mit der Datenbank herstellen, um eine mögliche fehlende Verbindung zu erkennen
                 DBUtils.CONNECTION.Open();

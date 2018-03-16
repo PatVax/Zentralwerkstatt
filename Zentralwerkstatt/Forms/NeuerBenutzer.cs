@@ -24,36 +24,43 @@ namespace Zentralwerkstatt
             InitializeComponent();
         }
 
-        private void buttonAbbrechen_Click(object sender, EventArgs e)
+        private void BtnAbbrechen_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void BenutzerHinzufügen_Click(object sender, EventArgs e)
+        private void BtnBenutzerHinzufuegen_Click(object sender, EventArgs e)
         {
             //Abbrechen wenn Benutzertextbox leer ist
-            if(BenutzertextBox.Text == "")
+            if(txtBenutzer.Text == "")
             {
                 MessageBox.Show("Benutzer konnte nicht angelegt werden.\nDie Benutzername darf nicht leer bleiben");
                 return;
             }
-            string Benutzer = BenutzertextBox.Text;
-            string Passwort = DBUtils.EncodeMD5(PassworttextBox.Text);
-            bool Administrator = AdminCheckbox.Checked;
+            if(txtPasswort.Text != txtRepeatPassword.Text)
+            {
+                MessageBox.Show("Passwörter stimmen nicht überein.");
+                return;
+            }
+            string name = txtName.Text;
+            string benutzer = txtBenutzer.Text;
+            string passwort = DBUtils.EncodeMD5(txtPasswort.Text);
+            bool administrator = chkAdmin.Checked;
             //Neuen Benutzer anlegen
             try
             {
-                MySqlCommand cmd = DBUtils.GetCommand("INSERT INTO benutzer (benutzername, passwort, administrator) VALUES (@Benutzername, @Passwort, @Administrator)");
-                cmd.Parameters.AddWithValue("@Benutzername", Benutzer);
-                cmd.Parameters.AddWithValue("@Passwort", Passwort);
-                cmd.Parameters.AddWithValue("@Administrator", Administrator);
+                MySqlCommand cmd = DBUtils.GetCommand("INSERT INTO benutzer (name, benutzername, passwort, administrator) VALUES (@Name, @Benutzername, @Passwort, @Administrator)");
+                cmd.Parameters.AddWithValue("@Name", name);
+                cmd.Parameters.AddWithValue("@Benutzername", benutzer);
+                cmd.Parameters.AddWithValue("@Passwort", passwort);
+                cmd.Parameters.AddWithValue("@Administrator", administrator);
                 cmd.ExecuteNonQuery();
             }catch(MySqlException)
             {
-                MessageBox.Show(String.Format("Benutzer konnte nicht angelegt werden.\nMöglicherweise existiert die Benutzername '{0}' schon", Benutzer));
+                MessageBox.Show(String.Format("Benutzer konnte nicht angelegt werden.\nMöglicherweise existiert die Benutzername '{0}' schon", benutzer));
             }
 
-            MessageBox.Show(String.Format("Ein Neuer Benutzer wurde angelegt:\nBenutzername:                 {0} \nAdministratorrechte:       {1}", Benutzer, AdminCheckbox.Checked ? "true" : "false"));
+            MessageBox.Show(String.Format("Ein Neuer Benutzer wurde angelegt:\nBenutzername:                 {0} \nAdministratorrechte:       {1}", benutzer, chkAdmin.Checked ? "Ja" : "Nein"));
             this.Close();
         }
     }

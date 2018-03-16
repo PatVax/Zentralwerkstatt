@@ -95,8 +95,6 @@ namespace Zentralwerkstatt.Forms
             form.ShowDialog();
 
             refreshBarcodeTables(sender, e);
-
-            fahrzeuge_standorteTableAdapter.Fill(projektZDataSet.fahrzeuge_standorte);
         }
 
         private void dataGridView_CancelRowEdit(object sender, QuestionEventArgs e)

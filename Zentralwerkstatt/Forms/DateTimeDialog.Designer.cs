@@ -72,6 +72,7 @@
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.dateTimePicker1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "DateTimeDialog";
             this.Text = "DateTimeDialog";
             this.ResumeLayout(false);

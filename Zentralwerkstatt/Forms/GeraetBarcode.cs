@@ -18,7 +18,6 @@ namespace Zentralwerkstatt
         public GeraetBarcode()
         {
             InitializeComponent();
-            this.StatusCount.Text = Convert.ToString(Count);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,15 +55,12 @@ namespace Zentralwerkstatt
                 listBox1.Items.Add(textBox1.Text);
                 textBox1.Clear();
                 Count = Count + 1;
-                this.StatusCount.Text = Convert.ToString(Count);
             }
             textBox1.Focus();
         }
 
         private void GeraetBarcode_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'projektZDataSet.Gerätetypen' table. You can move, or remove it, as needed.
-            this.geraetetypenTableAdapter.Fill(this.projektZDataSet.geraetetypen);
 
         }
 
@@ -75,7 +71,6 @@ namespace Zentralwerkstatt
             {
                 Count = Count - 1;
             }
-            this.StatusCount.Text = Convert.ToString(Count);
         }
 
         private void button2_Click(object sender, EventArgs e)

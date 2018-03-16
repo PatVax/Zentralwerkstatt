@@ -30,7 +30,6 @@ namespace Zentralwerkstatt
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -40,17 +39,8 @@ namespace Zentralwerkstatt
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.StatusCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.projektZDataSet = new ProjektZDataSet();
-            this.gerätetypenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.geraetetypenTableAdapter = new DataSets.ProjektZDataSetTableAdapters.geraetetypenTableAdapter();
-            this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,8 +70,6 @@ namespace Zentralwerkstatt
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.gerätetypenBindingSource;
-            this.comboBox1.DisplayMember = "Bezeichnung";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 16);
@@ -139,28 +127,6 @@ namespace Zentralwerkstatt
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.StatusCount});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 355);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(353, 22);
-            this.statusStrip1.TabIndex = 9;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(58, 17);
-            this.toolStripStatusLabel1.Text = "Barcodes:";
-            // 
-            // StatusCount
-            // 
-            this.StatusCount.Name = "StatusCount";
-            this.StatusCount.Size = new System.Drawing.Size(0, 17);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -180,28 +146,13 @@ namespace Zentralwerkstatt
             this.textBox2.Text = "YYYY-MM-DD";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
-            // projektZDataSet
-            // 
-            this.projektZDataSet.DataSetName = "ProjektZDataSet";
-            this.projektZDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gerätetypenBindingSource
-            // 
-            this.gerätetypenBindingSource.DataMember = "Gerätetypen";
-            this.gerätetypenBindingSource.DataSource = this.projektZDataSet;
-            // 
-            // gerätetypenTableAdapter
-            // 
-            this.geraetetypenTableAdapter.ClearBeforeFill = true;
-            // 
-            // GerätBarcode
+            // GeraetBarcode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(353, 377);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -211,13 +162,9 @@ namespace Zentralwerkstatt
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Name = "GerätBarcode";
+            this.Name = "GeraetBarcode";
             this.Text = "GerätBarcode";
             this.Load += new System.EventHandler(this.GeraetBarcode_Load);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gerätetypenBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,13 +181,7 @@ namespace Zentralwerkstatt
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel StatusCount;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
-        private ProjektZDataSet projektZDataSet;
-        private System.Windows.Forms.BindingSource gerätetypenBindingSource;
-        private DataSets.ProjektZDataSetTableAdapters.geraetetypenTableAdapter geraetetypenTableAdapter;
     }
 }

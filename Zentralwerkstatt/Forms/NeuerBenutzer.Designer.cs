@@ -28,93 +28,136 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Passwort = new System.Windows.Forms.Label();
-            this.BenutzertextBox = new System.Windows.Forms.TextBox();
-            this.BenutzerHinzufügen = new System.Windows.Forms.Button();
-            this.PassworttextBox = new System.Windows.Forms.TextBox();
-            this.Benutzer = new System.Windows.Forms.Label();
-            this.AdminCheckbox = new System.Windows.Forms.CheckBox();
-            this.buttonAbbrechen = new System.Windows.Forms.Button();
+            this.lblPasswort = new System.Windows.Forms.Label();
+            this.txtBenutzer = new System.Windows.Forms.TextBox();
+            this.btnBenutzerHinzufuegen = new System.Windows.Forms.Button();
+            this.txtPasswort = new System.Windows.Forms.TextBox();
+            this.lblBenutzer = new System.Windows.Forms.Label();
+            this.chkAdmin = new System.Windows.Forms.CheckBox();
+            this.btnAbbrechen = new System.Windows.Forms.Button();
+            this.lblRepeatPassword = new System.Windows.Forms.Label();
+            this.txtRepeatPassword = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // Passwort
+            // lblPasswort
             // 
-            this.Passwort.AutoSize = true;
-            this.Passwort.Location = new System.Drawing.Point(12, 35);
-            this.Passwort.Name = "Passwort";
-            this.Passwort.Size = new System.Drawing.Size(53, 13);
-            this.Passwort.TabIndex = 0;
-            this.Passwort.Text = "Passwort:";
+            this.lblPasswort.AutoSize = true;
+            this.lblPasswort.Location = new System.Drawing.Point(31, 64);
+            this.lblPasswort.Name = "lblPasswort";
+            this.lblPasswort.Size = new System.Drawing.Size(53, 13);
+            this.lblPasswort.TabIndex = 0;
+            this.lblPasswort.Text = "Passwort:";
             // 
-            // BenutzertextBox
+            // txtBenutzer
             // 
-            this.BenutzertextBox.Location = new System.Drawing.Point(71, 6);
-            this.BenutzertextBox.Name = "BenutzertextBox";
-            this.BenutzertextBox.Size = new System.Drawing.Size(100, 20);
-            this.BenutzertextBox.TabIndex = 1;
+            this.txtBenutzer.Location = new System.Drawing.Point(90, 35);
+            this.txtBenutzer.Name = "txtBenutzer";
+            this.txtBenutzer.Size = new System.Drawing.Size(100, 20);
+            this.txtBenutzer.TabIndex = 2;
             // 
-            // BenutzerHinzufügen
+            // btnBenutzerHinzufuegen
             // 
-            this.BenutzerHinzufügen.Location = new System.Drawing.Point(15, 226);
-            this.BenutzerHinzufügen.Name = "BenutzerHinzufügen";
-            this.BenutzerHinzufügen.Size = new System.Drawing.Size(100, 23);
-            this.BenutzerHinzufügen.TabIndex = 4;
-            this.BenutzerHinzufügen.Text = "Hinzufügen";
-            this.BenutzerHinzufügen.UseVisualStyleBackColor = true;
-            this.BenutzerHinzufügen.Click += new System.EventHandler(this.BenutzerHinzufügen_Click);
+            this.btnBenutzerHinzufuegen.Location = new System.Drawing.Point(17, 136);
+            this.btnBenutzerHinzufuegen.Name = "btnBenutzerHinzufuegen";
+            this.btnBenutzerHinzufuegen.Size = new System.Drawing.Size(100, 23);
+            this.btnBenutzerHinzufuegen.TabIndex = 6;
+            this.btnBenutzerHinzufuegen.Text = "Hinzufügen";
+            this.btnBenutzerHinzufuegen.UseVisualStyleBackColor = true;
+            this.btnBenutzerHinzufuegen.Click += new System.EventHandler(this.BtnBenutzerHinzufuegen_Click);
             // 
-            // PassworttextBox
+            // txtPasswort
             // 
-            this.PassworttextBox.Location = new System.Drawing.Point(71, 32);
-            this.PassworttextBox.Name = "PassworttextBox";
-            this.PassworttextBox.PasswordChar = '●';
-            this.PassworttextBox.Size = new System.Drawing.Size(100, 20);
-            this.PassworttextBox.TabIndex = 2;
+            this.txtPasswort.Location = new System.Drawing.Point(90, 61);
+            this.txtPasswort.Name = "txtPasswort";
+            this.txtPasswort.PasswordChar = '●';
+            this.txtPasswort.Size = new System.Drawing.Size(100, 20);
+            this.txtPasswort.TabIndex = 3;
             // 
-            // Benutzer
+            // lblBenutzer
             // 
-            this.Benutzer.AutoSize = true;
-            this.Benutzer.Location = new System.Drawing.Point(13, 9);
-            this.Benutzer.Name = "Benutzer";
-            this.Benutzer.Size = new System.Drawing.Size(52, 13);
-            this.Benutzer.TabIndex = 3;
-            this.Benutzer.Text = "Benutzer:";
+            this.lblBenutzer.AutoSize = true;
+            this.lblBenutzer.Location = new System.Drawing.Point(32, 38);
+            this.lblBenutzer.Name = "lblBenutzer";
+            this.lblBenutzer.Size = new System.Drawing.Size(52, 13);
+            this.lblBenutzer.TabIndex = 3;
+            this.lblBenutzer.Text = "Benutzer:";
             // 
-            // AdminCheckbox
+            // chkAdmin
             // 
-            this.AdminCheckbox.AutoSize = true;
-            this.AdminCheckbox.Location = new System.Drawing.Point(16, 58);
-            this.AdminCheckbox.Name = "AdminCheckbox";
-            this.AdminCheckbox.Size = new System.Drawing.Size(86, 17);
-            this.AdminCheckbox.TabIndex = 3;
-            this.AdminCheckbox.Text = "Administrator";
-            this.AdminCheckbox.UseVisualStyleBackColor = true;
+            this.chkAdmin.AutoSize = true;
+            this.chkAdmin.Location = new System.Drawing.Point(17, 113);
+            this.chkAdmin.Name = "chkAdmin";
+            this.chkAdmin.Size = new System.Drawing.Size(86, 17);
+            this.chkAdmin.TabIndex = 5;
+            this.chkAdmin.Text = "Administrator";
+            this.chkAdmin.UseVisualStyleBackColor = true;
             // 
-            // buttonAbbrechen
+            // btnAbbrechen
             // 
-            this.buttonAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonAbbrechen.Location = new System.Drawing.Point(172, 226);
-            this.buttonAbbrechen.Name = "buttonAbbrechen";
-            this.buttonAbbrechen.Size = new System.Drawing.Size(100, 23);
-            this.buttonAbbrechen.TabIndex = 5;
-            this.buttonAbbrechen.Text = "Abbrechen";
-            this.buttonAbbrechen.UseVisualStyleBackColor = true;
-            this.buttonAbbrechen.Click += new System.EventHandler(this.buttonAbbrechen_Click);
+            this.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAbbrechen.Location = new System.Drawing.Point(174, 136);
+            this.btnAbbrechen.Name = "btnAbbrechen";
+            this.btnAbbrechen.Size = new System.Drawing.Size(100, 23);
+            this.btnAbbrechen.TabIndex = 7;
+            this.btnAbbrechen.Text = "Abbrechen";
+            this.btnAbbrechen.UseVisualStyleBackColor = true;
+            this.btnAbbrechen.Click += new System.EventHandler(this.BtnAbbrechen_Click);
+            // 
+            // lblRepeatPassword
+            // 
+            this.lblRepeatPassword.AutoSize = true;
+            this.lblRepeatPassword.Location = new System.Drawing.Point(14, 90);
+            this.lblRepeatPassword.Name = "lblRepeatPassword";
+            this.lblRepeatPassword.Size = new System.Drawing.Size(70, 13);
+            this.lblRepeatPassword.TabIndex = 6;
+            this.lblRepeatPassword.Text = "Wiederholen:";
+            // 
+            // txtRepeatPassword
+            // 
+            this.txtRepeatPassword.Location = new System.Drawing.Point(90, 87);
+            this.txtRepeatPassword.Name = "txtRepeatPassword";
+            this.txtRepeatPassword.PasswordChar = '●';
+            this.txtRepeatPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtRepeatPassword.TabIndex = 4;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(46, 12);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(38, 13);
+            this.lblName.TabIndex = 7;
+            this.lblName.Text = "Name:";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(90, 9);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.TabIndex = 1;
             // 
             // NeuerBenutzer
             // 
-            this.AcceptButton = this.BenutzerHinzufügen;
+            this.AcceptButton = this.btnBenutzerHinzufuegen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.buttonAbbrechen;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.buttonAbbrechen);
-            this.Controls.Add(this.AdminCheckbox);
-            this.Controls.Add(this.PassworttextBox);
-            this.Controls.Add(this.Benutzer);
-            this.Controls.Add(this.BenutzerHinzufügen);
-            this.Controls.Add(this.BenutzertextBox);
-            this.Controls.Add(this.Passwort);
+            this.CancelButton = this.btnAbbrechen;
+            this.ClientSize = new System.Drawing.Size(284, 166);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.txtRepeatPassword);
+            this.Controls.Add(this.lblRepeatPassword);
+            this.Controls.Add(this.btnAbbrechen);
+            this.Controls.Add(this.chkAdmin);
+            this.Controls.Add(this.txtPasswort);
+            this.Controls.Add(this.lblBenutzer);
+            this.Controls.Add(this.btnBenutzerHinzufuegen);
+            this.Controls.Add(this.txtBenutzer);
+            this.Controls.Add(this.lblPasswort);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "NeuerBenutzer";
             this.Text = "NeuerBenutzer";
             this.ResumeLayout(false);
@@ -124,12 +167,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Passwort;
-        private System.Windows.Forms.TextBox BenutzertextBox;
-        private System.Windows.Forms.Button BenutzerHinzufügen;
-        private System.Windows.Forms.TextBox PassworttextBox;
-        private System.Windows.Forms.Label Benutzer;
-        private System.Windows.Forms.CheckBox AdminCheckbox;
-        private System.Windows.Forms.Button buttonAbbrechen;
+        private System.Windows.Forms.Label lblPasswort;
+        private System.Windows.Forms.TextBox txtBenutzer;
+        private System.Windows.Forms.Button btnBenutzerHinzufuegen;
+        private System.Windows.Forms.TextBox txtPasswort;
+        private System.Windows.Forms.Label lblBenutzer;
+        private System.Windows.Forms.CheckBox chkAdmin;
+        private System.Windows.Forms.Button btnAbbrechen;
+        private System.Windows.Forms.Label lblRepeatPassword;
+        private System.Windows.Forms.TextBox txtRepeatPassword;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.TextBox txtName;
     }
 }

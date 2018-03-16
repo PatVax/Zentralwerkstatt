@@ -28,6 +28,15 @@ namespace Zentralwerkstatt
         private void Geraeteverwaltung_Load(object sender, EventArgs e)
         {
             this.geraetetypenTableAdapter.Fill(this.projektZDataSet.geraetetypen);
+
+            int geraeteid = Convert.ToInt32(geraetetypenDataGridView.CurrentRow.Cells[1].Value);
+            try
+            {
+                this.barcodesTableAdapter.FillByGeraetetyp(this.projektZDataSet.barcodes, geraeteid);
+            }
+            catch (ConstraintException)
+            {
+            }
         }
 
         #region MenuItemBehavior
@@ -150,8 +159,8 @@ namespace Zentralwerkstatt
 
         private void prüflisteBearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pruefliste Form = new Pruefliste();
-            Form.ShowDialog();
+            //AddPruefliste Form = new AddPruefliste();
+            //Form.ShowDialog();
         }
 
         private void schließenToolStripMenuItem_Click(object sender, EventArgs e)

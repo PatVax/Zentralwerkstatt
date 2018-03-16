@@ -22,7 +22,7 @@ namespace Zentralwerkstatt
                 DBUtils.CONNECTION.Open();
 
                 //Letzte Benutzername in die Benutzer-Textbox schreiben
-                BenutzerTextBox.Text = ConfigurationManager.AppSettings["user"];
+                txtBenutzer.Text = ConfigurationManager.AppSettings["user"];
             }
             //Falls die Verbindung zur Datenbank nicht hergestellt werden konnte
             catch (MySqlException ex)
@@ -35,15 +35,15 @@ namespace Zentralwerkstatt
             }            
         }
 
-        private void AnmeldenButton_Click(object sender, EventArgs e)
+        private void BtnAnmelden_Click(object sender, EventArgs e)
         {
             try
             {
                 //Manuelle Datenanbindung zum erstellen von eigenen MySQL Abfragen
                 int count = 0;
                 MySqlCommand cmd = DBUtils.GetCommand("SELECT * FROM benutzer WHERE benutzername = @Benutzername AND passwort = @Passwort");
-                cmd.Parameters.AddWithValue("@Benutzername", this.BenutzerTextBox.Text);
-                cmd.Parameters.AddWithValue("@Passwort", DBUtils.EncodeMD5(this.PasswortTextBox.Text));
+                cmd.Parameters.AddWithValue("@Benutzername", this.txtBenutzer.Text);
+                cmd.Parameters.AddWithValue("@Passwort", DBUtils.EncodeMD5(this.txtPasswort.Text));
                 MySqlDataReader Reader;
                 Reader = cmd.ExecuteReader();
                 while (Reader.Read() && count < 2)
@@ -63,31 +63,32 @@ namespace Zentralwerkstatt
 
                         //Name des erfolgreich angemeldeten Benutzers in die Config speichern
                         config.AppSettings.Settings.Remove("user");
-                        config.AppSettings.Settings.Add("user", BenutzerTextBox.Text);
+                        config.AppSettings.Settings.Add("user", txtBenutzer.Text);
                         config.Save();
 
                         //Neuladen der Configdatei erzwingen
                         ConfigurationManager.RefreshSection("appSettings");
 
                         //Hauptfenster des Programms starten
-                        Main Form2 = new Main();
+                        Main mainForm = new Main();
                         this.Hide();
-                        Form2.Show();
+                        mainForm.Show();
+                        mainForm.BringToFront();
                     }
                     //Falls der Benutzer keine Administratorrechte hat, gib einen Fehlertext aus
                     else
                     {
-                        PasswortTextBox.Text = "";
-                        AdminText.Visible = true;
-                        BenutzerTextBox.Focus();
+                        txtPasswort.Text = "";
+                        lblAdminErrorText.Visible = true;
+                        txtBenutzer.Focus();
                     }
                 }
                 //Falls der Benutzer nicht gefunden wurde oder ein falsches Passwort eingegeben wurde, gib einen Fehlertext aus
                 else
                 {
-                    PasswortTextBox.Text = "";
-                    PasswortText.Visible = true;
-                    BenutzerTextBox.Focus();
+                    txtPasswort.Text = "";
+                    lblWrongPasswordText.Visible = true;
+                    txtBenutzer.Focus();
                 }
                 Reader.Close();
             }
@@ -98,20 +99,20 @@ namespace Zentralwerkstatt
             }
         }
 
-        private void PasswortTextBox_TextChanged(object sender, EventArgs e)
+        private void TxtPasswort_TextChanged(object sender, EventArgs e)
         {
             //Bei Verändern des Felds für das Passwort oder des Benutzernamens werden die Fehlermeldungen entfernt
-            PasswortText.Visible = false;
-            AdminText.Visible = false;
+            lblWrongPasswordText.Visible = false;
+            lblAdminErrorText.Visible = false;
         }
 
-        private void AbbrechenButton_Click(object sender, EventArgs e)
+        private void BtnAbbrechen_Click(object sender, EventArgs e)
         {
             //Bei drücken des Abbrechen Buttons, werden alle Fenster geschlossen
             Application.Exit();
         }
 
-        private void Connection_Click(object sender, EventArgs e)
+        private void BtnConnection_Click(object sender, EventArgs e)
         {
             //Öffnen des Dialogs zur verändern der Verbindung
             EditConnection editConnectionForm = new EditConnection();
@@ -121,7 +122,7 @@ namespace Zentralwerkstatt
         private void Anmeldung_Shown(object sender, EventArgs e)
         {
             //Wenn ein Benutzer in der Configdatei gefunden wurde, Focus auf die Passworteingabe verschieben
-            if (!string.IsNullOrEmpty(BenutzerTextBox.Text)) PasswortTextBox.Focus();
+            if (!string.IsNullOrEmpty(txtBenutzer.Text)) txtPasswort.Focus();
         }
     }
 }

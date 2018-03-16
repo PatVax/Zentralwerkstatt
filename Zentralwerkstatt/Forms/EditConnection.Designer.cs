@@ -40,7 +40,7 @@
             this.txtDB = new System.Windows.Forms.TextBox();
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.chkboxSavePassword = new System.Windows.Forms.CheckBox();
+            this.chkSavePassword = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblHost
@@ -145,16 +145,16 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // chkboxSavePassword
+            // chkSavePassword
             // 
-            this.chkboxSavePassword.AutoSize = true;
-            this.chkboxSavePassword.Location = new System.Drawing.Point(-1, 116);
-            this.chkboxSavePassword.Name = "chkboxSavePassword";
-            this.chkboxSavePassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.chkboxSavePassword.Size = new System.Drawing.Size(145, 17);
-            this.chkboxSavePassword.TabIndex = 9;
-            this.chkboxSavePassword.Text = "         Passwort speichern";
-            this.chkboxSavePassword.UseVisualStyleBackColor = true;
+            this.chkSavePassword.AutoSize = true;
+            this.chkSavePassword.Location = new System.Drawing.Point(-1, 116);
+            this.chkSavePassword.Name = "chkSavePassword";
+            this.chkSavePassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.chkSavePassword.Size = new System.Drawing.Size(145, 17);
+            this.chkSavePassword.TabIndex = 9;
+            this.chkSavePassword.Text = "         Passwort speichern";
+            this.chkSavePassword.UseVisualStyleBackColor = true;
             // 
             // EditConnection
             // 
@@ -163,7 +163,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(311, 206);
-            this.Controls.Add(this.chkboxSavePassword);
+            this.Controls.Add(this.chkSavePassword);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.txtDB);
@@ -202,6 +202,6 @@
         private System.Windows.Forms.TextBox txtDB;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.CheckBox chkboxSavePassword;
+        private System.Windows.Forms.CheckBox chkSavePassword;
     }
 }

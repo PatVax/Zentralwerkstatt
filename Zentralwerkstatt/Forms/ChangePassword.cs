@@ -18,7 +18,7 @@ namespace Zentralwerkstatt.Forms
         /// <summary>
         /// Eingegebenes Passwort
         /// </summary>
-        public string passwordResult
+        public string PasswordResult
         {
             get
             {
@@ -33,13 +33,18 @@ namespace Zentralwerkstatt.Forms
             InitializeComponent();
         }
 
-        private void btnAccept_Click(object sender, EventArgs e)
+        private void BtnAccept_Click(object sender, EventArgs e)
         {
+            if(txtPassword.Text != txtRepeatPassword.Text)
+            {
+                MessageBox.Show("Passwörter stimmen nicht überein.");
+                return;
+            }
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
