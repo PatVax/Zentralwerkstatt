@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="projektzDataSet" targetNamespace="http://tempuri.org/projektzDataSet2.xsd" xmlns:mstns="http://tempuri.org/projektzDataSet2.xsd" xmlns="http://tempuri.org/projektzDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="projektzConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="projektzConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Zentralwerkstatt.Properties.Settings.GlobalReference.Default.projektzConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="benutzerTableAdapter" GeneratorDataComponentClassName="benutzerTableAdapter" Name="benutzer" UserDataComponentName="benutzerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.benutzer" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idbenutzer`, `benutzername`, `passwort`, `administrator`, `aktiv` FROM `benutzer`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fahrzeugeTableAdapter" GeneratorDataComponentClassName="fahrzeugeTableAdapter" Name="fahrzeuge" UserDataComponentName="fahrzeugeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.fahrzeuge" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idfahrzeug`, `bezeichnung`, `idstandort`, `kennzeichen` FROM `fahrzeuge`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="geraeteTableAdapter" GeneratorDataComponentClassName="geraeteTableAdapter" Name="geraete" UserDataComponentName="geraeteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.geraete" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `geraete_barcode`, `idgeraetetyp`, `anschaffungsdatum`, `idfahrzeug`, `seriennummer` FROM `geraete`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="geraetetypenTableAdapter" GeneratorDataComponentClassName="geraetetypenTableAdapter" Name="geraetetypen" UserDataComponentName="geraetetypenTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.geraetetypen" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idgeraetetyp`, `idhersteller`, `headertext`, `footertext`, `bezeichnung` FROM `geraetetypen`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="herstellerTableAdapter" GeneratorDataComponentClassName="herstellerTableAdapter" Name="hersteller" UserDataComponentName="herstellerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.hersteller" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idhersteller`, `bezeichnung` FROM `hersteller`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pruefergebnisseTableAdapter" GeneratorDataComponentClassName="pruefergebnisseTableAdapter" Name="pruefergebnisse" UserDataComponentName="pruefergebnisseTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.pruefergebnisse" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idpruefung`, `idkriterium`, `messwert` FROM `pruefergebnisse`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pruefkriterienTableAdapter" GeneratorDataComponentClassName="pruefkriterienTableAdapter" Name="pruefkriterien" UserDataComponentName="pruefkriterienTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.pruefkriterien" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idkriterium`, `idgeraetetyp`, `text`, `anzeigeart`, `status` FROM `pruefkriterien`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pruefungenTableAdapter" GeneratorDataComponentClassName="pruefungenTableAdapter" Name="pruefungen" UserDataComponentName="pruefungenTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.pruefungen" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idpruefung`, `geraete_barcode`, `idbenutzer`, `datum`, `bemerkungen` FROM `pruefungen`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="standorteTableAdapter" GeneratorDataComponentClassName="standorteTableAdapter" Name="standorte" UserDataComponentName="standorteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.standorte" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idstandort`, `bezeichnung` FROM `standorte`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="barcodesTableAdapter" GeneratorDataComponentClassName="barcodesTableAdapter" Name="barcodes" UserDataComponentName="barcodesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.barcodes" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `geraete_barcode`, `seriennummer`, `anschaffungsdatum`, `hersteller`, `idhersteller`, `bezeichnung`, `idgeraetetyp`, `fahrzeug`, `kennzeichen`, `idfahrzeug` FROM `projektz`.`barcodes`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fahrzeuge_standorteTableAdapter" GeneratorDataComponentClassName="fahrzeuge_standorteTableAdapter" Name="fahrzeuge_standorte" UserDataComponentName="fahrzeuge_standorteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.fahrzeuge_standorte" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idfahrzeug`, `bezeichnung`, `kennzeichen`, `standort` FROM `projektz`.`fahrzeuge_standorte`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pruefausgabeTableAdapter" GeneratorDataComponentClassName="pruefausgabeTableAdapter" Name="pruefausgabe" UserDataComponentName="pruefausgabeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.pruefausgabe" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `text`, `messwert`, `idpruefung` FROM `projektz`.`pruefausgabe`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="testTableAdapter" GeneratorDataComponentClassName="testTableAdapter" Name="test" UserDataComponentName="testTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projektzConnectionString (Settings)" DbObjectName="projektz.test" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `bezeichnung`, `geraete_barcode`, `datum`, `idpruefung`, `bemerkungen` FROM `projektz`.`test`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="projektzDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="projektzDataSet" msprop:Generator_UserDSName="projektzDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="benutzer" msprop:Generator_TableClassName="benutzerDataTable" msprop:Generator_TableVarName="tablebenutzer" msprop:Generator_TablePropName="benutzer" msprop:Generator_RowDeletingName="benutzerRowDeleting" msprop:Generator_RowChangingName="benutzerRowChanging" msprop:Generator_RowEvHandlerName="benutzerRowChangeEventHandler" msprop:Generator_RowDeletedName="benutzerRowDeleted" msprop:Generator_UserTableName="benutzer" msprop:Generator_RowChangedName="benutzerRowChanged" msprop:Generator_RowEvArgName="benutzerRowChangeEvent" msprop:Generator_RowClassName="benutzerRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="fahrzeuge" msprop:Generator_TableClassName="fahrzeugeDataTable" msprop:Generator_TableVarName="tablefahrzeuge" msprop:Generator_TablePropName="fahrzeuge" msprop:Generator_RowDeletingName="fahrzeugeRowDeleting" msprop:Generator_RowChangingName="fahrzeugeRowChanging" msprop:Generator_RowEvHandlerName="fahrzeugeRowChangeEventHandler" msprop:Generator_RowDeletedName="fahrzeugeRowDeleted" msprop:Generator_UserTableName="fahrzeuge" msprop:Generator_RowChangedName="fahrzeugeRowChanged" msprop:Generator_RowEvArgName="fahrzeugeRowChangeEvent" msprop:Generator_RowClassName="fahrzeugeRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="geraete" msprop:Generator_TableClassName="geraeteDataTable" msprop:Generator_TableVarName="tablegeraete" msprop:Generator_TablePropName="geraete" msprop:Generator_RowDeletingName="geraeteRowDeleting" msprop:Generator_RowChangingName="geraeteRowChanging" msprop:Generator_RowEvHandlerName="geraeteRowChangeEventHandler" msprop:Generator_RowDeletedName="geraeteRowDeleted" msprop:Generator_UserTableName="geraete" msprop:Generator_RowChangedName="geraeteRowChanged" msprop:Generator_RowEvArgName="geraeteRowChangeEvent" msprop:Generator_RowClassName="geraeteRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="geraetetypen" msprop:Generator_TableClassName="geraetetypenDataTable" msprop:Generator_TableVarName="tablegeraetetypen" msprop:Generator_TablePropName="geraetetypen" msprop:Generator_RowDeletingName="geraetetypenRowDeleting" msprop:Generator_RowChangingName="geraetetypenRowChanging" msprop:Generator_RowEvHandlerName="geraetetypenRowChangeEventHandler" msprop:Generator_RowDeletedName="geraetetypenRowDeleted" msprop:Generator_UserTableName="geraetetypen" msprop:Generator_RowChangedName="geraetetypenRowChanged" msprop:Generator_RowEvArgName="geraetetypenRowChangeEvent" msprop:Generator_RowClassName="geraetetypenRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="hersteller" msprop:Generator_TableClassName="herstellerDataTable" msprop:Generator_TableVarName="tablehersteller" msprop:Generator_TablePropName="hersteller" msprop:Generator_RowDeletingName="herstellerRowDeleting" msprop:Generator_RowChangingName="herstellerRowChanging" msprop:Generator_RowEvHandlerName="herstellerRowChangeEventHandler" msprop:Generator_RowDeletedName="herstellerRowDeleted" msprop:Generator_UserTableName="hersteller" msprop:Generator_RowChangedName="herstellerRowChanged" msprop:Generator_RowEvArgName="herstellerRowChangeEvent" msprop:Generator_RowClassName="herstellerRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pruefergebnisse" msprop:Generator_TableClassName="pruefergebnisseDataTable" msprop:Generator_TableVarName="tablepruefergebnisse" msprop:Generator_TablePropName="pruefergebnisse" msprop:Generator_RowDeletingName="pruefergebnisseRowDeleting" msprop:Generator_RowChangingName="pruefergebnisseRowChanging" msprop:Generator_RowEvHandlerName="pruefergebnisseRowChangeEventHandler" msprop:Generator_RowDeletedName="pruefergebnisseRowDeleted" msprop:Generator_UserTableName="pruefergebnisse" msprop:Generator_RowChangedName="pruefergebnisseRowChanged" msprop:Generator_RowEvArgName="pruefergebnisseRowChangeEvent" msprop:Generator_RowClassName="pruefergebnisseRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pruefkriterien" msprop:Generator_TableClassName="pruefkriterienDataTable" msprop:Generator_TableVarName="tablepruefkriterien" msprop:Generator_TablePropName="pruefkriterien" msprop:Generator_RowDeletingName="pruefkriterienRowDeleting" msprop:Generator_RowChangingName="pruefkriterienRowChanging" msprop:Generator_RowEvHandlerName="pruefkriterienRowChangeEventHandler" msprop:Generator_RowDeletedName="pruefkriterienRowDeleted" msprop:Generator_UserTableName="pruefkriterien" msprop:Generator_RowChangedName="pruefkriterienRowChanged" msprop:Generator_RowEvArgName="pruefkriterienRowChangeEvent" msprop:Generator_RowClassName="pruefkriterienRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pruefungen" msprop:Generator_TableClassName="pruefungenDataTable" msprop:Generator_TableVarName="tablepruefungen" msprop:Generator_TablePropName="pruefungen" msprop:Generator_RowDeletingName="pruefungenRowDeleting" msprop:Generator_RowChangingName="pruefungenRowChanging" msprop:Generator_RowEvHandlerName="pruefungenRowChangeEventHandler" msprop:Generator_RowDeletedName="pruefungenRowDeleted" msprop:Generator_UserTableName="pruefungen" msprop:Generator_RowChangedName="pruefungenRowChanged" msprop:Generator_RowEvArgName="pruefungenRowChangeEvent" msprop:Generator_RowClassName="pruefungenRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="standorte" msprop:Generator_TableClassName="standorteDataTable" msprop:Generator_TableVarName="tablestandorte" msprop:Generator_TablePropName="standorte" msprop:Generator_RowDeletingName="standorteRowDeleting" msprop:Generator_RowChangingName="standorteRowChanging" msprop:Generator_RowEvHandlerName="standorteRowChangeEventHandler" msprop:Generator_RowDeletedName="standorteRowDeleted" msprop:Generator_UserTableName="standorte" msprop:Generator_RowChangedName="standorteRowChanged" msprop:Generator_RowEvArgName="standorteRowChangeEvent" msprop:Generator_RowClassName="standorteRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="barcodes" msprop:Generator_TableClassName="barcodesDataTable" msprop:Generator_TableVarName="tablebarcodes" msprop:Generator_TablePropName="barcodes" msprop:Generator_RowDeletingName="barcodesRowDeleting" msprop:Generator_RowChangingName="barcodesRowChanging" msprop:Generator_RowEvHandlerName="barcodesRowChangeEventHandler" msprop:Generator_RowDeletedName="barcodesRowDeleted" msprop:Generator_UserTableName="barcodes" msprop:Generator_RowChangedName="barcodesRowChanged" msprop:Generator_RowEvArgName="barcodesRowChangeEvent" msprop:Generator_RowClassName="barcodesRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="fahrzeuge_standorte" msprop:Generator_TableClassName="fahrzeuge_standorteDataTable" msprop:Generator_TableVarName="tablefahrzeuge_standorte" msprop:Generator_TablePropName="fahrzeuge_standorte" msprop:Generator_RowDeletingName="fahrzeuge_standorteRowDeleting" msprop:Generator_RowChangingName="fahrzeuge_standorteRowChanging" msprop:Generator_RowEvHandlerName="fahrzeuge_standorteRowChangeEventHandler" msprop:Generator_RowDeletedName="fahrzeuge_standorteRowDeleted" msprop:Generator_UserTableName="fahrzeuge_standorte" msprop:Generator_RowChangedName="fahrzeuge_standorteRowChanged" msprop:Generator_RowEvArgName="fahrzeuge_standorteRowChangeEvent" msprop:Generator_RowClassName="fahrzeuge_standorteRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pruefausgabe" msprop:Generator_TableClassName="pruefausgabeDataTable" msprop:Generator_TableVarName="tablepruefausgabe" msprop:Generator_TablePropName="pruefausgabe" msprop:Generator_RowDeletingName="pruefausgabeRowDeleting" msprop:Generator_RowChangingName="pruefausgabeRowChanging" msprop:Generator_RowEvHandlerName="pruefausgabeRowChangeEventHandler" msprop:Generator_RowDeletedName="pruefausgabeRowDeleted" msprop:Generator_UserTableName="pruefausgabe" msprop:Generator_RowChangedName="pruefausgabeRowChanged" msprop:Generator_RowEvArgName="pruefausgabeRowChangeEvent" msprop:Generator_RowClassName="pruefausgabeRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="test" msprop:Generator_TableClassName="testDataTable" msprop:Generator_TableVarName="tabletest" msprop:Generator_TablePropName="test" msprop:Generator_RowDeletingName="testRowDeleting" msprop:Generator_RowChangingName="testRowChanging" msprop:Generator_RowEvHandlerName="testRowChangeEventHandler" msprop:Generator_RowDeletedName="testRowDeleted" msprop:Generator_UserTableName="test" msprop:Generator_RowChangedName="testRowChanged" msprop:Generator_RowEvArgName="testRowChangeEvent" msprop:Generator_RowClassName="testRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

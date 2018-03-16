@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CDCD962-64D3-4A48-87F2-0F6BAF53A6D9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zentralwerkstatt</RootNamespace>
+    <AssemblyName>Zentralwerkstatt</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Zentralwerkstatt.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSets\projektzDataSet.cs">
+      <DependentUpon>projektzDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Anmeldung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Anmeldung.Designer.cs">
+      <DependentUpon>Anmeldung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Benutzerverwaltung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Benutzerverwaltung.Designer.cs">
+      <DependentUpon>Benutzerverwaltung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreatePHP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreatePHP.Designer.cs">
+      <DependentUpon>CreatePHP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DateTimeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DateTimeDialog.Designer.cs">
+      <DependentUpon>DateTimeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Fahrzeugenverwaltung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Fahrzeugenverwaltung.Designer.cs">
+      <DependentUpon>Fahrzeugenverwaltung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Standortverwaltung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Standortverwaltung.Designer.cs">
+      <DependentUpon>Standortverwaltung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\projektzDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projektzDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Geraetetyp.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Utils\DBUtils.cs" />
+    <Compile Include="Forms\EditConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditConnection.Designer.cs">
+      <DependentUpon>EditConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Geraetetypen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Geraetetypen.Designer.cs">
+      <DependentUpon>Geraetetypen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Geraeteverwaltung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Geraeteverwaltung.Designer.cs">
+      <DependentUpon>Geraeteverwaltung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GeraetBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GeraetBarcode.Designer.cs">
+      <DependentUpon>GeraetBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HerstellerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HerstellerAdd.Designer.cs">
+      <DependentUpon>HerstellerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NeuerBenutzer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NeuerBenutzer.Designer.cs">
+      <DependentUpon>NeuerBenutzer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\AddPruefliste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddPruefliste.Designer.cs">
+      <DependentUpon>AddPruefliste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prueflistebearbeiten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prueflistebearbeiten.Designer.cs">
+      <DependentUpon>Prueflistebearbeiten.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Anmeldung.resx">
+      <DependentUpon>Anmeldung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Benutzerverwaltung.resx">
+      <DependentUpon>Benutzerverwaltung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreatePHP.resx">
+      <DependentUpon>CreatePHP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DateTimeDialog.resx">
+      <DependentUpon>DateTimeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditConnection.resx">
+      <DependentUpon>EditConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Fahrzeugenverwaltung.resx">
+      <DependentUpon>Fahrzeugenverwaltung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Geraetetypen.resx">
+      <DependentUpon>Geraetetypen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Geraeteverwaltung.resx">
+      <DependentUpon>Geraeteverwaltung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GeraetBarcode.resx">
+      <DependentUpon>GeraetBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HerstellerAdd.resx">
+      <DependentUpon>HerstellerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NeuerBenutzer.resx">
+      <DependentUpon>NeuerBenutzer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Standortverwaltung.resx">
+      <DependentUpon>Standortverwaltung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\AddPruefliste.resx">
+      <DependentUpon>AddPruefliste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prueflistebearbeiten.resx">
+      <DependentUpon>Prueflistebearbeiten.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSets\projektzDataSet.xsc">
+      <DependentUpon>projektzDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\projektzDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projektzDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\projektzDataSet.xss">
+      <DependentUpon>projektzDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

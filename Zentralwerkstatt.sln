@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zentralwerkstatt", "Zentralwerkstatt\Zentralwerkstatt.csproj", "{1CDCD962-64D3-4A48-87F2-0F6BAF53A6D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "q", "Zentralwerkstatt\q.csproj", "{1CDCD962-64D3-4A48-87F2-0F6BAF53A6D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

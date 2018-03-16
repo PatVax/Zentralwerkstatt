@@ -2,29 +2,19 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Zentralwerkstatt.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
+    <Setting Name="saveDBPassword" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="user" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
     <Setting Name="projektzConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=localhost;user id=root;password=adminit;database=projektz&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;server=192.168.126.11;user id=PatVax;password=Pvatx0xtavP;persistsecurityinfo=True;database=projektz;SslMode=none&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=localhost;user id=root;password=adminit;database=projektz</Value>
-    </Setting>
-    <Setting Name="projektzConnectionString1" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=10.152.1.107;user id=fw;password=fw1;persistsecurityinfo=True;database=projektz&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=10.152.1.107;user id=fw;password=fw1;persistsecurityinfo=True;database=projektz</Value>
-    </Setting>
-    <Setting Name="projektzConnection" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=10.152.0.32;user id=fw;password=fw1;persistsecurityinfo=True;database=projektz&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=10.152.0.32;user id=fw;password=fw1;persistsecurityinfo=True;database=projektz</Value>
+      <Value Profile="(Default)">server=192.168.126.11;user id=PatVax;password=Pvatx0xtavP;persistsecurityinfo=True;database=projektz;SslMode=none</Value>
     </Setting>
   </Settings>
 </SettingsFile>
