@@ -66,9 +66,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSets\projektzDataSet.cs">
-      <DependentUpon>projektzDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Anmeldung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,11 +122,11 @@
     <Compile Include="Forms\EditConnection.Designer.cs">
       <DependentUpon>EditConnection.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Geraetetypen.cs">
+    <Compile Include="Forms\AddGeraetetyp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Geraetetypen.Designer.cs">
-      <DependentUpon>Geraetetypen.cs</DependentUpon>
+    <Compile Include="Forms\AddGeraetetyp.Designer.cs">
+      <DependentUpon>AddGeraetetyp.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Geraeteverwaltung.cs">
       <SubType>Form</SubType>
@@ -137,11 +134,11 @@
     <Compile Include="Forms\Geraeteverwaltung.Designer.cs">
       <DependentUpon>Geraeteverwaltung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\GeraetBarcode.cs">
+    <Compile Include="Forms\AddGeraet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\GeraetBarcode.Designer.cs">
-      <DependentUpon>GeraetBarcode.cs</DependentUpon>
+    <Compile Include="Forms\AddGeraet.Designer.cs">
+      <DependentUpon>AddGeraet.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HerstellerAdd.cs">
       <SubType>Form</SubType>
@@ -196,14 +193,14 @@
     <EmbeddedResource Include="Forms\Fahrzeugenverwaltung.resx">
       <DependentUpon>Fahrzeugenverwaltung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Geraetetypen.resx">
-      <DependentUpon>Geraetetypen.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddGeraetetyp.resx">
+      <DependentUpon>AddGeraetetyp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Geraeteverwaltung.resx">
       <DependentUpon>Geraeteverwaltung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GeraetBarcode.resx">
-      <DependentUpon>GeraetBarcode.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AddGeraet.resx">
+      <DependentUpon>AddGeraet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HerstellerAdd.resx">
       <DependentUpon>HerstellerAdd.cs</DependentUpon>

@@ -38,12 +38,12 @@ namespace Zentralwerkstatt
             this.messwert = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boolFeld = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.idgeraetetyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idkriterium = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pruefkriterienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projektZDataSet = new Zentralwerkstatt.DataSets.ProjektZDataSet();
             this.pruefkriterienTableAdapter = new Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters.pruefkriterienTableAdapter();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAccept = new System.Windows.Forms.Button();
-            this.btnHelp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPruefliste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pruefkriterienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).BeginInit();
@@ -51,6 +51,7 @@ namespace Zentralwerkstatt
             // 
             // dataGridViewPruefliste
             // 
+            this.dataGridViewPruefliste.AllowDrop = true;
             this.dataGridViewPruefliste.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -62,16 +63,22 @@ namespace Zentralwerkstatt
             this.header,
             this.messwert,
             this.boolFeld,
-            this.idgeraetetyp});
+            this.idgeraetetyp,
+            this.idkriterium});
             this.dataGridViewPruefliste.DataSource = this.pruefkriterienBindingSource;
             this.dataGridViewPruefliste.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewPruefliste.Name = "dataGridViewPruefliste";
             this.dataGridViewPruefliste.Size = new System.Drawing.Size(1126, 470);
             this.dataGridViewPruefliste.TabIndex = 0;
+            this.dataGridViewPruefliste.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridViewPruefliste_CellValidating);
             this.dataGridViewPruefliste.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPruefliste_CellValueChanged);
             this.dataGridViewPruefliste.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewPruefliste_DataError);
             this.dataGridViewPruefliste.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPruefliste_RowEnter);
             this.dataGridViewPruefliste.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPruefliste_RowLeave);
+            this.dataGridViewPruefliste.DragDrop += new System.Windows.Forms.DragEventHandler(this.dataGridViewPruefliste_DragDrop);
+            this.dataGridViewPruefliste.DragOver += new System.Windows.Forms.DragEventHandler(this.dataGridViewPruefliste_DragOver);
+            this.dataGridViewPruefliste.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dataGridViewPruefliste_MouseDown);
+            this.dataGridViewPruefliste.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridViewPruefliste_MouseMove);
             // 
             // textDataGridViewTextBoxColumn
             // 
@@ -86,6 +93,7 @@ namespace Zentralwerkstatt
             this.anzeigeartDataGridViewTextBoxColumn.DataPropertyName = "anzeigeart";
             this.anzeigeartDataGridViewTextBoxColumn.HeaderText = "anzeigeart";
             this.anzeigeartDataGridViewTextBoxColumn.Name = "anzeigeartDataGridViewTextBoxColumn";
+            this.anzeigeartDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.anzeigeartDataGridViewTextBoxColumn.Visible = false;
             // 
             // header
@@ -110,7 +118,15 @@ namespace Zentralwerkstatt
             this.idgeraetetyp.DataPropertyName = "idgeraetetyp";
             this.idgeraetetyp.HeaderText = "idgeraetetyp";
             this.idgeraetetyp.Name = "idgeraetetyp";
+            this.idgeraetetyp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.idgeraetetyp.Visible = false;
+            // 
+            // idkriterium
+            // 
+            this.idkriterium.DataPropertyName = "idkriterium";
+            this.idkriterium.HeaderText = "idkriterium";
+            this.idkriterium.Name = "idkriterium";
+            this.idkriterium.Visible = false;
             // 
             // pruefkriterienBindingSource
             // 
@@ -132,7 +148,7 @@ namespace Zentralwerkstatt
             this.btnCancel.Location = new System.Drawing.Point(1063, 488);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Abbrechen";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -143,34 +159,23 @@ namespace Zentralwerkstatt
             this.btnAccept.Location = new System.Drawing.Point(982, 488);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(75, 23);
-            this.btnAccept.TabIndex = 2;
+            this.btnAccept.TabIndex = 1;
             this.btnAccept.Text = "Weiter";
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
-            // 
-            // btnHelp
-            // 
-            this.btnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHelp.Location = new System.Drawing.Point(901, 488);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(75, 23);
-            this.btnHelp.TabIndex = 3;
-            this.btnHelp.Text = "Hilfe";
-            this.btnHelp.UseVisualStyleBackColor = true;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // AddPruefliste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 523);
-            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.dataGridViewPruefliste);
             this.Name = "AddPruefliste";
             this.Text = "Prüfliste erstellen";
             this.Load += new System.EventHandler(this.Pruefliste_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.AddPruefliste_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPruefliste)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pruefkriterienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektZDataSet)).EndInit();
@@ -186,12 +191,12 @@ namespace Zentralwerkstatt
         private DataSets.ProjektZDataSetTableAdapters.pruefkriterienTableAdapter pruefkriterienTableAdapter;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAccept;
-        private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.DataGridViewTextBoxColumn textDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn anzeigeartDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn header;
         private System.Windows.Forms.DataGridViewTextBoxColumn messwert;
         private System.Windows.Forms.DataGridViewCheckBoxColumn boolFeld;
         private System.Windows.Forms.DataGridViewTextBoxColumn idgeraetetyp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idkriterium;
     }
 }

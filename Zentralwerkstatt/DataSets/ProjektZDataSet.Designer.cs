@@ -3079,8 +3079,7 @@ namespace Zentralwerkstatt.DataSets {
                                 this.columnidkriterium,
                                 this.columnidgeraetetyp}, true));
                 this.columnidkriterium.AutoIncrement = true;
-                this.columnidkriterium.AutoIncrementSeed = -1;
-                this.columnidkriterium.AutoIncrementStep = -1;
+                this.columnidkriterium.AutoIncrementSeed = 1;
                 this.columnidkriterium.AllowDBNull = false;
                 this.columnidgeraetetyp.AllowDBNull = false;
                 this.columntext.AllowDBNull = false;
@@ -13130,12 +13129,24 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `idkriterium`, `idgeraetetyp`, `text`, `anzeigeart`, `status` FROM `pruefk" +
                 "riterien`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        idkriterium, idgeraetetyp, text, anzeigeart, status\r\nFROM          " +
+                "  pruefkriterien\r\nWHERE        (idgeraetetyp = @idGeraetetyp)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@idGeraetetyp";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "idgeraetetyp";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13157,6 +13168,32 @@ namespace Zentralwerkstatt.DataSets.ProjektZDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual ProjektZDataSet.pruefkriterienDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            ProjektZDataSet.pruefkriterienDataTable dataTable = new ProjektZDataSet.pruefkriterienDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByGeraetetyp(ProjektZDataSet.pruefkriterienDataTable dataTable, int idGeraetetyp) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idGeraetetyp));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProjektZDataSet.pruefkriterienDataTable GetDataByGeraetetyp(int idGeraetetyp) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idGeraetetyp));
             ProjektZDataSet.pruefkriterienDataTable dataTable = new ProjektZDataSet.pruefkriterienDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

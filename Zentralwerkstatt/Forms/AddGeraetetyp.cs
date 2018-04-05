@@ -56,15 +56,7 @@ namespace Zentralwerkstatt
         private void GeraetetypenHinzufuegenButton_Click(object sender, EventArgs e)
         {
 
-            Geraetetyp geraetetyp = new Geraetetyp((long)DropDownMenuHersteller.SelectedValue, textBox1.Text, textBox2.Text, textBox3.Text);
-
-            MySqlCommand cmd = DBUtils.COMMAND;
-
-            cmd.CommandText = "INSERT INTO geraetetypen (idhersteller, headertext, footertext, bezeichnung) VALUES (@IDH, @Header, @Footer, @Bezeichnung)";
-            cmd.Parameters.AddWithValue("@Header", textBox2.Text);
-            cmd.Parameters.AddWithValue("@Footer", textBox3.Text);
-            cmd.Parameters.AddWithValue("@Bezeichnung", textBox1.Text);
-            cmd.Parameters.AddWithValue("@IDH", DropDownMenuHersteller.SelectedValue);
+            Geraetetyp geraetetyp = new Geraetetyp(Convert.ToInt64(DropDownMenuHersteller.SelectedValue), textBox1.Text, textBox2.Text, textBox3.Text);
             
             AddPruefliste Form = new AddPruefliste(geraetetyp);
             Form.ShowDialog();
